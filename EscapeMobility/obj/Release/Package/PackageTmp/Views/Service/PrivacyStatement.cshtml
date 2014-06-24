@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Privacy Statement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Safety", MVC.Safety.Index(), null)
+        @ViewBag.Title
+    </div>
+}

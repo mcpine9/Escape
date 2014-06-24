@@ -1,0 +1,5 @@
+H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility.Domain\bin\Debug\EscapeMobility.Domain.dll
+H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility.Domain\bin\Debug\EscapeMobility.Domain.pdb
+H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.dll
+H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.pdb
+H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.csprojResolveAssemblyReference.cache

@@ -1,0 +1,95 @@
+﻿<div id="footerMenu">
+    <div class="footerBlock">
+        <div class="fbTitle hoofdmenu US"></div>
+        <ul>
+            <li>
+                @Html.ActionLink("Home", MVC.Home.Index(), null)
+            </li>
+            <li class="navItem">@Html.ActionLink("All Products", MVC.AllProducts.Index(), new { data_curbrance = "all-products" })</li>
+            <li class="navItem">@Html.ActionLink("Healthcare", MVC.HealthCare.Index(), new { data_curbrance = "healthcare" })</li>
+            <li class="navItem">@Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index(), new { data_curbrance = "office-buildings" })</li>
+            <li class="navItem">@Html.ActionLink("Education", MVC.Education.Index(), new { data_curbrance = "education" })</li>
+            <li class="navItem">@Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), new { data_curbrance = "emergency-services" })</li>
+            <li class="navItem last">@Html.ActionLink("Industry", MVC.Industry.Index(), new { data_curbrance = "industry" })</li>
+
+        </ul>
+    </div>
+    <div class="footerBlock">
+        <div class="fbTitle informatie US"></div>
+        <ul>
+            <li class="" data-page="company-info">
+                @Html.ActionLink("Company Info", MVC.Information.CompanyInfo(), null)
+            </li>
+            <li class="" data-page="innovation">
+                @Html.ActionLink("Innovation", MVC.Information.Innovation(), null)
+            </li>
+            <li class="" data-page="references">
+                @Html.ActionLink("References", MVC.Information.References(), null)
+            </li>
+            <li class="" data-page="events">
+                @Html.ActionLink("Events", MVC.Information.Events(), null)
+            </li>
+            <li class="" data-page="history">
+                @Html.ActionLink("History", MVC.Information.History(), null)
+            </li>
+            <li class="" data-page="brochures">
+                @Html.ActionLink("Brochures", MVC.Information.Brochures(), null)
+            </li>
+            <li class="" data-page="worldwide-distribution">
+                @Html.ActionLink("Worldwide Distribution", MVC.Information.WorldwideDistribution(), null)
+            </li>
+            <li class="" data-page="distributors-wanted">
+                @Html.ActionLink("Distributors Wanted", MVC.Information.DistributorsWanted(), null)
+            </li>
+            <li class="" data-page="news-oversight">
+                @Html.ActionLink("News", MVC.Information.News(), null)
+            </li>
+        </ul>
+    </div>
+    <div class="footerBlock">
+        <div class="fbTitle service US"></div>
+        <ul>
+            <li class="" data-page="customer-service">
+                @Html.ActionLink("Customer Service", MVC.Service.CustomerService(), null)
+            </li>
+            <li class="" data-page="contact">
+                @Html.ActionLink("Contact", MVC.Service.Contact(), null)
+            </li>
+            <li class="" data-page="privacy-en-disclaimer">
+                @Html.ActionLink("Privacy & Disclaimer", MVC.Service.PrivacyStatement(), null)
+            </li>
+            <li class="" data-page="terms-en-conditions">
+                @Html.ActionLink("Terms & Conditions", MVC.Service.Terms(), null)
+            </li>
+        </ul>
+    </div>
+    <div class="footerBlock contactgegevens">
+        <div class="fbTitle contactgegevens US"></div>
+        <h3>Escape Mobility Company USA, LLC</h3>
+        <br>
+        <ul>
+            <li>
+                <p>
+                    3500 W Olive Ave Ste 300<br>
+                    Burbank, CA 91505
+                </p>
+            </li>
+            <li>
+                <p>
+                    T: 818 827 7115<br>
+                    F: 818 279 2274 <br>
+                    E: <a href="mailto:usa@escape-mobility.com">usa@escape-mobility.com</a>
+            </li>
+        </ul>
+        <br />
+        <br />
+        <a id="bbblink" class="rbhzbas" title="Escape Mobility Company USA, Safety &amp; Rescue Equipment Sales &amp; Services, Burbank, CA"
+           href="http://www.bbb.org/sanjose/business-reviews/safety-and-rescue-equipment-sales-and-services/escape-mobility-company-usa-in-burbank-ca-1016457#bbbseal"
+           target="_blank">
+            <img id="bbblinkimg" src="~/Content/images/cbbb-badge-horz.png" alt="BBB Credited: -A Rating">
+        </a>
+        <br />
+        <br />
+        <img src="~/Content/images/FEMA.jpg" alt="Responder Knowledge Base" />
+    </div>
+</div>

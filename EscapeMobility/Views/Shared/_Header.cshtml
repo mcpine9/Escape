@@ -1,0 +1,74 @@
+﻿@using EscapeMobility.WebUtilities.HtmlHelperExtensions
+@Html.ActionLink(" ", MVC.Home.Index(), new { id = "homelink", @class = "american" })
+<div id="topBox">
+    <ul>
+        <li>
+            @Html.ActionLink("Information", MVC.Information.Index(), new { data_item = "information" })
+            <ul>
+                <li class="" data-page="company-info">
+                    @Html.ActionLink("Company Info", MVC.Information.CompanyInfo(), null)
+                </li>
+                <li class="" data-page="innovation">
+                    @Html.ActionLink("Innovation", MVC.Information.Innovation(), null)
+                </li>
+                <li class="" data-page="references">
+                    @Html.ActionLink("References", MVC.Information.References(), null)
+                </li>
+                <li class="" data-page="events">
+                    @Html.ActionLink("Events", MVC.Information.Events(), null)
+                </li>
+                <li class="" data-page="history">
+                    @Html.ActionLink("History", MVC.Information.History(), null)
+                </li>
+                <li class="" data-page="brochures">
+                    @Html.ActionLink("Brochures", MVC.Information.Brochures(), null)
+                </li>
+                <li class="" data-page="worldwide-distribution">
+                    @Html.ActionLink("Worldwide Distribution", MVC.Information.WorldwideDistribution(), null)
+                </li>
+                <li class="" data-page="distributors-wanted">
+                    @Html.ActionLink("Distributors Wanted", MVC.Information.DistributorsWanted(), null)
+                </li>
+                <li class="" data-page="news-oversight">
+                    @Html.ActionLink("News", MVC.Information.News(), null)
+                </li>
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Service", MVC.Service.Index(), new { data_item = "service" })
+            <ul>
+                <li class="" data-page="customer-service">
+                    @Html.ActionLink("Customer Service", MVC.Service.CustomerService(), null)
+                </li>
+                <li class="" data-page="contact">
+                    @Html.ActionLink("Contact", MVC.Service.Contact(), null)
+                </li>
+                <li class="" data-page="privacy-en-disclaimer">
+                    @Html.ActionLink("Privacy & Disclaimer", MVC.Service.PrivacyStatement(), null)
+                </li>
+                <li class="" data-page="terms-en-conditions">
+                    @Html.ActionLink("Terms & Conditions", MVC.Service.Terms(), null)
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Quote - 0 items", MVC.Quote.Index(), new { @class = "topBoxWmHeader" })
+            <ul>
+                <li class="topBoxWM">
+                    There are 0 items in your cart
+                </li>
+            </ul>
+        </li>
+        <li><div id="phoneNumber" class="american">818 827 7115</div></li>
+        <li id="languages">
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility.com/", new { @class = "language", id = "languageEN"})
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility.nl/", new { @class = "language", id = "languageNL" })
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility.de/", new { @class = "language", id = "languageDE" })
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility-usa.com/", new { @class = "language", id = "languageUS" })
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility.be/", new { @class = "language", id = "languageBE" })
+            @Html.ActionRedirectLink("&nbsp;", "http://www.escape-mobility.co.uk/", new { @class = "language", id = "languageUK" })
+
+        </li>
+    </ul>
+</div>

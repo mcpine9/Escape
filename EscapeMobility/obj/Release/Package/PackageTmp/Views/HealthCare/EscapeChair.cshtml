@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Escape Chair";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Health Care", MVC.HealthCare.Index(), null)
+        @ViewBag.Title
+    </div>
+}

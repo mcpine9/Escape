@@ -1,0 +1,163 @@
+﻿@using EscapeMobility.WebUtilities.HtmlHelperExtensions
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+        <div id="liveboard">
+            <ul id="liveboardContent">
+                <li>
+                    @Html.ImageActionRedirectLink("/Content/images/escape-chair_standardalu.jpg", "Escape-Chair_StandardALU",
+                        "http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu.aspx",
+                        new { target = "_blank" })
+                    <div class="popupSlider">
+                        <span class="descHolder">
+                            <span class="sliderTitle stEvacuation"></span>
+                            An Escape-Chair&reg;, also called an Evacuation Chair or Stair Chair, is one of the primary means of evacuating persons from buildings. We offer highly versatile and reliable devices that have been used and tested for over 25 years. All Escape-Chairs are built and assembled at the same facility since the inception of the original Escape-Chair.
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    @Html.ImageActionRedirectLink("/Content/images/one-size-fits-all.jpg", "One size fits all",
+                        "http://www.escape-mobility-usa.com/information/information/free-advice.aspx",
+                        new { target = "_blank" })
+                    <div class="popupSlider">
+                        <span class="descHolder">
+                            <span class="sliderTitle stEvacuation"></span>
+                            <strong><em class='colorOne size fits all'>Professional advice</em></strong>No two buildings are the same and no two situations are the same. Our expert product specialists will be glad to give a demonstration and provide suitable advice.
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    @Html.ImageActionRedirectLink("/Content/images/products.jpg", "Products",
+                        "http://www.escape-mobility-usa.com/products/all-products.aspx",
+                        new { target = "_blank" })
+                    <div class="popupSlider">
+                        <span class="descHolder">
+                            <span class="sliderTitle stGeen"></span>
+
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    @Html.ImageActionRedirectLink("/Content/images/EscapeChairLiveBoard_slide1.jpg", "Healthcare",
+                                 "http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu.aspx",
+                        new { target = "_blank" })
+                    <div class="popupSlider">
+                        <span class="descHolder">
+                            <span class="sliderTitle stEvacuation"></span>
+                            The Escape-Chair&reg; is an indispensable solution for the evacuation of persons over stairs in the event of a calamity.
+                        </span>
+                    </div>
+                </li>
+
+            </ul>
+
+            <div id="liveboardNav" style="width: 210px;">
+                <ul>
+                    <li class="prev" exclude="true"></li>
+                    <li class="pause" exclude="true"></li>
+                    <li class="next" exclude="true"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="page-content-block">
+            <section class="block-2">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="E2BBNGV8ZYSWG">
+                    <input type="image" src="/Content/images/paypal-here-logo-1x.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <br />
+                <script type="text/javascript" data-pp-pubid="d1a542ea52" data-pp-placementtype="234x60">
+                    (function (d, t) {
+                        "use strict";
+                        var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
+                        n.src = "//paypal.adtag.where.com/merchant.js";
+                        s.parentNode.insertBefore(n, s);
+                    }(document, "script"));
+                </script>
+            </section>
+            <section class="block-2">
+                <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+                    <input type="hidden" name="LinkId" value="791335da-d4c6-459a-be75-97582a22593a" />
+                    <input type="image" src="/Content/images/secure-payment.jpg" border="0" name="submit" alt="Secure Online Payment">
+                </form>
+            </section>
+        </div>
+        <div id="blocks">
+            <div class="homeBlock">
+                <div class="blockTitle">Escape-Chair®</div>
+                <div class="blockText">The <strong>Escape-Chair®</strong> is an indispensable solution for the transport of persons over stairs in the event of a calamity.</div>
+                <img style="WIDTH: 150px; FLOAT: right; HEIGHT: 175px" alt="Escape-Chair®" src="~/Content/images/escapechair_comfort150.png">
+                @Html.ActionRedirectLink("Find out more!",
+                    "http://www.escape-mobility-usa.com/products/all-products/evacuation/escape-chair.aspx",
+                    new { @class = "blockButton", target = "_blank" })
+            </div>
+            <div class="homeBlock">
+                <div class="blockTitle">References</div>
+                <div class="blockText">Customers that enhanced their safety with Escape Mobility products.</div>
+                <img src="~/Content/images/wallace_community.jpg">
+                @Html.ActionRedirectLink("Go to References",
+                    "http://www.escape-mobility-usa.com/information/information/references.aspx",
+                    new { @class = "blockButton", target = "_blank" })
+            </div>
+            <div class="homeBlock">
+                <div class="blockTitle">What is an Escape-Chair®?</div>
+                <div class="blockText" align="center">
+
+                    <object width="260" height="146"><param name="movie" value="http://www.youtube.com/v/Ji9_0ceqSXY?version=3&amp;hl=nl_NL&amp;rel=0"> <param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/Ji9_0ceqSXY?version=3&amp;hl=nl_NL&amp;rel=0&amp;showinfo=0" type="application/x-shockwave-flash" width="260" height="146" allowscriptaccess="always" allowfullscreen="true"></object>
+                </div>
+                @Html.ActionRedirectLink("Escape-Chair&reg;",
+                    "http://www.escape-mobility-usa.com/products/all-products/evacuation/escape-chair.aspx",
+                    new { @class = "blockButton", target = "_blank" })
+            </div>
+        </div>
+<div class="twitter-block">
+    <a class="twitter-timeline" href="https://twitter.com/Escape_MC_USA" data-widget-id="446534390558912512" height="200" width="520" data-tweet-limit="3" data-chrome="transparent" data-theme="dark" data-border-color="#ffffff">Tweets by @@Escape_MC_USA</a>
+    <script>
+        !function (d, s, id) {
+            var js,
+                fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+    </script>
+</div>
+
+    <div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div>
+
+@section pagescripts
+{
+    <script type="text/javascript" src="~/Scripts/app/jquery-1.8.0.min.0219160602.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/masterpage.1015101835.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/homepage.0618084353.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/jquery.fancybox-1.3.4.pack.0219160601.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/jquery.validate.min.0219160602.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/jquery.fancyform.0219160602.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/JLibrary.min.0523152631.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/jquery.liveboard.0219160602.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/app/jquery.tweet.0618084354.js"></script>*@
+}
+@section googleanalytics
+{
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-50047524-1', 'escape-mobility.net');
+        ga('send', 'pageview');
+
+    </script>
+}
