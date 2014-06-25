@@ -267,7 +267,6 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\OfficeBuildingsController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
-    <Compile Include="Controllers\AllProductsSafetyController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="EducationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

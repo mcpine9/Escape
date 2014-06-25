@@ -34,15 +34,15 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
-        public virtual ActionResult Safety(SafetyCategoryType category)
+        public virtual ActionResult Safety(string category)
         {
             switch (category)
             {
-                case SafetyCategoryType.EmergencyAid:
+                case "EmergencyAid":
                     return PartialView("~/Views/Safety/EmergencyAid.cshtml", new SafetyEquipment(ControllerContext));
-                case SafetyCategoryType.Lockers:
+                case "Lockers":
                     return PartialView("~/Views/Safety/Lockers.cshtml", new SafetyEquipment(ControllerContext));
-                case SafetyCategoryType.Smokehood:
+                case "Smokers":
                     return PartialView("~/Views/Safety/Smokehood.cshtml", new SafetyEquipment(ControllerContext));
                 default:
                     return RedirectToAction("Index");
@@ -63,10 +63,4 @@ namespace EscapeMobility.Controllers
         }
     }
 
-    public enum SafetyCategoryType
-    {
-        EmergencyAid,
-        Lockers,
-        Smokehood
-    }
 }
