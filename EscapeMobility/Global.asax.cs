@@ -17,7 +17,7 @@ namespace EscapeMobility
 {
     public class MvcApplication : HttpApplication
     {
-        protected new void Application_Start()
+        protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

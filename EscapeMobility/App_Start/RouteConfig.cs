@@ -21,14 +21,8 @@ namespace EscapeMobility
 
             routes.MapRoute(
                 name: "AllProductsDefault",
-                url: "AllProducts/{action}/{id}",
-                defaults: new { controller = "AllProducts", action = "Index", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "AllProductsSafetyDefault",
-                url: "AllProducts/Safety/{action}/{id}",
-                defaults: new { controller = "AllProductsSafety", action = "EmergencyAid", id = UrlParameter.Optional }
+                url: "AllProducts/Safety/{category}",
+                defaults: new { controller = "AllProducts", action = "Safety", category = UrlParameter.Optional }
             );
         }
     }

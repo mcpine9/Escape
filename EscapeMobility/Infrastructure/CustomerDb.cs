@@ -25,5 +25,6 @@ namespace EscapeMobility.Infrastructure
         {
             get { return Categories; }
         }
+
     }
 }

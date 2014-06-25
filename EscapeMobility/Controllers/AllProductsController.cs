@@ -34,14 +34,39 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
-        public virtual ActionResult EmergencyAid()
+        public virtual ActionResult Safety(SafetyCategoryType category)
         {
-            return View();
+            switch (category)
+            {
+                case SafetyCategoryType.EmergencyAid:
+                    return PartialView("~/Views/Safety/EmergencyAid.cshtml", new SafetyEquipment(ControllerContext));
+                case SafetyCategoryType.Lockers:
+                    return PartialView("~/Views/Safety/Lockers.cshtml", new SafetyEquipment(ControllerContext));
+                case SafetyCategoryType.Smokehood:
+                    return PartialView("~/Views/Safety/Smokehood.cshtml", new SafetyEquipment(ControllerContext));
+                default:
+                    return RedirectToAction("Index");
+            }
         }
 
         public virtual ActionResult MainLeftMenu()
         {
             return PartialView("MainLeftMenu");
         }
+    }
+
+    public class SafetyEquipment
+    {
+        public SafetyEquipment(ControllerContext context)
+        {
+            var cname = context.RouteData.Values["Controller"].ToString();
+        }
+    }
+
+    public enum SafetyCategoryType
+    {
+        EmergencyAid,
+        Lockers,
+        Smokehood
     }
 }
