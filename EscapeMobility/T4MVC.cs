@@ -27,7 +27,6 @@ public static partial class MVC
 {
     public static EscapeMobility.Controllers.AccountController Account = new EscapeMobility.Controllers.T4MVC_AccountController();
     public static EscapeMobility.Controllers.AllProductsController AllProducts = new EscapeMobility.Controllers.T4MVC_AllProductsController();
-    public static EscapeMobility.Controllers.AllProductsSafetyController AllProductsSafety = new EscapeMobility.Controllers.T4MVC_AllProductsSafetyController();
     public static EscapeMobility.Controllers.EducationController Education = new EscapeMobility.Controllers.T4MVC_EducationController();
     public static EscapeMobility.Controllers.EmergencyServicesController EmergencyServices = new EscapeMobility.Controllers.T4MVC_EmergencyServicesController();
     public static EscapeMobility.Controllers.HealthCareController HealthCare = new EscapeMobility.Controllers.T4MVC_HealthCareController();

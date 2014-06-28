@@ -20,18 +20,5 @@
             </li>
         </ul>
     </li>
-    <li class="menusafety open">
-        @Html.ActionLink("Safety", MVC.AllProductsSafety.EmergencyAid(), new { @class = "mainLeftMenu" })
-        <ul class="subLeftMenu" style="">
-            <li data-division="safety" data-group="emergency-aid">
-                @Html.ActionLink("Emergency Aid", MVC.AllProductsSafety.EmergencyAid(), null)
-            </li>
-            <li data-division="safety" data-group="lockers">
-                @Html.ActionLink("Lockers", MVC.AllProductsSafety.Lockers(), null)
-            </li>
-            <li data-division="safety" data-group="smokehood">
-                @Html.ActionLink("Smokehood", MVC.AllProductsSafety.Smokehood(), null)
-            </li>
-        </ul>
-    </li>
+    @Html.Partial("_SafetyMenu")
 </ul>

@@ -42,7 +42,7 @@ namespace EscapeMobility.Controllers
                     return PartialView("~/Views/Safety/EmergencyAid.cshtml", new SafetyEquipment(ControllerContext));
                 case "Lockers":
                     return PartialView("~/Views/Safety/Lockers.cshtml", new SafetyEquipment(ControllerContext));
-                case "Smokers":
+                case "Smokehood":
                     return PartialView("~/Views/Safety/Smokehood.cshtml", new SafetyEquipment(ControllerContext));
                 default:
                     return RedirectToAction("Index");

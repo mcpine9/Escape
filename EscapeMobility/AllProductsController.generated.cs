@@ -57,6 +57,12 @@ namespace EscapeMobility.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Safety()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AllProductsController Actions { get { return MVC.AllProducts; } }
@@ -78,7 +84,7 @@ namespace EscapeMobility.Controllers
             public readonly string EscapeCarryChair = "EscapeCarryChair";
             public readonly string EscapeMattress = "EscapeMattress";
             public readonly string Accessories = "Accessories";
-            public readonly string EmergencyAid = "EmergencyAid";
+            public readonly string Safety = "Safety";
             public readonly string MainLeftMenu = "MainLeftMenu";
         }
 
@@ -90,11 +96,19 @@ namespace EscapeMobility.Controllers
             public const string EscapeCarryChair = "EscapeCarryChair";
             public const string EscapeMattress = "EscapeMattress";
             public const string Accessories = "Accessories";
-            public const string EmergencyAid = "EmergencyAid";
+            public const string Safety = "Safety";
             public const string MainLeftMenu = "MainLeftMenu";
         }
 
 
+        static readonly ActionParamsClass_Safety s_params_Safety = new ActionParamsClass_Safety();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Safety SafetyParams { get { return s_params_Safety; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Safety
+        {
+            public readonly string category = "category";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -182,13 +196,14 @@ namespace EscapeMobility.Controllers
         }
 
         [NonAction]
-        partial void EmergencyAidOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void SafetyOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string category);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult EmergencyAid()
+        public override System.Web.Mvc.ActionResult Safety(string category)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EmergencyAid);
-            EmergencyAidOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "category", category);
+            SafetyOverride(callInfo, category);
             return callInfo;
         }
 
