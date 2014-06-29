@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Escape Chair";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Industry", MVC.Industry.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
+<div id="mainContent" data-currentname="escape-chair" data-division="evacuation" data-curbranche="industry">
+    <h1 class="pageTitle">Escape-Chair&reg;</h1>
+
+    <div class="clear"></div>
+    <p>
+    </p><div style="WIDTH: 350px; FLOAT: left">
+        <img src="~/Content/images/Escape-Chair2.png"> <br>
+        <br>
+        <h2>A&nbsp;calamity! </h2>
+        During a&nbsp;calamity you cannot or may not use the elevator. For example: fire- or smoke alarm, power failure (of the elevator),&nbsp;inoperable elevators, elevator is inaccessible for a stretcher, bomb scare, earthquake or aftershocks.&nbsp;<br>
+        <br>
+        <h2>Evacuation chair</h2>
+        An Escape-Chair® is an indispensable solution for the transport of persons over stairs in the event of a emergency. The easy to operate Escape-Chair® is ready for use within a few seconds and allows a person to be transported over the steps of a flight of stairs. <br>
+        <br>
+        <h2>Why an Escape-Chair®? </h2>
+        <ul>
+            <li>It is no longer necessary to carry persons </li>
+            <li>Safe evacuation over the stairs </li>
+            <li>Ready for use within a few seconds </li>
+            <li>Can be operated by a single person </li>
+            <li>Speed of descent can be determined by the user </li>
+            <li>Easy manoeuvring in the evacuation flow </li>
+            <li>Is no hinderance during an evacuation in the stairway</li>
+            <li>Fits in any safety plan</li>
+        </ul>
+        <br>
+        <img src="~/Content/images/logo_CE_ISO_TUV.png">
+    </div>
+    <div style="WIDTH: 320px; FLOAT: right">
+        <img style="MARGIN-BOTTOM: 20px; FLOAT: right" src="~/Content/images/lift-chair.png">
+        <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="169" src="http://www.youtube.com/embed/6IGf24P6OyI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;autohide=1&amp;controls=0&amp;loop=1&amp;playlist=6IGf24P6OyI" frameborder="0" width="300" allowfullscreen=""></iframe>
+    </div>
+    <div style="CLEAR: both"></div>
+</div>

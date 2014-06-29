@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Company Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("MainLeftMenu")
+</div>
+
+<div id="mainContent" data-curpage="company-info">
+    <h1 class="pageTitle">Company info</h1>
+
+    <div class="clear"></div>
+    <p align="center"><img alt="Escape Mobility Company Head Office" src="~/Content/images/gebouw_autosNEW600-web.jpg"></p>
+    <p align="center"><em>Head Office - Landgraaf, The Netherlands</em></p>
+    <h2>Evacuation solutions&nbsp;</h2>
+    The evacuation specialist Escape Mobility Company has been offering solutions in Europe for evacuating persons from buildings since 1987. Our offices are located in The Netherlands, Germany, United Kingdom and in the USA, working closely together with a worldwide network of Distributors.<br>
+    <br>
+    Development of evacuation chairs since 2006, resulted in the introduction of the Next Generation Escape-Chair® and Escape-Carry Chair® (an evacuation and carrying chair). <br>
+    We don’t believe in one size fits all as no two buildings are the same and no two situations are the same. Therefore, the Escape-Chair® is available in various models, and our specialists will be glad to provide their expert advice. <br>
+    <br>
+    Product development continued and evacuation products such as the Escape-Mattress®, the Evacuationsheet and most recently in 2012 the Escape-Mattress® Healthcare, were introduced to the product line with one goal in mind; enhancing the overall safety of your facility and people. All of our products are designed with versatility in mind and are specifically well-suited, among other applications, for the healthcare sector. <br>
+    <br>
+    <em><img style="WIDTH: 100px; FLOAT: right" src="~/Content/images/stempel_madeineurope_175-20graden.png">Escape Mobility Company is a family owned business and all products are covered by the trade name Escape Mobility Company. Our production and Research and Development facilities are based in The Netherlands and Germany, this guarantees quality and reliability.&nbsp;</em><br>
+    <br>
+    <br>
+    <br>
+    <img style="FLOAT: left; HEIGHT: 75px; MARGIN-RIGHT: 20px" src="~/Content/images/Alabel_products-scheef-10graden.png">
+    <h2>A-label quality</h2>
+    The products which we offer have been tested thoroughly to ensure that they meet our high quality standards. Escape Mobility Company carries an ‘A-label quality’ logo on all of its own products.
+    <p>&nbsp;</p>
+</div>

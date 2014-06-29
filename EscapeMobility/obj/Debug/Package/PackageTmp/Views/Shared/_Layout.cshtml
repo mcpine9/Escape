@@ -1,0 +1,69 @@
+﻿@using EscapeMobility.WebUtilities.HtmlHelperExtensions
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>Escape Mobility USA</title>
+    @RenderSection("pagecss", false)
+
+    <link href="~/Content/styles/app/masterpage.1015101830.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/styles/app/branchepage.0227102118.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/styles/app/basket.1015101831.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/styles/app/jquery.fancybox-1.3.4.0219160601.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <span id="ctl00_LoginControl1"><!-- CustomerId: 232 --></span>
+
+    <span id="ctl00_RedirectJCL"></span>
+    <div id="topGlow"></div>
+    @Html.ActionLink(" ", MVC.Home.Index(), new { id = "beeldmerk" })
+<div id="container" data-language="american" class="american">
+    <div id="header">
+        @Html.Partial("~/Views/Shared/_Header.cshtml")
+    </div>
+    <div id="content">
+        @Html.Partial("~/Views/Shared/_MainNav.cshtml")
+        @RenderSection("pagebreadcrumbs", false)
+        @RenderBody()
+    </div>
+</div>
+<div id="contentFooterBg">
+    <div id="footerGlow"></div>
+    <div id="footerContainer">
+        <div id="footerContact">
+            <div class="subFooterDivider"></div>
+            <a class="fcBlock fcPhone">
+                <div class="fcbTitle">
+                    Call me back
+                </div>
+                <div class="fcbText">
+
+                </div>
+            </a>
+            <div class="subFooterDivider"></div>
+            <a href="http://www.escape-mobility-usa.com/information/service/contact.aspx" class="fcBlock fcMail">
+                <div class="fcbTitle">Contact</div>
+                <div class="fcbText"></div>
+            </a>
+            <div class="subFooterDivider"></div>
+
+        </div>
+        @Html.Partial("~/Views/Shared/_FooterMenu.cshtml")
+    </div>
+</div>
+<div id="pageFooter">
+    <div id="pageFooterContainer">
+        <div id="pfcLeft">
+            Copyright ©2014 Escape Mobility Company
+
+        </div>
+    </div>
+</div>
+<!-- Page Related Scripts -->
+@RenderSection("pagescripts", false)
+@RenderSection("googleanalytics", false)
+</body>
+</html>

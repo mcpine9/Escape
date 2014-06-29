@@ -1,0 +1,21 @@
+﻿
+<ul>
+    <li class="menuevacuation open">
+        @Html.ActionLink("Evacuation", MVC.HealthCare.Index(), new { @class = "mainLeftMenu" })
+        <ul class="subLeftMenu" style="">
+            <li data-division="evacuation" data-group="escape-chair">
+                @Html.ActionLink("Escape-Chair®", MVC.HealthCare.EscapeChair(), null)
+            </li>
+            <li data-division="evacuation" data-group="escape-mattress">
+                @Html.ActionLink("Escape-Mattress®", MVC.HealthCare.EscapeMattress(), null)
+            </li>
+            <li data-division="evacuation" data-group="accessories">
+                @Html.ActionLink("Accessories", MVC.HealthCare.Accessories(), null)
+            </li>
+            <li data-division="evacuation" data-group="brochures">
+                @Html.ActionLink("Brochures", MVC.Information.Brochures(), null)
+            </li>
+        </ul>
+    </li>
+    @Html.Partial("_SafetyMenu")
+</ul>

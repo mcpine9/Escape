@@ -1,0 +1,353 @@
+﻿@charset "utf-8";
+/* Gerealiseerd door : Juice BV - Noorderbaan 10 - 5388 RB Nistelrode    */
+/* T: 0412-611453 - E: info@itsallinthemix.nl - I: www.itsallinthemix.nl */
+
+#liveboard
+{
+	width: 940px;
+	height: 344px;
+	clear: both;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+#liveboardContent li
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 940px;
+	height: 344px;
+	z-index: 0;
+}
+#liveboardContent li .loading {
+  left: 50%;
+  margin-left: -16px;
+  margin-right: -16px;
+  position: absolute;
+  top: 50%;
+}
+#liveboardContent li .popupSlider
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 50px 15px 15px;
+	color: #ffffff;
+	background: repeat-x url(/Content/images/liveboard.png);
+}
+#liveboardNav
+{
+	position: absolute;
+	right: 25px;
+	bottom: 25px;
+}
+#liveboardNav li
+{
+	background: no-repeat url(/Content/images/liveboard_nav.png);
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	display: block;
+	float: left;
+	margin: 0 0 0 5px;
+	color: #ffffff;
+	font-weight: bold;
+	cursor: pointer;
+}
+#liveboardNav li.prev
+{
+	background-position: -30px 0;
+}
+#liveboardNav li.pause
+{
+	background-position: -60px 0;
+}
+#liveboardNav li.next
+{
+	background-position: -90px 0;
+}
+
+#liveboardNav li:hover, #liveboardNav li.selected
+{
+	background-position: left bottom;
+}
+#liveboardNav li.prev:hover
+{
+	background-position: -30px bottom;
+}
+#liveboardNav li.pause:hover
+{
+	background-position: -60px bottom;
+}
+#liveboardNav li.next:hover
+{
+	background-position: -90px bottom;
+}
+#liveboardNav li.pause.ps
+{
+	background-position: -120px top;
+}
+#liveboardNav li.pause.ps
+{
+	background-position: -120px bottom;
+}
+
+.descHolder
+{
+	width: 620px;
+	display: block;
+	font-family: Verdana;
+}
+.descHolder strong
+{
+	display: block;
+	font-size: 20px;
+	font-weight: normal;
+}
+.descHolder strong em
+{
+	color: #7cc242;
+	font-style: normal;
+}
+.sliderTitle {
+	background: transparent repeat-x url('/Content/images/sliderTitles.png');
+	height: 40px;
+	width: 220px;
+	position: absolute;
+	left: 0;
+	top: 0;	
+	display: block;
+}
+.stEvacuation{
+	background-position: 0 0px;
+}
+.stSafety{
+	background-position: 0 -40px;
+}
+.stFacility{
+	background-position: 0 -80px;
+}
+.stMobility{
+	background-position: 0 -120px;
+}
+.stGeen
+{
+	display: none;
+}
+
+.colorEvacuation
+{
+	color: #7cc243;
+}
+.colorSafety
+{
+	color: #e19160;
+}
+.colorFacility
+{
+	color: #e3bd49;
+}
+.colorMobility
+{
+	color: #3bb1aa;
+}
+/* Einde liveboard */
+
+/* Blocks */
+#blocks{
+	background: transparent no-repeat url('/Content/images/blocksBg.png');
+	height: 270px;
+	margin: 19px 6px;
+	width: 937px;
+	padding: 5px 7px 6px 5px;
+	position: relative;
+}
+.homeBlock{
+	float: left;
+	height: 245px;
+	margin: 25px 1px 0 20px;
+	position: relative;
+	width: 291px;
+}
+.blockTitle{
+	color: #005832;
+	font-size: 20px;
+	line-height: 20px;
+}
+.blockText{
+	line-height: 16px;
+	padding: 12px 10px 0 0;
+}
+a.blockButton{
+	background: transparent no-repeat url('/Content/images/blockButtonBg.png');
+	bottom: 20px;
+	color: #ffffff;
+	display: block;
+	height: 25px;
+	line-height: 23px;
+	padding: 0 2px;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	width: 136px;
+	z-index: 5;
+}
+a.blockButton:hover{
+	background-position: 0 -25px;
+}
+.homeBlock img{	
+	bottom: 0;
+	max-height: 150px;
+	max-width: 281px;
+	position: absolute;
+	right: 0;
+}
+
+/* Twitter en Nieuws */
+.newsBox{
+	float: left;
+	font-size: 11px;
+	line-height: 18px;
+	margin: 20px 30px 33px 18px;
+}
+.newsBox.twitter{
+	width: 294px;
+}
+.tweet{
+	background: transparent no-repeat url('/Content/images/tweetBg.png');
+	height: 83px;
+	margin-top: 11px;
+	width: 294px;
+}
+#twitter_container {
+	height:auto !important;
+	padding-top: 5px;
+}
+#twitter_update_list {
+	font-size: 11px;
+	overflow: hidden;
+	padding: 0;	
+	width: 294px;
+	height: 383px;
+}
+#twitter_update_list li {
+	background: transparent no-repeat url('/Content/images/tweetBg.png');
+	font-size: 11px;	
+	height: 75px;	
+	line-height: 14px;
+	margin-top: 11px;
+	padding: 5px 13px 3px 28px;
+	width: 256px;
+}
+#twitter_update_list li span a {
+	color: #008751;
+	text-decoration: underline;
+}
+#twitter_update_list li span a:hover {
+	text-decoration: none;
+}
+#twitter_update_list li a{
+	color: #999999;
+	text-decoration: none;
+}
+.nbTitle{
+	font-size: 24px;
+	color: #005832;
+	padding: 7px 0 14px; 
+	position: relative;
+}
+.nbTitle a{
+	font-size: 11px;
+	background: transparent no-repeat url('/Content/images/megafoon.png') center left;
+	padding-left: 23px;
+	color: #005832;
+	text-decoration: none;
+	position: absolute;
+	right: 0;
+	top: 15px;
+}
+.nbTitle a:hover
+{
+	text-decoration: underline;
+}
+.newsBox.latestNews{
+	border-left: 1px solid #dedede;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 25px;
+	padding-right: 22px;
+	}
+.latestNewsItem{
+	background: transparent no-repeat url('/Content/images/newsItemBg.png');
+	border-bottom: 1px dashed #dedede;
+	min-height: 70px;
+	margin: 16px 0 0 8px;
+	padding-bottom: 20px;	
+	width: 557px;
+}
+.latestNewsItem.last{
+	border: none;
+}
+.lniDate{
+	color: #ffffff;	
+	float: left;
+	font-size: 12px;
+	line-height: 70px;
+	padding-right: 20px;
+	text-align: center;
+	width: 70px;
+}
+.lniTitle{
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 3px 0 2px;
+}
+.lniText{
+	line-height: 18px;
+	overflow: hidden;
+}
+.followUs{
+	background: transparent no-repeat url('/Content/images/twitterBird.png') center left;
+	margin: 6px 6px 6px 140px;
+	padding-left: 23px;	
+}
+a.lniLink, .followUs a{
+	background: transparent no-repeat url('/Content/images/greenArrow.png') center right;
+	color: #008751;
+	padding-right: 12px;
+	text-decoration: underline;
+}
+a.lniLink:hover, .followUs a:hover{
+	text-decoration: none;
+}
+
+/* mpine */
+.bbblink 
+{
+    display: block;
+    height: 38px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100px;
+}
+
+.twitter-block
+{
+	background-color: #006739;
+    border-radius: 10px;
+	margin: 19px 6px;
+	width: 929px;
+	padding: 8px;
+	position: relative;
+}
+#twitter-widget-0 
+{ 
+    width: 100% !important; 
+}

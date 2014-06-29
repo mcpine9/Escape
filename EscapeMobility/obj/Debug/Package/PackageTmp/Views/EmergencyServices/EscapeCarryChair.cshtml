@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Escape Carry Chair";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
+<div id="mainContent" data-currentname="escape-carry-chair" data-division="evacuation" data-curbranche="emergency-services">
+    <h1 class="pageTitle">Escape-Carry Chair®</h1>
+
+    <div class="clear"></div>
+    <p>
+        <img style="FLOAT: right" src="~/Content/images/lift-carry-chair.png"><img src="~/Content/images/Escape-Carry-Chair.png"> <br>
+    </p><h2>Evacuation chair as well as a carry chair</h2>
+    The Escape-Carry Chair® operates in the same way as the Escape-Chair®, equipped with glidebelts to allow evacuation via the stairs. In addition, this Escape-Carry Chair® is equipped with&nbsp;carrying handles that enable people to be carried up the stairs.<br>
+    <br>
+    <p></p>
+    <div class="clear"></div>
+</div>
