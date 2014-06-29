@@ -28,5 +28,20 @@ namespace EscapeMobility.Controllers
         {
             return View();
         }
+
+        public virtual ActionResult Safety(string category)
+        {
+            switch (category)
+            {
+                case "EmergencyAid":
+                    return View("Safety/EmergencyAid", new SafetyEquipment(ControllerContext));
+                case "Lockers":
+                    return View("Safety/Lockers", new SafetyEquipment(ControllerContext));
+                case "Smokehood":
+                    return View("Safety/Smokehood", new SafetyEquipment(ControllerContext));
+                default:
+                    return RedirectToAction("Index");
+            }
+        }
 }
 }

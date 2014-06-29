@@ -1,7 +1,10 @@
 ﻿
 <li class="menusafety open">
-    @Html.ActionLink("Safety", MVC.Industry.Safety("Lockers"), new { @class = "mainLeftMenu" })
+    @Html.ActionLink("Safety", MVC.Industry.Safety("EmergencyAid"), new { @class = "mainLeftMenu" })
     <ul class="subLeftMenu" style="">
+        <li data-division="safety" data-group="lockers">
+            @Html.ActionLink("EmergencyAid", MVC.Industry.Safety("EmergencyAid"), null)
+        </li>
         <li data-division="safety" data-group="lockers">
             @Html.ActionLink("Lockers", MVC.Industry.Safety("Lockers"), null)
         </li>

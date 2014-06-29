@@ -662,6 +662,11 @@
     <Content Include="Views\Industry\Safety\Smokehood.cshtml" />
     <Content Include="Views\Industry\_MainLeftMenu.cshtml" />
     <Content Include="Views\Industry\_SafetyMenu.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\Lockers.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\Smokehood.cshtml" />
+    <Content Include="Views\OfficeBuildings\_MainLeftMenu.cshtml" />
+    <Content Include="Views\OfficeBuildings\_SafetyMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
