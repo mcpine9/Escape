@@ -85,7 +85,6 @@ namespace EscapeMobility.Controllers
             public readonly string EscapeMattress = "EscapeMattress";
             public readonly string Accessories = "Accessories";
             public readonly string Safety = "Safety";
-            public readonly string MainLeftMenu = "MainLeftMenu";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -97,7 +96,6 @@ namespace EscapeMobility.Controllers
             public const string EscapeMattress = "EscapeMattress";
             public const string Accessories = "Accessories";
             public const string Safety = "Safety";
-            public const string MainLeftMenu = "MainLeftMenu";
         }
 
 
@@ -119,19 +117,38 @@ namespace EscapeMobility.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _MainLeftMenu = "_MainLeftMenu";
+                public readonly string _SafetyMenu = "_SafetyMenu";
                 public readonly string Accessories = "Accessories";
                 public readonly string EscapeCarryChair = "EscapeCarryChair";
                 public readonly string EscapeChair = "EscapeChair";
                 public readonly string EscapeMattress = "EscapeMattress";
                 public readonly string Index = "Index";
-                public readonly string MainLeftMenu = "MainLeftMenu";
             }
+            public readonly string _MainLeftMenu = "~/Views/AllProducts/_MainLeftMenu.cshtml";
+            public readonly string _SafetyMenu = "~/Views/AllProducts/_SafetyMenu.cshtml";
             public readonly string Accessories = "~/Views/AllProducts/Accessories.cshtml";
             public readonly string EscapeCarryChair = "~/Views/AllProducts/EscapeCarryChair.cshtml";
             public readonly string EscapeChair = "~/Views/AllProducts/EscapeChair.cshtml";
             public readonly string EscapeMattress = "~/Views/AllProducts/EscapeMattress.cshtml";
             public readonly string Index = "~/Views/AllProducts/Index.cshtml";
-            public readonly string MainLeftMenu = "~/Views/AllProducts/MainLeftMenu.cshtml";
+            static readonly _SafetyClass s_Safety = new _SafetyClass();
+            public _SafetyClass Safety { get { return s_Safety; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _SafetyClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string EmergencyAid = "EmergencyAid";
+                    public readonly string Lockers = "Lockers";
+                    public readonly string Smokehood = "Smokehood";
+                }
+                public readonly string EmergencyAid = "~/Views/AllProducts/Safety/EmergencyAid.cshtml";
+                public readonly string Lockers = "~/Views/AllProducts/Safety/Lockers.cshtml";
+                public readonly string Smokehood = "~/Views/AllProducts/Safety/Smokehood.cshtml";
+            }
         }
     }
 
@@ -204,17 +221,6 @@ namespace EscapeMobility.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "category", category);
             SafetyOverride(callInfo, category);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void MainLeftMenuOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult MainLeftMenu()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MainLeftMenu);
-            MainLeftMenuOverride(callInfo);
             return callInfo;
         }
 

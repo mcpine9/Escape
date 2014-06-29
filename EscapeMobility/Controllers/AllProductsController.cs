@@ -39,27 +39,25 @@ namespace EscapeMobility.Controllers
             switch (category)
             {
                 case "EmergencyAid":
-                    return PartialView("~/Views/Safety/EmergencyAid.cshtml", new SafetyEquipment(ControllerContext));
+                    return View("Safety/EmergencyAid", new SafetyEquipment(ControllerContext));
                 case "Lockers":
-                    return PartialView("~/Views/Safety/Lockers.cshtml", new SafetyEquipment(ControllerContext));
+                    return View("Safety/Lockers", new SafetyEquipment(ControllerContext));
                 case "Smokehood":
-                    return PartialView("~/Views/Safety/Smokehood.cshtml", new SafetyEquipment(ControllerContext));
+                    return View("Safety/Smokehood", new SafetyEquipment(ControllerContext));
                 default:
                     return RedirectToAction("Index");
             }
         }
 
-        public virtual ActionResult MainLeftMenu()
-        {
-            return PartialView("MainLeftMenu");
-        }
     }
 
     public class SafetyEquipment
     {
+        private string _controllerName;
+
         public SafetyEquipment(ControllerContext context)
         {
-            var cname = context.RouteData.Values["Controller"].ToString();
+            _controllerName = context.RouteData.Values["Controller"].ToString();
         }
     }
 

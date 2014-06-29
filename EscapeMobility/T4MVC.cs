@@ -36,7 +36,6 @@ public static partial class MVC
     public static EscapeMobility.Controllers.OfficeBuildingsController OfficeBuildings = new EscapeMobility.Controllers.T4MVC_OfficeBuildingsController();
     public static EscapeMobility.Controllers.QuoteController Quote = new EscapeMobility.Controllers.T4MVC_QuoteController();
     public static EscapeMobility.Controllers.ServiceController Service = new EscapeMobility.Controllers.T4MVC_ServiceController();
-    public static T4MVC.SafetyController Safety = new T4MVC.SafetyController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

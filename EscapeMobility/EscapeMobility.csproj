@@ -189,7 +189,8 @@
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="T4MVCExtensions">
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\T4MVCExtensions.3.9.1\lib\net40\T4MVCExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Tweetinvi, Version=0.9.2.3, Culture=neutral, processorArchitecture=MSIL">
@@ -296,9 +297,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuoteController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SafetyController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ServiceController.generated.cs">
@@ -560,7 +558,9 @@
     <Content Include="Scripts\modernizr-2.7.2.js" />
     <Content Include="Scripts\_references.js" />
     <None Include="T4MVC.tt.settings.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -588,11 +588,6 @@
     <Content Include="Views\Home\Redirect.cshtml" />
     <Content Include="Views\AllProducts\Index.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
-    <None Include="T4MVC.tt.hooks.t4" />
-    <None Include="T4MVC.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>T4MVC.cs</LastGenOutput>
-    </None>
     <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Information\Innovation.cshtml" />
     <Content Include="Views\Information\References.cshtml" />
@@ -611,9 +606,9 @@
     <Content Include="Views\AllProducts\EscapeCarryChair.cshtml" />
     <Content Include="Views\AllProducts\EscapeMattress.cshtml" />
     <Content Include="Views\AllProducts\Accessories.cshtml" />
-    <Content Include="Views\Safety\EmergencyAid.cshtml" />
-    <Content Include="Views\Safety\Lockers.cshtml" />
-    <Content Include="Views\Safety\Smokehood.cshtml" />
+    <Content Include="Views\AllProducts\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\AllProducts\Safety\Lockers.cshtml" />
+    <Content Include="Views\AllProducts\Safety\Smokehood.cshtml" />
     <Content Include="Views\HealthCare\Index.cshtml" />
     <Content Include="Views\HealthCare\EscapeChair.cshtml" />
     <Content Include="Views\HealthCare\EscapeMattress.cshtml" />
@@ -639,9 +634,14 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_MainNav.cshtml" />
     <Content Include="Views\Shared\_FooterMenu.cshtml" />
-    <Content Include="Views\AllProducts\MainLeftMenu.cshtml" />
+    <Content Include="Views\AllProducts\_MainLeftMenu.cshtml" />
     <Content Include="Views\Information\MainLeftMenu.cshtml" />
-    <Content Include="Views\Shared\_SafetyMenu.cshtml" />
+    <Content Include="Views\AllProducts\_SafetyMenu.cshtml" />
+    <Content Include="T4MVC.tt.hooks.t4" />
+    <Content Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

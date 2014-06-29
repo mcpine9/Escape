@@ -1,0 +1,24 @@
+﻿
+<ul>
+    <li class="menuevacuation open">
+        @Html.ActionLink("Evacuation", MVC.AllProducts.Index(), new { @class = "mainLeftMenu" })
+        <ul class="subLeftMenu" style="">
+            <li data-division="evacuation" data-group="escape-chair">
+                @Html.ActionLink("Escape Chair®", MVC.AllProducts.EscapeChair(), null)
+            </li>
+            <li data-division="evacuation" data-group="escape-carry-chair">
+                @Html.ActionLink("Escape-Carry Chair®", MVC.AllProducts.EscapeCarryChair(), null)
+            </li>
+            <li data-division="evacuation" data-group="escape-mattress">
+                @Html.ActionLink("Escape Mattress®", MVC.AllProducts.EscapeMattress(), null)
+            </li>
+            <li data-division="evacuation" data-group="accessories">
+                @Html.ActionLink("Accessories", MVC.AllProducts.Accessories(), null)
+            </li>
+            <li data-division="evacuation" data-group="brochures">
+                @Html.ActionLink("Brochures", MVC.Information.Brochures(), null)
+            </li>
+        </ul>
+    </li>
+    @Html.Partial("_SafetyMenu")
+</ul>
