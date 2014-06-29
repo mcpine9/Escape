@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Lockers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("All Products", MVC.AllProducts.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("./_MainLeftMenu")
+</div>

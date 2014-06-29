@@ -57,6 +57,12 @@ namespace EscapeMobility.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Safety()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public IndustryController Actions { get { return MVC.Industry; } }
@@ -78,6 +84,7 @@ namespace EscapeMobility.Controllers
             public readonly string EscapeCarryChair = "EscapeCarryChair";
             public readonly string EscapeMattress = "EscapeMattress";
             public readonly string Accessories = "Accessories";
+            public readonly string Safety = "Safety";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -88,9 +95,18 @@ namespace EscapeMobility.Controllers
             public const string EscapeCarryChair = "EscapeCarryChair";
             public const string EscapeMattress = "EscapeMattress";
             public const string Accessories = "Accessories";
+            public const string Safety = "Safety";
         }
 
 
+        static readonly ActionParamsClass_Safety s_params_Safety = new ActionParamsClass_Safety();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Safety SafetyParams { get { return s_params_Safety; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Safety
+        {
+            public readonly string category = "category";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -101,17 +117,38 @@ namespace EscapeMobility.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _MainLeftMenu = "_MainLeftMenu";
+                public readonly string _SafetyMenu = "_SafetyMenu";
                 public readonly string Accessories = "Accessories";
                 public readonly string EscapeCarryChair = "EscapeCarryChair";
                 public readonly string EscapeChair = "EscapeChair";
                 public readonly string EscapeMattress = "EscapeMattress";
                 public readonly string Index = "Index";
             }
+            public readonly string _MainLeftMenu = "~/Views/Industry/_MainLeftMenu.cshtml";
+            public readonly string _SafetyMenu = "~/Views/Industry/_SafetyMenu.cshtml";
             public readonly string Accessories = "~/Views/Industry/Accessories.cshtml";
             public readonly string EscapeCarryChair = "~/Views/Industry/EscapeCarryChair.cshtml";
             public readonly string EscapeChair = "~/Views/Industry/EscapeChair.cshtml";
             public readonly string EscapeMattress = "~/Views/Industry/EscapeMattress.cshtml";
             public readonly string Index = "~/Views/Industry/Index.cshtml";
+            static readonly _SafetyClass s_Safety = new _SafetyClass();
+            public _SafetyClass Safety { get { return s_Safety; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _SafetyClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string EmergencyAid = "EmergencyAid";
+                    public readonly string Lockers = "Lockers";
+                    public readonly string Smokehood = "Smokehood";
+                }
+                public readonly string EmergencyAid = "~/Views/Industry/Safety/EmergencyAid.cshtml";
+                public readonly string Lockers = "~/Views/Industry/Safety/Lockers.cshtml";
+                public readonly string Smokehood = "~/Views/Industry/Safety/Smokehood.cshtml";
+            }
         }
     }
 
@@ -172,6 +209,18 @@ namespace EscapeMobility.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Accessories);
             AccessoriesOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SafetyOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string category);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Safety(string category)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "category", category);
+            SafetyOverride(callInfo, category);
             return callInfo;
         }
 

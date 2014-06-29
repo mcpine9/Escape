@@ -265,6 +265,7 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\OfficeBuildingsController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
+    <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="EducationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -624,7 +625,7 @@
     <Content Include="Views\EmergencyServices\Index.cshtml" />
     <Content Include="Views\EmergencyServices\EscapeChair.cshtml" />
     <Content Include="Views\EmergencyServices\EscapeCarryChair.cshtml" />
-    <Content Include="Views\EmergencyServices\EscpaeMattress.cshtml" />
+    <Content Include="Views\EmergencyServices\EscapeMattress.cshtml" />
     <Content Include="Views\EmergencyServices\Accessories.cshtml" />
     <Content Include="Views\Industry\Index.cshtml" />
     <Content Include="Views\Industry\EscapeChair.cshtml" />
@@ -642,6 +643,25 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Education\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\Education\Safety\Lockers.cshtml" />
+    <Content Include="Views\Education\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Education\_MainLeftMenu.cshtml" />
+    <Content Include="Views\Education\_SafetyMenu.cshtml" />
+    <Content Include="Views\EmergencyServices\Safety\Lockers.cshtml" />
+    <Content Include="Views\EmergencyServices\Safety\Smokehood.cshtml" />
+    <Content Include="Views\EmergencyServices\_MainLeftMenu.cshtml" />
+    <Content Include="Views\EmergencyServices\_SafetyMenu.cshtml" />
+    <Content Include="Views\HealthCare\_MainLeftMenu.cshtml" />
+    <Content Include="Views\HealthCare\_SafetyMenu.cshtml" />
+    <Content Include="Views\HealthCare\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\HealthCare\Safety\Lockers.cshtml" />
+    <Content Include="Views\HealthCare\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Industry\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\Industry\Safety\Lockers.cshtml" />
+    <Content Include="Views\Industry\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Industry\_MainLeftMenu.cshtml" />
+    <Content Include="Views\Industry\_SafetyMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
