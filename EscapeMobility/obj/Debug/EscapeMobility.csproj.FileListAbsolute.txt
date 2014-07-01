@@ -232,3 +232,5 @@ Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Ra
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.xml
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.xml
+Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Escape.Data.dll
+Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Escape.Data.pdb

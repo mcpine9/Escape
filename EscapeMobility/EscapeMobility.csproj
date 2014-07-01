@@ -52,21 +52,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.0.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
@@ -265,6 +265,9 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\OfficeBuildingsController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
+    <Compile Include="Infrastructure\CustomerDb.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="EducationController.generated.cs">
@@ -288,10 +291,7 @@
     <Compile Include="InformationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\CustomerDb.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -679,6 +679,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Escape.Data\Escape.Data.csproj">
+      <Project>{0994ce3a-3d9d-44e2-b4e6-e82c9adad503}</Project>
+      <Name>Escape.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EscapeMobility.Domain\EscapeMobility.Domain.csproj">
       <Project>{47b88821-fff3-4c7f-8c2a-6ad5e3f02b5c}</Project>
       <Name>EscapeMobility.Domain</Name>
