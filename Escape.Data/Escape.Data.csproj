@@ -69,6 +69,14 @@
     <Compile Include="Migrations\201407202032486_InitialCreate.Designer.cs">
       <DependentUpon>201407202032486_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407270524363_ChangedSchema.cs" />
+    <Compile Include="Migrations\201407270524363_ChangedSchema.Designer.cs">
+      <DependentUpon>201407270524363_ChangedSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407270607477_ChangedSchema2.cs" />
+    <Compile Include="Migrations\201407270607477_ChangedSchema2.Designer.cs">
+      <DependentUpon>201407270607477_ChangedSchema2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
@@ -95,6 +103,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201407202032486_InitialCreate.resx">
       <DependentUpon>201407202032486_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407270524363_ChangedSchema.resx">
+      <DependentUpon>201407270524363_ChangedSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407270607477_ChangedSchema2.resx">
+      <DependentUpon>201407270607477_ChangedSchema2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

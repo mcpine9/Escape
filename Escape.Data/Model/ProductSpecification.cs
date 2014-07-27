@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +10,8 @@ namespace Escape.Data.Model
 {
     public class ProductSpecification
     {
-        public int ProductSpecificationId { get; set; }
-        public int? ProductId { get; set; }
+        [Key, ForeignKey("Product")]
+        public int ProductId { get; set; }
         public bool IsSpecificationOn { get; set; }
         public string Material   { get; set; }
         public bool IsEasyToOperate { get; set; }
@@ -30,5 +32,7 @@ namespace Escape.Data.Model
         public bool HasPaddedHeadrest{ get; set; }
         public string DimentionsFoldedUp{ get; set; }
         public string Waranty{ get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

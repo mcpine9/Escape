@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Escape.Data.Model;
 
@@ -6,6 +7,11 @@ namespace Escape.Data
 {
     class EscapeDataContext : DbContext
     {
+        public EscapeDataContext() : base("EscapeData")
+        {
+            Database.SetInitializer(new DropCreateDatabaseAlways<EscapeDataContext>());
+        }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductSpecification> ProductSpecifications { get; set; }
         public DbSet<Customer> Customers { get; set; }

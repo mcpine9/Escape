@@ -15,5 +15,6 @@ namespace Escape.Data.Model
         public string Title { get; set; }
 
         public virtual ICollection<CustomerContact> CustomerContacts { get; set; }
+        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; } 
     }
 }
