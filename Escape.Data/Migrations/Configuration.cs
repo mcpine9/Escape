@@ -8,7 +8,7 @@ namespace Escape.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Escape.Data.EscapeDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EscapeDataContext>
     {
         public Configuration()
         {
@@ -17,7 +17,7 @@ namespace Escape.Data.Migrations
             
         }
 
-        protected override void Seed(Escape.Data.EscapeDataContext context)
+        protected override void Seed(EscapeDataContext context)
         {
             var products = new List<Product>()
             {

@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EscapeDataInitializer.cs" />
     <Compile Include="Migrations\201407202032486_InitialCreate.cs" />
     <Compile Include="Migrations\201407202032486_InitialCreate.Designer.cs">
       <DependentUpon>201407202032486_InitialCreate.cs</DependentUpon>

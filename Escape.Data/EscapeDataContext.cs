@@ -5,11 +5,10 @@ using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    class EscapeDataContext : DbContext
+    public class EscapeDataContext : DbContext
     {
         public EscapeDataContext() : base("EscapeData")
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<EscapeDataContext>());
         }
 
         public DbSet<Product> Products { get; set; }
