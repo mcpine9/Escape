@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Escape.Data.Model
 {
-    class ProductSpecification
+    public class ProductSpecification
     {
         public int ProductSpecificationId { get; set; }
+        public int? ProductId { get; set; }
         public bool IsSpecificationOn { get; set; }
         public string Material   { get; set; }
         public bool IsEasyToOperate { get; set; }
@@ -18,8 +19,8 @@ namespace Escape.Data.Model
         public bool HasGlidingBeltSystem{ get; set; }
         public bool HasDustCover{ get; set; }
         public bool HasAniSlipHandle{ get; set; }
-        public int MaxCarryingCapacity{ get; set; }
-        public int MaxAngleOfStairs{ get; set; }
+        public int? MaxCarryingCapacity{ get; set; }
+        public int?  MaxAngleOfStairs{ get; set; }
         public string OperatingHandle{ get; set; }
         public string Seat { get; set; }
         public string Backrest{ get; set; }

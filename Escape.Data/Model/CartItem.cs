@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Escape.Data.Model
 {
-    class CartItem
+    public class CartItem
     {
         public int CartItemId { get; set; }
-        public int ShoppingCartId { get; set; }
-        public int ProductId { get; set; }
-        public decimal Discount { get; set; }
 
+        public int ShoppingCartID { get; set; }
         public virtual ShoppingCart ShoppingCart { get; set; }
+        public int ProductID { get; set; }
         public virtual Product Product { get; set; }
     }
 }

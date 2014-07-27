@@ -1,4 +1,4 @@
-﻿namespace Escape.Data
+﻿namespace Escape.Data.Model
 {
     public class Accessory
     {

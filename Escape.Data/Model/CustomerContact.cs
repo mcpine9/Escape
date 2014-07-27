@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Escape.Data.Model
 {
-    class CustomerContact
+    public class CustomerContact
     {
         public int CustomerContactId { get; set; }
         public string Email { get; set; }

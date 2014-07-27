@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Escape.Data.Model
 {
-    class Category
+    public class Category
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }

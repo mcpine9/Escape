@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Escape.Data.Model
 {
-    class ShoppingCart
+    public class ShoppingCart
     {
         public int ShoppingCartId { get; set; }
         public DateTime DateCreated { get; set; }
