@@ -1,239 +1,4 @@
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EscapeMobility.dll.config
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EscapeMobility.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EscapeMobility.pdb
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Antlr3.Runtime.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EntityFramework.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EntityFramework.SqlServer.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Practices.Unity.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Newtonsoft.Json.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Owin.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Streaminvi.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Helpers.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Mvc.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Optimization.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Razor.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Razor.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Tweetinvi.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviControllers.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviCore.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviCredentials.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviFactories.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviLogic.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\TweetinviWebLogic.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\UILibrary.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\WebGrease.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Antlr3.Runtime.pdb
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EntityFramework.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\EntityFramework.SqlServer.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Practices.Unity.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.Practices.Unity.Configuration.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Helpers.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Mvc.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Optimization.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.Razor.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Razor.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.dll
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.pdb
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\bin\Newtonsoft.Json.xml
-C:\Users\Mark-Ulti\Documents\Visual Studio 2013\Projects\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EscapeMobility.dll.config
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EscapeMobility.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EscapeMobility.pdb
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Antlr3.Runtime.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Autofac.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EntityFramework.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EntityFramework.SqlServer.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EscapeMobility.Domain.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Google.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Threading.Tasks.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Threading.Tasks.Extensions.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Web.Infrastructure.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.Web.Common.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.Web.Mvc.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Owin.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\PCLWebUtility.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Helpers.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Mvc.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Optimization.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Razor.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Deployment.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Razor.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\T4MVCExtensions.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Controllers.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Core.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Credentials.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Factories.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Logic.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Security.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.Streams.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Tweetinvi.WebLogic.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\WebActivatorEx.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\WebGrease.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Runtime.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Threading.Tasks.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EscapeMobility.Domain.pdb
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Antlr3.Runtime.pdb
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Autofac.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EntityFramework.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\EntityFramework.SqlServer.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Google.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Threading.Tasks.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Microsoft.Threading.Tasks.Extensions.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.Web.Common.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Ninject.Web.Mvc.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Helpers.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Mvc.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Optimization.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.Razor.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\System.Web.WebPages.Razor.xml
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\obj\Debug\EscapeMobility.pdb
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Newtonsoft.Json.dll
-H:\Development\Escape\VisualStudioProject\EscapeMobility\EscapeMobility\bin\Newtonsoft.Json.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.pdb
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll.config
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.pdb
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Antlr3.Runtime.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Autofac.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EntityFramework.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EntityFramework.SqlServer.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.Domain.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Google.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Threading.Tasks.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Threading.Tasks.Extensions.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Web.Infrastructure.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Newtonsoft.Json.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.Web.Common.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.Web.Mvc.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Owin.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\PCLWebUtility.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Helpers.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Mvc.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Optimization.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Razor.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Deployment.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\T4MVCExtensions.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Controllers.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Core.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Credentials.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Factories.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Logic.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Security.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Streams.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.WebLogic.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\WebActivatorEx.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\WebGrease.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Runtime.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Threading.Tasks.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.Domain.pdb
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Antlr3.Runtime.pdb
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Autofac.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EntityFramework.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\EntityFramework.SqlServer.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Cookies.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Facebook.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Google.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.OAuth.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Security.Twitter.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Threading.Tasks.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Microsoft.Threading.Tasks.Extensions.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Newtonsoft.Json.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.Web.Common.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Ninject.Web.Mvc.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Helpers.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Mvc.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Optimization.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.Razor.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.xml
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Escape.Data.dll
-Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility\bin\Escape.Data.pdb
+C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll.config
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.pdb
@@ -242,7 +7,6 @@ C:\GitSrc\Escape\EscapeMobility\bin\Autofac.dll
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.dll
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.SqlServer.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Escape.Data.dll
-C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.Domain.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -283,10 +47,7 @@ C:\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.Streams.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Tweetinvi.WebLogic.dll
 C:\GitSrc\Escape\EscapeMobility\bin\WebActivatorEx.dll
 C:\GitSrc\Escape\EscapeMobility\bin\WebGrease.dll
-C:\GitSrc\Escape\EscapeMobility\bin\System.Runtime.dll
-C:\GitSrc\Escape\EscapeMobility\bin\System.Threading.Tasks.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Escape.Data.pdb
-C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.Domain.pdb
 C:\GitSrc\Escape\EscapeMobility\bin\Antlr3.Runtime.pdb
 C:\GitSrc\Escape\EscapeMobility\bin\Autofac.xml
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.xml
@@ -316,6 +77,6 @@ C:\GitSrc\Escape\EscapeMobility\bin\System.Web.Razor.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.xml
-C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.dll
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.pdb
+C:\GitSrc\Escape\EscapeMobility\bin\System.Data.Entity.dll

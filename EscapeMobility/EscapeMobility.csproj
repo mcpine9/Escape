@@ -64,8 +64,7 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
@@ -138,6 +137,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
     <Reference Include="System.Web.DynamicData" />
@@ -264,9 +266,8 @@
     <Compile Include="Controllers\IndustryController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\OfficeBuildingsController.cs" />
+    <Compile Include="Controllers\ProductsAdminController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
-    <Compile Include="Infrastructure\CustomerDb.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
@@ -668,6 +669,11 @@
     <Content Include="Views\OfficeBuildings\_MainLeftMenu.cshtml" />
     <Content Include="Views\OfficeBuildings\_SafetyMenu.cshtml" />
     <Content Include="Views\Service\_MainLeftMenu.cshtml" />
+    <Content Include="Views\ProductsAdmin\Create.cshtml" />
+    <Content Include="Views\ProductsAdmin\Delete.cshtml" />
+    <Content Include="Views\ProductsAdmin\Details.cshtml" />
+    <Content Include="Views\ProductsAdmin\Edit.cshtml" />
+    <Content Include="Views\ProductsAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -682,10 +688,6 @@
     <ProjectReference Include="..\Escape.Data\Escape.Data.csproj">
       <Project>{0994ce3a-3d9d-44e2-b4e6-e82c9adad503}</Project>
       <Name>Escape.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EscapeMobility.Domain\EscapeMobility.Domain.csproj">
-      <Project>{47b88821-fff3-4c7f-8c2a-6ad5e3f02b5c}</Project>
-      <Name>EscapeMobility.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
