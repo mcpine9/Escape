@@ -8,3 +8,8 @@ Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility.Domain\bin\Debug\
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.csprojResolveAssemblyReference.cache
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.dll
 Z:\Documents\Personal\Development\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.pdb
+C:\GitSrc\Escape\EscapeMobility.Domain\bin\Debug\EscapeMobility.Domain.dll
+C:\GitSrc\Escape\EscapeMobility.Domain\bin\Debug\EscapeMobility.Domain.pdb
+C:\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.csprojResolveAssemblyReference.cache
+C:\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.dll
+C:\GitSrc\Escape\EscapeMobility.Domain\obj\Debug\EscapeMobility.Domain.pdb
