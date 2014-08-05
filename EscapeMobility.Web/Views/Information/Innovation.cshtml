@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Innovation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Information", MVC.Information.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("MainLeftMenu")
+</div>
+
+<div id="mainContent" data-curpage="innovation">
+    <h1 class="pageTitle">Innovation</h1>
+
+    <div class="clear"></div>
+    <a class="zoom" title="The innovative evacuation aids of Escape Mobility Company" href="~/Content/images/productie_large.jpg"><img style="FLOAT: right; HEIGHT: 170px; MARGIN-LEFT: 25px" src="~/Content/images/productie.jpg"></a> <strong>
+        Innovation and customization <br>
+    </strong>Our Escape products are developed in-house. This enables our Research &amp; Development Department to respond continuously to the wishes of our Customers and also&nbsp;respond to changes to the latest safety requirements.&nbsp;This leads to improvements of our existing products or possibly, the design of a completely new product. We can also manufacture customized accessories to our Customer’s specifications. <br>
+    <br>
+    The most recent <em>modifications</em>: <br>
+    <br>
+    <ul>
+        <li><strong>Escape-Chair® - Comfort </strong>model and <strong>StandardPLUS</strong> model: we have made improvements to the operating handle. The locking mechanism, which is disconnected when the operating handle is extracted, has been relocated to the side of the rescue worker, making it more easy to operate. </li>
+        <li><strong>Escape-Chair</strong>®: all Escape-Chair® models are provided with a storage case under the seat for storing information and personal documents of the evacuee. </li>
+    </ul>
+    <br>
+    The most recent <em>new products</em>: <br>
+    <br>
+    <ul>
+        <li><strong>Escape-Chair® - XS</strong> model. This&nbsp;narrow model was initially developed&nbsp;as an evacuation seat to be used in aircraft, due to&nbsp;the limited space in an aircraft (for the benefit of storage as well as transport through the narrow aisles of an aircraft). In the meantime, this model has also become popular for situations in which there is little room for evacuation. </li>
+        <li><strong>Escape-Mattress® - Stretcher</strong> model. This Escape-Mattress® replaces the standard mattress on an ambulance stretcher. If a patient cannot be reached with a stretcher (for example because of the presence of stairs or other obstacles) this Escape-Mattress® can be folded out to become a towed mattress. </li>
+        <li><strong>Escape-Mattress® - Healthcare</strong> model. This Escape-Mattress® is an all-in-one evacuation mattress for the healthcare and home care sectors. </li>
+        <li>Accessory for the Escape-Mattress®: a storage bag for the Fold model. </li>
+        <li>Dust cover for the Escape-Chair® with a transparent window for the inspection card. This gives all the information about the training courses attended and the maintenance performed at a glance. </li>
+        <li><strong>Escape-Point Locker</strong>: all requisites for an evacuation or calamity in one central place. </li>
+    </ul>
+    <br>
+    Example of <em>customization</em>: <br>
+    <br>
+    <ul>
+        <li><strong>Escape-Mattress</strong>®: modified Escape-Mattress® model for&nbsp;children. </li>
+    </ul>
+</div>

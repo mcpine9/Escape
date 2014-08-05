@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Escape Mobility USA</title>
+    <meta http-equiv="refresh" content="5;URL='@ViewBag.RedirectUrl'" />
+    @RenderSection("pagecss", required: false)
+    <style>
+        #container p, #container h3 {
+            color: white;
+            margin: .8em 0 0 2em;
+        }
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #00ff00;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+    <body>
+        <div id="topGlow"></div>
+        <div id="container" data-language="american" class="american">
+            <div id="header">
+                <a id="homelink" class="american" href="#"></a>
+                <div id="topBox">
+                </div>
+            </div>
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        @RenderSection("googleanalytics", false)
+    </body>
+</html>

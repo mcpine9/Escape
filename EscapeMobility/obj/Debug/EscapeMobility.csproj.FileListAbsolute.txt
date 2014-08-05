@@ -1,4 +1,3 @@
-C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll.config
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.dll
 C:\GitSrc\Escape\EscapeMobility\bin\EscapeMobility.pdb
@@ -8,7 +7,6 @@ C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.dll
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.SqlServer.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Escape.Data.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.dll
-C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.dll
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.dll
@@ -53,7 +51,6 @@ C:\GitSrc\Escape\EscapeMobility\bin\Autofac.xml
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.xml
 C:\GitSrc\Escape\EscapeMobility\bin\EntityFramework.SqlServer.xml
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Core.xml
-C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.xml
 C:\GitSrc\Escape\EscapeMobility\bin\Microsoft.Owin.Host.SystemWeb.xml
@@ -77,6 +74,6 @@ C:\GitSrc\Escape\EscapeMobility\bin\System.Web.Razor.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Deployment.xml
 C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.xml
+C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.dll
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.pdb
-C:\GitSrc\Escape\EscapeMobility\bin\System.Data.Entity.dll

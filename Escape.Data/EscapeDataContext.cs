@@ -5,10 +5,12 @@ using Escape.Data.Model;
 
 namespace Escape.Data
 {
+    [DbConfigurationType(typeof(EscapeDBConfiguration))]
     public class EscapeDataContext : DbContext
     {
         public EscapeDataContext() : base("EscapeData")
         {
+
         }
 
         public DbSet<Product> Products { get; set; }

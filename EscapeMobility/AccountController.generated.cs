@@ -26,6 +26,9 @@ namespace EscapeMobility.Controllers
     public partial class AccountController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public AccountController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected AccountController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

@@ -6,6 +6,7 @@ namespace Escape.Data
 {
     public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
     {
+        
         protected override void Seed(EscapeDataContext context)
         {
             var products = new List<Product>()

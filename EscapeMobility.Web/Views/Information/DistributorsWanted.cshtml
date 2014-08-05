@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Distributors Wanted";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Information", MVC.Information.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("MainLeftMenu")
+</div>
+
+<div id="mainContent" data-curpage="distributors-wanted">
+    <h1 class="pageTitle">Distributors wanted</h1>
+
+    <div class="clear"></div>
+    <h2><img style="FLOAT: right" src="~/Content/images/distribiteurs_vrij225h.png">Escape Mobility Company US, LLC is looking for distributors</h2>
+    <br>
+    <br>
+    Would you like to become a distributor of Escape Mobility Company products in the USA? <br>
+</div>

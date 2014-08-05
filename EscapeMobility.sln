@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escape.Data", "Escape.Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeMobility.Domain", "EscapeMobility.Domain\EscapeMobility.Domain.csproj", "{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeMobility.Web", "EscapeMobility.Web\EscapeMobility.Web.csproj", "{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
