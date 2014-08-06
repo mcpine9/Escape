@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Lockers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("./_MainLeftMenu")
+</div>
+
+<div id="mainContent" data-currentname="Lockers" data-division="safety" data-curbranche="emergency-ervices">
+    <h1 class="pageTitle">Lockers</h1>
+
+    <div class="clear"></div>
+    <p>
+
+    </p>
+</div>

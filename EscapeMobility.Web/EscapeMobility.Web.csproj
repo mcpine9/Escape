@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EscapeMobility.Web</RootNamespace>
+    <AssemblyName>EscapeMobility.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.2.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLWebUtility">
+      <HintPath>..\packages\PCLWebUtility.1.0.2\Lib\portable-net4+sl4+wp7+win8\PCLWebUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="T4MVCExtensions">
+      <HintPath>..\packages\T4MVCExtensions.3.9.1\lib\net40\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Controllers">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Core">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Credentials">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Credentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Factories">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Factories.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Logic">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Security">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.Streams">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi.WebLogic">
+      <HintPath>..\packages\TweetinviAPI.0.9.3.4\lib\Tweetinvi.WebLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\ada_county.JPG" />
+    <Content Include="Content\images\additional-backrest.jpg" />
+    <Content Include="Content\images\Akademie-der-Kunste-Berlin.jpg" />
+    <Content Include="Content\images\Alabel_products-scheef-10graden.png" />
+    <Content Include="Content\images\all-products.jpg" />
+    <Content Include="Content\images\armrests.jpg" />
+    <Content Include="Content\images\arrowDownWhite.png" />
+    <Content Include="Content\images\az-alma2.jpg" />
+    <Content Include="Content\images\azmlogo_2.png" />
+    <Content Include="Content\images\beeldmerk.png" />
+    <Content Include="Content\images\berufsfoerderungswerk.jpg" />
+    <Content Include="Content\images\beurs3.jpg" />
+    <Content Include="Content\images\blockButtonBg.png" />
+    <Content Include="Content\images\blocksBg.png" />
+    <Content Include="Content\images\bodyBg.png" />
+    <Content Include="Content\images\breadcrumbSpacer.png" />
+    <Content Include="Content\images\cbbb-badge-horz.png" />
+    <Content Include="Content\images\cbBorderBg.png" />
+    <Content Include="Content\images\Contact_foto_Marlie.png" />
+    <Content Include="Content\images\contentBg.png" />
+    <Content Include="Content\images\contentFooterBg.png" />
+    <Content Include="Content\images\ContentListLiBg.png" />
+    <Content Include="Content\images\DhrvanLeeuwen.jpg" />
+    <Content Include="Content\images\distribiteurs_vrij225h.png" />
+    <Content Include="Content\images\distributors-wanted.jpg" />
+    <Content Include="Content\images\dust-cover-standard-standard-alu.jpg" />
+    <Content Include="Content\images\education.jpg" />
+    <Content Include="Content\images\emergency-food-rations--mainstay-1200-energy-bar--1-package.jpg" />
+    <Content Include="Content\images\emergency-food-rations--mainstay-2400--1-package.jpg" />
+    <Content Include="Content\images\emergency-food-rations--mainstay-3600--1-package.jpg" />
+    <Content Include="Content\images\emergency-services.jpg" />
+    <Content Include="Content\images\emergency-water-rations.jpg" />
+    <Content Include="Content\images\escape-alarm.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standard-with-extra-package.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standard.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standardplus.jpg" />
+    <Content Include="Content\images\escape-carry-chair-xs.jpg" />
+    <Content Include="Content\images\Escape-Carry-Chair.png" />
+    <Content Include="Content\images\escape-chair-comfort.jpg" />
+    <Content Include="Content\images\escape-chair-standard-alu-with-extra-package.jpg" />
+    <Content Include="Content\images\escape-chair-standard-alu.jpg" />
+    <Content Include="Content\images\escape-chair-standard.jpg" />
+    <Content Include="Content\images\escape-chair-standardplus.jpg" />
+    <Content Include="Content\images\Escape-Chair2.png" />
+    <Content Include="Content\images\escape-chair_standardalu.jpg" />
+    <Content Include="Content\images\escape-harness-including-accessory-bag.jpg" />
+    <Content Include="Content\images\escape-locker.jpg" />
+    <Content Include="Content\images\escape-mattress-compact.jpg" />
+    <Content Include="Content\images\escape-mattress-fold.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare.jpg" />
+    <Content Include="Content\images\escape-mattress-solo.jpg" />
+    <Content Include="Content\images\escape-mattress-storage-bag.jpg" />
+    <Content Include="Content\images\escape-mattress-stretcher-black.jpg" />
+    <Content Include="Content\images\Escape-Mattress.png" />
+    <Content Include="Content\images\escape-mobility-company-usa-1016457.png" />
+    <Content Include="Content\images\escape-point-locker.jpg" />
+    <Content Include="Content\images\escape-smokehood-single-pack--smoke-mask.jpg" />
+    <Content Include="Content\images\escape-smokehood-soft-pack--smoke-mask.jpg" />
+    <Content Include="Content\images\escape-smokehood-traveller-pack--smoke-mask.jpg" />
+    <Content Include="Content\images\escape-smokehood-twin-pack--smoke-mask.jpg" />
+    <Content Include="Content\images\EscapeChairLiveBoard_slide1.jpg" />
+    <Content Include="Content\images\escapechair_comfort150.png" />
+    <Content Include="Content\images\FEMA.jpg" />
+    <Content Include="Content\images\fixation-headrest.jpg" />
+    <Content Include="Content\images\footerGlow.png" />
+    <Content Include="Content\images\footerListstyle.png" />
+    <Content Include="Content\images\footerTitles_en.png" />
+    <Content Include="Content\images\footrest.jpg" />
+    <Content Include="Content\images\footstrap-for-footrest.jpg" />
+    <Content Include="Content\images\galena park.jpg" />
+    <Content Include="Content\images\gebouw_autosNEW600-web.jpg" />
+    <Content Include="Content\images\greenArrow.png" />
+    <Content Include="Content\images\healthcare.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900.jpg" />
+    <Content Include="Content\images\industry.jpg" />
+    <Content Include="Content\images\jvg-logo.jpg" />
+    <Content Include="Content\images\kennecott.JPG" />
+    <Content Include="Content\images\kisco senior living virginia beach, virginia.jpg" />
+    <Content Include="Content\images\klantenservice.png" />
+    <Content Include="Content\images\lebenhsilfe-blau.png" />
+    <Content Include="Content\images\leftMenuUlBg.png" />
+    <Content Include="Content\images\leftMenuUlBottomBg.png" />
+    <Content Include="Content\images\leftMenuUlLiBg.png" />
+    <Content Include="Content\images\leftMenuUlLinkBg.png" />
+    <Content Include="Content\images\legstrap.jpg" />
+    <Content Include="Content\images\lift-carry-chair.png" />
+    <Content Include="Content\images\lift-chair.png" />
+    <Content Include="Content\images\lift-trap-vloer.png" />
+    <Content Include="Content\images\liveboard.png" />
+    <Content Include="Content\images\liveboard_nav.png" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Content\images\logo_CE_ISO_TUV.png" />
+    <Content Include="Content\images\logo_en.png" />
+    <Content Include="Content\images\mainContentBg.png" />
+    <Content Include="Content\images\mainNavLiBg.png" />
+    <Content Include="Content\images\mainNavLiFirstBg.png" />
+    <Content Include="Content\images\megafoon.png" />
+    <Content Include="Content\images\modified-footrest-for-the-escape-carry-chair.jpg" />
+    <Content Include="Content\images\newsItemBg.png" />
+    <Content Include="Content\images\nixall-cleanser--2oz-single.jpg" />
+    <Content Include="Content\images\nixall-disinfectant--quart-bottle-single.jpg" />
+    <Content Include="Content\images\nixall-vet-response--8oz-single.jpg" />
+    <Content Include="Content\images\nixall-wound--skin-solution--2oz-single.jpg" />
+    <Content Include="Content\images\office-buildings.jpg" />
+    <Content Include="Content\images\one-size-fits-all.jpg" />
+    <Content Include="Content\images\padded-seat.jpg" />
+    <Content Include="Content\images\palmetto.JPG" />
+    <Content Include="Content\images\paypal-here-logo-1x.png" />
+    <Content Include="Content\images\phone.png" />
+    <Content Include="Content\images\productie.jpg" />
+    <Content Include="Content\images\productie_large.jpg" />
+    <Content Include="Content\images\products.jpg" />
+    <Content Include="Content\images\radio_unchecked.png" />
+    <Content Include="Content\images\RK-logo3.jpg" />
+    <Content Include="Content\images\scape-cbrn30.jpg" />
+    <Content Include="Content\images\scape-co-cbrn--escape-respirator.jpg" />
+    <Content Include="Content\images\seal-for-1016457.png" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Content\images\searchButton.png" />
+    <Content Include="Content\images\searchIcon.png" />
+    <Content Include="Content\images\secure-payment.jpg" />
+    <Content Include="Content\images\secure90x72.gif" />
+    <Content Include="Content\images\sliderTitles.png" />
+    <Content Include="Content\images\stand-alone-holder-color-black.jpg" />
+    <Content Include="Content\images\stempel_madeineurope_175-20graden.png" />
+    <Content Include="Content\images\subFooterArrow.png" />
+    <Content Include="Content\images\subFooterDivider.png" />
+    <Content Include="Content\images\subFooterIcon.png" />
+    <Content Include="Content\images\subFooterIconHover.png" />
+    <Content Include="Content\images\topDivider.png" />
+    <Content Include="Content\images\topGlow.png" />
+    <Content Include="Content\images\topLanguages.png" />
+    <Content Include="Content\images\topPhoneNumber.png" />
+    <Content Include="Content\images\tweetBg.png" />
+    <Content Include="Content\images\UK-brochure-Escape-Chair.jpg" />
+    <Content Include="Content\images\UK-brochure-Liggend-Evacueren.jpg" />
+    <Content Include="Content\images\umcgkort_fc.jpg" />
+    <Content Include="Content\images\united states attorney’s office boston, ma.jpg" />
+    <Content Include="Content\images\united states marine corps – mccs cherry point, north carolina.jpg" />
+    <Content Include="Content\images\vanbreda2.jpg" />
+    <Content Include="Content\images\VGR-logo2.jpg" />
+    <Content Include="Content\images\wallace_community %281%29.JPG" />
+    <Content Include="Content\images\wallace_community.jpg" />
+    <Content Include="Content\images\youtube_watermark-vflHX6b6E.png" />
+    <Content Include="Content\images\yulius.jpg" />
+    <Content Include="Content\styles\app\basket.1015101831.css" />
+    <Content Include="Content\styles\app\branchepage.0227102118.css" />
+    <Content Include="Content\styles\app\homepage.0227102118.css" />
+    <Content Include="Content\styles\app\jquery.fancybox-1.3.4.0219160601.css" />
+    <Content Include="Content\styles\app\masterpage.1015101830.css" />
+    <Content Include="Content\styles\app\Site.css" />
+    <Content Include="Content\styles\lib\bootstrap-theme.css" />
+    <Content Include="Content\styles\lib\bootstrap-theme.min.css" />
+    <Content Include="Content\styles\lib\bootstrap.css" />
+    <Content Include="Content\styles\lib\bootstrap.min.css" />
+    <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\app\branchepage.0227102119.js" />
+    <Content Include="Scripts\app\conversion.js" />
+    <Content Include="Scripts\app\ga.js" />
+    <Content Include="Scripts\app\homepage.0618084353.js" />
+    <Content Include="Scripts\app\JLibrary.min.0523152631.js" />
+    <Content Include="Scripts\app\jquery-1.8.0.min.0219160602.js" />
+    <Content Include="Scripts\app\jquery.fancybox-1.3.4.pack.0219160601.js" />
+    <Content Include="Scripts\app\jquery.fancyform.0219160602.js" />
+    <Content Include="Scripts\app\jquery.liveboard.0219160602.js" />
+    <Content Include="Scripts\app\jquery.tweet.0618084354.js" />
+    <Content Include="Scripts\app\jquery.validate.min.0219160602.js" />
+    <Content Include="Scripts\app\masterpage.1015101835.js" />
+    <Content Include="Scripts\app\seal.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap\bootstrap.min.js" />
+    <None Include="Scripts\lib\jquery\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\lib\jquery\jquery-2.1.0.js" />
+    <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.js" />
+    <None Include="Scripts\lib\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery\jquery.validate.js" />
+    <Content Include="Scripts\lib\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\lib\respond\respond.js" />
+    <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\lib\respond\respond.min.js" />
+    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllProductsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AllProductsController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\EmergencyServicesController.cs" />
+    <Compile Include="Controllers\HealthCareController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndustryController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
+    <Compile Include="Controllers\OfficeBuildingsController.cs" />
+    <Compile Include="Controllers\ProductsAdminController.cs" />
+    <Compile Include="Controllers\QuoteController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="EducationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmergencyServicesController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HealthCareController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndustryController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SafetyEquipment.cs" />
+    <Compile Include="Models\TwitterFeedViewModel.cs" />
+    <Compile Include="OfficeBuildingsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsAdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4MVC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebUtilities\HtmlHelperExtensions\HtmlActionLinkHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\AllProducts\_MainLeftMenu.cshtml" />
+    <Content Include="Views\AllProducts\_SafetyMenu.cshtml" />
+    <Content Include="Views\AllProducts\Accessories.cshtml" />
+    <Content Include="Views\AllProducts\EscapeCarryChair.cshtml" />
+    <Content Include="Views\AllProducts\EscapeChair.cshtml" />
+    <Content Include="Views\AllProducts\EscapeMattress.cshtml" />
+    <Content Include="Views\AllProducts\Index.cshtml" />
+    <Content Include="Views\AllProducts\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\AllProducts\Safety\Lockers.cshtml" />
+    <Content Include="Views\AllProducts\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Education\_MainLeftMenu.cshtml" />
+    <Content Include="Views\Education\_SafetyMenu.cshtml" />
+    <Content Include="Views\Education\Accessories.cshtml" />
+    <Content Include="Views\Education\EscapeChair.cshtml" />
+    <Content Include="Views\Education\EscapeMattress.cshtml" />
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Education\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\Education\Safety\Lockers.cshtml" />
+    <Content Include="Views\Education\Safety\Smokehood.cshtml" />
+    <Content Include="Views\EmergencyServices\_MainLeftMenu.cshtml" />
+    <Content Include="Views\EmergencyServices\_SafetyMenu.cshtml" />
+    <Content Include="Views\EmergencyServices\Accessories.cshtml" />
+    <Content Include="Views\EmergencyServices\EscapeCarryChair.cshtml" />
+    <Content Include="Views\EmergencyServices\EscapeChair.cshtml" />
+    <Content Include="Views\EmergencyServices\EscapeMattress.cshtml" />
+    <Content Include="Views\EmergencyServices\Index.cshtml" />
+    <Content Include="Views\EmergencyServices\Safety\Lockers.cshtml" />
+    <Content Include="Views\EmergencyServices\Safety\Smokehood.cshtml" />
+    <Content Include="Views\HealthCare\_MainLeftMenu.cshtml" />
+    <Content Include="Views\HealthCare\_SafetyMenu.cshtml" />
+    <Content Include="Views\HealthCare\Accessories.cshtml" />
+    <Content Include="Views\HealthCare\EscapeChair.cshtml" />
+    <Content Include="Views\HealthCare\EscapeMattress.cshtml" />
+    <Content Include="Views\HealthCare\Index.cshtml" />
+    <Content Include="Views\HealthCare\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\HealthCare\Safety\Lockers.cshtml" />
+    <Content Include="Views\HealthCare\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Redirect.cshtml" />
+    <Content Include="Views\Industry\_MainLeftMenu.cshtml" />
+    <Content Include="Views\Industry\_SafetyMenu.cshtml" />
+    <Content Include="Views\Industry\Accessories.cshtml" />
+    <Content Include="Views\Industry\EscapeCarryChair.cshtml" />
+    <Content Include="Views\Industry\EscapeChair.cshtml" />
+    <Content Include="Views\Industry\EscapeMattress.cshtml" />
+    <Content Include="Views\Industry\Index.cshtml" />
+    <Content Include="Views\Industry\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\Industry\Safety\Lockers.cshtml" />
+    <Content Include="Views\Industry\Safety\Smokehood.cshtml" />
+    <Content Include="Views\Information\Brochures.cshtml" />
+    <Content Include="Views\Information\DistributorsWanted.cshtml" />
+    <Content Include="Views\Information\Events.cshtml" />
+    <Content Include="Views\Information\History.cshtml" />
+    <Content Include="Views\Information\Index.cshtml" />
+    <Content Include="Views\Information\Innovation.cshtml" />
+    <Content Include="Views\Information\MainLeftMenu.cshtml" />
+    <Content Include="Views\Information\News.cshtml" />
+    <Content Include="Views\Information\References.cshtml" />
+    <Content Include="Views\Information\WorldwideDistribution.cshtml" />
+    <Content Include="Views\OfficeBuildings\_MainLeftMenu.cshtml" />
+    <Content Include="Views\OfficeBuildings\_SafetyMenu.cshtml" />
+    <Content Include="Views\OfficeBuildings\Accessories.cshtml" />
+    <Content Include="Views\OfficeBuildings\EscapeChair.cshtml" />
+    <Content Include="Views\OfficeBuildings\EscapeMattress.cshtml" />
+    <Content Include="Views\OfficeBuildings\Index.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\Lockers.cshtml" />
+    <Content Include="Views\OfficeBuildings\Safety\Smokehood.cshtml" />
+    <Content Include="Views\ProductsAdmin\Create.cshtml" />
+    <Content Include="Views\ProductsAdmin\Delete.cshtml" />
+    <Content Include="Views\ProductsAdmin\Details.cshtml" />
+    <Content Include="Views\ProductsAdmin\Edit.cshtml" />
+    <Content Include="Views\ProductsAdmin\Index.cshtml" />
+    <Content Include="Views\Quote\Index.cshtml" />
+    <Content Include="Views\Service\_MainLeftMenu.cshtml" />
+    <Content Include="Views\Service\Contact.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\PrivacyStatement.cshtml" />
+    <Content Include="Views\Service\Terms.cshtml" />
+    <Content Include="Views\Shared\_AutoRedirect.cshtml" />
+    <Content Include="Views\Shared\_FooterMenu.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_MainNav.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Content\styles\lib\bootstrap\alerts.less" />
+    <Content Include="Content\styles\lib\bootstrap\badges.less" />
+    <Content Include="Content\styles\lib\bootstrap\bootstrap.less" />
+    <Content Include="Content\styles\lib\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\styles\lib\bootstrap\button-groups.less" />
+    <Content Include="Content\styles\lib\bootstrap\buttons.less" />
+    <Content Include="Content\styles\lib\bootstrap\carousel.less" />
+    <Content Include="Content\styles\lib\bootstrap\close.less" />
+    <Content Include="Content\styles\lib\bootstrap\code.less" />
+    <Content Include="Content\styles\lib\bootstrap\component-animations.less" />
+    <Content Include="Content\styles\lib\bootstrap\dropdowns.less" />
+    <Content Include="Content\styles\lib\bootstrap\forms.less" />
+    <Content Include="Content\styles\lib\bootstrap\glyphicons.less" />
+    <Content Include="Content\styles\lib\bootstrap\grid.less" />
+    <Content Include="Content\styles\lib\bootstrap\input-groups.less" />
+    <Content Include="Content\styles\lib\bootstrap\jumbotron.less" />
+    <Content Include="Content\styles\lib\bootstrap\labels.less" />
+    <Content Include="Content\styles\lib\bootstrap\list-group.less" />
+    <Content Include="Content\styles\lib\bootstrap\media.less" />
+    <Content Include="Content\styles\lib\bootstrap\mixins.less" />
+    <Content Include="Content\styles\lib\bootstrap\modals.less" />
+    <Content Include="Content\styles\lib\bootstrap\navbar.less" />
+    <Content Include="Content\styles\lib\bootstrap\navs.less" />
+    <Content Include="Content\styles\lib\bootstrap\normalize.less" />
+    <Content Include="Content\styles\lib\bootstrap\pager.less" />
+    <Content Include="Content\styles\lib\bootstrap\pagination.less" />
+    <Content Include="Content\styles\lib\bootstrap\panels.less" />
+    <Content Include="Content\styles\lib\bootstrap\popovers.less" />
+    <Content Include="Content\styles\lib\bootstrap\print.less" />
+    <Content Include="Content\styles\lib\bootstrap\progress-bars.less" />
+    <Content Include="Content\styles\lib\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\styles\lib\bootstrap\scaffolding.less" />
+    <Content Include="Content\styles\lib\bootstrap\tables.less" />
+    <Content Include="Content\styles\lib\bootstrap\theme.less" />
+    <Content Include="Content\styles\lib\bootstrap\thumbnails.less" />
+    <Content Include="Content\styles\lib\bootstrap\tooltip.less" />
+    <Content Include="Content\styles\lib\bootstrap\type.less" />
+    <Content Include="Content\styles\lib\bootstrap\utilities.less" />
+    <Content Include="Content\styles\lib\bootstrap\variables.less" />
+    <Content Include="Content\styles\lib\bootstrap\wells.less" />
+    <Content Include="Content\styles\lib\bootstrap-theme.css.map" />
+    <Content Include="Content\styles\lib\bootstrap.css.map" />
+    <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4MVC.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Escape.Data\Escape.Data.csproj">
+      <Project>{0994ce3a-3d9d-44e2-b4e6-e82c9adad503}</Project>
+      <Name>Escape.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49192</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49188/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

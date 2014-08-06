@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeMobility", "EscapeMobility\EscapeMobility.csproj", "{A9BC79E2-20B1-4BCA-AC43-CF568BE8BF10}"
 EndProject
@@ -12,7 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3A40C1
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Escape.Data", "Escape.Data\Escape.Data.csproj", "{0994CE3A-3D9D-44E2-B4E6-E82C9ADAD503}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeMobility.Domain", "EscapeMobility.Domain\EscapeMobility.Domain.csproj", "{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscapeMobility.Web", "EscapeMobility.Web\EscapeMobility.Web.csproj", "{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +28,18 @@ Global
 		{A9BC79E2-20B1-4BCA-AC43-CF568BE8BF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9BC79E2-20B1-4BCA-AC43-CF568BE8BF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9BC79E2-20B1-4BCA-AC43-CF568BE8BF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0994CE3A-3D9D-44E2-B4E6-E82C9ADAD503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0994CE3A-3D9D-44E2-B4E6-E82C9ADAD503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0994CE3A-3D9D-44E2-B4E6-E82C9ADAD503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0994CE3A-3D9D-44E2-B4E6-E82C9ADAD503}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B88821-FFF3-4C7F-8C2A-6AD5E3F02B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{892F0EA0-14FA-4927-B9F9-2A280C76FEC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

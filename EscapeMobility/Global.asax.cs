@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Reflection;
+﻿using System.Configuration;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using EscapeMobility.Domain;
-using EscapeMobility.Infrastructure;
-using Ninject;
-using Ninject.Web.Common;
+using Escape.Data;
 using Tweetinvi;
 
 namespace EscapeMobility
@@ -19,6 +12,7 @@ namespace EscapeMobility
     {
         protected void Application_Start()
         {
+            //System.Data.Entity.Database.SetInitializer(new EscapeDataInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Escape Mattress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
+<div id="mainContent" data-currentname="escape-mattress" data-division="evacuation" data-curbranche="emergency-services">
+    <h1 class="pageTitle">Escape-Mattress®</h1>
+
+    <div class="clear"></div>
+    <p>
+    </p><div style="WIDTH: 350px; FLOAT: left">
+        <img style="MARGIN-BOTTOM: 20px" src="~/Content/images/Escape-Mattress.png"><br>
+        <h2>Horizontal evacuation</h2>
+        The Escape-Mattress® is an&nbsp;evacuation solution, on which people with mobility problems&nbsp;can be moved in a horizontal position, to a safe location.<br>
+        <br>
+        The Escape-Mattress® is produced in different models,&nbsp;to provide a&nbsp;solution&nbsp;to your specific situation.
+    </div>
+    <div style="WIDTH: 320px; FLOAT: right">
+        <img style="MARGIN-BOTTOM: 20px; FLOAT: right" src="~/Content/images/lift-trap-vloer.png">
+        <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="169" src="http://www.youtube.com/embed/iO6G-l44bHY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;autohide=1&amp;controls=0&amp;loop=1&amp;playlist=iO6G-l44bHY" frameborder="0" width="300" allowfullscreen=""></iframe>
+    </div>
+    <div style="CLEAR: both"></div>
+    <p></p>
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,114 @@
+﻿@model Escape.Data.Model.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ShortDescription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LongDescription)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LongDescription)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Thumbnailfolder)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Thumbnailfolder)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Discount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Discount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ArticleNumber)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ArticleNumber)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VideoSample)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VideoSample)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SafetyTags)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SafetyTags)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SimilarTags)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SimilarTags)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductSpecificationId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductSpecificationId)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
