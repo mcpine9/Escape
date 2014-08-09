@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Diagnostics;
 using Escape.Data.Model;
 
 namespace Escape.Data
@@ -8,9 +9,10 @@ namespace Escape.Data
     [DbConfigurationType(typeof(EscapeDBConfiguration))]
     public class EscapeDataContext : DbContext
     {
-        public EscapeDataContext() : base("EscapeData")
+        public EscapeDataContext()
+            : base("EscapeDataContext")
         {
-
+            Debug.Write(Database.Connection.ConnectionString);
         }
 
         public DbSet<Product> Products { get; set; }

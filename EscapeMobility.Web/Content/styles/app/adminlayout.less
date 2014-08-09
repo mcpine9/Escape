@@ -1,0 +1,45 @@
+﻿
+@all-screen: 100%;
+@medium-screen: 80%;
+
+#Product_table
+{
+    margin: 10px auto;
+    &.table
+    {
+        width: @medium-screen;
+        td 
+        {
+            text-align: left !important;
+            &:last-child
+            {
+                width: 175px;
+            }
+        }
+    }
+    &.details
+    {
+        width: @medium-screen;
+        td
+        {
+            text-align: left !important;
+            &:first-child
+            {
+                width: 175px !important;
+            }
+        }
+    }
+}
+
+.content
+{
+    text-align: center;
+    width: @all-screen;
+}
+
+.form-horizontal
+{
+    margin: 0 auto;
+    width: 50%;
+}
+

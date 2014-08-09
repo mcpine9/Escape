@@ -1,0 +1,30 @@
+﻿#Product_table {
+  margin: 10px auto;
+}
+#Product_table.table {
+  width: 80%;
+}
+#Product_table.table td {
+  text-align: left !important;
+}
+#Product_table.table td:last-child {
+  width: 175px;
+}
+#Product_table.details {
+  width: 80%;
+}
+#Product_table.details td {
+  text-align: left !important;
+}
+#Product_table.details td:first-child {
+  width: 175px !important;
+}
+.content {
+  text-align: center;
+  width: 100%;
+}
+.form-horizontal {
+  margin: 0 auto;
+  width: 50%;
+}
+/*# sourceMappingURL=adminlayout.css.map */

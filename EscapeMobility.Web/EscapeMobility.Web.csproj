@@ -300,6 +300,9 @@
     <Content Include="Content\images\wallace_community.jpg" />
     <Content Include="Content\images\youtube_watermark-vflHX6b6E.png" />
     <Content Include="Content\images\yulius.jpg" />
+    <Content Include="Content\styles\app\adminlayout.css">
+      <DependentUpon>adminlayout.less</DependentUpon>
+    </Content>
     <Content Include="Content\styles\app\basket.1015101831.css" />
     <Content Include="Content\styles\app\branchepage.0227102118.css" />
     <Content Include="Content\styles\app\homepage.0227102118.css" />
@@ -314,6 +317,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
+    <Content Include="Content\styles\app\adminlayout.less" />
+    <Content Include="Content\styles\app\adminlayout.css.map">
+      <DependentUpon>adminlayout.css</DependentUpon>
+    </Content>
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\app\branchepage.0227102119.js" />
     <Content Include="Scripts\app\conversion.js" />
@@ -562,6 +569,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
