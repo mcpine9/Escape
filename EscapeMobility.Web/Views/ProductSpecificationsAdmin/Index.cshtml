@@ -4,13 +4,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h2>Index</h2>
-
+<hr/>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table id="Product_table" class="table table-striped table-condensed table-bordered">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Product.Title)
@@ -81,80 +79,81 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Product.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductSpecificationID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSpecificationOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Material)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsEasyToOperate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsReadyForUse)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasUnfoldingStand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasErgonomicBackrest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasGlidingBeltSystem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasDustCover)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasAniSlipHandle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaxCarryingCapacity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaxAngleOfStairs)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OperatingHandle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Seat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Backrest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Footrest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Armrest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasImmobilizationBand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HasPaddedHeadrest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DimentionsFoldedUp)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Waranty)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductSpecificationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsSpecificationOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Material)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsEasyToOperate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsReadyForUse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasUnfoldingStand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasErgonomicBackrest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasGlidingBeltSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasDustCover)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasAniSlipHandle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxCarryingCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxAngleOfStairs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatingHandle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Backrest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Footrest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Armrest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasImmobilizationBand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasPaddedHeadrest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DimentionsFoldedUp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Waranty)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+            </td>
+        </tr>
+    }
 
 </table>
