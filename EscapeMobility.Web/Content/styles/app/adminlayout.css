@@ -19,6 +19,10 @@
 #Product_table.details td:first-child {
   width: 175px !important;
 }
+#Product_table tr,
+#Product_table td {
+  max-height: 50px !important;
+}
 .content {
   text-align: center;
   width: 100%;
@@ -33,4 +37,7 @@ td.center {
 td.center i.fa {
   margin: 0 auto;
 }
-/*# sourceMappingURL=adminlayout.css.map */
+td.tbl-longdescription {
+  min-width: 200px;
+  overflow-y: scroll;
+}

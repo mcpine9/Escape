@@ -36,6 +36,7 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _AdminLayout = "_AdminLayout";
                 public readonly string _AutoRedirect = "_AutoRedirect";
                 public readonly string _FooterMenu = "_FooterMenu";
                 public readonly string _Header = "_Header";
@@ -45,6 +46,7 @@ namespace T4MVC
                 public readonly string _MainNav = "_MainNav";
                 public readonly string Error = "Error";
             }
+            public readonly string _AdminLayout = "~/Views/Shared/_AdminLayout.cshtml";
             public readonly string _AutoRedirect = "~/Views/Shared/_AutoRedirect.cshtml";
             public readonly string _FooterMenu = "~/Views/Shared/_FooterMenu.cshtml";
             public readonly string _Header = "~/Views/Shared/_Header.cshtml";

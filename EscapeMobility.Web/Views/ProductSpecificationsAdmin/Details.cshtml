@@ -1,0 +1,195 @@
+﻿@model Escape.Data.Model.ProductSpecification
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductSpecification</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductSpecificationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductSpecificationID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSpecificationOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSpecificationOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEasyToOperate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEasyToOperate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsReadyForUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsReadyForUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasUnfoldingStand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasUnfoldingStand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasErgonomicBackrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasErgonomicBackrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasGlidingBeltSystem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasGlidingBeltSystem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasDustCover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasDustCover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasAniSlipHandle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasAniSlipHandle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxCarryingCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxCarryingCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxAngleOfStairs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxAngleOfStairs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperatingHandle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OperatingHandle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Backrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Backrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Footrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Footrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Armrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Armrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasImmobilizationBand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasImmobilizationBand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasPaddedHeadrest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasPaddedHeadrest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DimentionsFoldedUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DimentionsFoldedUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Waranty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Waranty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

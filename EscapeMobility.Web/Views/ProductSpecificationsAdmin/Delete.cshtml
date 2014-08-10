@@ -1,0 +1,184 @@
+﻿@model Escape.Data.Model.ProductSpecification
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductSpecification</h4>
+    <hr />
+    <table id="Product_table" class="details table-striped table-condensed table-bordered">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Product.Title)</td>
+            <td>@Html.DisplayFor(model => model.Product.Title)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ProductSpecificationID)</td>
+            <td>@Html.DisplayFor(model => model.ProductSpecificationID)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.IsSpecificationOn)</td>
+            <td>@Html.DisplayFor(model => model.IsSpecificationOn)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Material)</td>
+            <td>@Html.DisplayFor(model => model.Material)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.IsEasyToOperate)</td>
+            <td>@Html.DisplayFor(model => model.IsEasyToOperate)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.IsReadyForUse)</td>
+            <td>@Html.DisplayFor(model => model.IsReadyForUse)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.HasUnfoldingStand)</td>
+            <td>@Html.DisplayFor(model => model.HasUnfoldingStand)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.HasErgonomicBackrest)</td>
+            <td>@Html.DisplayFor(model => model.HasErgonomicBackrest)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.HasGlidingBeltSystem)</td>
+            <td>@Html.DisplayFor(model => model.HasGlidingBeltSystem)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.HasDustCover)</td>
+            <td>@Html.DisplayFor(model => model.HasDustCover)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.HasAniSlipHandle)</td>
+            <td>@Html.DisplayFor(model => model.HasAniSlipHandle)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <dt>
+                
+            </dt>
+
+            <dd>
+                
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaxCarryingCapacity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaxCarryingCapacity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.MaxAngleOfStairs)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaxAngleOfStairs)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OperatingHandle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OperatingHandle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Seat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Seat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Backrest)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Backrest)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Footrest)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Footrest)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Armrest)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Armrest)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasImmobilizationBand)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HasImmobilizationBand)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.HasPaddedHeadrest)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HasPaddedHeadrest)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DimentionsFoldedUp)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DimentionsFoldedUp)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Waranty)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Waranty)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+</div>

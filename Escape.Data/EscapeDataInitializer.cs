@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
+    public class EscapeDataInitializer : CreateDatabaseIfNotExists<EscapeDataContext>
     {
         
         protected override void Seed(EscapeDataContext context)
@@ -19,7 +20,8 @@ namespace Escape.Data
                     Price = 1295.00M,
                     ShortDescription = "Light weight basic evacuation chair with aluminum frame.",
                     Title = "Escape-Chair® Standard-ALU",
-                    IsAccessory = false
+                    IsAccessory = false,
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
                 },
                 new Product()
                 {
@@ -28,7 +30,8 @@ namespace Escape.Data
                     Price = 1445.00M,
                     ShortDescription = "Light weight basic evacuation chair with additional package: standard seat with extra fixation. Padded (upholstered) headrest. Anti-slip on operating handle and lower frame.",
                     Title = "Escape-Chair® Standard-ALU with extra package",
-                    IsAccessory = false
+                    IsAccessory = false,
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
                 },
                 new Product()
                 {
@@ -37,7 +40,8 @@ namespace Escape.Data
                     Price = 1595.00M,
                     ShortDescription = "Light weight basic evacuation chair with enamelled aluminum frame.",
                     Title = "Escape-Chair® Standard",
-                    IsAccessory = false
+                    IsAccessory = false,
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
                 },
                 new Product()
                 {
@@ -46,7 +50,8 @@ namespace Escape.Data
                     Price = 1895.00M,
                     ShortDescription = "Light weight evacuation chair with in 2 height positions adjustable operating handle and comfort seat.",
                     Title = "Escape-Chair® StandardPLUS",
-                    IsAccessory = false
+                    IsAccessory = false,
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
                 },
                 new Product()
                 {
@@ -55,7 +60,8 @@ namespace Escape.Data
                     Price = 2495.00M,
                     ShortDescription = "Evacuation chair with armrests, footrest, in 2 height positions adjustable operating handle and comfort seat.",
                     Title = "Escape-Chair® Comfort",
-                    IsAccessory = false
+                    IsAccessory = false,
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
                 }
             };
 

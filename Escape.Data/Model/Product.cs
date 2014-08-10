@@ -21,6 +21,8 @@ namespace Escape.Data.Model
         public string Thumbnailfolder { get; set; }
         public decimal Price { get; set; }
         public decimal? Discount { get; set; }
+        [Required]
+        [Display(Name = "Article Number")]
         public long ArticleNumber { get; set; }
         [Display(Name = "Video Sample URL")]
         public string VideoSampleURL { get; set; }
