@@ -27,4 +27,10 @@
   margin: 0 auto;
   width: 50%;
 }
+td.center {
+  text-align: center !important;
+}
+td.center i.fa {
+  margin: 0 auto;
+}
 /*# sourceMappingURL=adminlayout.css.map */

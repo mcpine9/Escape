@@ -22,10 +22,10 @@
                 <td>@Html.DisplayNameFor(model => model.LongDescription)</td>
                 <td>@Html.DisplayFor(model => model.LongDescription)</td>
             </tr>
-            <tr>
+            @*<tr>
                 <td>@Html.DisplayNameFor(model => model.Thumbnailfolder)</td>
                 <td>@Html.DisplayFor(model => model.Thumbnailfolder)</td>
-            </tr>
+            </tr>*@
             <tr>
                 <td>@Html.DisplayNameFor(model => model.Price)</td>
                 <td>@Html.DisplayFor(model => model.Price)</td>
@@ -39,21 +39,21 @@
                 <td>@Html.DisplayFor(model => model.ArticleNumber)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.VideoSample)</td>
-                <td>@Html.DisplayFor(model => model.VideoSample)</td>
+                <td>@Html.DisplayNameFor(model => model.VideoSampleURL)</td>
+                <td>@Html.DisplayFor(model => model.VideoSampleURL)</td>
             </tr>
-            <tr>
+            @*<tr>
                 <td>@Html.DisplayNameFor(model => model.SafetyTags)</td>
                 <td>@Html.DisplayFor(model => model.SafetyTags)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.SimilarTags)</td>
-                <td>@Html.DisplayFor(model => model.SimilarTags)</td>
+                <td>@Html.DisplayNameFor(model => model.RelatedTags)</td>
+                <td>@Html.DisplayFor(model => model.RelatedTags)</td>
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.ProductSpecificationId)</td>
                 <td>@Html.DisplayFor(model => model.ProductSpecificationId)</td>
-            </tr>
+            </tr>*@
         </table>
     
         @using (Html.BeginForm()) {

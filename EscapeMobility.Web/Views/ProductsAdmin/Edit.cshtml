@@ -38,13 +38,13 @@
                 </div>
             </div>
     
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.Thumbnailfolder, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Thumbnailfolder, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Thumbnailfolder, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
     
             <div class="form-group">
                 @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -71,14 +71,21 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.VideoSample, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.VideoSampleURL, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.VideoSample, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.VideoSample, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.VideoSampleURL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.VideoSampleURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsAccessory, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(model => model.IsAccessory, new { htmlAttributes = new { @class = "form-control" } })
                 </div>
             </div>
     
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.SafetyTags, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.SafetyTags, new { htmlAttributes = new { @class = "form-control" } })
@@ -87,10 +94,10 @@
             </div>
     
             <div class="form-group">
-                @Html.LabelFor(model => model.SimilarTags, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.RelatedTags, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.SimilarTags, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.SimilarTags, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.RelatedTags, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RelatedTags, "", new { @class = "text-danger" })
                 </div>
             </div>
     
@@ -100,7 +107,7 @@
                     @Html.EditorFor(model => model.ProductSpecificationId, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.ProductSpecificationId, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
     
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

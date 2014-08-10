@@ -61,6 +61,14 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Mvc.RazorTools">
+      <HintPath>..\packages\Mvc.RazorTools.Base.1.0.5\lib\net45\Mvc.RazorTools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mvc.RazorTools.FontAwesome">
+      <HintPath>..\packages\Mvc.RazorTools.FontAwesome.4.0.3.10\lib\net45\Mvc.RazorTools.FontAwesome.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -155,6 +163,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\styles\lib\font-awesome\font-awesome.css" />
+    <Content Include="Content\styles\lib\font-awesome\font-awesome.min.css" />
     <Content Include="Content\images\ada_county.JPG" />
     <Content Include="Content\images\additional-backrest.jpg" />
     <Content Include="Content\images\Akademie-der-Kunste-Berlin.jpg" />
@@ -314,6 +324,7 @@
     <Content Include="Content\styles\lib\bootstrap.css" />
     <Content Include="Content\styles\lib\bootstrap.min.css" />
     <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\styles\lib\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
@@ -321,6 +332,10 @@
     <Content Include="Content\styles\app\adminlayout.css.map">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
+    <Content Include="Content\styles\lib\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\styles\lib\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\styles\lib\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\styles\lib\fonts\FontAwesome.otf" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\app\branchepage.0227102119.js" />
     <Content Include="Scripts\app\conversion.js" />
@@ -368,6 +383,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\Razor Tools\FontAwesome.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AllProductsController.cs" />
     <Compile Include="Controllers\EducationController.cs" />

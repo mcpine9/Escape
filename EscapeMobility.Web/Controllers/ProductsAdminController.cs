@@ -42,7 +42,7 @@ namespace EscapeMobility.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSample,SafetyTags,SimilarTags,ProductSpecificationId")] Product product)
+        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSample,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace EscapeMobility.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSample,SafetyTags,SimilarTags,ProductSpecificationId")] Product product)
+        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSample,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory")] Product product)
         {
             if (ModelState.IsValid)
             {

@@ -9,7 +9,8 @@ namespace Escape.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = false;
         }
 
         protected override void Seed(Escape.Data.EscapeDataContext context)

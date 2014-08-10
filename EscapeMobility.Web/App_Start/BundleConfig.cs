@@ -28,6 +28,7 @@ namespace EscapeMobility
                       "~/Content/styles/app/site.css"));
             bundles.Add(new StyleBundle("~/Content/admincss").Include(
                     "~/Content/styles/lib/bootstrap.css",
+                    "~/Content/styles/lib/font-awesome/font-awesome.min.css",
                     "~/Content/styles/app/adminlayout.css"));
         }
     }

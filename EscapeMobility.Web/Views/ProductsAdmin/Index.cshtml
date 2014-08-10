@@ -3,46 +3,50 @@
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<hr/>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
     <table id="Product_table" class="table table-striped table-condensed table-bordered">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LongDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Thumbnailfolder)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArticleNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VideoSample)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SafetyTags)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SimilarTags)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductSpecificationId)
-        </th>
-        <th></th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LongDescription)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Thumbnailfolder)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VideoSampleURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAccessory)
+            </th>
+            @*
+            <th>
+                @Html.DisplayNameFor(model => model.SafetyTags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelatedTags)
+            </th><th>
+                @Html.DisplayNameFor(model => model.ProductSpecificationId)
+            </th>*@
+            <th></th>
+        </tr>
 
     @foreach (var item in Model)
     {
@@ -56,9 +60,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LongDescription)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Thumbnailfolder)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
@@ -69,17 +73,20 @@
                 @Html.DisplayFor(modelItem => item.ArticleNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VideoSample)
+                @Html.DisplayFor(modelItem => item.VideoSampleURL)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SafetyTags)
+            <td class="center">
+                @Html.Raw(item.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SimilarTags)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductSpecificationId)
-            </td>
+            @*
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafetyTags)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RelatedTags)
+                </td><td>
+                    @Html.DisplayFor(modelItem => item.ProductSpecificationId)
+                </td>*@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |

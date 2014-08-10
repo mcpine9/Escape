@@ -87,6 +87,14 @@
     <Compile Include="Migrations\201408092046332_InitialCreate.Designer.cs">
       <DependentUpon>201408092046332_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408092312232_ChangeProductTitleRequired.cs" />
+    <Compile Include="Migrations\201408092312232_ChangeProductTitleRequired.Designer.cs">
+      <DependentUpon>201408092312232_ChangeProductTitleRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408100117021_ChangedProductsModel.cs" />
+    <Compile Include="Migrations\201408100117021_ChangedProductsModel.Designer.cs">
+      <DependentUpon>201408100117021_ChangedProductsModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
@@ -138,6 +146,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201408092046332_InitialCreate.resx">
       <DependentUpon>201408092046332_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408092312232_ChangeProductTitleRequired.resx">
+      <DependentUpon>201408092312232_ChangeProductTitleRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408100117021_ChangedProductsModel.resx">
+      <DependentUpon>201408100117021_ChangedProductsModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
