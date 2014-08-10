@@ -15,13 +15,16 @@ namespace Escape.Data
             Debug.Write(Database.Connection.ConnectionString);
         }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductSpecification> ProductSpecifications { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerContact> CustomerContacts { get; set; }
-        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
-        public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductSpecification> ProductSpecification { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<CustomerContact> CustomerContact { get; set; }
+        public DbSet<ShoppingCart> ShoppingCart { get; set; }
+        public DbSet<CartItem> CartItem { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<SafetyCategory> SafetyCategory { get; set; }
+        public DbSet<SimilarCategory> SimilarCategory { get; set; }
+        public DbSet<Accessory> Accessory { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -77,3 +77,5 @@ C:\GitSrc\Escape\EscapeMobility\bin\System.Web.WebPages.Razor.xml
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.csprojResolveAssemblyReference.cache
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.dll
 C:\GitSrc\Escape\EscapeMobility\obj\Debug\EscapeMobility.pdb
+C:\GitSrc\Escape\EscapeMobility\bin\App_Data\EscapeMobility.mdf
+C:\GitSrc\Escape\EscapeMobility\bin\App_Data\EscapeMobility_log.ldf

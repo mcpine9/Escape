@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using Escape.Data.Model;
 
 namespace Escape.Data
@@ -58,8 +59,9 @@ namespace Escape.Data
                 }
             };
 
-            products.ForEach(p => context.Products.Add(p));
+            products.ForEach(p => context.Product.Add(p));
             context.SaveChanges();
+            SqlConnection.ClearAllPools();
         }
     }
 }

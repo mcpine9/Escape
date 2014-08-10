@@ -42,10 +42,7 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.IsAccessory)</td>
-                <td>@{
-                        Html.Raw(Model.IsAccessory ? "<i class='fa fa-check-square-o'></i>" : "");
-                    }
-                </td>
+                <td>@Html.Raw(Model.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")</td>
             </tr>
             @*<tr>
                 <td>@Html.DisplayNameFor(model => model.SafetyTags)</td>

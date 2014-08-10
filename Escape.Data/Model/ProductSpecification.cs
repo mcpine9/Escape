@@ -10,6 +10,7 @@ namespace Escape.Data.Model
 {
     public class ProductSpecification
     {
+        public int ProductSpecificationID { get; set; }
         [Key, ForeignKey("Product")]
         public int ProductId { get; set; }
         public bool IsSpecificationOn { get; set; }
