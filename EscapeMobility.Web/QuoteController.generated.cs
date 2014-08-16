@@ -57,6 +57,12 @@ namespace EscapeMobility.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddToQuote()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QuoteController Actions { get { return MVC.Quote; } }
@@ -74,15 +80,25 @@ namespace EscapeMobility.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string AddToQuote = "AddToQuote";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string AddToQuote = "AddToQuote";
         }
 
 
+        static readonly ActionParamsClass_AddToQuote s_params_AddToQuote = new ActionParamsClass_AddToQuote();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddToQuote AddToQuoteParams { get { return s_params_AddToQuote; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddToQuote
+        {
+            public readonly string productID = "productID";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -112,6 +128,18 @@ namespace EscapeMobility.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddToQuoteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productID);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddToQuote(int productID)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productID", productID);
+            AddToQuoteOverride(callInfo, productID);
             return callInfo;
         }
 

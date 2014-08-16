@@ -172,9 +172,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\overviewBlockBg.png" />
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
+    <Content Include="Content\styles\app\productlisting.1008085041.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.min.css" />
     <Content Include="Content\images\ada_county.JPG" />
@@ -434,6 +436,8 @@
     <Compile Include="InformationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductHighlightModel.cs" />
+    <Compile Include="Models\ProductHighlightModels.cs" />
     <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
@@ -611,6 +615,7 @@
     <Content Include="Views\ProductSpecificationsAdmin\Details.cshtml" />
     <Content Include="Views\ProductSpecificationsAdmin\Edit.cshtml" />
     <Content Include="Views\ProductSpecificationsAdmin\Index.cshtml" />
+    <Content Include="Views\AllProducts\_ProductHighlight.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

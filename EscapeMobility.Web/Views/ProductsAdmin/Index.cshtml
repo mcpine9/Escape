@@ -45,6 +45,7 @@
             </th><th>
                 @Html.DisplayNameFor(model => model.ProductSpecificationId)
             </th>*@
+            <th>@Html.DisplayNameFor(model => model.ImageFileName)</th>
             <th></th>
         </tr>
 
@@ -87,6 +88,9 @@
                 </td><td>
                     @Html.DisplayFor(modelItem => item.ProductSpecificationId)
                 </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageFileName)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |

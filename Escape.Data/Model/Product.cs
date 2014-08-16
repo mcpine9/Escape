@@ -33,6 +33,8 @@ namespace Escape.Data.Model
         public int ProductSpecificationId { get; set; }
         [Display(Name = "Is an Accesory")]
         public bool IsAccessory { get; set; }
+        [Display(Name = "Image File Name")]
+        public string ImageFileName { get; set; }
 
         public virtual ICollection<Category> ProductCategories { get; set; }
         public virtual ICollection<SafetyCategory> SafetyCategories { get; set; }

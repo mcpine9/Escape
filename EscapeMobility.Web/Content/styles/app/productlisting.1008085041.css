@@ -1,0 +1,133 @@
+﻿@charset "utf-8";
+/* Gerealiseerd door : Juice BV - Noorderbaan 10 - 5388 RB Nistelrode    */
+/* T: 0412-611453 - E: info@itsallinthemix.nl - I: www.itsallinthemix.nl */
+
+/* Productoverzicht */
+
+.overviewBlock {
+	background: url("/Content/images/overviewBlockBg.png") no-repeat scroll 0 0 transparent;
+	height: 158px;
+	margin-bottom: 10px;
+	padding: 11px;
+	position: relative;
+	width: 680px;
+	cursor:pointer;
+}
+.obImage {
+	float: left;		
+	height: 158px;
+	padding-right: 10px;
+	text-align: center;
+	vertical-align: central;
+	width: 122px;
+}
+.overviewImage {	
+	max-height: 158px;
+	max-width: 122px;
+	border:1px solid #DDDDDD;
+}
+.overviewBlock .contentButton {
+	bottom: 11px;
+	position: absolute;
+}
+.overviewBlock .moreInfo {
+	right: 11px;
+}
+.overviewBlock .addToBasket {
+	right: 155px;
+}
+
+.popTitle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #008751;
+	height: 41px;
+	line-height: 39px;
+	background: repeat-x url(/Content/images/prodPopup.gif) left bottom;
+	text-indent: 10px;
+}
+#addToBasketPopup {
+	width: 704px;
+}
+.popTitleBorder {
+	border-top: 1px solid #e0e0e0;
+}
+.popupProdImg {
+	float: left;
+	width: 175px;
+	height: 180px;
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+.popupProdTxt {
+	float: left;
+	width: 370px;
+	padding: 20px 0 0 0;
+}
+.ppName {
+	color: #008752;
+	font-size: 14px;
+	font-weight: bold;
+}
+.ppTxt {
+	line-height: 18px;
+	color: #333333;
+	font-size: 11px;
+}
+.ppPrice {
+	color: #008752;
+	font-size: 18px;
+	font-weight: bold;
+}
+.ppsArrow {
+	width: 12px;
+	height: 207px;
+	background: no-repeat url(/Content/images/popupArrows.gif);
+	cursor: pointer;
+}
+.ppsArrowLeft {
+	float: left;
+}
+.ppsArrowRight {
+	background-position: right top;
+	float: right;
+}
+.shopMore {
+	width: 150px;
+	height: 22px;
+	line-height: 22px;
+	background: no-repeat url(/Content/images/popupVerder.gif);
+	float: left;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 0 5px;
+	text-align: right;
+	cursor: pointer;
+}
+.endShopping, .preSelectProduct {
+	width: 230px;
+	height: 22px;
+	line-height: 22px;
+	background: no-repeat url(/Content/images/popupShopping.gif);
+	float: right;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 0 5px;
+	cursor: pointer;
+}
+.piPriceVAT {
+	color: #999999;
+	font-size: 11px;
+	font-weight: normal;
+}
+.ppsProdPrice .piPriceVAT {
+	text-align: right;
+}
+.ppConfigColor {
+    margin-bottom: 10px;
+}
+.ppConfigSize {
+    margin-bottom: 10px;
+}

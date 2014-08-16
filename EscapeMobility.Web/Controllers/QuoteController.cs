@@ -13,5 +13,10 @@ namespace EscapeMobility.Controllers
         {
             return View();
         }
+
+        public virtual ActionResult AddToQuote(int productID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

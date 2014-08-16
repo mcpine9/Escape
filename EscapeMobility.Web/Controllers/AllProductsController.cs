@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Escape.Data;
+using EscapeMobility.Web.Models;
+using Microsoft.Ajax.Utilities;
+using Ninject.Infrastructure.Language;
 
 namespace EscapeMobility.Controllers
 {
     public partial class AllProductsController : Controller
     {
+        private EscapeDataContext _db { get; set; }
+
+        public AllProductsController()
+        {
+            _db = new EscapeDataContext();
+        }
         // GET: AllProducts
         public virtual ActionResult Index()
         {
@@ -16,7 +26,26 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChair()
         {
-            return View();
+            var products = _db.Product.ToList();
+            var highlights = (from p in products
+                select new ProductHighlightModel()
+                {
+                    ProductID = p.ProductId, 
+                    ImageFileName = p.ImageFileName, 
+                    Name = p.Title,
+                    Price = p.Price,
+                    ShortDescription = p.ShortDescription
+                }).ToList();
+            var model = new ProductHighlightModels
+            {
+                ProductHighlights = highlights
+            };
+            return View(model);
+        }
+
+        public virtual ActionResult EscapeChairHighlightList(ProductHighlightModel highlight)
+        {
+            return PartialView("_ProductHighlightList", highlight);
         }
 
         public virtual ActionResult EscapeCarryChair()

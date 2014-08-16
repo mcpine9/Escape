@@ -299,7 +299,7 @@ img.floatLeft {
 /* Navigatie */
 
 #contentNav {
-	background: transparent no-repeat url('../img/content/contentNavBg.png') 0 0;
+	background: transparent no-repeat url('/Content/images/contentNavBg.png') 0 0;
 	height: 46px;
 	width: 695px;
 	margin: 25px 0 25px -16px;
@@ -742,7 +742,7 @@ a.socialMediaLink.linkedin {
 /* Content knoppen */
 
 a.contentButton {
-	background: url("../img/blockButtonBg.png") no-repeat scroll 0 0 transparent;
+	background: url("/Content/images/blockButtonBg.png") no-repeat scroll 0 0 transparent;
 	color: #FFFFFF;
 	display: block;
 	float: right;

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
+@{
     ViewBag.Title = "Escape Chair";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -9,6 +10,10 @@
         @Html.ActionLink("All Products", MVC.AllProducts.Index(), null)
         @ViewBag.Title
     </div>
+}
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
 }
 
 
@@ -49,87 +54,91 @@
         <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="169" src="http://www.youtube.com/embed/6IGf24P6OyI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;autohide=1&amp;controls=0&amp;loop=1&amp;playlist=6IGf24P6OyI" frameborder="0" width="300" allowfullscreen=""></iframe>
     </div>
     <div style="CLEAR: both"></div>
-    @*<p></p>
-        <div class="overviewBlock">
-            <div class="obImage">
-                <img src="~/Content/images/escape-chair-standard-alu.jpg" class="overviewImage">
-            </div>
-            <h2>Escape-Chair® Standard-ALU</h2>
-            <p>
-                Light weight basic evacuation chair with aluminum frame.
-            </p>
-            <div id="piPrice">
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight",item);
+    }
+        @*<p></p>
+            <div class="overviewBlock">
+                <div class="obImage">
+                    <img src="~/Content/images/escape-chair-standard-alu.jpg" class="overviewImage">
+                </div>
+                <h2>Escape-Chair® Standard-ALU</h2>
+                <p>
+                    Light weight basic evacuation chair with aluminum frame.
+                </p>
+                <div id="piPrice">
 
-                <div class="price">$ 1,295.00</div>
-            </div>
-            <div id="piPriceVAT">excl. Tax</div>
-            <div class="clear"></div>
-            <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu.aspx" class="contentButton moreInfo">More information</a>
-            <a class="contentButton addToBasket" data-pid="16" data-pname="escape-chair-standard-alu" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
-        </div><div class="overviewBlock">
-            <div class="obImage">
-                <img src="~/Content/images/escape-chair-standard-alu-with-extra-package.jpg" class="overviewImage">
-            </div>
-            <h2>Escape-Chair® Standard-ALU with extra package</h2>
-            <p>
-                Light weight basic evacuation chair with additional package: standard seat with extra fixation. Padded (upholstered) headrest. Anti-slip on operating handle and lower frame.
-            </p>
-            <div id="piPrice">
+                    <div class="price">$ 1,295.00</div>
+                </div>
+                <div id="piPriceVAT">excl. Tax</div>
+                <div class="clear"></div>
+                <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu.aspx" class="contentButton moreInfo">More information</a>
+                <a class="contentButton addToBasket" data-pid="16" data-pname="escape-chair-standard-alu" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
+            </div><div class="overviewBlock">
+                <div class="obImage">
+                    <img src="~/Content/images/escape-chair-standard-alu-with-extra-package.jpg" class="overviewImage">
+                </div>
+                <h2>Escape-Chair® Standard-ALU with extra package</h2>
+                <p>
+                    Light weight basic evacuation chair with additional package: standard seat with extra fixation. Padded (upholstered) headrest. Anti-slip on operating handle and lower frame.
+                </p>
+                <div id="piPrice">
 
-                <div class="price">$ 1,445.00</div>
-            </div>
-            <div id="piPriceVAT">excl. Tax</div>
-            <div class="clear"></div>
-            <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu-with-extra-package.aspx" class="contentButton moreInfo">More information</a>
-            <a class="contentButton addToBasket" data-pid="232" data-pname="escape-chair-standard-alu-with-extra-package" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
-        </div><div class="overviewBlock">
-            <div class="obImage">
-                <img src="~/Content/images/escape-chair-standard.jpg" class="overviewImage">
-            </div>
-            <h2>Escape-Chair® Standard</h2>
-            <p>
-                Light weight basic evacuation chair with enamelled aluminum frame.
-            </p>
-            <div id="piPrice">
+                    <div class="price">$ 1,445.00</div>
+                </div>
+                <div id="piPriceVAT">excl. Tax</div>
+                <div class="clear"></div>
+                <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard-alu-with-extra-package.aspx" class="contentButton moreInfo">More information</a>
+                <a class="contentButton addToBasket" data-pid="232" data-pname="escape-chair-standard-alu-with-extra-package" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
+            </div><div class="overviewBlock">
+                <div class="obImage">
+                    <img src="~/Content/images/escape-chair-standard.jpg" class="overviewImage">
+                </div>
+                <h2>Escape-Chair® Standard</h2>
+                <p>
+                    Light weight basic evacuation chair with enamelled aluminum frame.
+                </p>
+                <div id="piPrice">
 
-                <div class="price">$ 1,595.00</div>
-            </div>
-            <div id="piPriceVAT">excl. Tax</div>
-            <div class="clear"></div>
-            <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard.aspx" class="contentButton moreInfo">More information</a>
-            <a class="contentButton addToBasket" data-pid="28" data-pname="escape-chair-standard" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
-        </div><div class="overviewBlock">
-            <div class="obImage">
-                <img src="~/Content/images/escape-chair-standardplus.jpg" class="overviewImage">
-            </div>
-            <h2>Escape-Chair® StandardPLUS</h2>
-            <p>
-                Light weight evacuation chair with in 2 height positions&nbsp;adjustable operating handle and comfort seat.
-            </p>
-            <div id="piPrice">
+                    <div class="price">$ 1,595.00</div>
+                </div>
+                <div id="piPriceVAT">excl. Tax</div>
+                <div class="clear"></div>
+                <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standard.aspx" class="contentButton moreInfo">More information</a>
+                <a class="contentButton addToBasket" data-pid="28" data-pname="escape-chair-standard" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
+            </div><div class="overviewBlock">
+                <div class="obImage">
+                    <img src="~/Content/images/escape-chair-standardplus.jpg" class="overviewImage">
+                </div>
+                <h2>Escape-Chair® StandardPLUS</h2>
+                <p>
+                    Light weight evacuation chair with in 2 height positions&nbsp;adjustable operating handle and comfort seat.
+                </p>
+                <div id="piPrice">
 
-                <div class="price">$ 1,895.00</div>
-            </div>
-            <div id="piPriceVAT">excl. Tax</div>
-            <div class="clear"></div>
-            <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standardplus.aspx" class="contentButton moreInfo">More information</a>
-            <a class="contentButton addToBasket" data-pid="29" data-pname="escape-chair-standardplus" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
-        </div><div class="overviewBlock">
-            <div class="obImage">
-                <img src="~/Content/images/escape-chair-comfort.jpg" class="overviewImage">
-            </div>
-            <h2>Escape-Chair® Comfort</h2>
-            <p>
-                Evacuation chair with armrests, footrest, in 2 height positions adjustable operating handle and comfort seat.
-            </p>
-            <div id="piPrice">
+                    <div class="price">$ 1,895.00</div>
+                </div>
+                <div id="piPriceVAT">excl. Tax</div>
+                <div class="clear"></div>
+                <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-standardplus.aspx" class="contentButton moreInfo">More information</a>
+                <a class="contentButton addToBasket" data-pid="29" data-pname="escape-chair-standardplus" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
+            </div><div class="overviewBlock">
+                <div class="obImage">
+                    <img src="~/Content/images/escape-chair-comfort.jpg" class="overviewImage">
+                </div>
+                <h2>Escape-Chair® Comfort</h2>
+                <p>
+                    Evacuation chair with armrests, footrest, in 2 height positions adjustable operating handle and comfort seat.
+                </p>
+                <div id="piPrice">
 
-                <div class="price">$ 2,495.00</div>
+                    <div class="price">$ 2,495.00</div>
+                </div>
+                <div id="piPriceVAT">excl. Tax</div>
+                <div class="clear"></div>
+                <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-comfort.aspx" class="contentButton moreInfo">More information</a>
+                <a class="contentButton addToBasket" data-pid="30" data-pname="escape-chair-comfort" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
             </div>
-            <div id="piPriceVAT">excl. Tax</div>
-            <div class="clear"></div>
-            <a href="http://www.escape-mobility-usa.com/product/all-products/evacuation/escape-chair/escape-chair-comfort.aspx" class="contentButton moreInfo">More information</a>
-            <a class="contentButton addToBasket" data-pid="30" data-pname="escape-chair-comfort" data-tbranche="all-products" data-tmaingroup="evacuation" data-tgroup="escape-chair">Add to quote</a>
-        </div>
-        <div class="clear"></div>*@
-</div>
+            <div class="clear"></div>*@
+    </div>

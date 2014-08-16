@@ -2,11 +2,12 @@
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Linq;
 using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    public class EscapeDataInitializer : CreateDatabaseIfNotExists<EscapeDataContext>
+    public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
     {
         
         protected override void Seed(EscapeDataContext context)
@@ -21,7 +22,8 @@ namespace Escape.Data
                     ShortDescription = "Light weight basic evacuation chair with aluminum frame.",
                     Title = "Escape-Chair® Standard-ALU",
                     IsAccessory = false,
-                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
+                    ImageFileName = "escape-chair-standard-alu.jpg"
                 },
                 new Product()
                 {
@@ -31,7 +33,8 @@ namespace Escape.Data
                     ShortDescription = "Light weight basic evacuation chair with additional package: standard seat with extra fixation. Padded (upholstered) headrest. Anti-slip on operating handle and lower frame.",
                     Title = "Escape-Chair® Standard-ALU with extra package",
                     IsAccessory = false,
-                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
+                    ImageFileName = "escape-chair-standard-alu-with-extra-package.jpg"
                 },
                 new Product()
                 {
@@ -41,7 +44,8 @@ namespace Escape.Data
                     ShortDescription = "Light weight basic evacuation chair with enamelled aluminum frame.",
                     Title = "Escape-Chair® Standard",
                     IsAccessory = false,
-                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
+                    ImageFileName = "escape-chair-standard.jpg"
                 },
                 new Product()
                 {
@@ -51,7 +55,8 @@ namespace Escape.Data
                     ShortDescription = "Light weight evacuation chair with in 2 height positions adjustable operating handle and comfort seat.",
                     Title = "Escape-Chair® StandardPLUS",
                     IsAccessory = false,
-                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
+                    ImageFileName = "escape-chair-standardplus.jpg"
                 },
                 new Product()
                 {
@@ -61,11 +66,17 @@ namespace Escape.Data
                     ShortDescription = "Evacuation chair with armrests, footrest, in 2 height positions adjustable operating handle and comfort seat.",
                     Title = "Escape-Chair® Comfort",
                     IsAccessory = false,
-                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI"
+                    VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
+                    ImageFileName = "escape-chair-comfort.jpg"
                 }
             };
 
             products.ForEach(p => context.Product.Add(p));
+            if (context.Product.Any())
+            {
+                var objCtx = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)context).ObjectContext;
+                objCtx.ExecuteStoreCommand("TRUNCATE TABLE [Product]");
+            }
             context.SaveChanges();
             SqlConnection.ClearAllPools();
         }
