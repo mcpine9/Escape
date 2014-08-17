@@ -7,13 +7,13 @@ namespace Escape.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class AddedImageFileNameToProduct : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedImageFileNameToProduct));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201408161841015_AddedImageFileNameToProduct"; }
+            get { return "201408170109107_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

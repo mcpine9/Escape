@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using Escape.Data.Model;
 
@@ -9,9 +11,38 @@ namespace Escape.Data
 {
     public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
     {
-        
         protected override void Seed(EscapeDataContext context)
         {
+            var categories = new List<Category>()
+            {
+                new Category()
+                {
+                    CategoryName = "All Products"
+                },
+                new Category()
+                {
+                    CategoryName = "Healthcare"
+                },
+                new Category()
+                {
+                    CategoryName = "Office Buildings"
+                },
+                new Category()
+                {
+                    CategoryName = "Education"
+                },
+                new Category()
+                {
+                    CategoryName = "Ermergency Services"
+                },
+                new Category()
+                {
+                    CategoryName = "Industry"
+                }
+            };
+            categories.ForEach(c => context.Category.Add(c));
+            context.SaveChanges();
+
             var products = new List<Product>()
             {
                 new Product()
@@ -70,15 +101,21 @@ namespace Escape.Data
                     ImageFileName = "escape-chair-comfort.jpg"
                 }
             };
-
-            products.ForEach(p => context.Product.Add(p));
-            if (context.Product.Any())
+            try
             {
-                var objCtx = ((System.Data.Entity.Infrastructure.IObjectContextAdapter)context).ObjectContext;
-                objCtx.ExecuteStoreCommand("TRUNCATE TABLE [Product]");
+                products.ForEach(p => context.Product.Add(p));
+                context.SaveChanges();
             }
-            context.SaveChanges();
-            SqlConnection.ClearAllPools();
+            catch (Exception e)
+            {
+                Debug.Print(e.Message);
+            }
+            finally
+            {
+                SqlConnection.ClearAllPools();
+            }
+
+            base.Seed(context);
         }
     }
 }

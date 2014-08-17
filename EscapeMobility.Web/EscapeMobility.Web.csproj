@@ -412,7 +412,6 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\OfficeBuildingsController.cs" />
     <Compile Include="Controllers\ProductsAdminController.cs" />
-    <Compile Include="Controllers\ProductSpecificationsAdminController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="EducationController.generated.cs">
@@ -444,9 +443,6 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductsAdminController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProductSpecificationsAdminController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -610,11 +606,6 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\ProductSpecificationsAdmin\Create.cshtml" />
-    <Content Include="Views\ProductSpecificationsAdmin\Delete.cshtml" />
-    <Content Include="Views\ProductSpecificationsAdmin\Details.cshtml" />
-    <Content Include="Views\ProductSpecificationsAdmin\Edit.cshtml" />
-    <Content Include="Views\ProductSpecificationsAdmin\Index.cshtml" />
     <Content Include="Views\AllProducts\_ProductHighlight.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

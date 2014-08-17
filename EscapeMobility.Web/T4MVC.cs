@@ -34,7 +34,6 @@ public static partial class MVC
     public static EscapeMobility.Controllers.InformationController Information = new EscapeMobility.Controllers.T4MVC_InformationController();
     public static EscapeMobility.Controllers.OfficeBuildingsController OfficeBuildings = new EscapeMobility.Controllers.T4MVC_OfficeBuildingsController();
     public static EscapeMobility.Controllers.ProductsAdminController ProductsAdmin = new EscapeMobility.Controllers.T4MVC_ProductsAdminController();
-    public static EscapeMobility.Web.Controllers.ProductSpecificationsAdminController ProductSpecificationsAdmin = new EscapeMobility.Web.Controllers.T4MVC_ProductSpecificationsAdminController();
     public static EscapeMobility.Controllers.QuoteController Quote = new EscapeMobility.Controllers.T4MVC_QuoteController();
     public static EscapeMobility.Controllers.ServiceController Service = new EscapeMobility.Controllers.T4MVC_ServiceController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -270,6 +269,7 @@ namespace Links
             public static readonly string nixall_wound__skin_solution__2oz_single_jpg = Url("nixall-wound--skin-solution--2oz-single.jpg");
             public static readonly string office_buildings_jpg = Url("office-buildings.jpg");
             public static readonly string one_size_fits_all_jpg = Url("one-size-fits-all.jpg");
+            public static readonly string overviewBlockBg_png = Url("overviewBlockBg.png");
             public static readonly string padded_seat_jpg = Url("padded-seat.jpg");
             public static readonly string palmetto_JPG = Url("palmetto.JPG");
             public static readonly string paypal_here_logo_1x_png = Url("paypal-here-logo-1x.png");
@@ -336,6 +336,8 @@ namespace Links
                 public static readonly string jquery_fancybox_1_3_4_0219160601_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fancybox-1.3.4.0219160601.min.css") ? Url("jquery.fancybox-1.3.4.0219160601.min.css") : Url("jquery.fancybox-1.3.4.0219160601.css");
                      
                 public static readonly string masterpage_1015101830_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/masterpage.1015101830.min.css") ? Url("masterpage.1015101830.min.css") : Url("masterpage.1015101830.css");
+                     
+                public static readonly string productlisting_1008085041_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/productlisting.1008085041.min.css") ? Url("productlisting.1008085041.min.css") : Url("productlisting.1008085041.css");
                      
                 public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
                      

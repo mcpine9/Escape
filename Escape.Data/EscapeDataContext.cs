@@ -4,11 +4,11 @@ using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using Escape.Data.Model;
+using Escape.Data.DataMappings;
+using Escape.Data.Model;        
 
 namespace Escape.Data
 {
-    [DbConfigurationType(typeof(EscapeDBConfiguration))]
     public class EscapeDataContext : DbContext
     {
         public EscapeDataContext()
@@ -32,6 +32,8 @@ namespace Escape.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Configurations.Add(new ProductMapping());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

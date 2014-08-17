@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Escape.Data;
 using EscapeMobility.Web.Models;
-using Microsoft.Ajax.Utilities;
-using Ninject.Infrastructure.Language;
 
 namespace EscapeMobility.Controllers
 {
@@ -24,10 +19,16 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
+        public virtual ActionResult Details(int id)
+        {
+            return View();
+        }
+
         public virtual ActionResult EscapeChair()
         {
             var products = _db.Product.ToList();
-            var highlights = (from p in products
+            var highlights = (
+                from p in products
                 select new ProductHighlightModel()
                 {
                     ProductID = p.ProductId, 

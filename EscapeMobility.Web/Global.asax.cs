@@ -12,9 +12,7 @@ namespace EscapeMobility.Web
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new EscapeDataInitializer());
-            //var db = new EscapeDataContext();
-            //db.Database.Initialize(true);
+            Database.SetInitializer(new EscapeDataInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

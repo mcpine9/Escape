@@ -8,6 +8,18 @@ namespace Escape.Data.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Accessory",
+                c => new
+                    {
+                        AccessoryId = c.Int(nullable: false, identity: true),
+                        ProductId = c.Int(nullable: false),
+                        AccessoryToPublic = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.AccessoryId)
+                .ForeignKey("dbo.Product", t => t.ProductId, cascadeDelete: true)
+                .Index(t => t.ProductId);
+            
+            CreateTable(
                 "dbo.CartItem",
                 c => new
                     {
@@ -26,31 +38,21 @@ namespace Escape.Data.Migrations
                 c => new
                     {
                         ProductId = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
+                        Title = c.String(nullable: false),
                         ShortDescription = c.String(),
                         LongDescription = c.String(),
                         Thumbnailfolder = c.String(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Discount = c.Decimal(precision: 18, scale: 2),
                         ArticleNumber = c.Long(nullable: false),
-                        VideoSample = c.String(),
+                        VideoSampleURL = c.String(),
                         SafetyTags = c.String(),
-                        SimilarTags = c.String(),
+                        RelatedTags = c.String(),
                         ProductSpecificationId = c.Int(nullable: false),
+                        IsAccessory = c.Boolean(nullable: false),
+                        ImageFileName = c.String(),
                     })
                 .PrimaryKey(t => t.ProductId);
-            
-            CreateTable(
-                "dbo.Accessory",
-                c => new
-                    {
-                        AccessoryId = c.Int(nullable: false, identity: true),
-                        ProductId = c.Int(nullable: false),
-                        AccessoryToPublic = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.AccessoryId)
-                .ForeignKey("dbo.Product", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
             
             CreateTable(
                 "dbo.Category",
@@ -102,6 +104,18 @@ namespace Escape.Data.Migrations
                 .Index(t => t.CustomerId);
             
             CreateTable(
+                "dbo.Customer",
+                c => new
+                    {
+                        CustomerId = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        MiddleName = c.String(),
+                        Title = c.String(),
+                    })
+                .PrimaryKey(t => t.CustomerId);
+            
+            CreateTable(
                 "dbo.CustomerContact",
                 c => new
                     {
@@ -121,22 +135,10 @@ namespace Escape.Data.Migrations
                 .Index(t => t.Customer_CustomerId);
             
             CreateTable(
-                "dbo.Customer",
-                c => new
-                    {
-                        CustomerId = c.Int(nullable: false, identity: true),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        MiddleName = c.String(),
-                        Title = c.String(),
-                    })
-                .PrimaryKey(t => t.CustomerId);
-            
-            CreateTable(
                 "dbo.ProductSpecification",
                 c => new
                     {
-                        ProductId = c.Int(nullable: false),
+                        ProductSpecificationId = c.Int(nullable: false, identity: true),
                         IsSpecificationOn = c.Boolean(nullable: false),
                         Material = c.String(),
                         IsEasyToOperate = c.Boolean(nullable: false),
@@ -157,16 +159,14 @@ namespace Escape.Data.Migrations
                         HasPaddedHeadrest = c.Boolean(nullable: false),
                         DimentionsFoldedUp = c.String(),
                         Waranty = c.String(),
+                        ProductId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ProductId)
-                .ForeignKey("dbo.Product", t => t.ProductId)
-                .Index(t => t.ProductId);
+                .PrimaryKey(t => t.ProductSpecificationId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.ProductSpecification", "ProductId", "dbo.Product");
             DropForeignKey("dbo.ShoppingCart", "CustomerId", "dbo.Customer");
             DropForeignKey("dbo.CustomerContact", "Customer_CustomerId", "dbo.Customer");
             DropForeignKey("dbo.CartItem", "ShoppingCartID", "dbo.ShoppingCart");
@@ -175,25 +175,24 @@ namespace Escape.Data.Migrations
             DropForeignKey("dbo.SafetyCategory", "Product_ProductId", "dbo.Product");
             DropForeignKey("dbo.Category", "Product_ProductId", "dbo.Product");
             DropForeignKey("dbo.Accessory", "ProductId", "dbo.Product");
-            DropIndex("dbo.ProductSpecification", new[] { "ProductId" });
             DropIndex("dbo.CustomerContact", new[] { "Customer_CustomerId" });
             DropIndex("dbo.ShoppingCart", new[] { "CustomerId" });
             DropIndex("dbo.SimilarCategory", new[] { "Product_ProductId" });
             DropIndex("dbo.SafetyCategory", new[] { "Product_ProductId" });
             DropIndex("dbo.Category", new[] { "Product_ProductId" });
-            DropIndex("dbo.Accessory", new[] { "ProductId" });
             DropIndex("dbo.CartItem", new[] { "ProductID" });
             DropIndex("dbo.CartItem", new[] { "ShoppingCartID" });
+            DropIndex("dbo.Accessory", new[] { "ProductId" });
             DropTable("dbo.ProductSpecification");
-            DropTable("dbo.Customer");
             DropTable("dbo.CustomerContact");
+            DropTable("dbo.Customer");
             DropTable("dbo.ShoppingCart");
             DropTable("dbo.SimilarCategory");
             DropTable("dbo.SafetyCategory");
             DropTable("dbo.Category");
-            DropTable("dbo.Accessory");
             DropTable("dbo.Product");
             DropTable("dbo.CartItem");
+            DropTable("dbo.Accessory");
         }
     }
 }

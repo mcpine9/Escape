@@ -81,27 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataMappings\ProductMapping.cs" />
     <Compile Include="EscapeDataInitializer.cs" />
     <Compile Include="EscapeDBConfiguration.cs" />
-    <Compile Include="Migrations\201408092046332_InitialCreate.cs" />
-    <Compile Include="Migrations\201408092046332_InitialCreate.Designer.cs">
-      <DependentUpon>201408092046332_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408092312232_ChangeProductTitleRequired.cs" />
-    <Compile Include="Migrations\201408092312232_ChangeProductTitleRequired.Designer.cs">
-      <DependentUpon>201408092312232_ChangeProductTitleRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408100117021_ChangedProductsModel.cs" />
-    <Compile Include="Migrations\201408100117021_ChangedProductsModel.Designer.cs">
-      <DependentUpon>201408100117021_ChangedProductsModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408100445074_productspecificationchange.cs" />
-    <Compile Include="Migrations\201408100445074_productspecificationchange.Designer.cs">
-      <DependentUpon>201408100445074_productspecificationchange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201408161841015_AddedImageFileNameToProduct.cs" />
-    <Compile Include="Migrations\201408161841015_AddedImageFileNameToProduct.Designer.cs">
-      <DependentUpon>201408161841015_AddedImageFileNameToProduct.cs</DependentUpon>
+    <Compile Include="Migrations\201408170109107_InitialCreate.cs" />
+    <Compile Include="Migrations\201408170109107_InitialCreate.Designer.cs">
+      <DependentUpon>201408170109107_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Accessory.cs" />
@@ -121,6 +106,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -143,24 +129,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408092046332_InitialCreate.resx">
-      <DependentUpon>201408092046332_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408092312232_ChangeProductTitleRequired.resx">
-      <DependentUpon>201408092312232_ChangeProductTitleRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408100117021_ChangedProductsModel.resx">
-      <DependentUpon>201408100117021_ChangedProductsModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408100445074_productspecificationchange.resx">
-      <DependentUpon>201408100445074_productspecificationchange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201408161841015_AddedImageFileNameToProduct.resx">
-      <DependentUpon>201408161841015_AddedImageFileNameToProduct.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201408170109107_InitialCreate.resx">
+      <DependentUpon>201408170109107_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -1,9 +1,11 @@
-﻿namespace Escape.Data.Model
+﻿using System.Collections.Generic;
+
+namespace Escape.Data.Model
 {
     public class Accessory
     {
         public int AccessoryId { get; set; }
-        public int ProductId { get; set; }
-        public int AccessoryToPublic { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
