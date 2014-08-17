@@ -437,6 +437,7 @@
     </Compile>
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />
+    <Compile Include="Models\ProductsAdminViewModel.cs" />
     <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">

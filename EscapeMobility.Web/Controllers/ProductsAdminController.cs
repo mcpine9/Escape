@@ -1,8 +1,12 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Escape.Data;
 using Escape.Data.Model;
+using EscapeMobility.Web.Models;
+using Ninject.Infrastructure.Language;
 
 namespace EscapeMobility.Controllers
 {
@@ -42,7 +46,7 @@ namespace EscapeMobility.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory")] Product product)
+        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory, ProductCategories")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -61,12 +65,22 @@ namespace EscapeMobility.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Product.Find(id);
-            if (product == null)
+            var product = db.Product.Find(id);
+            var category = db.Category;
+            IEnumerable<Category> productCategory = category.ToEnumerable();
+            var productViewModel = new ProductsAdminViewModel();
+            productViewModel.Product = product;
+            var selectList = new MultiSelectList(productCategory, "CategoryId", "CategoryName");
+            foreach (var item in selectList)
             {
-                return HttpNotFound();
+                if (item.Value == )
+                {
+                    
+                }
             }
-            return View(product);
+            selectList.Items
+            productViewModel.ProductCategoryList = selectList;
+            return View(productViewModel);
         }
 
         // POST: ProductsAdmin/Edit/5
@@ -74,7 +88,7 @@ namespace EscapeMobility.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory")] Product product)
+        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory, ProductCategories")] Product product)
         {
             if (ModelState.IsValid)
             {
