@@ -83,7 +83,9 @@
   <ItemGroup>
     <Compile Include="DataMappings\ProductMapping.cs" />
     <Compile Include="EscapeDataInitializer.cs" />
-    <Compile Include="EscapeDBConfiguration.cs" />
+    <Compile Include="EscapeDBConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201408170109107_InitialCreate.cs" />
     <Compile Include="Migrations\201408170109107_InitialCreate.Designer.cs">
       <DependentUpon>201408170109107_InitialCreate.cs</DependentUpon>

@@ -33,7 +33,7 @@ namespace Escape.Data
                 },
                 new Category()
                 {
-                    CategoryName = "Ermergency Services"
+                    CategoryName = "Emergency Services"
                 },
                 new Category()
                 {
@@ -101,21 +101,24 @@ namespace Escape.Data
                     ImageFileName = "escape-chair-comfort.jpg"
                 }
             };
-            try
-            {
-                products.ForEach(p => context.Product.Add(p));
-                context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                Debug.Print(e.Message);
-            }
-            finally
-            {
-                SqlConnection.ClearAllPools();
-            }
+            products.ForEach(p => context.Product.Add(p));
+            context.SaveChanges();
+
+            AddOrUpdateProduct(context, 1, 1);
+            AddOrUpdateProduct(context, 2, 1);
+            AddOrUpdateProduct(context, 3, 1);
+            AddOrUpdateProduct(context, 4, 1);
+            AddOrUpdateProduct(context, 5, 1);
 
             base.Seed(context);
+        }
+
+        void AddOrUpdateProduct(EscapeDataContext context, int productId, int categoryId)
+        {
+            var product = context.Product.SingleOrDefault(p => p.ProductId == productId);
+            product = product ?? new Product();
+            var category = context.Category.SingleOrDefault(c => c.CategoryId == categoryId);
+            product.ProductCategories = new Collection<Category>(){category};
         }
     }
 }

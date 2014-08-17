@@ -35,5 +35,6 @@ namespace Escape.Data
             modelBuilder.Configurations.Add(new ProductMapping());
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
