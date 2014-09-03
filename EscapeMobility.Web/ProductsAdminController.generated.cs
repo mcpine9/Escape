@@ -141,6 +141,7 @@ namespace EscapeMobility.Controllers
         {
             public readonly string id = "id";
             public readonly string product = "product";
+            public readonly string SelectedProductCategoryIds = "SelectedProductCategoryIds";
         }
         static readonly ActionParamsClass_Delete s_params_Delete = new ActionParamsClass_Delete();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -246,14 +247,15 @@ namespace EscapeMobility.Controllers
         }
 
         [NonAction]
-        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Escape.Data.Model.Product product);
+        partial void EditOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Escape.Data.Model.Product product, int[] SelectedProductCategoryIds);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Edit(Escape.Data.Model.Product product)
+        public override System.Web.Mvc.ActionResult Edit(Escape.Data.Model.Product product, int[] SelectedProductCategoryIds)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Edit);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "product", product);
-            EditOverride(callInfo, product);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "SelectedProductCategoryIds", SelectedProductCategoryIds);
+            EditOverride(callInfo, product, SelectedProductCategoryIds);
             return callInfo;
         }
 

@@ -13,7 +13,7 @@ namespace Escape.Data.DataMappings
         public ProductMapping()
         {
             HasRequired(s => s.ProductSpecification).WithRequiredPrincipal(p => p.Product);
-            HasMany(c => c.ProductCategories)
+            HasMany(c => c.Categories)
                 .WithMany(p => p.Products)
                 .Map(t => t.MapLeftKey("ProductId")
                 .MapRightKey("CategoryId").ToTable("ProductCategory"));

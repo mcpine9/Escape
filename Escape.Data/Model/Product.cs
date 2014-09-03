@@ -38,7 +38,7 @@ namespace Escape.Data.Model
         public int ProductSpecificationId { get; set; }
         public ProductSpecification ProductSpecification { get; set; }
 
-        public ICollection<Category> ProductCategories { get; set; }
+        public ICollection<Category> Categories { get; set; }
         public virtual ICollection<SafetyCategory> SafetyCategories { get; set; }
         public virtual ICollection<SimilarCategory> SimilarCategories { get; set; }
         public virtual ICollection<Accessory> Accessories { get; set; } 

@@ -9,7 +9,7 @@ using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    public class EscapeDataInitializer : DropCreateDatabaseIfModelChanges<EscapeDataContext>
+    public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
     {
         protected override void Seed(EscapeDataContext context)
         {
@@ -54,7 +54,8 @@ namespace Escape.Data
                     Title = "Escape-Chair® Standard-ALU",
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
-                    ImageFileName = "escape-chair-standard-alu.jpg"
+                    ImageFileName = "escape-chair-standard-alu.jpg",
+                    Categories = new List<Category>()
                 },
                 new Product()
                 {
@@ -65,7 +66,8 @@ namespace Escape.Data
                     Title = "Escape-Chair® Standard-ALU with extra package",
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
-                    ImageFileName = "escape-chair-standard-alu-with-extra-package.jpg"
+                    ImageFileName = "escape-chair-standard-alu-with-extra-package.jpg",
+                    Categories = new List<Category>()
                 },
                 new Product()
                 {
@@ -76,7 +78,8 @@ namespace Escape.Data
                     Title = "Escape-Chair® Standard",
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
-                    ImageFileName = "escape-chair-standard.jpg"
+                    ImageFileName = "escape-chair-standard.jpg",
+                    Categories = new List<Category>()
                 },
                 new Product()
                 {
@@ -87,7 +90,8 @@ namespace Escape.Data
                     Title = "Escape-Chair® StandardPLUS",
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
-                    ImageFileName = "escape-chair-standardplus.jpg"
+                    ImageFileName = "escape-chair-standardplus.jpg",
+                    Categories = new List<Category>()
                 },
                 new Product()
                 {
@@ -98,7 +102,8 @@ namespace Escape.Data
                     Title = "Escape-Chair® Comfort",
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
-                    ImageFileName = "escape-chair-comfort.jpg"
+                    ImageFileName = "escape-chair-comfort.jpg",
+                    Categories = new List<Category>()
                 }
             };
             products.ForEach(p => context.Product.Add(p));
@@ -117,8 +122,11 @@ namespace Escape.Data
         {
             var product = context.Product.SingleOrDefault(p => p.ProductId == productId);
             product = product ?? new Product();
+
             var category = context.Category.SingleOrDefault(c => c.CategoryId == categoryId);
-            product.ProductCategories = new Collection<Category>(){category};
+            product.Categories.Add(category);
+
+            context.SaveChanges();
         }
     }
 }

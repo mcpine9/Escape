@@ -12,7 +12,10 @@ namespace EscapeMobility.Web.Models
     {
         public Product Product { get; set; }
         [Display(Name = "Category")]
-        public MultiSelectList ProductCategoryList { get; set; }
+        public IEnumerable<Category> ProductCategoryList { get; set; }
+        public List<int> SelectedProductCategoryIds { get; set; }
+
+
 
     }
 }
