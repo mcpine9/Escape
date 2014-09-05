@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
@@ -21,7 +22,11 @@ namespace EscapeMobility.Controllers
         // GET: ProductsAdmin
         public virtual ActionResult Index()
         {
-            return View(db.Product.ToList());
+            var vm = new ProductsAdminViewModel()
+            {
+
+            };
+            return View(vm);
         }
 
         // GET: ProductsAdmin/Details/5
@@ -95,8 +100,16 @@ namespace EscapeMobility.Controllers
         {
             if (ModelState.IsValid)
             {
-                product.Categories = db.Category.Where(x => SelectedProductCategoryIds.Contains(x.CategoryId)).ToList();
                 db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(product).Collection(c => c.Categories).Load();
+                product.Categories.Clear();
+                if (SelectedProductCategoryIds != null)
+                {
+                    foreach (var category in SelectedProductCategoryIds.Select(ids => db.Category.Find(ids)))
+                    {
+                        product.Categories.Add(category);
+                    }
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

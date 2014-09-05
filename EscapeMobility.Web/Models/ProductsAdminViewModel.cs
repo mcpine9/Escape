@@ -11,10 +11,12 @@ namespace EscapeMobility.Web.Models
     public class ProductsAdminViewModel
     {
         public Product Product { get; set; }
+        public IEnumerable<Product> Products { get; set; }
         [Display(Name = "Category")]
         public IEnumerable<Category> ProductCategoryList { get; set; }
         public List<int> SelectedProductCategoryIds { get; set; }
 
+        public string[] SelectedCategories { get; set; }
 
 
     }
