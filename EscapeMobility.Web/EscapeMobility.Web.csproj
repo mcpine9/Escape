@@ -404,6 +404,7 @@
     <Compile Include="App_Start\Razor Tools\FontAwesome.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AllProductsController.cs" />
+    <Compile Include="Models\EditProductViewModel.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\EmergencyServicesController.cs" />
     <Compile Include="Controllers\HealthCareController.cs" />
@@ -435,6 +436,7 @@
     <Compile Include="InformationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductsAdminDetailsViewModel.cs" />
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />
     <Compile Include="Models\ProductsAdminViewModel.cs" />

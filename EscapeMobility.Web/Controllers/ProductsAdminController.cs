@@ -1,31 +1,36 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
-using Microsoft.Ajax.Utilities;
 using Ninject.Infrastructure.Language;
-using WebGrease.Css.Extensions;
 
-namespace EscapeMobility.Controllers
+namespace EscapeMobility.Web.Controllers
 {
     public partial class ProductsAdminController : Controller
     {
-        private readonly EscapeDataContext db = new EscapeDataContext();
+        private readonly EscapeDataContext _db = new EscapeDataContext();
         
         // GET: ProductsAdmin
         public virtual ActionResult Index()
         {
-            var vm = new ProductsAdminViewModel()
-            {
+            var product = _db.Product.ToList();
+            var categories = _db.Category.ToList();
 
-            };
+            var vm = new ProductsAdminViewModel();
+            vm.SelectedCategories = new Dictionary<int, string>();
+            foreach (var p in product)
+            {
+                var categoryArray = (from c in categories
+                                     from productCategory in c.Products
+                                     where productCategory.ProductId == p.ProductId
+                                     select c.CategoryName).ToArray();
+                vm.SelectedCategories.Add(p.ProductId, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
+            }
+            vm.Products = product;
             return View(vm);
         }
 
@@ -36,12 +41,21 @@ namespace EscapeMobility.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Product.Find(id);
+            var vm = new ProductsAdminDetailsViewModel();
+            vm.SelectedCategories = new Dictionary<int, string>();
+            Product product = _db.Product.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            vm.Product = product;
+            var categories = _db.Category.ToList();
+            var categoryArray = (from c in categories
+                                 from productCategory in c.Products
+                                 where productCategory.ProductId == id
+                                 select c.CategoryName).ToArray();
+            vm.SelectedCategories.Add((int) id, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
+            return View(vm);
         }
 
         // GET: ProductsAdmin/Create
@@ -59,8 +73,8 @@ namespace EscapeMobility.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Product.Add(product);
-                db.SaveChanges();
+                _db.Product.Add(product);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -74,15 +88,15 @@ namespace EscapeMobility.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var vm = new ProductsAdminViewModel();
-            Product product = db.Product.SingleOrDefault(p => p.ProductId == id);
-            IEnumerable<Category> categories = (from c in db.Category
+            var vm = new EditProductViewModel();
+            Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            IEnumerable<Category> categories = (from c in _db.Category
                 select c);
             if (product != null)
             {
                 vm.Product = product;
                 vm.ProductCategoryList = categories;
-                vm.SelectedProductCategoryIds = (from c in db.Category
+                vm.SelectedProductCategoryIds = (from c in _db.Category
                     from productCategory in c.Products
                     where productCategory.ProductId == id
                     select c.CategoryId).ToList();
@@ -98,22 +112,24 @@ namespace EscapeMobility.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory,SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
+            var vm = new EditProductViewModel();
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                db.Entry(product).Collection(c => c.Categories).Load();
+                _db.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                _db.Entry(product).Collection(c => c.Categories).Load();
                 product.Categories.Clear();
                 if (SelectedProductCategoryIds != null)
                 {
-                    foreach (var category in SelectedProductCategoryIds.Select(ids => db.Category.Find(ids)))
+                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Category.Find(ids)))
                     {
                         product.Categories.Add(category);
                     }
                 }
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(product);
+            vm.Product = product;
+            return View(vm);
         }
 
         // GET: ProductsAdmin/Delete/5
@@ -123,7 +139,7 @@ namespace EscapeMobility.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Product.Find(id);
+            Product product = _db.Product.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -136,9 +152,9 @@ namespace EscapeMobility.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Product.Find(id);
-            db.Product.Remove(product);
-            db.SaveChanges();
+            Product product = _db.Product.Find(id);
+            _db.Product.Remove(product);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -146,7 +162,7 @@ namespace EscapeMobility.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

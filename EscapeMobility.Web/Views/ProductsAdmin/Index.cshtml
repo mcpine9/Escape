@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Escape.Data.Model.Product>
+﻿@model EscapeMobility.Web.Models.ProductsAdminViewModel
 
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -10,34 +10,34 @@
     <table id="Product_table" class="table table-striped table-condensed table-bordered">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Product.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ShortDescription)
+                @Html.DisplayNameFor(model => model.Product.ShortDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LongDescription)
+                @Html.DisplayNameFor(model => model.Product.LongDescription)
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.Thumbnailfolder)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Product.Price)
             </th>
             @*<th>
                 @Html.DisplayNameFor(model => model.Discount)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.ArticleNumber)
+                @Html.DisplayNameFor(model => model.Product.ArticleNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VideoSampleURL)
+                @Html.DisplayNameFor(model => model.Product.VideoSampleURL)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsAccessory)
+                @Html.DisplayNameFor(model => model.Product.IsAccessory)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SelectedCategpories)
+                @Html.DisplayNameFor(model => model.SelectedCategories)
             </th>
             @*
             <th>
@@ -48,11 +48,11 @@
             </th><th>
                 @Html.DisplayNameFor(model => model.ProductSpecificationId)
             </th>*@
-            <th>@Html.DisplayNameFor(model => model.ImageFileName)</th>
+            <th>@Html.DisplayNameFor(model => model.Product.ImageFileName)</th>
             <th></th>
         </tr>
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
         <tr>
             <td>
@@ -81,6 +81,9 @@
             </td>
             <td class="center">
                 @Html.Raw(item.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")
+            </td>
+            <td>
+                @Html.Raw(Model.SelectedCategories[item.ProductId])
             </td>
             @*
                 <td>

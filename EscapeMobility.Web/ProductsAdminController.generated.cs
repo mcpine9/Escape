@@ -21,7 +21,7 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace EscapeMobility.Controllers
+namespace EscapeMobility.Web.Controllers
 {
     public partial class ProductsAdminController
     {
@@ -184,7 +184,7 @@ namespace EscapeMobility.Controllers
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_ProductsAdminController : EscapeMobility.Controllers.ProductsAdminController
+    public partial class T4MVC_ProductsAdminController : EscapeMobility.Web.Controllers.ProductsAdminController
     {
         public T4MVC_ProductsAdminController() : base(Dummy.Instance) { }
 

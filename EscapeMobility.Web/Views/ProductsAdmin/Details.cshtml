@@ -1,4 +1,4 @@
-﻿@model Escape.Data.Model.Product
+﻿@model EscapeMobility.Web.Models.ProductsAdminDetailsViewModel
 
 @{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -9,60 +9,64 @@
         <hr />
         <table id="Product_table" class="details table-striped table-condensed table-bordered">
             <tr>
-                <td>@Html.DisplayNameFor(model => model.Title)</td>
-                <td>@Html.DisplayFor(model => model.Title)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.Title)</td>
+                <td>@Html.DisplayFor(model => model.Product.Title)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.ShortDescription)</td>
-                <td>@Html.DisplayFor(model => model.ShortDescription)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.ShortDescription)</td>
+                <td>@Html.DisplayFor(model => model.Product.ShortDescription)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.LongDescription)</td>
-                <td>@Html.DisplayFor(model => model.LongDescription)</td>
-            </tr>
-            @*<tr>
-                <td>@Html.DisplayNameFor(model => model.Thumbnailfolder)</td>
-                <td>@Html.DisplayFor(model => model.Thumbnailfolder)</td>
-            </tr>*@
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Price)</td>
-                <td>@Html.DisplayFor(model => model.Price)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.LongDescription)</td>
+                <td>@Html.DisplayFor(model => model.Product.LongDescription)</td>
             </tr>
             @*<tr>
-                <td>@Html.DisplayNameFor(model => model.Discount)</td>
-                <td>@Html.DisplayFor(model => model.Discount)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.Thumbnailfolder)</td>
+                <td>@Html.DisplayFor(model => model.Product.Thumbnailfolder)</td>
             </tr>*@
             <tr>
-                <td>@Html.DisplayNameFor(model => model.ArticleNumber)</td>
-                <td>@Html.DisplayFor(model => model.ArticleNumber)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.VideoSampleURL)</td>
-                <td>@Html.DisplayFor(model => model.VideoSampleURL)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.IsAccessory)</td>
-                <td>@Html.Raw(Model.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")</td>
+                <td>@Html.DisplayNameFor(model => model.Product.Price)</td>
+                <td>@Html.DisplayFor(model => model.Product.Price)</td>
             </tr>
             @*<tr>
-                <td>@Html.DisplayNameFor(model => model.SafetyTags)</td>
-                <td>@Html.DisplayFor(model => model.SafetyTags)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.RelatedTags)</td>
-                <td>@Html.DisplayFor(model => model.RelatedTags)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.ProductSpecificationId)</td>
-                <td>@Html.DisplayFor(model => model.ProductSpecificationId)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.Discount)</td>
+                <td>@Html.DisplayFor(model => model.Product.Discount)</td>
             </tr>*@
             <tr>
-                <td>@Html.DisplayNameFor(model => model.ImageFileName)</td>
-                <td>@Html.DisplayFor(model => model.ImageFileName)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.ArticleNumber)</td>
+                <td>@Html.DisplayFor(model => model.Product.ArticleNumber)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.VideoSampleURL)</td>
+                <td>@Html.DisplayFor(model => model.Product.VideoSampleURL)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.IsAccessory)</td>
+                <td>@Html.Raw(Model.Product.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")</td>
+            </tr>
+            @*<tr>
+                <td>@Html.DisplayNameFor(model => model.Product.SafetyTags)</td>
+                <td>@Html.DisplayFor(model => model.Product.SafetyTags)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.RelatedTags)</td>
+                <td>@Html.DisplayFor(model => model.Product.RelatedTags)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.ProductSpecificationId)</td>
+                <td>@Html.DisplayFor(model => model.Product.ProductSpecificationId)</td>
+            </tr>*@
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.SelectedCategories)</td>
+                <td>@Html.Raw(Model.SelectedCategories[Model.Product.ProductId])</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.ImageFileName)</td>
+                <td>@Html.DisplayFor(model => model.Product.ImageFileName)</td>
             </tr>
         </table>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Product.ProductId }) |
         @Html.ActionLink("Back to List", "Index")
     </p>

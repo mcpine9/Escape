@@ -20,7 +20,6 @@ namespace Escape.Data.DataMappings
             HasMany(s => s.SafetyCategories).WithMany(p => p.Products);
             HasMany(s => s.SimilarCategories).WithMany(p => p.Products);
             HasMany(s => s.Accessories).WithMany(p => p.Products);
-
         }
     }
 }
