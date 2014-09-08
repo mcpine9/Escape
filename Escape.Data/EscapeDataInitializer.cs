@@ -17,6 +17,10 @@ namespace Escape.Data
             {
                 new Category()
                 {
+                    CategoryName = "None"
+                },
+                new Category()
+                {
                     CategoryName = "All Products"
                 },
                 new Category()

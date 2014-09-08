@@ -61,7 +61,12 @@ namespace EscapeMobility.Web.Controllers
         // GET: ProductsAdmin/Create
         public virtual ActionResult Create()
         {
-            return View();
+            var vm = new CreateProductViewModel();
+            IEnumerable<Category> categories = (from c in _db.Category
+                                                select c);
+                vm.ProductCategoryList = categories;
+            
+            return View(vm);
         }
 
         // POST: ProductsAdmin/Create
@@ -69,16 +74,26 @@ namespace EscapeMobility.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory, Categories")] Product product)
+        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory, SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
+            var vm = new CreateProductViewModel();
             if (ModelState.IsValid)
             {
-                _db.Product.Add(product);
+                _db.Entry(product).State = System.Data.Entity.EntityState.Added;
+                _db.Entry(product).Collection(c => c.Categories).Load();
+                product.Categories.Clear();
+                if (SelectedProductCategoryIds != null)
+                {
+                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Category.Find(ids)))
+                    {
+                        product.Categories.Add(category);
+                    }
+                }
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View(product);
+            vm.Product = product;
+            return View(vm);
         }
 
         // GET: ProductsAdmin/Edit/5
