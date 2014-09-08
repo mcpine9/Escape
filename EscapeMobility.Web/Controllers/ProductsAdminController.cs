@@ -105,14 +105,21 @@ namespace EscapeMobility.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var vm = new EditProductViewModel();
+            var product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            vm.EvacuationTypeList = new List<SelectListItem>();
             var itemValues = Enum.GetValues(typeof(EvacuationType));
             var itemNames = Enum.GetNames(typeof(EvacuationType)); 
             for (int i = 0; i <= itemNames.Length - 1; i++)
             {
-                var item = new ListItem(itemNames[i], itemValues[i]);
-                vm.EvacuationTypeList.Add(item);
+                var t = new SelectListItem()
+                {
+                    Text = itemNames[i],
+                    Value = itemValues.GetValue(i).ToString(),
+                    Selected = product != null && (product.EvacuationType.ToString() == itemNames[i])
+                };
+                vm.EvacuationTypeList.Add(t);
             }
-            Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            
             IEnumerable<Category> categories = (from c in _db.Category
                 select c);
             if (product != null)

@@ -59,7 +59,7 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-standard-alu.jpg",
-                    EvacuationType = EvacuationType.EscapeChair,
+                    EvacuationType = EvacuationType.EscapeMattress,
                     Categories = new List<Category>()
                 },
                 new Product()
