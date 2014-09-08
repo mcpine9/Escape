@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using Escape.Data;
+using Escape.Data.Model;
 using EscapeMobility.Web.Models;
 using WebGrease.Css.Ast.Selectors;
 
@@ -27,9 +28,10 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChair()
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 1));
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
             var highlights = (
                 from p in products
+                where p.EvacuationType == EvacuationType.EscapeChair
                 select new ProductHighlightModel()
                 {
                     ProductID = p.ProductId, 

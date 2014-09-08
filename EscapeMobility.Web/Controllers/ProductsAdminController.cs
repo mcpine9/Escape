@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
@@ -74,7 +75,7 @@ namespace EscapeMobility.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory, SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
+        public virtual ActionResult Create([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,ImageFileName,IsAccessory, EvacuationType, SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
             var vm = new CreateProductViewModel();
             if (ModelState.IsValid)
@@ -104,6 +105,13 @@ namespace EscapeMobility.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var vm = new EditProductViewModel();
+            var itemValues = Enum.GetValues(typeof(EvacuationType));
+            var itemNames = Enum.GetNames(typeof(EvacuationType)); 
+            for (int i = 0; i <= itemNames.Length - 1; i++)
+            {
+                var item = new ListItem(itemNames[i], itemValues[i]);
+                vm.EvacuationTypeList.Add(item);
+            }
             Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
             IEnumerable<Category> categories = (from c in _db.Category
                 select c);
@@ -125,7 +133,7 @@ namespace EscapeMobility.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,IsAccessory,SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
+        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,ImageFileName,IsAccessory,EvacuationType,SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
             var vm = new EditProductViewModel();
             if (ModelState.IsValid)

@@ -97,9 +97,11 @@
     <Compile Include="EscapeDataContext.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\CustomerContact.cs" />
+    <Compile Include="Model\EvacuationType.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductSpecification.cs" />
     <Compile Include="Model\SafetyCategory.cs" />
+    <Compile Include="Model\SafetyType.cs" />
     <Compile Include="Model\SimilarCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\ShoppingCart.cs" />

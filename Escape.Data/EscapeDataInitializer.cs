@@ -59,6 +59,7 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-standard-alu.jpg",
+                    EvacuationType = EvacuationType.EscapeChair,
                     Categories = new List<Category>()
                 },
                 new Product()
@@ -71,6 +72,7 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-standard-alu-with-extra-package.jpg",
+                    EvacuationType = EvacuationType.EscapeChair,
                     Categories = new List<Category>()
                 },
                 new Product()
@@ -83,6 +85,7 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-standard.jpg",
+                    EvacuationType = EvacuationType.EscapeChair,
                     Categories = new List<Category>()
                 },
                 new Product()
@@ -95,6 +98,7 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-standardplus.jpg",
+                    EvacuationType = EvacuationType.EscapeChair,
                     Categories = new List<Category>()
                 },
                 new Product()
@@ -107,17 +111,18 @@ namespace Escape.Data
                     IsAccessory = false,
                     VideoSampleURL = "https://www.youtube.com/watch?v=6IGf24P6OyI",
                     ImageFileName = "escape-chair-comfort.jpg",
+                    EvacuationType = EvacuationType.EscapeChair,
                     Categories = new List<Category>()
                 }
             };
             products.ForEach(p => context.Product.Add(p));
             context.SaveChanges();
 
-            AddOrUpdateProduct(context, 1, 1);
-            AddOrUpdateProduct(context, 2, 1);
-            AddOrUpdateProduct(context, 3, 1);
-            AddOrUpdateProduct(context, 4, 1);
-            AddOrUpdateProduct(context, 5, 1);
+            AddOrUpdateProduct(context, 1, 2);
+            AddOrUpdateProduct(context, 2, 2);
+            AddOrUpdateProduct(context, 3, 2);
+            AddOrUpdateProduct(context, 4, 2);
+            AddOrUpdateProduct(context, 5, 2);
 
             base.Seed(context);
         }

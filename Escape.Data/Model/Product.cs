@@ -37,6 +37,8 @@ namespace Escape.Data.Model
         public string ImageFileName { get; set; }
         public int ProductSpecificationId { get; set; }
         public ProductSpecification ProductSpecification { get; set; }
+        public EvacuationType EvacuationType { get; set; }
+        public SafetyType SafetyType { get; set; }
 
         public ICollection<Category> Categories { get; set; }
         public virtual ICollection<SafetyCategory> SafetyCategories { get; set; }
