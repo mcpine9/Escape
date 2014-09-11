@@ -41,3 +41,6 @@ td.tbl-longdescription {
   min-width: 200px;
   overflow-y: scroll;
 }
+.left-align {
+  text-align: left;
+}

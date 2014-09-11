@@ -30,25 +30,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Product.ArticleNumber)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product.VideoSampleURL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product.IsAccessory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SelectedCategories)
-            </th>
-            @*
-            <th>
-                @Html.DisplayNameFor(model => model.SafetyTags)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RelatedTags)
-            </th><th>
-                @Html.DisplayNameFor(model => model.ProductSpecificationId)
-            </th>*@
-            <th>@Html.DisplayNameFor(model => model.Product.ImageFileName)</th>
+            <th></th>
             <th></th>
         </tr>
 
@@ -64,38 +46,39 @@
             <td class="tbl-longdescription">
                 @Html.DisplayFor(modelItem => item.LongDescription)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Thumbnailfolder)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.ArticleNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VideoSampleURL)
-            </td>
-            <td class="center">
-                @Html.Raw(item.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")
-            </td>
-            <td>
-                @Html.Raw(Model.SelectedCategories[item.ProductId])
-            </td>
-            @*
-                <td>
-                    @Html.DisplayFor(modelItem => item.SafetyTags)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.RelatedTags)
-                </td><td>
-                    @Html.DisplayFor(modelItem => item.ProductSpecificationId)
-                </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageFileName)
+                <table class="table table-striped table-condensed">
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.VideoSampleURL)</td>
+                        <td>@Html.DisplayFor(modelItem => item.VideoSampleURL)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.Accessories)</td>
+                        <td>@Html.Raw(item.IsAccessory ? "<i class=\"fa fa-check-square-o\"></i>" : "<i class=\"fa fa-square-o\"></i>")</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.Categories)</td>
+                        <td>@Html.Raw(Model.SelectedCategories[item.ProductId])</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.ImageFileName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ImageFileName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.EvacuationType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EvacuationType)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Product.SafetyType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SafetyType)</td>
+                    </tr>
+                </table>
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |

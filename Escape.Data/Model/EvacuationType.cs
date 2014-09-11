@@ -2,6 +2,7 @@
 {
     public enum EvacuationType
     {
+        None,
         EscapeChair,
         EscapeCarryChair,
         EscapeMattress,

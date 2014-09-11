@@ -57,12 +57,20 @@
                 <td>@Html.DisplayFor(model => model.Product.ProductSpecificationId)</td>
             </tr>*@
             <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.ImageFileName)</td>
+                <td>@Html.DisplayFor(model => model.Product.ImageFileName)</td>
+            </tr>
+            <tr>
                 <td>@Html.DisplayNameFor(model => model.SelectedCategories)</td>
                 <td>@Html.Raw(Model.SelectedCategories[Model.Product.ProductId])</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.Product.ImageFileName)</td>
-                <td>@Html.DisplayFor(model => model.Product.ImageFileName)</td>
+                <td>@Html.DisplayNameFor(model => model.Product.EvacuationType)</td>
+                <td>@Html.DisplayFor(model => model.Product.EvacuationType)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Product.SafetyType)</td>
+                <td>@Html.DisplayFor(model => model.Product.SafetyType)</td>
             </tr>
         </table>
     </div>

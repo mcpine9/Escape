@@ -12,6 +12,9 @@ namespace EscapeMobility.Web.Models
         [Display(Name = "Category")]
         public IEnumerable<Category> ProductCategoryList { get; set; }
         public List<int> SelectedProductCategoryIds { get; set; }
-        public List<SelectListItem> EvacuationTypeList { get; set; } 
+        [Display(Name = "Evacuation Type")]
+        public List<SelectListItem> EvacuationTypeList { get; set; }
+        [Display(Name = "Safety Type")]
+        public List<SelectListItem> SafetyTypeList { get; set; }
     }
 }

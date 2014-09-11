@@ -17,5 +17,9 @@ namespace EscapeMobility.Web.Models
         public List<int> SelectedProductCategoryIds { get; set; }
         [Display(Name = "Selected Categories")]
         public Dictionary<int, string> SelectedCategories { get; set; }
+        [Display(Name = "Evacuation Type")]
+        public string SelectedEvacuationType { get; set; }
+        [Display(Name = "Safety Type")]
+        public string SelectedSafetyType { get; set; }
     }
 }

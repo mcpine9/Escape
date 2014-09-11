@@ -49,7 +49,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChairHighlightList(ProductHighlightModel highlight)
         {
-            return PartialView("_ProductHighlightList", highlight);
+            return PartialView("_ProductHighlight", highlight);
         }
 
         public virtual ActionResult EscapeCarryChair()

@@ -9,7 +9,7 @@ using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
+    public class EscapeDataInitializer : DropCreateDatabaseIfModelChanges<EscapeDataContext>
     {
         protected override void Seed(EscapeDataContext context)
         {
@@ -118,16 +118,16 @@ namespace Escape.Data
             products.ForEach(p => context.Product.Add(p));
             context.SaveChanges();
 
-            AddOrUpdateProduct(context, 1, 2);
-            AddOrUpdateProduct(context, 2, 2);
-            AddOrUpdateProduct(context, 3, 2);
-            AddOrUpdateProduct(context, 4, 2);
-            AddOrUpdateProduct(context, 5, 2);
+            AddCategoryToProduct(context, 1, 2);
+            AddCategoryToProduct(context, 2, 2);
+            AddCategoryToProduct(context, 3, 2);
+            AddCategoryToProduct(context, 4, 2);
+            AddCategoryToProduct(context, 5, 2);
 
             base.Seed(context);
         }
 
-        void AddOrUpdateProduct(EscapeDataContext context, int productId, int categoryId)
+        void AddCategoryToProduct(EscapeDataContext context, int productId, int categoryId)
         {
             var product = context.Product.SingleOrDefault(p => p.ProductId == productId);
             product = product ?? new Product();
@@ -137,5 +137,6 @@ namespace Escape.Data
 
             context.SaveChanges();
         }
+
     }
 }
