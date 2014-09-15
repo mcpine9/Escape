@@ -86,11 +86,10 @@
     <Compile Include="EscapeDBConfiguration.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Migrations\201408170109107_InitialCreate.cs" />
-    <Compile Include="Migrations\201408170109107_InitialCreate.Designer.cs">
-      <DependentUpon>201408170109107_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201409150442457_InitialCreate.cs" />
+    <Compile Include="Migrations\201409150442457_InitialCreate.Designer.cs">
+      <DependentUpon>201409150442457_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -136,8 +135,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201408170109107_InitialCreate.resx">
-      <DependentUpon>201408170109107_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409150442457_InitialCreate.resx">
+      <DependentUpon>201409150442457_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

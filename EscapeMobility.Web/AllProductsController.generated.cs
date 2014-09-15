@@ -62,9 +62,9 @@ namespace EscapeMobility.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult EscapeChairHighlightList()
+        public virtual System.Web.Mvc.ActionResult ProductHighlightList()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EscapeChairHighlightList);
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductHighlightList);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -91,7 +91,7 @@ namespace EscapeMobility.Controllers
             public readonly string Index = "Index";
             public readonly string Details = "Details";
             public readonly string EscapeChair = "EscapeChair";
-            public readonly string EscapeChairHighlightList = "EscapeChairHighlightList";
+            public readonly string ProductHighlightList = "ProductHighlightList";
             public readonly string EscapeCarryChair = "EscapeCarryChair";
             public readonly string EscapeMattress = "EscapeMattress";
             public readonly string Accessories = "Accessories";
@@ -104,7 +104,7 @@ namespace EscapeMobility.Controllers
             public const string Index = "Index";
             public const string Details = "Details";
             public const string EscapeChair = "EscapeChair";
-            public const string EscapeChairHighlightList = "EscapeChairHighlightList";
+            public const string ProductHighlightList = "ProductHighlightList";
             public const string EscapeCarryChair = "EscapeCarryChair";
             public const string EscapeMattress = "EscapeMattress";
             public const string Accessories = "Accessories";
@@ -120,11 +120,11 @@ namespace EscapeMobility.Controllers
         {
             public readonly string id = "id";
         }
-        static readonly ActionParamsClass_EscapeChairHighlightList s_params_EscapeChairHighlightList = new ActionParamsClass_EscapeChairHighlightList();
+        static readonly ActionParamsClass_ProductHighlightList s_params_ProductHighlightList = new ActionParamsClass_ProductHighlightList();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_EscapeChairHighlightList EscapeChairHighlightListParams { get { return s_params_EscapeChairHighlightList; } }
+        public ActionParamsClass_ProductHighlightList ProductHighlightListParams { get { return s_params_ProductHighlightList; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_EscapeChairHighlightList
+        public class ActionParamsClass_ProductHighlightList
         {
             public readonly string highlight = "highlight";
         }
@@ -223,14 +223,14 @@ namespace EscapeMobility.Controllers
         }
 
         [NonAction]
-        partial void EscapeChairHighlightListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ProductHighlightModel highlight);
+        partial void ProductHighlightListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ProductHighlightModel highlight);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult EscapeChairHighlightList(EscapeMobility.Web.Models.ProductHighlightModel highlight)
+        public override System.Web.Mvc.ActionResult ProductHighlightList(EscapeMobility.Web.Models.ProductHighlightModel highlight)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EscapeChairHighlightList);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductHighlightList);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "highlight", highlight);
-            EscapeChairHighlightListOverride(callInfo, highlight);
+            ProductHighlightListOverride(callInfo, highlight);
             return callInfo;
         }
 

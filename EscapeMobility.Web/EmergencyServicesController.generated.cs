@@ -26,9 +26,6 @@ namespace EscapeMobility.Controllers
     public partial class EmergencyServicesController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public EmergencyServicesController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected EmergencyServicesController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

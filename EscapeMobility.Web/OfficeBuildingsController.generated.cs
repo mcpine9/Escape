@@ -26,9 +26,6 @@ namespace EscapeMobility.Controllers
     public partial class OfficeBuildingsController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public OfficeBuildingsController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected OfficeBuildingsController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

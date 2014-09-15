@@ -47,24 +47,72 @@ namespace EscapeMobility.Controllers
             return View(model);
         }
 
-        public virtual ActionResult EscapeChairHighlightList(ProductHighlightModel highlight)
+        public virtual ActionResult ProductHighlightList(ProductHighlightModel highlight)
         {
             return PartialView("_ProductHighlight", highlight);
         }
 
         public virtual ActionResult EscapeCarryChair()
         {
-            return View();
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            var highlights = (
+                from p in products
+                where p.EvacuationType == EvacuationType.EscapeCarryChair
+                select new ProductHighlightModel()
+                {
+                    ProductID = p.ProductId,
+                    ImageFileName = p.ImageFileName,
+                    Name = p.Title,
+                    Price = p.Price,
+                    ShortDescription = p.ShortDescription
+                }).ToList();
+            var model = new ProductHighlightModels
+            {
+                ProductHighlights = highlights
+            };
+            return View(model);
         }
 
         public virtual ActionResult EscapeMattress()
         {
-            return View();
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            var highlights = (
+                from p in products
+                where p.EvacuationType == EvacuationType.EscapeMattress
+                select new ProductHighlightModel()
+                {
+                    ProductID = p.ProductId,
+                    ImageFileName = p.ImageFileName,
+                    Name = p.Title,
+                    Price = p.Price,
+                    ShortDescription = p.ShortDescription
+                }).ToList();
+            var model = new ProductHighlightModels
+            {
+                ProductHighlights = highlights
+            };
+            return View(model);
         }
 
         public virtual ActionResult Accessories()
         {
-            return View();
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            var highlights = (
+                from p in products
+                where p.IsAccessory
+                select new ProductHighlightModel()
+                {
+                    ProductID = p.ProductId,
+                    ImageFileName = p.ImageFileName,
+                    Name = p.Title,
+                    Price = p.Price,
+                    ShortDescription = p.ShortDescription
+                }).ToList();
+            var model = new ProductHighlightModels
+            {
+                ProductHighlights = highlights
+            };
+            return View(model);
         }
 
         public virtual ActionResult Safety(string category)

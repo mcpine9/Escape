@@ -26,9 +26,6 @@ namespace EscapeMobility.Controllers
     public partial class IndustryController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public IndustryController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected IndustryController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

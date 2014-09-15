@@ -26,9 +26,6 @@ namespace EscapeMobility.Controllers
     public partial class EducationController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public EducationController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected EducationController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
