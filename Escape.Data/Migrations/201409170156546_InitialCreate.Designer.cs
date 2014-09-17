@@ -13,7 +13,7 @@ namespace Escape.Data
         
         string IMigrationMetadata.Id
         {
-            get { return "201409150442457_InitialCreate"; }
+            get { return "201409170156546_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
