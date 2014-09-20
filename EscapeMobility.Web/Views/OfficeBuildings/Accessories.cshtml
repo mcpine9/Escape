@@ -1,4 +1,4 @@
-﻿
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
 @{
     ViewBag.Title = "Accessories";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,6 +10,10 @@
         @Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index(), null)
         @ViewBag.Title
     </div>
+}
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
 }
 
 <div id="leftMenu" class="all-open">
@@ -25,4 +29,8 @@
     Accessories and optional&nbsp;extras,&nbsp;ideal for&nbsp;the Escape-Chair®, Escape-Carry Chair® or Escape-Mattress®
     <p></p>
     <div class="clear"></div>
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight", item);
+    }
 </div>

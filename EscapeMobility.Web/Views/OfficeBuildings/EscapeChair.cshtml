@@ -1,4 +1,4 @@
-﻿
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
 @{
     ViewBag.Title = "Escape Chair";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,6 +10,10 @@
         @Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index(), null)
         @ViewBag.Title
     </div>
+}
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
 }
 
 <div id="leftMenu" class="all-open">
@@ -49,4 +53,8 @@
         <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="169" src="http://www.youtube.com/embed/6IGf24P6OyI?rel=0&amp;showinfo=0&amp;autoplay=1&amp;autohide=1&amp;controls=0&amp;loop=1&amp;playlist=6IGf24P6OyI" frameborder="0" width="300" allowfullscreen=""></iframe>
     </div>
     <div style="CLEAR: both"></div>
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight", item);
+    }
 </div>

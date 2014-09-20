@@ -23,6 +23,11 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
+        public virtual ActionResult ProductHighlightList(ProductHighlightModel highlight)
+        {
+            return PartialView("_ProductHighlight", highlight);
+        }
+
         public virtual ActionResult EscapeChair()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 3));

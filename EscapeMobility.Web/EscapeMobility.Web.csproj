@@ -611,6 +611,8 @@
     </None>
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\AllProducts\_ProductHighlight.cshtml" />
+    <Content Include="Views\HealthCare\_ProductHighlight.cshtml" />
+    <Content Include="Views\OfficeBuildings\_ProductHighlight.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
