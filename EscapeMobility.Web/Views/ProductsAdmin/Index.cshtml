@@ -9,6 +9,9 @@
     </p>
     <table id="Product_table" class="table table-striped table-condensed table-bordered">
         <tr>
+            <td colspan="7">@Html.ActionLink("Add Category", MVC.ProductsAdmin.AddCategory())</td>
+        </tr>
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Product.Title)
             </th>

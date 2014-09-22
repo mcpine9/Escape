@@ -403,7 +403,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\Razor Tools\FontAwesome.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CondoApartmentController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AllProductsController.cs" />
+    <Compile Include="Controllers\CondoApartmentController.cs" />
+    <Compile Include="Controllers\ProductHelper.cs" />
+    <Compile Include="Models\AddCategoryViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
     <Compile Include="Models\EditProductViewModel.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -441,7 +447,6 @@
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />
     <Compile Include="Models\ProductsAdminViewModel.cs" />
-    <Compile Include="Models\SafetyEquipment.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -613,6 +618,21 @@
     <Content Include="Views\AllProducts\_ProductHighlight.cshtml" />
     <Content Include="Views\HealthCare\_ProductHighlight.cshtml" />
     <Content Include="Views\OfficeBuildings\_ProductHighlight.cshtml" />
+    <Content Include="Views\Education\_ProductHighlight.cshtml" />
+    <Content Include="Views\Industry\_ProductHighlight.cshtml" />
+    <Content Include="Views\EmergencyServices\_ProductHighlight.cshtml" />
+    <Content Include="Views\CondoApartment\Index.cshtml" />
+    <Content Include="Views\CondoApartment\Safety\EmergencyAid.cshtml" />
+    <Content Include="Views\CondoApartment\Safety\Lockers.cshtml" />
+    <Content Include="Views\CondoApartment\Safety\Smokehood.cshtml" />
+    <Content Include="Views\CondoApartment\_MainLeftMenu.cshtml" />
+    <Content Include="Views\CondoApartment\_ProductHighlight.cshtml" />
+    <Content Include="Views\CondoApartment\_SafetyMenu.cshtml" />
+    <Content Include="Views\CondoApartment\EscapeChair.cshtml" />
+    <Content Include="Views\CondoApartment\EscapeCarryChair.cshtml" />
+    <Content Include="Views\CondoApartment\EscapeMattress.cshtml" />
+    <Content Include="Views\CondoApartment\Accessories.cshtml" />
+    <Content Include="Views\ProductsAdmin\AddCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

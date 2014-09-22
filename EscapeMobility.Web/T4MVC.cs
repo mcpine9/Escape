@@ -26,6 +26,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static EscapeMobility.Controllers.AllProductsController AllProducts = new EscapeMobility.Controllers.T4MVC_AllProductsController();
+    public static EscapeMobility.Web.Controllers.CondoApartmentController CondoApartment = new EscapeMobility.Web.Controllers.T4MVC_CondoApartmentController();
     public static EscapeMobility.Controllers.EducationController Education = new EscapeMobility.Controllers.T4MVC_EducationController();
     public static EscapeMobility.Controllers.EmergencyServicesController EmergencyServices = new EscapeMobility.Controllers.T4MVC_EmergencyServicesController();
     public static EscapeMobility.Controllers.HealthCareController HealthCare = new EscapeMobility.Controllers.T4MVC_HealthCareController();

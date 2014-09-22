@@ -1,4 +1,4 @@
-﻿
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
 @{
     ViewBag.Title = "Smokehood";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,6 +11,10 @@
         @ViewBag.Title
     </div>
 }
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
+}
 
 <div id="leftMenu" class="all-open">
     @Html.Partial("./_MainLeftMenu")
@@ -20,7 +24,8 @@
     <h1 class="pageTitle">Smokehood</h1>
 
     <div class="clear"></div>
-    <p>
-
-    </p>
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight", item);
+    }
 </div> 

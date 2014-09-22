@@ -21,12 +21,12 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace EscapeMobility.Controllers
+namespace EscapeMobility.Web.Controllers
 {
-    public partial class EmergencyServicesController
+    public partial class CondoApartmentController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected EmergencyServicesController(Dummy d) { }
+        protected CondoApartmentController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -56,19 +56,25 @@ namespace EscapeMobility.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult ProductHighlightList()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductHighlightList);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Safety()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public EmergencyServicesController Actions { get { return MVC.EmergencyServices; } }
+        public CondoApartmentController Actions { get { return MVC.CondoApartment; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "EmergencyServices";
+        public readonly string Name = "CondoApartment";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "EmergencyServices";
+        public const string NameConst = "CondoApartment";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -76,6 +82,7 @@ namespace EscapeMobility.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string ProductHighlightList = "ProductHighlightList";
             public readonly string Index = "Index";
             public readonly string EscapeChair = "EscapeChair";
             public readonly string EscapeCarryChair = "EscapeCarryChair";
@@ -87,6 +94,7 @@ namespace EscapeMobility.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string ProductHighlightList = "ProductHighlightList";
             public const string Index = "Index";
             public const string EscapeChair = "EscapeChair";
             public const string EscapeCarryChair = "EscapeCarryChair";
@@ -96,6 +104,14 @@ namespace EscapeMobility.Controllers
         }
 
 
+        static readonly ActionParamsClass_ProductHighlightList s_params_ProductHighlightList = new ActionParamsClass_ProductHighlightList();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ProductHighlightList ProductHighlightListParams { get { return s_params_ProductHighlightList; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ProductHighlightList
+        {
+            public readonly string highlight = "highlight";
+        }
         static readonly ActionParamsClass_Safety s_params_Safety = new ActionParamsClass_Safety();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Safety SafetyParams { get { return s_params_Safety; } }
@@ -123,14 +139,14 @@ namespace EscapeMobility.Controllers
                 public readonly string EscapeMattress = "EscapeMattress";
                 public readonly string Index = "Index";
             }
-            public readonly string _MainLeftMenu = "~/Views/EmergencyServices/_MainLeftMenu.cshtml";
-            public readonly string _ProductHighlight = "~/Views/EmergencyServices/_ProductHighlight.cshtml";
-            public readonly string _SafetyMenu = "~/Views/EmergencyServices/_SafetyMenu.cshtml";
-            public readonly string Accessories = "~/Views/EmergencyServices/Accessories.cshtml";
-            public readonly string EscapeCarryChair = "~/Views/EmergencyServices/EscapeCarryChair.cshtml";
-            public readonly string EscapeChair = "~/Views/EmergencyServices/EscapeChair.cshtml";
-            public readonly string EscapeMattress = "~/Views/EmergencyServices/EscapeMattress.cshtml";
-            public readonly string Index = "~/Views/EmergencyServices/Index.cshtml";
+            public readonly string _MainLeftMenu = "~/Views/CondoApartment/_MainLeftMenu.cshtml";
+            public readonly string _ProductHighlight = "~/Views/CondoApartment/_ProductHighlight.cshtml";
+            public readonly string _SafetyMenu = "~/Views/CondoApartment/_SafetyMenu.cshtml";
+            public readonly string Accessories = "~/Views/CondoApartment/Accessories.cshtml";
+            public readonly string EscapeCarryChair = "~/Views/CondoApartment/EscapeCarryChair.cshtml";
+            public readonly string EscapeChair = "~/Views/CondoApartment/EscapeChair.cshtml";
+            public readonly string EscapeMattress = "~/Views/CondoApartment/EscapeMattress.cshtml";
+            public readonly string Index = "~/Views/CondoApartment/Index.cshtml";
             static readonly _SafetyClass s_Safety = new _SafetyClass();
             public _SafetyClass Safety { get { return s_Safety; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -140,19 +156,33 @@ namespace EscapeMobility.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string EmergencyAid = "EmergencyAid";
                     public readonly string Lockers = "Lockers";
                     public readonly string Smokehood = "Smokehood";
                 }
-                public readonly string Lockers = "~/Views/EmergencyServices/Safety/Lockers.cshtml";
-                public readonly string Smokehood = "~/Views/EmergencyServices/Safety/Smokehood.cshtml";
+                public readonly string EmergencyAid = "~/Views/CondoApartment/Safety/EmergencyAid.cshtml";
+                public readonly string Lockers = "~/Views/CondoApartment/Safety/Lockers.cshtml";
+                public readonly string Smokehood = "~/Views/CondoApartment/Safety/Smokehood.cshtml";
             }
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_EmergencyServicesController : EscapeMobility.Controllers.EmergencyServicesController
+    public partial class T4MVC_CondoApartmentController : EscapeMobility.Web.Controllers.CondoApartmentController
     {
-        public T4MVC_EmergencyServicesController() : base(Dummy.Instance) { }
+        public T4MVC_CondoApartmentController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void ProductHighlightListOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ProductHighlightModel highlight);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ProductHighlightList(EscapeMobility.Web.Models.ProductHighlightModel highlight)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductHighlightList);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "highlight", highlight);
+            ProductHighlightListOverride(callInfo, highlight);
+            return callInfo;
+        }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);

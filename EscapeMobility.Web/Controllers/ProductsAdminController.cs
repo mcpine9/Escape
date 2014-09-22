@@ -227,6 +227,28 @@ namespace EscapeMobility.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public virtual ActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult AddCategory(string CategoryName)
+        {
+            if (ModelState.IsValid)
+            {
+                var cat = new Category()
+                {
+                    CategoryName = CategoryName
+                };
+                _db.Category.Add(cat);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

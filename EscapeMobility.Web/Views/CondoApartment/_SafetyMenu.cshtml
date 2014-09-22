@@ -1,0 +1,15 @@
+﻿
+<li class="menusafety open">
+    @Html.ActionLink("Safety", MVC.CondoApartment.Safety("EmergencyAid"), new { @class = "mainLeftMenu" })
+    <ul class="subLeftMenu" style="">
+        <li data-division="safety" data-group="lockers">
+            @Html.ActionLink("Emergency Aid", MVC.CondoApartment.Safety("EmergencyAid"), null)
+        </li>
+        <li data-division="safety" data-group="lockers">
+            @Html.ActionLink("Lockers", MVC.CondoApartment.Safety("Lockers"), null)
+        </li>
+        <li data-division="safety" data-group="smokehood">
+            @Html.ActionLink("Smokehood", MVC.CondoApartment.Safety("Smokehood"), null)
+        </li>
+    </ul>
+</li>

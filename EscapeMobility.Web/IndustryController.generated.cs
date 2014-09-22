@@ -115,6 +115,7 @@ namespace EscapeMobility.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _MainLeftMenu = "_MainLeftMenu";
+                public readonly string _ProductHighlight = "_ProductHighlight";
                 public readonly string _SafetyMenu = "_SafetyMenu";
                 public readonly string Accessories = "Accessories";
                 public readonly string EscapeCarryChair = "EscapeCarryChair";
@@ -123,6 +124,7 @@ namespace EscapeMobility.Controllers
                 public readonly string Index = "Index";
             }
             public readonly string _MainLeftMenu = "~/Views/Industry/_MainLeftMenu.cshtml";
+            public readonly string _ProductHighlight = "~/Views/Industry/_ProductHighlight.cshtml";
             public readonly string _SafetyMenu = "~/Views/Industry/_SafetyMenu.cshtml";
             public readonly string Accessories = "~/Views/Industry/Accessories.cshtml";
             public readonly string EscapeCarryChair = "~/Views/Industry/EscapeCarryChair.cshtml";

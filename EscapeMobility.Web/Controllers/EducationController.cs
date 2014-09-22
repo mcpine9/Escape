@@ -17,6 +17,12 @@ namespace EscapeMobility.Controllers
         {
             _db = new EscapeDataContext();
         }
+
+        public virtual ActionResult ProductHighlightList(ProductHighlightModel highlight)
+        {
+            return PartialView("_ProductHighlight", highlight);
+        }
+
         // GET: Education
         public virtual ActionResult Index()
         {
@@ -88,14 +94,19 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Safety(string category)
         {
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            var model = new ProductHighlightModels();
             switch (category)
             {
                 case "EmergencyAid":
-                    return View("Safety/EmergencyAid", new SafetyEquipment(ControllerContext));
+                    model.ProductHighlights = ProductHelper.ToSafetyTypeProductHighlights(products, SafetyType.EmergencyAid);
+                    return View("Safety/EmergencyAid", model);
                 case "Lockers":
-                    return View("Safety/Lockers", new SafetyEquipment(ControllerContext));
+                    model.ProductHighlights = ProductHelper.ToSafetyTypeProductHighlights(products, SafetyType.Lockers);
+                    return View("Safety/Lockers", model);
                 case "Smokehood":
-                    return View("Safety/Smokehood", new SafetyEquipment(ControllerContext));
+                    model.ProductHighlights = ProductHelper.ToSafetyTypeProductHighlights(products, SafetyType.Smokehood);
+                    return View("Safety/Smokehood", model);
                 default:
                     return RedirectToAction("Index");
             }

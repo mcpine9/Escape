@@ -103,6 +103,7 @@ namespace EscapeMobility.Web.Controllers
             public readonly string Edit = "Edit";
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
+            public readonly string AddCategory = "AddCategory";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -114,6 +115,7 @@ namespace EscapeMobility.Web.Controllers
             public const string Edit = "Edit";
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
+            public const string AddCategory = "AddCategory";
         }
 
 
@@ -160,6 +162,14 @@ namespace EscapeMobility.Web.Controllers
         {
             public readonly string id = "id";
         }
+        static readonly ActionParamsClass_AddCategory s_params_AddCategory = new ActionParamsClass_AddCategory();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddCategory AddCategoryParams { get { return s_params_AddCategory; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddCategory
+        {
+            public readonly string CategoryName = "CategoryName";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -170,12 +180,14 @@ namespace EscapeMobility.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string AddCategory = "AddCategory";
                 public readonly string Create = "Create";
                 public readonly string Delete = "Delete";
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
             }
+            public readonly string AddCategory = "~/Views/ProductsAdmin/AddCategory.cshtml";
             public readonly string Create = "~/Views/ProductsAdmin/Create.cshtml";
             public readonly string Delete = "~/Views/ProductsAdmin/Delete.cshtml";
             public readonly string Details = "~/Views/ProductsAdmin/Details.cshtml";
@@ -282,6 +294,29 @@ namespace EscapeMobility.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DeleteConfirmedOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddCategoryOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddCategory()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCategory);
+            AddCategoryOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddCategoryOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string CategoryName);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddCategory(string CategoryName)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCategory);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "CategoryName", CategoryName);
+            AddCategoryOverride(callInfo, CategoryName);
             return callInfo;
         }
 
