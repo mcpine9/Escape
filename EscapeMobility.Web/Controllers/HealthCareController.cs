@@ -31,20 +31,9 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult EscapeChair()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 3));
-            var highlights = (
-                from p in products
-                where p.EvacuationType == EvacuationType.EscapeChair
-                select new ProductHighlightModel()
-                {
-                    ProductID = p.ProductId,
-                    ImageFileName = p.ImageFileName,
-                    Name = p.Title,
-                    Price = p.Price,
-                    ShortDescription = p.ShortDescription
-                }).ToList();
             var model = new ProductHighlightModels
             {
-                ProductHighlights = highlights
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeChair)
             };
             return View(model);
         }
@@ -52,20 +41,9 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult EscapeMattress()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 3));
-            var highlights = (
-                from p in products
-                where p.EvacuationType == EvacuationType.EscapeMattress
-                select new ProductHighlightModel()
-                {
-                    ProductID = p.ProductId,
-                    ImageFileName = p.ImageFileName,
-                    Name = p.Title,
-                    Price = p.Price,
-                    ShortDescription = p.ShortDescription
-                }).ToList();
             var model = new ProductHighlightModels
             {
-                ProductHighlights = highlights
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeMattress)
             };
             return View(model);
         }
@@ -73,20 +51,9 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult Accessories()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 3));
-            var highlights = (
-                from p in products
-                where p.IsAccessory
-                select new ProductHighlightModel()
-                {
-                    ProductID = p.ProductId,
-                    ImageFileName = p.ImageFileName,
-                    Name = p.Title,
-                    Price = p.Price,
-                    ShortDescription = p.ShortDescription
-                }).ToList();
             var model = new ProductHighlightModels
             {
-                ProductHighlights = highlights
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.Accessories)
             };
             return View(model);
         }

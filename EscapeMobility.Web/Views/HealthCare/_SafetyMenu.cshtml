@@ -3,6 +3,9 @@
     @Html.ActionLink("Safety", MVC.HealthCare.Safety("Lockers"), new { @class = "mainLeftMenu" })
     <ul class="subLeftMenu" style="">
         <li data-division="safety" data-group="lockers">
+            @Html.ActionLink("Emergency Aid", MVC.HealthCare.Safety("EmergencyAid"), null)
+        </li>
+        <li data-division="safety" data-group="lockers">
             @Html.ActionLink("Lockers", MVC.HealthCare.Safety("Lockers"), null)
         </li>
         <li data-division="safety" data-group="smokehood">

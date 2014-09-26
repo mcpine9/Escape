@@ -21,5 +21,7 @@ namespace EscapeMobility.Web.Models
         public string SelectedEvacuationType { get; set; }
         [Display(Name = "Safety Type")]
         public string SelectedSafetyType { get; set; }
+
+        public int NumberOfProducts { get; set; }
     }
 }

@@ -66,20 +66,9 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult Accessories()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
-            var highlights = (
-                from p in products
-                where p.IsAccessory
-                select new ProductHighlightModel()
-                {
-                    ProductID = p.ProductId,
-                    ImageFileName = p.ImageFileName,
-                    Name = p.Title,
-                    Price = p.Price,
-                    ShortDescription = p.ShortDescription
-                }).ToList();
             var model = new ProductHighlightModels
             {
-                ProductHighlights = highlights
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.Accessories)
             };
             return View(model);
         }

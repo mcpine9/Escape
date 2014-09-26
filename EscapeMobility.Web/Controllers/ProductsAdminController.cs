@@ -31,6 +31,7 @@ namespace EscapeMobility.Web.Controllers
                                      select c.CategoryName).ToArray();
                 vm.SelectedCategories.Add(p.ProductId, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
             }
+            vm.NumberOfProducts = product.Count;
             vm.Products = product;
             return View(vm);
         }
