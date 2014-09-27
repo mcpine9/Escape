@@ -1,4 +1,4 @@
-﻿
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
 @{
     ViewBag.Title = "Escape Mattress";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,10 @@
         @ViewBag.Title
     </div>
 }
-
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
+}
 <div id="leftMenu" class="all-open">
     @Html.Partial("_MainLeftMenu")
 </div>
@@ -33,6 +36,8 @@
         <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="169" src="http://www.youtube.com/embed/iO6G-l44bHY?rel=0&amp;showinfo=0&amp;autoplay=1&amp;autohide=1&amp;controls=0&amp;loop=1&amp;playlist=iO6G-l44bHY" frameborder="0" width="300" allowfullscreen=""></iframe>
     </div>
     <div style="CLEAR: both"></div>
-    <p></p>
-    <div class="clear"></div>
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight", item);
+    }
 </div>

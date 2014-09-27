@@ -1,4 +1,4 @@
-﻿
+﻿@model EscapeMobility.Web.Models.ProductHighlightModels
 @{
     ViewBag.Title = "Escape Carry Chair";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,10 @@
         @ViewBag.Title
     </div>
 }
-
+@section pagecss
+{
+    <link href="~/Content/styles/app/productlisting.1008085041.css" type="text/css" rel="stylesheet">
+}
 <div id="leftMenu" class="all-open">
     @Html.Partial("_MainLeftMenu")
 </div>
@@ -26,5 +29,8 @@
     The Escape-Carry Chair® operates in the same way as the Escape-Chair®, equipped with glidebelts to allow evacuation via the stairs. In addition, this Escape-Carry Chair® is equipped with&nbsp;carrying handles that enable people to be carried up the stairs.<br>
     <br>
     <p></p>
-    <div class="clear"></div>
+    @foreach (var item in Model.ProductHighlights)
+    {
+        Html.RenderPartial("_ProductHighlight", item);
+    }
 </div>
