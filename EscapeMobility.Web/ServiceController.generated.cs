@@ -91,6 +91,14 @@ namespace EscapeMobility.Controllers
         }
 
 
+        static readonly ActionParamsClass_Contact s_params_Contact = new ActionParamsClass_Contact();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Contact ContactParams { get { return s_params_Contact; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Contact
+        {
+            public readonly string vm = "vm";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -150,6 +158,18 @@ namespace EscapeMobility.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
             ContactOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ContactOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ContactFormViewModel vm);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Contact(EscapeMobility.Web.Models.ContactFormViewModel vm)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
+            ContactOverride(callInfo, vm);
             return callInfo;
         }
 

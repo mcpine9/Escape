@@ -410,6 +410,7 @@
     <Compile Include="Controllers\CondoApartmentController.cs" />
     <Compile Include="Controllers\ProductHelper.cs" />
     <Compile Include="Models\AddCategoryViewModel.cs" />
+    <Compile Include="Models\ContactFormViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
     <Compile Include="Models\EditProductViewModel.cs" />
     <Compile Include="Controllers\EducationController.cs" />
