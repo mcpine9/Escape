@@ -57,12 +57,6 @@ namespace EscapeMobility.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult AddToQuote()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QuoteController Actions { get { return MVC.Quote; } }
@@ -80,24 +74,24 @@ namespace EscapeMobility.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string AddToQuote = "AddToQuote";
+            public readonly string SubmitSuccess = "SubmitSuccess";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string AddToQuote = "AddToQuote";
+            public const string SubmitSuccess = "SubmitSuccess";
         }
 
 
-        static readonly ActionParamsClass_AddToQuote s_params_AddToQuote = new ActionParamsClass_AddToQuote();
+        static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_AddToQuote AddToQuoteParams { get { return s_params_AddToQuote; } }
+        public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_AddToQuote
+        public class ActionParamsClass_Index
         {
-            public readonly string productID = "productID";
+            public readonly string vm = "vm";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -109,9 +103,13 @@ namespace EscapeMobility.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _QuoteItems = "_QuoteItems";
                 public readonly string Index = "Index";
+                public readonly string SubmitSuccess = "SubmitSuccess";
             }
+            public readonly string _QuoteItems = "~/Views/Quote/_QuoteItems.cshtml";
             public readonly string Index = "~/Views/Quote/Index.cshtml";
+            public readonly string SubmitSuccess = "~/Views/Quote/SubmitSuccess.cshtml";
         }
     }
 
@@ -132,14 +130,25 @@ namespace EscapeMobility.Controllers
         }
 
         [NonAction]
-        partial void AddToQuoteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productID);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.QuoteViewModel vm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult AddToQuote(int productID)
+        public override System.Web.Mvc.ActionResult Index(EscapeMobility.Web.Models.QuoteViewModel vm)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productID", productID);
-            AddToQuoteOverride(callInfo, productID);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
+            IndexOverride(callInfo, vm);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SubmitSuccessOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SubmitSuccess()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SubmitSuccess);
+            SubmitSuccessOverride(callInfo);
             return callInfo;
         }
 

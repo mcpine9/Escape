@@ -430,6 +430,7 @@
     <Compile Include="Controllers\CondoApartmentController.cs" />
     <Compile Include="Controllers\ProductHelper.cs" />
     <Compile Include="Models\AddCategoryViewModel.cs" />
+    <Compile Include="Models\AddToQuoteResponseViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
     <Compile Include="Models\EditProductViewModel.cs" />
@@ -468,6 +469,7 @@
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />
     <Compile Include="Models\ProductsAdminViewModel.cs" />
+    <Compile Include="Models\QuoteViewModel.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -655,6 +657,8 @@
     <Content Include="Views\CondoApartment\Accessories.cshtml" />
     <Content Include="Views\ProductsAdmin\AddCategory.cshtml" />
     <Content Include="Views\Service\SubmitSuccess.cshtml" />
+    <Content Include="Views\Quote\_QuoteItems.cshtml" />
+    <Content Include="Views\Quote\SubmitSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

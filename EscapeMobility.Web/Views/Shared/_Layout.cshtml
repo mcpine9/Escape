@@ -60,6 +60,38 @@
         </div>
     </div>
     <!-- Page Related Scripts -->
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script language="javascript">
+        /// <autosync enabled="true" />
+        /// <reference path="jquery-2.1.1.js" />
+        var QuoteObj = (function($) {
+            var AddToQuote = function(prodId) {
+                var request = $.ajax({
+                    url: "/Quote/AddToQuote",
+                    type: "GET",
+                    data: { id: prodId },
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8"
+                });
+
+                request.done(function(msg) {
+                    alert(msg);
+                });
+
+                request.fail(function(jqXHR, textStatus) {
+                    alert("Quote Request failed: " + textStatus);
+                });
+            };
+
+            return {
+                AddToQuote: AddToQuote
+            };
+        })(jQuery);
+
+        $(function () {
+            $("#AddToQuote").click(function (){QuoteObj.AddToQuote($(this).data("productid"))});
+        });
+    </script>
     @RenderSection("pagescripts", false)
     @RenderSection("googleanalytics", false)
 </body>

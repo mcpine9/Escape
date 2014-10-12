@@ -1,0 +1,23 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "SubmitSuccess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @Html.ActionLink("Customer Service", MVC.Service.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
+<div id="mainContent" data-curpage="customer-service">
+    <h1 class="pageTitle">Request a Quote</h1>
+
+    <h2>Thank you for your inquiry. Someone will contact you shortly.</h2>
+</div>

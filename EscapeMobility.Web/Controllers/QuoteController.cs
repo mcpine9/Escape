@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using Microsoft.Ajax.Utilities;
 using Recaptcha.Web;
 using Recaptcha.Web.Mvc;
 using Tweetinvi.Core.Extensions;
@@ -20,10 +23,10 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult Index()
         {
             var vm = new QuoteViewModel();
-            int cartId = (int) Session["CartId"];
-            if (!cartId.ToString().IsNullOrEmpty())
+            if (Session["Cart"] != null)
             {
-                vm.ShoppingCart = (_db.ShoppingCart.Where(shoppingCart => shoppingCart.ShoppingCartId == cartId)
+                ShoppingCart cart = (ShoppingCart) Session["Cart"];
+                vm.ShoppingCart = (_db.ShoppingCart.Where(shoppingCart => shoppingCart.ShoppingCartId == cart.ShoppingCartId)
                     .Select(shoppingCart => new ShoppingCart())
                     ).SingleOrDefault();
 
@@ -80,15 +83,25 @@ namespace EscapeMobility.Controllers
                         }
                     }
                 };
-                bool customerExists =
-                    _db.Customer.Select(c => c.CustomerContacts.Select(t => t.Email == vm.Email)).Any();
-                if (!customerExists)
+                var customerExists =
+                    _db.Customer.Select(c => c.CustomerContacts.Select(t => t.Email == vm.Email)).SingleOrDefault();
+                if (customerExists.IsNullOrEmpty())
                 {
                     customer.DateCreated = DateTime.Now;
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
-                    return RedirectToAction(MVC.Service.SubmitSuccess());
+                    return RedirectToAction(MVC.Quote.SubmitSuccess());
                 }
+                var thisShoppingCart = new ShoppingCart()
+                {
+                    CartItems = vm.ShoppingCart.CartItems,
+                    DateCreated = DateTime.Now,
+                    CustomerId =
+                        _db.Customer.Select(c => c.CustomerContacts.Single(x => x.Email == vm.Email).CustomerContactId)
+                };
+                _db.ShoppingCart.Add(thisShoppingCart);
+                _db.SaveChanges();
+
                 ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";
                 return View(vm);
 
@@ -96,9 +109,35 @@ namespace EscapeMobility.Controllers
             return View(vm);
         }
 
-        public virtual ActionResult AddToQuote(int productID)
+        public virtual ActionResult SubmitSuccess()
         {
-            return Content("Success");
+            return View();
         }
+
+        [AsyncTimeout(2000)]
+        [ActionName("AddToQuote")]
+        public virtual async Task<JsonResult> AddToQuoteAsync(int id)
+        {
+            ShoppingCart cart = new ShoppingCart();
+            if (Session["Cart"] != null)
+            {
+                cart = (ShoppingCart) Session["Cart"];
+            }
+            cart = await AddToQuote(id, cart);
+            return Json(cart, JsonRequestBehavior.AllowGet);
+        }
+
+        private async Task<ShoppingCart> AddToQuote(int id, ShoppingCart cart)
+        {
+            Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            cart.CartItems.Add(new CartItem()
+            {
+                Product = product,
+                ProductID = id
+            });
+            return cart;
+        }
+
+
     }
 }
