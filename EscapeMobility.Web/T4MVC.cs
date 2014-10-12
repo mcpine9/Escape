@@ -332,6 +332,10 @@ namespace Links
                      
                 public static readonly string branchepage_0227102118_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/branchepage.0227102118.min.css") ? Url("branchepage.0227102118.min.css") : Url("branchepage.0227102118.css");
                      
+                public static readonly string formstyle_less = Url("formstyle.less");
+                public static readonly string formstyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/formstyle.min.css") ? Url("formstyle.min.css") : Url("formstyle.css");
+                     
+                public static readonly string formstyle_min_css = Url("formstyle.min.css");
                 public static readonly string homepage_0227102118_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/homepage.0227102118.min.css") ? Url("homepage.0227102118.min.css") : Url("homepage.0227102118.css");
                      
                 public static readonly string jquery_fancybox_1_3_4_0219160601_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fancybox-1.3.4.0219160601.min.css") ? Url("jquery.fancybox-1.3.4.0219160601.min.css") : Url("jquery.fancybox-1.3.4.0219160601.css");

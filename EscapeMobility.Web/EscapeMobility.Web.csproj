@@ -176,6 +176,12 @@
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
+    <Content Include="Content\styles\app\formstyle.css">
+      <DependentUpon>formstyle.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\app\formstyle.min.css">
+      <DependentUpon>formstyle.css</DependentUpon>
+    </Content>
     <Content Include="Content\styles\app\productlisting.1008085041.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.min.css" />
@@ -353,6 +359,7 @@
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Content\styles\app\formstyle.less" />
     <None Include="Properties\PublishProfiles\EscapeMobility.pubxml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\app\branchepage.0227102119.js" />
@@ -634,6 +641,7 @@
     <Content Include="Views\CondoApartment\EscapeMattress.cshtml" />
     <Content Include="Views\CondoApartment\Accessories.cshtml" />
     <Content Include="Views\ProductsAdmin\AddCategory.cshtml" />
+    <Content Include="Views\Service\SubmitSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

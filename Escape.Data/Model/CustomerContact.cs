@@ -9,6 +9,8 @@ namespace Escape.Data.Model
     public class CustomerContact
     {
         public int CustomerContactId { get; set; }
+        public string Title { get; set; }
+        public string Company { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Phone2 { get; set; }
@@ -17,5 +19,8 @@ namespace Escape.Data.Model
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+        public string Comments { get; set; }
+
+        public DateTime DateAdded { get; set; }
     }
 }

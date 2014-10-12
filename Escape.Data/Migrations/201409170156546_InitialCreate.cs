@@ -20,7 +20,7 @@ namespace Escape.Data
                 .ForeignKey("dbo.ShoppingCart", t => t.ShoppingCartID, cascadeDelete: true)
                 .Index(t => t.ShoppingCartID)
                 .Index(t => t.ProductID);
-            
+
             CreateTable(
                 "dbo.Product",
                 c => new
@@ -43,7 +43,7 @@ namespace Escape.Data
                         SafetyType = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ProductId);
-            
+
             CreateTable(
                 "dbo.Accessory",
                 c => new
@@ -51,7 +51,7 @@ namespace Escape.Data
                         AccessoryId = c.Int(nullable: false, identity: true),
                     })
                 .PrimaryKey(t => t.AccessoryId);
-            
+
             CreateTable(
                 "dbo.Category",
                 c => new
@@ -60,7 +60,7 @@ namespace Escape.Data
                         CategoryName = c.String(),
                     })
                 .PrimaryKey(t => t.CategoryId);
-            
+
             CreateTable(
                 "dbo.ProductSpecification",
                 c => new
@@ -91,7 +91,7 @@ namespace Escape.Data
                 .PrimaryKey(t => t.ProductSpecificationId)
                 .ForeignKey("dbo.Product", t => t.ProductSpecificationId)
                 .Index(t => t.ProductSpecificationId);
-            
+
             CreateTable(
                 "dbo.SafetyCategory",
                 c => new
@@ -100,7 +100,7 @@ namespace Escape.Data
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.SafetyCategoryId);
-            
+
             CreateTable(
                 "dbo.SimilarCategory",
                 c => new
@@ -109,7 +109,7 @@ namespace Escape.Data
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.SimilarCategoryId);
-            
+
             CreateTable(
                 "dbo.ShoppingCart",
                 c => new
@@ -122,7 +122,7 @@ namespace Escape.Data
                 .PrimaryKey(t => t.ShoppingCartId)
                 .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
                 .Index(t => t.CustomerId);
-            
+
             CreateTable(
                 "dbo.Customer",
                 c => new
@@ -134,7 +134,7 @@ namespace Escape.Data
                         Title = c.String(),
                     })
                 .PrimaryKey(t => t.CustomerId);
-            
+
             CreateTable(
                 "dbo.CustomerContact",
                 c => new
@@ -153,7 +153,7 @@ namespace Escape.Data
                 .PrimaryKey(t => t.CustomerContactId)
                 .ForeignKey("dbo.Customer", t => t.Customer_CustomerId)
                 .Index(t => t.Customer_CustomerId);
-            
+
             CreateTable(
                 "dbo.ProductAccessory",
                 c => new
@@ -166,7 +166,7 @@ namespace Escape.Data
                 .ForeignKey("dbo.Accessory", t => t.Accessory_AccessoryId, cascadeDelete: true)
                 .Index(t => t.Product_ProductId)
                 .Index(t => t.Accessory_AccessoryId);
-            
+
             CreateTable(
                 "dbo.ProductCategory",
                 c => new
@@ -179,7 +179,7 @@ namespace Escape.Data
                 .ForeignKey("dbo.Category", t => t.CategoryId, cascadeDelete: true)
                 .Index(t => t.ProductId)
                 .Index(t => t.CategoryId);
-            
+
             CreateTable(
                 "dbo.ProductSafetyCategory",
                 c => new
@@ -192,7 +192,7 @@ namespace Escape.Data
                 .ForeignKey("dbo.SafetyCategory", t => t.SafetyCategory_SafetyCategoryId, cascadeDelete: true)
                 .Index(t => t.Product_ProductId)
                 .Index(t => t.SafetyCategory_SafetyCategoryId);
-            
+
             CreateTable(
                 "dbo.ProductSimilarCategory",
                 c => new
@@ -205,9 +205,9 @@ namespace Escape.Data
                 .ForeignKey("dbo.SimilarCategory", t => t.SimilarCategory_SimilarCategoryId, cascadeDelete: true)
                 .Index(t => t.Product_ProductId)
                 .Index(t => t.SimilarCategory_SimilarCategoryId);
-            
+
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.ShoppingCart", "CustomerId", "dbo.Customer");

@@ -76,6 +76,7 @@ namespace EscapeMobility.Controllers
             public readonly string Index = "Index";
             public readonly string CustomerService = "CustomerService";
             public readonly string Contact = "Contact";
+            public readonly string SubmitSuccess = "SubmitSuccess";
             public readonly string PrivacyStatement = "PrivacyStatement";
             public readonly string Terms = "Terms";
         }
@@ -86,6 +87,7 @@ namespace EscapeMobility.Controllers
             public const string Index = "Index";
             public const string CustomerService = "CustomerService";
             public const string Contact = "Contact";
+            public const string SubmitSuccess = "SubmitSuccess";
             public const string PrivacyStatement = "PrivacyStatement";
             public const string Terms = "Terms";
         }
@@ -113,12 +115,14 @@ namespace EscapeMobility.Controllers
                 public readonly string Contact = "Contact";
                 public readonly string Index = "Index";
                 public readonly string PrivacyStatement = "PrivacyStatement";
+                public readonly string SubmitSuccess = "SubmitSuccess";
                 public readonly string Terms = "Terms";
             }
             public readonly string _MainLeftMenu = "~/Views/Service/_MainLeftMenu.cshtml";
             public readonly string Contact = "~/Views/Service/Contact.cshtml";
             public readonly string Index = "~/Views/Service/Index.cshtml";
             public readonly string PrivacyStatement = "~/Views/Service/PrivacyStatement.cshtml";
+            public readonly string SubmitSuccess = "~/Views/Service/SubmitSuccess.cshtml";
             public readonly string Terms = "~/Views/Service/Terms.cshtml";
         }
     }
@@ -170,6 +174,17 @@ namespace EscapeMobility.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
             ContactOverride(callInfo, vm);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SubmitSuccessOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SubmitSuccess()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SubmitSuccess);
+            SubmitSuccessOverride(callInfo);
             return callInfo;
         }
 

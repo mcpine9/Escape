@@ -90,6 +90,26 @@
     <Compile Include="Migrations\201409170156546_InitialCreate.Designer.cs">
       <DependentUpon>201409170156546_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410111831177_AdjustCustomerContacts.cs" />
+    <Compile Include="Migrations\201410111831177_AdjustCustomerContacts.Designer.cs">
+      <DependentUpon>201410111831177_AdjustCustomerContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410112014288_ClearObjectInDBError.cs" />
+    <Compile Include="Migrations\201410112014288_ClearObjectInDBError.Designer.cs">
+      <DependentUpon>201410112014288_ClearObjectInDBError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410112041178_AddedCommmentsToCustomerContact.cs" />
+    <Compile Include="Migrations\201410112041178_AddedCommmentsToCustomerContact.Designer.cs">
+      <DependentUpon>201410112041178_AddedCommmentsToCustomerContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410112046437_ChangedGetSetForDatesInCustomerContact.cs" />
+    <Compile Include="Migrations\201410112046437_ChangedGetSetForDatesInCustomerContact.Designer.cs">
+      <DependentUpon>201410112046437_ChangedGetSetForDatesInCustomerContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201410120448315_DeletedDateCreatedForCustomerContactTable.cs" />
+    <Compile Include="Migrations\201410120448315_DeletedDateCreatedForCustomerContactTable.Designer.cs">
+      <DependentUpon>201410120448315_DeletedDateCreatedForCustomerContactTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -137,6 +157,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201409170156546_InitialCreate.resx">
       <DependentUpon>201409170156546_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410111831177_AdjustCustomerContacts.resx">
+      <DependentUpon>201410111831177_AdjustCustomerContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410112014288_ClearObjectInDBError.resx">
+      <DependentUpon>201410112014288_ClearObjectInDBError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410112041178_AddedCommmentsToCustomerContact.resx">
+      <DependentUpon>201410112041178_AddedCommmentsToCustomerContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410112046437_ChangedGetSetForDatesInCustomerContact.resx">
+      <DependentUpon>201410112046437_ChangedGetSetForDatesInCustomerContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410120448315_DeletedDateCreatedForCustomerContactTable.resx">
+      <DependentUpon>201410120448315_DeletedDateCreatedForCustomerContactTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

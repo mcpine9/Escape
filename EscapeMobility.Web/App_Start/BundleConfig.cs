@@ -23,9 +23,8 @@ namespace EscapeMobility
                       "~/Scripts/lib/bootstrap/bootstrap.js",
                       "~/Scripts/lib/respond/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/sitecss").Include(
-                      "~/Content/styles/lib/bootstrap.css",
-                      "~/Content/styles/app/site.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                      "~/Content/styles/lib/bootstrap.css"));
             bundles.Add(new StyleBundle("~/Content/admincss").Include(
                     "~/Content/styles/lib/bootstrap.css",
                     "~/Content/styles/lib/font-awesome/font-awesome.css",

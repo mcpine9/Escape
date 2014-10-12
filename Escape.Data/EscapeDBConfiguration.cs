@@ -7,7 +7,8 @@ namespace Escape.Data
         public EscapeDBConfiguration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationDataLossAllowed = false;
+            
         }
 
         protected override void Seed(EscapeDataContext context)
