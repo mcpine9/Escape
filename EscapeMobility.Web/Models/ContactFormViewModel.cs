@@ -43,6 +43,7 @@ namespace EscapeMobility.Web.Models
         [MaxLength(100)]
         public string Zip { get; set; }
         [MaxLength(2000, ErrorMessage = "2000 Characters is the limit. You have gone over the limit.")]
+        [Display(Name = "Do you have Questions or Comments?")]
         public string Comments { get; set; }
     }
 }

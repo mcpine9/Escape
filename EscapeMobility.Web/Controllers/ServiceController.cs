@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using Recaptcha.Web;
+using Recaptcha.Web.Mvc;
 
 namespace EscapeMobility.Controllers
 {
@@ -33,7 +35,20 @@ namespace EscapeMobility.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult Contact([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments")] ContactFormViewModel vm)
         {
+            RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
+            if (String.IsNullOrEmpty(recaptchaHelper.Response))
+            {
+                ModelState.AddModelError("", "Captcha answer cannot be empty.");
+                return View(vm);
+            }
+
+            RecaptchaVerificationResult recaptchaResult = recaptchaHelper.VerifyRecaptchaResponse();
+
+            if (recaptchaResult != RecaptchaVerificationResult.Success)
+            {
+                ModelState.AddModelError("", "Incorrect captcha answer.");
+            }
             if (ModelState.IsValid)
             {
                 Customer customer = new Customer()
