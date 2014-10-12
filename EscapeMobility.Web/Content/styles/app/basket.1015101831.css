@@ -256,6 +256,11 @@ td .formData {
 	color: #999999;
 	padding-right:5px;
 }
+
+#wmTable tbody tr
+{
+    border-top: solid #000 1px;
+}
 /*
 label.error
 {
