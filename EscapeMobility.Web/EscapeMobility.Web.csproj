@@ -182,7 +182,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\DSC06167.JPG" />
     <Content Include="Content\images\overviewBlockBg.png" />
+    <Content Include="Content\images\roundCornerClose.png" />
+    <Content Include="Content\images\roundCorners.png" />
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
@@ -355,6 +358,7 @@
     <Content Include="Content\styles\lib\bootstrap.min.css" />
     <Content Include="Content\styles\lib\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\styles\lib\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\styles\lib\simple-modal\simple-modal-basic.css" />
     <Content Include="Global.asax" />
     <Content Include="RecaptchaNet.ReadMe.txt" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />

@@ -62,7 +62,7 @@
 	padding: 20px;
 	z-index: 1101;
 	outline: none;
-	display: none;
+	/*display: none;*/
 }
 
 #fancybox-outer {
@@ -367,19 +367,19 @@
 */
 #fancybox-bg-nw
 {
-	background: no-repeat url(../../img/fancybox/roundCorners.png) left top !important;	
+	background: no-repeat url(/Content/images/roundCorners.png) left top !important;	
 }
 #fancybox-bg-ne
 {
-	background: no-repeat url(../../img/fancybox/roundCorners.png) right top !important;	
+	background: no-repeat url(/Content/images/roundCorners.png) right top !important;	
 }
 #fancybox-bg-sw
 {
-	background: no-repeat url(../../img/fancybox/roundCorners.png) left bottom !important;	
+	background: no-repeat url(/Content/images/roundCorners.png) left bottom !important;	
 }
 #fancybox-bg-se
 {
-	background: no-repeat url(../../img/fancybox/roundCorners.png) right bottom !important;	
+	background: no-repeat url(/Content/images/roundCorners.png) right bottom !important;	
 }
 #fancybox-bg-w, #fancybox-bg-n, #fancybox-bg-e, #fancybox-bg-s, #fancybox-outer
 {
@@ -391,7 +391,7 @@
 }
 #fancybox-close
 {
-	background	: no-repeat url(../../img/fancybox/roundCornerClose.png);
+	background	: no-repeat url(/Content/images/roundCornerClose.png);
 	width		: 20px;
 	height		: 20px;
 	right: 0px;
