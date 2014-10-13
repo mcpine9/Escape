@@ -6,9 +6,12 @@ using Escape.Data.Model;
 
 namespace EscapeMobility.Web.Models
 {
-    [Serializable]
-    public class AddToQuoteResponseViewModel
+    public class AddToQuoteViewModel
     {
-        public int ProductId { get; set; }
+        public int ProductID { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public string ShortDescription { get; set; }
+        public string ImageFileName { get; set; }
     }
 }

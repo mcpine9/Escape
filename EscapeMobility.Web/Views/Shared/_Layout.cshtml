@@ -60,7 +60,8 @@
         </div>
     </div>
     <!-- Page Related Scripts -->
-    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/lib/simplemodal/jquery.simplemodal.js"></script>
     <script language="javascript">
         /// <autosync enabled="true" />
         /// <reference path="jquery-2.1.1.js" />
@@ -70,12 +71,12 @@
                     url: "/Quote/AddToQuote",
                     type: "GET",
                     data: { id: prodId },
-                    dataType: "json",
+                    dataType: "html",
                     contentType: "application/json; charset=utf-8"
                 });
 
-                request.done(function(msg) {
-                    alert(msg);
+                request.done(function (msg) {
+                    $.modal(msg);
                 });
 
                 request.fail(function(jqXHR, textStatus) {
@@ -89,7 +90,12 @@
         })(jQuery);
 
         $(function () {
-            $("#AddToQuote").click(function (){QuoteObj.AddToQuote($(this).data("productid"))});
+            $(".addToQuote").each(function () {
+                $(this).on("click", function (event) {
+                    event.preventDefault();
+                    QuoteObj.AddToQuote($(this).data("productid"));
+                });
+            });
         });
     </script>
     @RenderSection("pagescripts", false)

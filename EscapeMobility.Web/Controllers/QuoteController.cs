@@ -114,28 +114,22 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
-        [AsyncTimeout(2000)]
-        [ActionName("AddToQuote")]
-        public virtual async Task<JsonResult> AddToQuoteAsync(int id)
-        {
-            ShoppingCart cart = new ShoppingCart();
-            if (Session["Cart"] != null)
-            {
-                cart = (ShoppingCart) Session["Cart"];
-            }
-            cart = await AddToQuote(id, cart);
-            return Json(cart, JsonRequestBehavior.AllowGet);
-        }
-
-        private async Task<ShoppingCart> AddToQuote(int id, ShoppingCart cart)
+        public virtual ActionResult AddToQuote(int id)
         {
             Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
-            cart.CartItems.Add(new CartItem()
+            if (product == null)
             {
-                Product = product,
-                ProductID = id
-            });
-            return cart;
+                return Content("-1");
+            }
+            var vm = new AddToQuoteViewModel
+            {
+                ProductID = product.ProductId,
+                Name = product.Title,
+                Price = product.Price,
+                ShortDescription = product.ShortDescription,
+                ImageFileName = product.ImageFileName
+            };
+            return PartialView("_QuoteModal", vm);
         }
 
 

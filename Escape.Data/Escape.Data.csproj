@@ -110,6 +110,10 @@
     <Compile Include="Migrations\201410120448315_DeletedDateCreatedForCustomerContactTable.Designer.cs">
       <DependentUpon>201410120448315_DeletedDateCreatedForCustomerContactTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410130124090_ChangedShoppingCartProperty.cs" />
+    <Compile Include="Migrations\201410130124090_ChangedShoppingCartProperty.Designer.cs">
+      <DependentUpon>201410130124090_ChangedShoppingCartProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410120448315_DeletedDateCreatedForCustomerContactTable.resx">
       <DependentUpon>201410120448315_DeletedDateCreatedForCustomerContactTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410130124090_ChangedShoppingCartProperty.resx">
+      <DependentUpon>201410130124090_ChangedShoppingCartProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

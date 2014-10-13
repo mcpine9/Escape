@@ -1,0 +1,76 @@
+﻿@model EscapeMobility.Web.Models.AddToQuoteViewModel
+<div id="fancybox-wrap" style="width: 724px; height: auto;">
+    <div id="fancybox-outer">
+        <div class="fancybox-bg" id="fancybox-bg-n"></div>
+        <div class="fancybox-bg" id="fancybox-bg-ne"></div>
+        <div class="fancybox-bg" id="fancybox-bg-e"></div>
+        <div class="fancybox-bg" id="fancybox-bg-se"></div>
+        <div class="fancybox-bg" id="fancybox-bg-s"></div>
+        <div class="fancybox-bg" id="fancybox-bg-sw"></div>
+        <div class="fancybox-bg" id="fancybox-bg-w"></div>
+        <div class="fancybox-bg" id="fancybox-bg-nw"></div>
+        <div id="fancybox-content" style="border-width: 10px; width: 704px; height: auto; opacity: 1;">
+            <div style="width:auto;height:auto;overflow: auto;position:relative;">
+                <div id="productPopup" class="addToBasketPopup">
+                    <div>
+                        <div class="popTitle">Added to your quotation</div>
+                        <div class="popupProdImg">
+                            <img src="~/Content/images/@Model.ImageFileName" alt="" title="">
+                        </div>
+                        <div class="popupProdTxt">
+                            <div class="ppName">@Html.DisplayFor(m => m.Name)</div>
+                            <div class="ppTxt">
+                                @Html.DisplayFor(m => m.ShortDescription)
+                            </div>
+                            <div class="ppPrice">
+                                @Html.DisplayFor(m => m.Price)
+                                <div class="piPriceVAT">excl. Tax</div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        @*<div>
+                                <div class="popTitle popTitleBorder">
+                                    Add accessories?
+                                </div>
+                                <div class="ppsArrow ppsArrowLeft"></div>
+                                <div class="ppSliderHolder">
+                                    <div class="ppSlider">
+                                        <div class="ppsProd" data-pos="0">
+                                            <div class="ppsAdded">Added</div>
+                                            <div class="ppsProdImg">
+                                                <img src="/images/product/38/small/{name_seo}.jpg">
+                                            </div>
+                                            <div class="ppsProdTxt">
+                                                Escape-Locker
+                                            </div>
+                                            <a class="contentButton ppsProdAdd" data-block="true" data-pid="38" data-language="american">Add</a>
+                                            <div class="ppsProdPrice">$ 520,00<div class="piPriceVAT">excl. Tax</div></div>
+                                        </div><div class="ppsProd" data-pos="1">
+                                            <div class="ppsAdded">Added</div>
+                                            <div class="ppsProdImg">
+                                                <img src="/images/product/49/small/{name_seo}.jpg">
+                                            </div>
+                                            <div class="ppsProdTxt">
+                                                Escape-Mattress® storage bag
+                                            </div>
+                                            <a class="contentButton ppsProdAdd" data-block="true" data-pid="49" data-language="american">Add</a>
+                                            <div class="ppsProdPrice">$ 360,00<div class="piPriceVAT">excl. Tax</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ppsArrow ppsArrowRight"></div>
+                                <div class="clear"></div>
+                            </div>*@
+                        <div class="shopMore">Continue</div>
+                        <div class="endShopping">Go to basket</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="fancybox-close" style="display: inline;"></a>
+        <div id="fancybox-title" style="display: none;"></div>
+        <a href="javascript:;" id="fancybox-left" style="display: none;"><span class="fancy-ico" id="fancybox-left-ico"></span></a>
+        <a href="javascript:;" id="fancybox-right" style="display: none;"><span class="fancy-ico" id="fancybox-right-ico"></span></a>
+    </div>
+</div>

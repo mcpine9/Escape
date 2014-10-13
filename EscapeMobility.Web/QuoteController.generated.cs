@@ -57,6 +57,12 @@ namespace EscapeMobility.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddToQuote()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QuoteController Actions { get { return MVC.Quote; } }
@@ -75,6 +81,7 @@ namespace EscapeMobility.Controllers
         {
             public readonly string Index = "Index";
             public readonly string SubmitSuccess = "SubmitSuccess";
+            public readonly string AddToQuote = "AddToQuote";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -82,6 +89,7 @@ namespace EscapeMobility.Controllers
         {
             public const string Index = "Index";
             public const string SubmitSuccess = "SubmitSuccess";
+            public const string AddToQuote = "AddToQuote";
         }
 
 
@@ -92,6 +100,14 @@ namespace EscapeMobility.Controllers
         public class ActionParamsClass_Index
         {
             public readonly string vm = "vm";
+        }
+        static readonly ActionParamsClass_AddToQuote s_params_AddToQuote = new ActionParamsClass_AddToQuote();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddToQuote AddToQuoteParams { get { return s_params_AddToQuote; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddToQuote
+        {
+            public readonly string id = "id";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -104,10 +120,12 @@ namespace EscapeMobility.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _QuoteItems = "_QuoteItems";
+                public readonly string _QuoteModal = "_QuoteModal";
                 public readonly string Index = "Index";
                 public readonly string SubmitSuccess = "SubmitSuccess";
             }
             public readonly string _QuoteItems = "~/Views/Quote/_QuoteItems.cshtml";
+            public readonly string _QuoteModal = "~/Views/Quote/_QuoteModal.cshtml";
             public readonly string Index = "~/Views/Quote/Index.cshtml";
             public readonly string SubmitSuccess = "~/Views/Quote/SubmitSuccess.cshtml";
         }
@@ -149,6 +167,18 @@ namespace EscapeMobility.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SubmitSuccess);
             SubmitSuccessOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddToQuoteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddToQuote(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            AddToQuoteOverride(callInfo, id);
             return callInfo;
         }
 

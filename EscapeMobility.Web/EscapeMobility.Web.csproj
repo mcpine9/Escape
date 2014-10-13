@@ -408,6 +408,8 @@
     <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\lib\respond\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\lib\respond\respond.min.js" />
+    <Content Include="Scripts\lib\simplemodal\basic.js" />
+    <Content Include="Scripts\lib\simplemodal\jquery.simplemodal.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -659,6 +661,7 @@
     <Content Include="Views\Service\SubmitSuccess.cshtml" />
     <Content Include="Views\Quote\_QuoteItems.cshtml" />
     <Content Include="Views\Quote\SubmitSuccess.cshtml" />
+    <Content Include="Views\Quote\_QuoteModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

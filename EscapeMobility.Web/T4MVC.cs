@@ -150,6 +150,15 @@ namespace Links
                 public static readonly string respond_min_js = Url("respond.min.js");
             }
         
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class simplemodal {
+                private const string URLPATH = "~/Scripts/lib/simplemodal";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string basic_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/basic.min.js") ? Url("basic.min.js") : Url("basic.js");
+                public static readonly string jquery_simplemodal_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.simplemodal.min.js") ? Url("jquery.simplemodal.min.js") : Url("jquery.simplemodal.js");
+            }
+        
         }
     
         public static readonly string modernizr_2_7_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.7.2.min.js") ? Url("modernizr-2.7.2.min.js") : Url("modernizr-2.7.2.js");
