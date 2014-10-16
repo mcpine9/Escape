@@ -199,6 +199,7 @@ namespace Links
             public static readonly string DhrvanLeeuwen_jpg = Url("DhrvanLeeuwen.jpg");
             public static readonly string distribiteurs_vrij225h_png = Url("distribiteurs_vrij225h.png");
             public static readonly string distributors_wanted_jpg = Url("distributors-wanted.jpg");
+            public static readonly string DSC06167_JPG = Url("DSC06167.JPG");
             public static readonly string dust_cover_standard_standard_alu_jpg = Url("dust-cover-standard-standard-alu.jpg");
             public static readonly string education_jpg = Url("education.jpg");
             public static readonly string emergency_food_rations__mainstay_1200_energy_bar__1_package_jpg = Url("emergency-food-rations--mainstay-1200-energy-bar--1-package.jpg");
@@ -289,6 +290,8 @@ namespace Links
             public static readonly string products_jpg = Url("products.jpg");
             public static readonly string radio_unchecked_png = Url("radio_unchecked.png");
             public static readonly string RK_logo3_jpg = Url("RK-logo3.jpg");
+            public static readonly string roundCornerClose_png = Url("roundCornerClose.png");
+            public static readonly string roundCorners_png = Url("roundCorners.png");
             public static readonly string scape_cbrn30_jpg = Url("scape-cbrn30.jpg");
             public static readonly string scape_co_cbrn__escape_respirator_jpg = Url("scape-co-cbrn--escape-respirator.jpg");
             public static readonly string seal_for_1016457_png = Url("seal-for-1016457.png");
@@ -441,6 +444,15 @@ namespace Links
                     public static readonly string glyphicons_halflings_regular_svg = Url("glyphicons-halflings-regular.svg");
                     public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
                     public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class simple_modal {
+                    private const string URLPATH = "~/Content/styles/lib/simple-modal";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string simple_modal_basic_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/simple-modal-basic.min.css") ? Url("simple-modal-basic.min.css") : Url("simple-modal-basic.css");
+                         
                 }
             
             }

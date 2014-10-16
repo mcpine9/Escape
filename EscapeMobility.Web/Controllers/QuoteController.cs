@@ -26,18 +26,18 @@ namespace EscapeMobility.Controllers
             if (Session["Cart"] != null)
             {
                 ShoppingCart cart = (ShoppingCart) Session["Cart"];
-                vm.ShoppingCart = (_db.ShoppingCart.Where(shoppingCart => shoppingCart.ShoppingCartId == cart.ShoppingCartId)
-                    .Select(shoppingCart => new ShoppingCart())
-                    ).SingleOrDefault();
-
+                vm.ShoppingCart = cart;
+                return View(vm);
             }
+            vm.ShoppingCart = new ShoppingCart();
+            vm.ShoppingCart.CartItems = new Collection<CartItem>();
             return View(vm);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments")] QuoteViewModel vm)
+        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,CartItem")] QuoteViewModel vm, List<CartItem> cartItems  )
         {
             RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
@@ -55,6 +55,15 @@ namespace EscapeMobility.Controllers
             }
             if (ModelState.IsValid)
             {
+                if (Session["Cart"] != null)
+                {
+                    vm.ShoppingCart = (ShoppingCart) Session["Cart"];
+                    vm.ShoppingCart.CartItems = cartItems;
+                }
+                else
+                {
+                    vm.ShoppingCart = new ShoppingCart();
+                }
                 Customer customer = new Customer()
                 {
                     FirstName = vm.FirstName,
@@ -92,15 +101,6 @@ namespace EscapeMobility.Controllers
                     _db.SaveChanges();
                     return RedirectToAction(MVC.Quote.SubmitSuccess());
                 }
-                var thisShoppingCart = new ShoppingCart()
-                {
-                    CartItems = vm.ShoppingCart.CartItems,
-                    DateCreated = DateTime.Now,
-                    CustomerId =
-                        _db.Customer.Select(c => c.CustomerContacts.Single(x => x.Email == vm.Email).CustomerContactId)
-                };
-                _db.ShoppingCart.Add(thisShoppingCart);
-                _db.SaveChanges();
 
                 ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";
                 return View(vm);
@@ -116,6 +116,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult AddToQuote(int id)
         {
+            ShoppingCart cart;
             Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
             if (product == null)
             {
@@ -129,6 +130,44 @@ namespace EscapeMobility.Controllers
                 ShortDescription = product.ShortDescription,
                 ImageFileName = product.ImageFileName
             };
+            if (Session["Cart"] != null)
+            {
+                cart = (ShoppingCart) Session["Cart"];
+                foreach (var item in cart.CartItems)
+                {
+                    if (item.ProductID == id)
+                    {
+                        item.Quantity++;
+                    }
+                }
+                if (!cart.CartItems.Any(c => c.ProductID == id))
+                {
+                    var cartItem = new CartItem()
+                    {
+                        ProductID = product.ProductId,
+                        Product = product,
+                        Quantity = 1
+                    };
+                    cart.CartItems.Add(cartItem);
+                }
+                Session["Cart"] = cart;
+            }
+            else
+            {
+                var cartItem = new CartItem()
+                {
+                    ProductID = product.ProductId,
+                    Product = product,
+                    Quantity = 1
+                };
+                Session["Cart"] = new ShoppingCart()
+                {
+                    CartItems = new Collection<CartItem>()
+                    {
+                        cartItem
+                    }
+                };
+            }
             return PartialView("_QuoteModal", vm);
         }
 
