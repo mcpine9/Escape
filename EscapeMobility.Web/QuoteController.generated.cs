@@ -100,7 +100,6 @@ namespace EscapeMobility.Controllers
         public class ActionParamsClass_Index
         {
             public readonly string vm = "vm";
-            public readonly string cartItems = "cartItems";
         }
         static readonly ActionParamsClass_AddToQuote s_params_AddToQuote = new ActionParamsClass_AddToQuote();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -149,15 +148,14 @@ namespace EscapeMobility.Controllers
         }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.QuoteViewModel vm, System.Collections.Generic.List<Escape.Data.Model.CartItem> cartItems);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.QuoteViewModel vm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index(EscapeMobility.Web.Models.QuoteViewModel vm, System.Collections.Generic.List<Escape.Data.Model.CartItem> cartItems)
+        public override System.Web.Mvc.ActionResult Index(EscapeMobility.Web.Models.QuoteViewModel vm)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cartItems", cartItems);
-            IndexOverride(callInfo, vm, cartItems);
+            IndexOverride(callInfo, vm);
             return callInfo;
         }
 

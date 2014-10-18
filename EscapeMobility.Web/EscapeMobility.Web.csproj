@@ -70,6 +70,9 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\net45\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Mvc.Mailer">
+      <HintPath>..\packages\MvcMailer.4.5\lib\45\Mvc.Mailer.dll</HintPath>
+    </Reference>
     <Reference Include="Mvc.RazorTools">
       <HintPath>..\packages\Mvc.RazorTools.Base.1.0.5\lib\net45\Mvc.RazorTools.dll</HintPath>
       <Private>True</Private>
@@ -360,6 +363,7 @@
     <Content Include="Content\styles\lib\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\styles\lib\simple-modal\simple-modal-basic.css" />
     <Content Include="Global.asax" />
+    <Content Include="InstallationDummyFile.txt" />
     <Content Include="RecaptchaNet.ReadMe.txt" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
@@ -435,6 +439,8 @@
     <Compile Include="Controllers\AllProductsController.cs" />
     <Compile Include="Controllers\CondoApartmentController.cs" />
     <Compile Include="Controllers\ProductHelper.cs" />
+    <Compile Include="Mailers\IUserMailer.cs" />
+    <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\AddCategoryViewModel.cs" />
     <Compile Include="Models\AddToQuoteResponseViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
@@ -498,6 +504,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="WebUtilities\EmailHelper.cs" />
     <Compile Include="WebUtilities\HtmlHelperExtensions\HtmlActionLinkHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -666,6 +673,10 @@
     <Content Include="Views\Quote\_QuoteItems.cshtml" />
     <Content Include="Views\Quote\SubmitSuccess.cshtml" />
     <Content Include="Views\Quote\_QuoteModal.cshtml" />
+    <Content Include="Views\Quote\_MainLeftMenu.cshtml" />
+    <Content Include="Views\UserMailer\_Layout.cshtml" />
+    <Content Include="Views\UserMailer\Welcome.cshtml" />
+    <Content Include="Views\UserMailer\PasswordReset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

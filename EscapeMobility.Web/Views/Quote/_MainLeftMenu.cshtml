@@ -1,0 +1,19 @@
+﻿<ul>
+    <li class="menuevacuation open">
+        @Html.ActionLink("Service", MVC.Service.Index(), new { @class = "mainLeftMenu" })
+        <ul class="subLeftMenu" style="">
+            <li data-division="evacuation" data-group="escape-chair">
+                @Html.ActionLink("Customer Service", MVC.Service.Index(), null)
+            </li>
+            <li data-division="evacuation" data-group="escape-carry-chair">
+                @Html.ActionLink("Contact", MVC.Service.Contact(), null)
+            </li>
+            <li data-division="evacuation" data-group="accessories">
+                @Html.ActionLink("Privacy & Disclaimer", MVC.Service.PrivacyStatement(), null)
+            </li>
+            <li data-division="evacuation" data-group="brochures">
+                @Html.ActionLink("Terms & Conditions", MVC.Service.Terms(), null)
+            </li>
+        </ul>
+    </li>
+</ul>

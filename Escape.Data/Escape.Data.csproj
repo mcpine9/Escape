@@ -118,6 +118,10 @@
     <Compile Include="Migrations\201410140441013_AddedQuantityToCartItem.Designer.cs">
       <DependentUpon>201410140441013_AddedQuantityToCartItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201410180748096_ChangedCartItemToList.cs" />
+    <Compile Include="Migrations\201410180748096_ChangedCartItemToList.Designer.cs">
+      <DependentUpon>201410180748096_ChangedCartItemToList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410140441013_AddedQuantityToCartItem.resx">
       <DependentUpon>201410140441013_AddedQuantityToCartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201410180748096_ChangedCartItemToList.resx">
+      <DependentUpon>201410180748096_ChangedCartItemToList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

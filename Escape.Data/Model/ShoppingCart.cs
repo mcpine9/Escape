@@ -13,6 +13,6 @@ namespace Escape.Data.Model
         public IQueryable<int> CustomerId { get; set; }
         public string Message { get; set; }
 
-        public virtual ICollection<CartItem> CartItems { get; set; } 
+        public virtual IList<CartItem> CartItems { get; set; } 
     }
 }

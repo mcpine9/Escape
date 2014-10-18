@@ -45,6 +45,6 @@ namespace EscapeMobility.Web.Models
         [Display(Name = "Do you have Questions or Comments?")]
         public string Comments { get; set; }
 
-        public ShoppingCart ShoppingCart { get; set; }
+        public ShoppingCart ShoppingCart { get; set; } 
     }
 }

@@ -8,8 +8,10 @@ using System.Web.Mvc;
 using System.Web.Services.Description;
 using Escape.Data;
 using Escape.Data.Model;
+using EscapeMobility.Web.Mailers;
 using EscapeMobility.Web.Models;
 using Microsoft.Ajax.Utilities;
+using Mvc.Mailer;
 using Recaptcha.Web;
 using Recaptcha.Web.Mvc;
 using Tweetinvi.Core.Extensions;
@@ -19,6 +21,13 @@ namespace EscapeMobility.Controllers
     public partial class QuoteController : Controller
     {
         EscapeDataContext _db = new EscapeDataContext();
+
+        private IUserMailer _userMailer = new UserMailer();
+        public IUserMailer UserMailer
+        {
+            get { return _userMailer; }
+            set { _userMailer = value; }
+        }
         // GET: Quote
         public virtual ActionResult Index()
         {
@@ -30,14 +39,14 @@ namespace EscapeMobility.Controllers
                 return View(vm);
             }
             vm.ShoppingCart = new ShoppingCart();
-            vm.ShoppingCart.CartItems = new Collection<CartItem>();
+            vm.ShoppingCart.CartItems = new List<CartItem>();
             return View(vm);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,CartItem")] QuoteViewModel vm, List<CartItem> cartItems  )
+        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,ShoppingCart")] QuoteViewModel vm )
         {
             RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
@@ -55,15 +64,6 @@ namespace EscapeMobility.Controllers
             }
             if (ModelState.IsValid)
             {
-                if (Session["Cart"] != null)
-                {
-                    vm.ShoppingCart = (ShoppingCart) Session["Cart"];
-                    vm.ShoppingCart.CartItems = cartItems;
-                }
-                else
-                {
-                    vm.ShoppingCart = new ShoppingCart();
-                }
                 Customer customer = new Customer()
                 {
                     FirstName = vm.FirstName,
@@ -90,18 +90,20 @@ namespace EscapeMobility.Controllers
                             Comments = vm.Comments,
                             DateAdded = DateTime.Now
                         }
-                    }
+                    },
+                    DateCreated = DateTime.Now
                 };
                 var customerExists =
-                    _db.Customer.Select(c => c.CustomerContacts.Select(t => t.Email == vm.Email)).SingleOrDefault();
-                if (customerExists.IsNullOrEmpty())
+                    _db.CustomerContact.Where(c => c.Email == vm.Email);
+                if (!customerExists.Any())
                 {
                     customer.DateCreated = DateTime.Now;
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
+                    UserMailer.Welcome().Send();
                     return RedirectToAction(MVC.Quote.SubmitSuccess());
                 }
-
+                vm.ShoppingCart = (ShoppingCart) Session["Cart"];
                 ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";
                 return View(vm);
 
@@ -165,7 +167,8 @@ namespace EscapeMobility.Controllers
                     CartItems = new Collection<CartItem>()
                     {
                         cartItem
-                    }
+                    },
+                    DateCreated = DateTime.Now
                 };
             }
             return PartialView("_QuoteModal", vm);
