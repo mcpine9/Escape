@@ -1,0 +1,31 @@
+@using System.Net.Mime
+@model EscapeMobility.Web.Models.QuoteViewModel
+
+************************************************************************<br />
+FROM ESCAPE-MOBILITY.NET<br />
+************************************************************************<br />
+
+Customer Name: @Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)<br />
+@Model.Phone<br />
+@Model.Address1<br />
+@(string.IsNullOrEmpty(Model.Address2) ? Model.Address2 + "<br />" : "")
+@Model.City<br />
+@Model.State<br />
+@Model.Zip<br />
+@Model.Email<br />
+@Model.Company<br /><br />
+
+Comments:<br/>
+
+@Model.Comments
+<ul>
+    @{
+        if (Model.ShoppingCart.CartItems != null)
+        {
+            foreach (var item in Model.ShoppingCart.CartItems)
+            {
+                <li>@item.Quantity x @item.Product.Title </li>
+            }
+        }
+    }
+</ul>

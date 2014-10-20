@@ -1,3 +1,5 @@
+using System.Web.Mail;
+using EscapeMobility.Web.Models;
 using Mvc.Mailer;
 
 namespace EscapeMobility.Web.Mailers
@@ -8,14 +10,15 @@ namespace EscapeMobility.Web.Mailers
 		{
 			MasterName="_Layout";
 		}
-		
-		public virtual MvcMailMessage Welcome()
+
+        public virtual MvcMailMessage SendQuoteEmail(QuoteViewModel vm)
 		{
 			//ViewBag.Data = someObject;
+            ViewData.Model = vm;
 			return Populate(x =>
 			{
-				x.Subject = "Welcome";
-				x.ViewName = "Welcome";
+				x.Subject = "QUOTE REQUEST FROM ESCAPE-MOBILITY.NET";
+				x.ViewName = "SendQuoteEmail";
 				x.To.Add("mcpine@gmail.com");
 			});
 		}

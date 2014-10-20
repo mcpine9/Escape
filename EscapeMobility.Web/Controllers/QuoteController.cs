@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Mail;
 using System.Web.Mvc;
 using System.Web.Services.Description;
 using Escape.Data;
@@ -64,6 +65,7 @@ namespace EscapeMobility.Controllers
             }
             if (ModelState.IsValid)
             {
+                vm.ShoppingCart.DateCreated = DateTime.Now;
                 Customer customer = new Customer()
                 {
                     FirstName = vm.FirstName,
@@ -100,7 +102,7 @@ namespace EscapeMobility.Controllers
                     customer.DateCreated = DateTime.Now;
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
-                    UserMailer.Welcome().Send();
+                    UserMailer.SendQuoteEmail(vm).Send();
                     return RedirectToAction(MVC.Quote.SubmitSuccess());
                 }
                 vm.ShoppingCart = (ShoppingCart) Session["Cart"];
@@ -174,6 +176,17 @@ namespace EscapeMobility.Controllers
             return PartialView("_QuoteModal", vm);
         }
 
+        public virtual ActionResult Send()
+        {
+            var vm = new QuoteViewModel()
+            {
+                FirstName = "John",
+                LastName = "Smith"
+            };
+            ViewData.Model = vm;
+            UserMailer.SendQuoteEmail(vm).Send();
+            return RedirectToAction(MVC.Quote.SubmitSuccess());
+        }
 
     }
 }
