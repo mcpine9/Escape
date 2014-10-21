@@ -67,6 +67,7 @@
         /// <autosync enabled="true" />
         /// <reference path="jquery-2.1.1.js" />
         var QuoteObj = (function($) {
+            var sessionItemCount = @Html.Raw(Session["ItemCount"] ?? 0);
             var AddToQuote = function(prodId) {
                 var request = $.ajax({
                     url: "/Quote/AddToQuote",
@@ -78,7 +79,13 @@
 
                 request.done(function (msg) {
                     $.modal(msg, { closeClass: "fancybox-close" });
-                    //$.modal("<div id='fancybox-wrap' style='width: 724px; height: auto; top: 20px; left: 298px; display: block;'><div id='fancybox-outer'><div class='fancybox-bg' id='fancybox-bg-n'></div><div class='fancybox-bg' id='fancybox-bg-ne'></div><div class='fancybox-bg' id='fancybox-bg-e'></div><div class='fancybox-bg' id='fancybox-bg-se'></div><div class='fancybox-bg' id='fancybox-bg-s'></div><div class='fancybox-bg' id='fancybox-bg-sw'></div><div class='fancybox-bg' id='fancybox-bg-w'></div><div class='fancybox-bg' id='fancybox-bg-nw'></div><div id='fancybox-content' style='border-width: 10px; width: 704px; height: auto;'><div style='width:auto;height:auto;overflow: auto;position:relative;'><div id='productPopup' class='addToBasketPopup'><div>  <div class='popTitle'>Added to your quotation</div>  <div class='popupProdImg'>    <img src='/images/product/53/list/escape-mattress-fold.jpg' alt='' title=''>  </div>  <div class='popupProdTxt'>    <div class='ppName'>Escape-Mattress® Fold</div>    <div class='ppTxt'>                                             This&nbsp;Escape-Mattress® model can be folded double so that it is easy to move and store.                                         </div>    <div class='ppPrice'>                                             $ 1.245,00                                             <div class='piPriceVAT'>excl. Tax</div></div>  </div>  <div class='clear'></div>  <div>    <div class='popTitle popTitleBorder'>                                             Add accessories?                                         </div>    <div class='ppsArrow ppsArrowLeft'></div>    <div class='ppSliderHolder'>      <div class='ppSlider'>                                                 <div class='ppsProd' data-pos='0'>  <div class='ppsAdded'>Added</div>  <div class='ppsProdImg'>    <img src='/images/product/38/small/{name_seo}.jpg'>  </div>  <div class='ppsProdTxt'>                                    Escape-Locker                                </div>  <a class='contentButton ppsProdAdd' data-block='true' data-pid='38' data-language='american'>Add</a>  <div class='ppsProdPrice'>$ 520,00<div class='piPriceVAT'>excl. Tax</div></div></div><div class='ppsProd' data-pos='1'>  <div class='ppsAdded'>Added</div>  <div class='ppsProdImg'>    <img src='/images/product/49/small/{name_seo}.jpg'>  </div>  <div class='ppsProdTxt'>                                    Escape-Mattress® storage bag                                </div>  <a class='contentButton ppsProdAdd' data-block='true' data-pid='49' data-language='american'>Add</a>  <div class='ppsProdPrice'>$ 360,00<div class='piPriceVAT'>excl. Tax</div></div></div>                                             </div>    </div>    <div class='ppsArrow ppsArrowRight'></div>    <div class='clear'></div>  </div>  <div class='shopMore'>Continue</div>  <div class='endShopping'>Go to basket</div>  <div class='clear'></div></div></div></div></div><a id='fancybox-close' style='display: inline;'></a><div id='fancybox-title' style='display: none;'></div><a href='javascript:;' id='fancybox-left'><span class='fancy-ico' id='fancybox-left-ico'></span></a><a href='javascript:;' id='fancybox-right'><span class='fancy-ico' id='fancybox-right-ico'></span></a></div></div");
+                    sessionItemCount = @Html.Raw(Session["ItemCount"] ?? 0);
+                    if (sessionItemCount > 0) {
+                        sessionItemCount++;
+                    } else {
+                        sessionItemCount = 1;
+                    }
+                    $(".item-count").text(sessionItemCount);
                 });
 
                 request.fail(function(jqXHR, textStatus) {
@@ -87,7 +94,8 @@
             };
 
             return {
-                AddToQuote: AddToQuote
+                AddToQuote: AddToQuote,
+                sessionItemCount: sessionItemCount
             };
         })(jQuery);
 
@@ -98,8 +106,10 @@
                     QuoteObj.AddToQuote($(this).data("productid"));
                 });
             });
+
+            $(".item-count").text(QuoteObj.sessionItemCount);
         });
-    </script>
+</script>
     @RenderSection("pagescripts", false)
     @RenderSection("googleanalytics", false)
 </body>

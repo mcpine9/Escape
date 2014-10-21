@@ -5,7 +5,7 @@
 FROM ESCAPE-MOBILITY.NET<br />
 ************************************************************************<br />
 
-Customer Name: @Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)<br />
+@Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)<br />
 @Model.Phone<br />
 @Model.Address1<br />
 @(string.IsNullOrEmpty(Model.Address2) ? Model.Address2 + "<br />" : "")

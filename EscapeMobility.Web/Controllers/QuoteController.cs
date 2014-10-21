@@ -66,14 +66,22 @@ namespace EscapeMobility.Controllers
             if (ModelState.IsValid)
             {
                 vm.ShoppingCart.DateCreated = DateTime.Now;
-                Customer customer = new Customer()
+                foreach (var cartItem in vm.ShoppingCart.CartItems)
+                {
+                    cartItem.Product = _db.Product.Find(cartItem.ProductID);
+                }
+                var customer = new Customer()
                 {
                     FirstName = vm.FirstName,
                     LastName = vm.LastName,
                     MiddleName = vm.MiddleName,
                     ShoppingCarts = new Collection<ShoppingCart>()
                     {
-                        vm.ShoppingCart
+                        new ShoppingCart()
+                        {
+                            CartItems = vm.ShoppingCart.CartItems,
+                            DateCreated = DateTime.Now
+                        }
                     },
                     CustomerContacts = new Collection<CustomerContact>()
                     {
@@ -95,6 +103,7 @@ namespace EscapeMobility.Controllers
                     },
                     DateCreated = DateTime.Now
                 };
+                
                 var customerExists =
                     _db.CustomerContact.Where(c => c.Email == vm.Email);
                 if (!customerExists.Any())
@@ -110,6 +119,7 @@ namespace EscapeMobility.Controllers
                 return View(vm);
 
             }
+            vm.ShoppingCart = (ShoppingCart)Session["Cart"];
             return View(vm);
         }
 
@@ -120,7 +130,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult AddToQuote(int id)
         {
-            ShoppingCart cart;
+            ShoppingCart cart = null;
             Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
             if (product == null)
             {
@@ -164,7 +174,7 @@ namespace EscapeMobility.Controllers
                     Product = product,
                     Quantity = 1
                 };
-                Session["Cart"] = new ShoppingCart()
+                cart = new ShoppingCart()
                 {
                     CartItems = new Collection<CartItem>()
                     {
@@ -172,7 +182,9 @@ namespace EscapeMobility.Controllers
                     },
                     DateCreated = DateTime.Now
                 };
+                Session["Cart"] = cart;
             }
+            Session["ItemCount"] = cart.CartItems.Count; 
             return PartialView("_QuoteModal", vm);
         }
 
