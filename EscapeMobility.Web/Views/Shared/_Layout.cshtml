@@ -80,6 +80,7 @@
                 request.done(function (msg) {
                     $.modal(msg, { closeClass: "fancybox-close" });
                     sessionItemCount = @Html.Raw(Session["ItemCount"] ?? 0);
+                    
                     if (sessionItemCount > 0) {
                         sessionItemCount++;
                     } else {
