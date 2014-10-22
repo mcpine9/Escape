@@ -477,6 +477,7 @@
     <Compile Include="InformationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ItemCountViewModel.cs" />
     <Compile Include="Models\ProductsAdminDetailsViewModel.cs" />
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />

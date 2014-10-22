@@ -188,6 +188,16 @@ namespace EscapeMobility.Controllers
             return PartialView("_QuoteModal", vm);
         }
 
+
+        public virtual JsonResult GetItemCount()
+        {
+            var vm = new ItemCountViewModel()
+            {
+                Count = (int) Session["ItemCount"]
+            };
+            return Json(vm, JsonRequestBehavior.AllowGet);
+        }
+
         public virtual ActionResult Send()
         {
             var vm = new QuoteViewModel()
