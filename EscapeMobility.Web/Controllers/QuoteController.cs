@@ -198,17 +198,5 @@ namespace EscapeMobility.Controllers
             return Json(vm, JsonRequestBehavior.AllowGet);
         }
 
-        public virtual ActionResult Send()
-        {
-            var vm = new QuoteViewModel()
-            {
-                FirstName = "John",
-                LastName = "Smith"
-            };
-            ViewData.Model = vm;
-            UserMailer.SendQuoteEmail(vm).Send();
-            return RedirectToAction(MVC.Quote.SubmitSuccess());
-        }
-
     }
 }

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Escape.Data;
 using Escape.Data.Model;
+using EscapeMobility.Web.Mailers;
 using EscapeMobility.Web.Models;
 using Recaptcha.Web;
 using Recaptcha.Web.Mvc;
@@ -15,6 +16,12 @@ namespace EscapeMobility.Controllers
     public partial class ServiceController : Controller
     {
         EscapeDataContext _db = new EscapeDataContext();
+        private IUserMailer _userMailer = new UserMailer();
+        public IUserMailer UserMailer
+        {
+            get { return _userMailer; }
+            set { _userMailer = value; }
+        }
         // GET: Service
         public virtual ActionResult Index()
         {
