@@ -189,6 +189,7 @@
     <Content Include="Content\images\overviewBlockBg.png" />
     <Content Include="Content\images\roundCornerClose.png" />
     <Content Include="Content\images\roundCorners.png" />
+    <Content Include="Content\images\Sail_Exterior_1_reduced-1.jpg" />
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>

@@ -19,7 +19,7 @@ namespace EscapeMobility.Web.Mailers
 			{
 				x.Subject = "QUOTE REQUEST FROM ESCAPE-MOBILITY.NET";
 				x.ViewName = "SendQuoteEmail";
-				x.To.Add("mcpine@gmail.com");
+                x.To.Add("burak@escape-mobility.net");
 			});
 		}
  
