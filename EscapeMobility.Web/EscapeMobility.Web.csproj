@@ -366,6 +366,7 @@
     <Content Include="Global.asax" />
     <Content Include="InstallationDummyFile.txt" />
     <Content Include="RecaptchaNet.ReadMe.txt" />
+    <Content Include="Scripts\app\Main.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
     <Content Include="Content\styles\app\adminlayout.less" />
