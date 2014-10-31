@@ -83,13 +83,14 @@ namespace EscapeMobility.Controllers
                         }
                     }
                 };
-                bool customerExists =
-                    _db.Customer.Select(c => c.CustomerContacts.Select(t => t.Email == vm.Email)).Any();
-                if (!customerExists)
+                var customerExists =
+                    _db.CustomerContact.Where(c => c.Email == vm.Email);
+                if (!customerExists.Any())
                 {
                     customer.DateCreated = DateTime.Now;
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
+                    UserMailer.SendContactEmail(vm).Send();
                     return RedirectToAction(MVC.Service.SubmitSuccess());
                 }
                 ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";

@@ -23,6 +23,19 @@ namespace EscapeMobility.Web.Mailers
                 x.Bcc.Add("mcpine@gmail.com");
 			});
 		}
+
+        public virtual MvcMailMessage SendContactEmail(ContactFormViewModel vm)
+        {
+            //ViewBag.Data = someObject;
+            ViewData.Model = vm;
+            return Populate(x =>
+            {
+                x.Subject = "CONTACT FORM REQUEST FROM ESCAPE-MOBILITY.NET";
+                x.ViewName = "SendContactEmail";
+                x.To.Add("burak@escape-mobility.net");
+                x.Bcc.Add("mcpine@gmail.com");
+            });
+        }
  
 		public virtual MvcMailMessage PasswordReset()
 		{

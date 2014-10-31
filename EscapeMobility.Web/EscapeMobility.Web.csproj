@@ -680,6 +680,7 @@
     <Content Include="Views\UserMailer\_Layout.cshtml" />
     <Content Include="Views\UserMailer\SendQuoteEmail.cshtml" />
     <Content Include="Views\UserMailer\PasswordReset.cshtml" />
+    <Content Include="Views\UserMailer\SendContactEmail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
