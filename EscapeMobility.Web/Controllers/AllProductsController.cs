@@ -92,5 +92,33 @@ namespace EscapeMobility.Controllers
                     return RedirectToAction("Index");
             }
         }
+
+        public virtual ActionResult ProductionSpecification(int id)
+        {
+            ProductSpecification spec = _db.Product.Find(id).ProductSpecification;
+            var vm = new ProductSpecificationsViewModel()
+            {
+                Armrest = spec.Armrest,
+                ArticleNumber = spec.ArticleNumber,
+                Backrest = spec.Backrest,
+                Dimensions = spec.Dimensions,
+                DimentionsFoldedUp = spec.DimentionsFoldedUp,
+                Discount = spec.Discount,
+                Footrest = spec.Footrest,
+                HasAniSlipHandle = spec.HasAniSlipHandle,
+                HasDustCover = spec.HasDustCover,
+                HasErgonomicBackrest = spec.HasErgonomicBackrest,
+                HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
+                HasImmobilizationBand = spec.HasImmobilizationBand,
+                HasUnfoldingStand = spec.HasUnfoldingStand,
+                ImageFileName = spec.ImageFileName,
+                IsEasyToOperate = spec.IsEasyToOperate,
+                IsReadyForUse = spec.IsReadyForUse,
+                IsSpecificationOn = spec.IsSpecificationOn
+
+
+            };
+            return PartialView("/Views/Shared/_ProductSpecifications.cshtml", vm);
+        }
     }
 }

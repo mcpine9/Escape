@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Escape.Data.Model
+﻿namespace Escape.Data.Model
 {
     public class ProductSpecification
     {
@@ -30,8 +22,14 @@ namespace Escape.Data.Model
         public bool HasImmobilizationBand{ get; set; }
         public bool HasPaddedHeadrest{ get; set; }
         public string DimentionsFoldedUp{ get; set; }
-        public string Waranty{ get; set; }
+        public string Warranty { get; set; }
+        public string Weight { get; set; }
+        public string Dimensions { get; set; }
+        public string LimitedWarranty { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
+        public long ArticleNumber { get; set; }
+        public decimal? Discount { get; set; }
+        public string ImageFileName { get; set; }
     }
 }

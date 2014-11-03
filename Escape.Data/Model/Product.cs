@@ -31,7 +31,7 @@ namespace Escape.Data.Model
         public string SafetyTags { get; set; }
         [Display(Name = "Related Tags")]
         public string RelatedTags { get; set; }
-        [Display(Name = "Is an Accesory")]
+        [Display(Name = "Is an Accessory")]
         public bool IsAccessory { get; set; }
         [Display(Name = "Image File Name")]
         public string ImageFileName { get; set; }

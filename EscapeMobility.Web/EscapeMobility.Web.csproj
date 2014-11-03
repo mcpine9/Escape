@@ -186,6 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\DSC06167.JPG" />
+    <Content Include="Content\images\LEDLights.png" />
+    <Content Include="Content\images\LEDLightsDetail.png" />
     <Content Include="Content\images\overviewBlockBg.png" />
     <Content Include="Content\images\roundCornerClose.png" />
     <Content Include="Content\images\roundCorners.png" />
@@ -484,6 +486,7 @@
     <Compile Include="Models\ProductHighlightModel.cs" />
     <Compile Include="Models\ProductHighlightModels.cs" />
     <Compile Include="Models\ProductsAdminViewModel.cs" />
+    <Compile Include="Models\ProductSpecificationsViewModel.cs" />
     <Compile Include="Models\QuoteViewModel.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
@@ -681,6 +684,7 @@
     <Content Include="Views\UserMailer\SendQuoteEmail.cshtml" />
     <Content Include="Views\UserMailer\PasswordReset.cshtml" />
     <Content Include="Views\UserMailer\SendContactEmail.cshtml" />
+    <Content Include="Views\Shared\_ProductSpecifications.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

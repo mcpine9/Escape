@@ -122,6 +122,10 @@
     <Compile Include="Migrations\201410180748096_ChangedCartItemToList.Designer.cs">
       <DependentUpon>201410180748096_ChangedCartItemToList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411030350447_ChangedAddedFieldsToProdSpecs.cs" />
+    <Compile Include="Migrations\201411030350447_ChangedAddedFieldsToProdSpecs.Designer.cs">
+      <DependentUpon>201411030350447_ChangedAddedFieldsToProdSpecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201410180748096_ChangedCartItemToList.resx">
       <DependentUpon>201410180748096_ChangedCartItemToList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411030350447_ChangedAddedFieldsToProdSpecs.resx">
+      <DependentUpon>201411030350447_ChangedAddedFieldsToProdSpecs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
