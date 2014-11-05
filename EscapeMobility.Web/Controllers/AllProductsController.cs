@@ -99,11 +99,11 @@ namespace EscapeMobility.Controllers
             var vm = new ProductSpecificationsViewModel()
             {
                 Armrest = spec.Armrest,
-                ArticleNumber = spec.ArticleNumber,
+                ArticleNumber = spec.Product.ArticleNumber,
                 Backrest = spec.Backrest,
                 Dimensions = spec.Dimensions,
-                DimentionsFoldedUp = spec.DimentionsFoldedUp,
-                Discount = spec.Discount,
+                DimentionsFoldedUp = spec.DimensionsFoldedUp,
+                Discount = spec.Product.Discount,
                 Footrest = spec.Footrest,
                 HasAniSlipHandle = spec.HasAniSlipHandle,
                 HasDustCover = spec.HasDustCover,
@@ -111,11 +111,22 @@ namespace EscapeMobility.Controllers
                 HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
                 HasImmobilizationBand = spec.HasImmobilizationBand,
                 HasUnfoldingStand = spec.HasUnfoldingStand,
-                ImageFileName = spec.ImageFileName,
+                ImageFileName = spec.Product.ImageFileName,
                 IsEasyToOperate = spec.IsEasyToOperate,
                 IsReadyForUse = spec.IsReadyForUse,
-                IsSpecificationOn = spec.IsSpecificationOn
-
+                IsSpecificationOn = spec.IsSpecificationOn,
+                LongDescription = spec.Product.LongDescription,
+                Material = spec.Material,
+                MaxAngleOfStairs = spec.MaxAngleOfStairs,
+                MaxCarryingCapacity = spec.MaxCarryingCapacity,
+                OperatingHandle = spec.OperatingHandle,
+                HasPaddedHeadRest = spec.HasPaddedHeadrest,
+                Price = spec.Product.Price,
+                Seat = spec.Seat,
+                ShortDescription = spec.Product.ShortDescription,
+                Title = spec.Product.Title,
+                Warranty = spec.Warranty,
+                Weight = spec.Weight
 
             };
             return PartialView("/Views/Shared/_ProductSpecifications.cshtml", vm);

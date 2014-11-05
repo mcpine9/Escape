@@ -21,15 +21,11 @@
         public string Armrest{ get; set; }
         public bool HasImmobilizationBand{ get; set; }
         public bool HasPaddedHeadrest{ get; set; }
-        public string DimentionsFoldedUp{ get; set; }
+        public string DimensionsFoldedUp{ get; set; }
         public string Warranty { get; set; }
         public string Weight { get; set; }
         public string Dimensions { get; set; }
-        public string LimitedWarranty { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        public long ArticleNumber { get; set; }
-        public decimal? Discount { get; set; }
-        public string ImageFileName { get; set; }
     }
 }

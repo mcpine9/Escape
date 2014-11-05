@@ -45,7 +45,7 @@ namespace EscapeMobility.Web.Models
         public string Footrest { get; set; }
         public string Armrest { get; set; }
         public bool HasImmobilizationBand { get; set; }
-        public string PaddedHeadrest { get; set; }
+        public bool HasPaddedHeadRest { get; set; }
         public string DimentionsFoldedUp { get; set; }
         public string Warranty { get; set; }
         public string Weight { get; set; }
