@@ -70,24 +70,28 @@
         </ul>
     </div>
 </div>
-
-<div class="clear"></div>
+<div id="MainPageParagraph">
+    <p>
+        <em>In an emergency, a disaster or something as simple as an elevator outage,</em> the Escape-Chair is an innovative evacuation device for people in buildings. For persons who are unable to use the stairs, the Escape-Chair deploys within seconds and is operated by a single user.
+        Evacuation planning demands that suitable procedures and devices must be available for persons that have disabilities, are pregnant or have been injured. Especially for disaster prone regions, disaster-preparedness is your best asset.
+        Since elevators cannot be used, for example, after earthquakes, during fires and blackouts, an alternative should be present.
+        By offering various models to address different situations, we can provide the best evacuation solution; in form of an evacuation chair or stretcher, for your requirements.
+    </p>
+</div>
 <div id="blocks">
     <div class="homeBlock">
         <div class="blockTitle">Escape-Chair®</div>
         <div class="blockText">The <strong>Escape-Chair®</strong> is an indispensable solution for the transport of persons over stairs in the event of a calamity.</div>
         <img style="WIDTH: 150px; FLOAT: right; HEIGHT: 175px" alt="Escape-Chair®" src="~/Content/images/escapechair_comfort150.png">
-        @Html.ActionRedirectLink("Find out more!",
-                    "http://www.escape-mobility-usa.com/products/all-products/evacuation/escape-chair.aspx",
-                    new { @class = "blockButton", target = "_blank" })
+        @Html.ActionLink("Find out more!", MVC.AllProducts.EscapeChair(),
+            new { @class = "blockButton", target = "_self" })
     </div>
     <div class="homeBlock">
         <div class="blockTitle">References</div>
         <div class="blockText">Customers that enhanced their safety with Escape Mobility products.</div>
         <img src="~/Content/images/wallace_community.jpg">
-        @Html.ActionRedirectLink("Go to References",
-                    "http://www.escape-mobility-usa.com/information/information/references.aspx",
-                    new { @class = "blockButton", target = "_blank" })
+        @Html.ActionLink("Go to References", MVC.Information.References(),
+                     new { @class = "blockButton", target = "_self" })
     </div>
     <div class="homeBlock">
         <div class="blockTitle">What is an Escape-Chair®?</div>
@@ -95,9 +99,8 @@
 
             <object width="260" height="146"><param name="movie" value="http://www.youtube.com/v/Ji9_0ceqSXY?version=3&amp;hl=nl_NL&amp;rel=0"> <param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/Ji9_0ceqSXY?version=3&amp;hl=nl_NL&amp;rel=0&amp;showinfo=0" type="application/x-shockwave-flash" width="260" height="146" allowscriptaccess="always" allowfullscreen="true"></object>
         </div>
-        @Html.ActionRedirectLink("Escape-Chair&reg;",
-                    "http://www.escape-mobility-usa.com/products/all-products/evacuation/escape-chair.aspx",
-                    new { @class = "blockButton", target = "_blank" })
+        @Html.ActionLink("Escape-Chair", MVC.AllProducts.EscapeChair(),
+                     new { @class = "blockButton", target = "_self" })
     </div>
 </div>
 <div class="twitter-block">
@@ -142,40 +145,17 @@
     </section>
 </div>
 
-<div id="fancybox-tmp"></div>
-<div id="fancybox-loading"><div></div></div>
-<div id="fancybox-overlay"></div>
-<div id="fancybox-wrap">
-    <div id="fancybox-outer">
-        <div class="fancybox-bg" id="fancybox-bg-n"></div>
-        <div class="fancybox-bg" id="fancybox-bg-ne"></div>
-        <div class="fancybox-bg" id="fancybox-bg-e"></div>
-        <div class="fancybox-bg" id="fancybox-bg-se"></div>
-        <div class="fancybox-bg" id="fancybox-bg-s"></div>
-        <div class="fancybox-bg" id="fancybox-bg-sw"></div>
-        <div class="fancybox-bg" id="fancybox-bg-w"></div>
-        <div class="fancybox-bg" id="fancybox-bg-nw"></div>
-        <div id="fancybox-content"></div>
-        <a id="fancybox-close"></a>
-        <div id="fancybox-title"></div>
-        <a href="javascript:;" id="fancybox-left">
-            <span class="fancy-ico" id="fancybox-left-ico"></span>
-        </a>
-        <a href="javascript:;" id="fancybox-right">
-            <span class="fancy-ico" id="fancybox-right-ico"></span>
-        </a>
-    </div>
-</div>
-
+@section pagecss
+{
+    
+}
 @section pagescripts
 {
     <script type="text/javascript" src="~/Scripts/app/jquery-1.8.0.min.0219160602.js"></script>
     <script type="text/javascript" src="~/Scripts/app/masterpage.1015101835.js"></script>
     <script type="text/javascript" src="~/Scripts/app/homepage.0618084353.js"></script>
-    <script type="text/javascript" src="~/Scripts/app/jquery.fancybox-1.3.4.pack.0219160601.js"></script>
     <script type="text/javascript" src="~/Scripts/app/jquery.validate.min.0219160602.js"></script>
     <script type="text/javascript" src="~/Scripts/app/jquery.fancyform.0219160602.js"></script>
     <script type="text/javascript" src="~/Scripts/app/JLibrary.min.0523152631.js"></script>
     <script type="text/javascript" src="~/Scripts/app/jquery.liveboard.0219160602.js"></script>
-    @*<script type="text/javascript" src="~/Scripts/app/jquery.tweet.0618084354.js"></script>*@
 }

@@ -1,13 +1,17 @@
 ﻿
+
+@{
+    string ControllerName = ViewContext.RouteData.Values["Controller"].ToString();
+}
 <ul id="mainNav">
     <li class="navItem first">
-        @Html.ActionLink("Home", MVC.Home.Index(), new {@class="active"})
+        @Html.ActionLink("Home", MVC.Home.Index(), new { @class = ControllerName.Equals("Home") ? "active" : "" })
     </li>
-    <li class="navItem">@Html.ActionLink("All Products", MVC.AllProducts.Index(), new {data_curbrance="all-products"})</li>
-    <li class="navItem">@Html.ActionLink("Healthcare", MVC.HealthCare.Index(), new { data_curbrance = "healthcare" })</li>
-    <li class="navItem">@Html.ActionLink("Condo/Apartments", MVC.CondoApartment.Index(), new { data_curbrance = "condo-apartments" })</li>
-    <li class="navItem">@Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index(), new { data_curbrance = "office-buildings" })</li>
-    <li class="navItem">@Html.ActionLink("Education", MVC.Education.Index(), new { data_curbrance = "education" })</li>
-    <li class="navItem">@Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), new { data_curbrance = "emergency-services" })</li>
-    <li class="navItem last">@Html.ActionLink("Industry", MVC.Industry.Index(), new { data_curbrance = "industry" })</li>
+    <li class="navItem">@Html.ActionLink("All Products", MVC.AllProducts.Index(), new { @class = ControllerName.Equals("AllProducts") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Healthcare", MVC.HealthCare.Index(), new { @class = ControllerName.Equals("HealthCare") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Condo/Apartments", MVC.CondoApartment.Index(), new { @class = ControllerName.Equals("CondoApartment") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index(), new { @class = ControllerName.Equals("OfficeBuildings") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Education", MVC.Education.Index(), new { @class = ControllerName.Equals("Education") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index(), new { @class = ControllerName.Equals("EmergencyServices") ? "active" : "" })</li>
+    <li class="navItem">@Html.ActionLink("Industry", MVC.Industry.Index(), new { @class = ControllerName.Equals("Industry") ? "active" : "" })</li>
 </ul>

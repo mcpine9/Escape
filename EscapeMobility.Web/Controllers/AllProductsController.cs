@@ -28,11 +28,6 @@ namespace EscapeMobility.Controllers
             return View();
         }
 
-        public virtual ActionResult Details(int id)
-        {
-            return View();
-        }
-
         public virtual ActionResult EscapeChair()
         {
             var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
@@ -93,43 +88,47 @@ namespace EscapeMobility.Controllers
             }
         }
 
-        public virtual ActionResult ProductionSpecification(int id)
+        public virtual ActionResult Details(int id)
         {
-            ProductSpecification spec = _db.Product.Find(id).ProductSpecification;
-            var vm = new ProductSpecificationsViewModel()
+            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.ProductId == id).ProductSpecification;
+            if (spec != null)
             {
-                Armrest = spec.Armrest,
-                ArticleNumber = spec.Product.ArticleNumber,
-                Backrest = spec.Backrest,
-                Dimensions = spec.Dimensions,
-                DimentionsFoldedUp = spec.DimensionsFoldedUp,
-                Discount = spec.Product.Discount,
-                Footrest = spec.Footrest,
-                HasAniSlipHandle = spec.HasAniSlipHandle,
-                HasDustCover = spec.HasDustCover,
-                HasErgonomicBackrest = spec.HasErgonomicBackrest,
-                HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
-                HasImmobilizationBand = spec.HasImmobilizationBand,
-                HasUnfoldingStand = spec.HasUnfoldingStand,
-                ImageFileName = spec.Product.ImageFileName,
-                IsEasyToOperate = spec.IsEasyToOperate,
-                IsReadyForUse = spec.IsReadyForUse,
-                IsSpecificationOn = spec.IsSpecificationOn,
-                LongDescription = spec.Product.LongDescription,
-                Material = spec.Material,
-                MaxAngleOfStairs = spec.MaxAngleOfStairs,
-                MaxCarryingCapacity = spec.MaxCarryingCapacity,
-                OperatingHandle = spec.OperatingHandle,
-                HasPaddedHeadRest = spec.HasPaddedHeadrest,
-                Price = spec.Product.Price,
-                Seat = spec.Seat,
-                ShortDescription = spec.Product.ShortDescription,
-                Title = spec.Product.Title,
-                Warranty = spec.Warranty,
-                Weight = spec.Weight
+                var vm = new ProductSpecificationsViewModel()
+                {
+                    Armrest = spec.Armrest,
+                    ArticleNumber = spec.Product.ArticleNumber,
+                    Backrest = spec.Backrest,
+                    Dimensions = spec.Dimensions,
+                    DimentionsFoldedUp = spec.DimensionsFoldedUp,
+                    Discount = spec.Product.Discount,
+                    Footrest = spec.Footrest,
+                    HasAniSlipHandle = spec.HasAniSlipHandle,
+                    HasDustCover = spec.HasDustCover,
+                    HasErgonomicBackrest = spec.HasErgonomicBackrest,
+                    HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
+                    HasImmobilizationBand = spec.HasImmobilizationBand,
+                    HasUnfoldingStand = spec.HasUnfoldingStand,
+                    ImageFileName = spec.Product.ImageFileName,
+                    IsEasyToOperate = spec.IsEasyToOperate,
+                    IsReadyForUse = spec.IsReadyForUse,
+                    IsSpecificationOn = spec.IsSpecificationOn,
+                    LongDescription = spec.Product.LongDescription,
+                    Material = spec.Material,
+                    MaxAngleOfStairs = spec.MaxAngleOfStairs,
+                    MaxCarryingCapacity = spec.MaxCarryingCapacity,
+                    OperatingHandle = spec.OperatingHandle,
+                    HasPaddedHeadRest = spec.HasPaddedHeadRest,
+                    Price = spec.Product.Price,
+                    Seat = spec.Seat,
+                    ShortDescription = spec.Product.ShortDescription,
+                    Title = spec.Product.Title,
+                    Warranty = spec.Warranty,
+                    Weight = spec.Weight
 
-            };
-            return PartialView("/Views/Shared/_ProductSpecifications.cshtml", vm);
+                };
+                return View(vm);   
+            }
+            return View(new ProductSpecificationsViewModel());
         }
     }
 }

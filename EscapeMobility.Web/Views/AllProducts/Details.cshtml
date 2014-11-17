@@ -1,7 +1,6 @@
 ﻿@model EscapeMobility.Web.Models.ProductSpecificationsViewModel
-
 @{
-    ViewBag.Title = "Escape Chair";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section pagebreadcrumbs
@@ -11,14 +10,26 @@
         @Html.ActionLink("All Products", MVC.AllProducts.Index(), null)
         @ViewBag.Title
     </div>
+ }
+@section pagescripts
+{
+    <script src="~/Scripts/app/productdetail.1008085047.js"></script>
 }
+@section pagecss
+{
+    <link href="~/Content/styles/app/productdetail.0625152100.css" rel="stylesheet" />
+}
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
 <div id="mainContent" data-currentname="escape-chair" data-curbranche="all-products" data-division="evacuation">
     <div class="navigationHolder">
 
 
         <div class="prodNav">
-            <a class="prodNavPrev disabled"><img src="/img/spacer.png" alt=""></a>
-            <a class="prodNavNext " href="/product/all-products/evacuation/escape-chair/escape-chair-standard-alu-with-extra-package.aspx" title="onbekend (Volgende item) - Escape-Chair® Standard-ALU with extra package"><img src="/img/spacer.png" alt="onbekend (Volgende item) - Escape-Chair® Standard-ALU with extra package"></a>
+            <a class="prodNavPrev disabled"><img src="/Content/images/spacer.png" alt=""></a>
+            <a class="prodNavNext " href="/product/all-products/evacuation/escape-chair/escape-chair-standard-alu-with-extra-package.aspx" title="onbekend (Volgende item) - Escape-Chair® Standard-ALU with extra package"><img src="/Content/images/spacer.png" alt="onbekend (Volgende item) - Escape-Chair® Standard-ALU with extra package"></a>
         </div>
 
         <div class="prodNavBack">
@@ -26,7 +37,7 @@
         </div>
 
     </div>
-    <h1 class="pageTitle">Escape-Chair® Standard-ALU</h1>
+    <h1 class="pageTitle">@Model.Title</h1>
     <div id="socialMediaLinks">
 
     </div>
@@ -39,7 +50,7 @@
             <div id="piThumbs">
                 <div class="scrollerLeft disabled"></div>
                 <div class="scroller">
-                    <div class="subContent" rel="scPhotoalbum" style="width: 81px;"><a class="fotoalbum" rel="photoAlbum" href="/images/productDetail/16-1/big/escape-chair-standard-alu.jpg" data-pos="0"><img src="/images/productDetail/16-1/normal/escape-chair-standard-alu.jpg"></a></div>
+                    <div class="subContent" rel="scPhotoalbum" style="width: 81px;"><a class="fotoalbum" rel="photoAlbum" href="/Content/images/@Model.ImageFileName" data-pos="0"><img src="/Content/images/@Model.ImageFileName"></a></div>
                 </div>
                 <div class="scrollerRight disabled"></div>
             </div>
@@ -81,7 +92,7 @@
         <ul>
 
             <li class="navItem">
-                <a href="#" class="" rel="scDescription">Description</a>
+                <a href="#" class="" rel="scDescription" class="active">Description</a>
             </li>
 
             <li class="navItem">
@@ -89,7 +100,7 @@
             </li>
 
             <li class="navItem">
-                <a href="#" rel="scAccessoires" class="active">Accessories</a>
+                <a href="#" rel="scAccessoires">Accessories</a>
             </li>
 
             <li>
@@ -98,7 +109,7 @@
         </ul>
     </div>
 
-    <div class="subContent" rel="scDescription" style="display: none;">
+    <div class="subContent" rel="scDescription" style="display: block;">
         <div style="WIDTH: 330px; FLOAT: left; MARGIN-RIGHT: 10px">
             @Model.LongDescription
             <img style="FLOAT: left" src="http://www.escape-mobility.nl/images/cms/logos/logo_CE_ISO_TUV.png"><br>
@@ -118,31 +129,31 @@
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Light weight, easy to operate:</div>
-                <div class="slValue">@{ Model.IsEasyToOperate ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@( Model.IsEasyToOperate ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Ready for use within a few seconds:</div>
-                <div class="slValue">@{Model.IsReadyForUse ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.IsReadyForUse ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Unfolding stand with wide wheel base for horizontal transport:</div>
-                <div class="slValue">@{Model.HasUnfoldingStand ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasUnfoldingStand ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Ergonomic backrest:</div>
-                <div class="slValue">@{Model.HasErgonomicBackrest ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasErgonomicBackrest ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Gliding belt system in safe closed exchangable cassette:</div>
-                <div class="slValue">@{Model.HasGlidingBeltSystem ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasGlidingBeltSystem ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Supplied with dust cover:</div>
-                <div class="slValue">@{Model.HasDustCover ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasDustCover ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Anti-slip on operating handle and lower bracket:</div>
-                <div class="slValue">@{Model.HasAniSlipHandle ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasAniSlipHandle ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Maximum carrying capacity:</div>
@@ -174,11 +185,11 @@
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Head rest including immobilization band:</div>
-                <div class="slValue">@{Model.HasImmobilizationBand ? "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasImmobilizationBand ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Padded (upholstered) headrest:</div>
-                <div class="slValue">@{ Model.HasPaddedHeadRest ?  "<div class=\"icon iconYes\"></div>" : ""}</div>
+                <div class="slValue">@(Model.HasPaddedHeadRest ?  "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Weight:</div>
@@ -197,7 +208,7 @@
 
     </div>
 
-    <div class="subContent" rel="scAccessoires" style="display: block;">
+    <div class="subContent" rel="scAccessoires" style="display: none;">
         <h2>Accessories</h2><a class="scAccessoire" href="/product/all-products/safety/smokehood/ievac-smoke-fire-hood-ebp-900.aspx?fromproduct=true">
             <img src="/images/product/264/small/{name_seo}.jpg">
             <b>iEvac Smoke/Fire Hood EBP-900</b>
@@ -297,7 +308,6 @@
     <div class="clear"></div>
 </div>
 
-@section pagescripts
-{
-    <script type="text/javascript" src="/scripts/productdetail.1008085047.js"></script>
-}
+
+
+

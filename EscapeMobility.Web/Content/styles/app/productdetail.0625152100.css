@@ -1,0 +1,403 @@
+﻿@charset "utf-8";
+/* Gerealiseerd door : Juice BV - Noorderbaan 10 - 5388 RB Nistelrode    */
+/* T: 0412-611453 - E: info@itsallinthemix.nl - I: www.itsallinthemix.nl */
+
+/* Detail */
+.navigationHolder 
+{
+    display: block;
+	height: 25px;
+	position: absolute;
+	right: 0px;
+	top: 17px;
+	width: 310px;
+}
+.prodNavBack {
+    display: inline-block;
+	height: 27px;
+	position: absolute;
+	right: 10px;
+	top: -37px;
+	width: auto;
+}
+.prodNavBack a {
+    background: no-repeat url(/Content/images/backBtn.gif) left 0px;
+    color: #999999;
+    display: inline-block;
+    font-size: 11px;
+    height: 27px;
+    padding: 0 0 0 24px;
+    text-decoration: none;
+}
+.prodNavBack a span {
+    background: no-repeat url(/Content/images/backBtn.gif) right 0px;
+    display: inline-block;
+    height: 27px;
+    line-height: 25px;
+    padding: 0 12px 0 0;
+}
+.prodNavBack a:hover {
+    background: no-repeat url(/Content/images/backBtn.gif) left -27px;
+	color: #008752;
+}
+.prodNavBack a:hover span {
+    background: no-repeat url(/Content/images/backBtn.gif) right -27px;
+}
+.prodNav {
+	display: block;
+	height: 24px;
+	right: 8px;
+	top: 17px;
+	width: 50px;
+	float:right;
+	margin-right:5px;
+}
+.prodNav .prodNavPrev {
+	background: url(/img/content/prodNavPrev.png) no-repeat;
+	border-right: 1px solid #dddddd;
+	float: left;
+}
+.prodNav .prodNavNext {
+	background: url(/img/content/prodNavNext.png) no-repeat;
+	float: right;
+}
+.prodNav a, .prodNav div {
+	background-position: 0px 0px;
+	cursor: pointer;
+	display: block;
+	height: 24px;
+	width: 24px;
+}
+.prodNav a:hover, .prodNav div:hover {
+	background-position: 0px -25px;
+}
+.prodNav .disabled {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    cursor: auto;
+}
+#socialMediaLinks {
+	right: 60px;
+}
+#piButtons {
+	float: right;
+	margin-top: 31px;
+	width: 395px;
+}
+a.piButton, div.piButton {
+	background: url("/Content/images/productInfoButtonBg.png") no-repeat scroll 0 0 transparent;
+	color: #333333;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	height: 46px;
+	line-height: 46px;
+	margin-bottom: 4px;
+	padding: 0px;
+	text-decoration: none;
+	width: 390px;
+	cursor: pointer;
+}
+div.piButton .buttonText {
+	position: relative;
+}
+div.piButton .buttonText .lc5element {
+	position: absolute;
+	top: 12px;
+	right: 11px;
+}
+span.piButtonIcon {
+	background: url("/Content/images/productInfoButtonIcons.png") no-repeat scroll 0 0 transparent;
+	display: block;
+	float: left;
+	height: 46px;
+	width: 53px;
+}
+span.piButtonIcon.download {
+	background-position: 0 -46px;
+}
+span.piButtonIcon.print {
+	background-position: 0 -92px;
+}
+/* Subcontent */
+.subContent a, #errorMessage a {
+	color: #008752;
+}
+.subContent a:hover, #errorMessage a:hover {
+	text-decoration: none;
+}
+/* Specificaties */
+#specsList {
+	border-bottom: 1px solid #7cc242;
+	border-top: 1px solid #7cc242;
+	margin-top: 18px;
+	width: 100%;
+}
+.slRow, .slRowEven {
+	min-height: 24px;
+	line-height: 24px;
+}
+.slRow {
+	background: #eeeeee;
+}
+.slProperty {
+	float: left;
+	width: 316px;
+}
+.slRow, .slRowEven {
+	padding: 0 4px
+}
+.slValue .icon {
+	background: url("../img/content/specsListValueIcons.png") no-repeat scroll 0 0 transparent;
+	display: inline-block;
+	height: 24px;
+	width: 16px;
+}
+.icon.iconNo {
+	background-position: 0 -24px;
+}
+/* Afbeeldingen */
+a.fotoalbum img {
+	border: 1px solid #008852;
+	margin-right: 6px;
+	max-height: 82px;
+	max-width: 123px;
+}
+/* Accessoires */
+a.scAccessoire {
+	border-bottom: 1px dashed #eeeeee;
+	clear: both;
+	color: #666666;
+	display: block;
+	margin: 14px 0 0 14px;
+	min-height: 111px;
+	padding-bottom: 10px;
+	position: relative;
+	text-decoration: none;
+	width: 550px;
+}
+a.scAccessoire img {
+	border: 1px solid #1a171b;
+	float: left;
+	margin-right: 12px;
+}
+a.scAccessoire .price {
+	bottom: 15px;
+	left: 107px;
+	margin: 0;
+	position: absolute;
+	text-align: left;
+	width: 200px;
+}
+a.scAccessoire .price .VAT {
+	color: #666666;
+	font-size: 11px;
+	font-weight: normal;
+	margin-left: 5px;
+}
+
+.ppsArrowRight {
+	background-position: right top;
+	float: right;
+}
+.shopMore {
+	width: 150px;
+	height: 22px;
+	line-height: 22px;
+	background: no-repeat url(../img/content/popupVerder.gif);
+	float: left;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 0 5px;
+	text-align: right;
+	cursor: pointer;
+}
+.endShopping {
+	width: 230px;
+	height: 22px;
+	line-height: 22px;
+	background: no-repeat url(../img/content/popupShopping.gif);
+	float: right;
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+#piChoices {
+	float: right;
+	margin-right: 5px;
+	min-height: 80px;
+	width: 190px;
+}
+#priceBlock {
+	float: right;
+	margin: 60px 0 0;
+	width: 200px;
+}
+#piPrice {
+	position: relative;
+	bottom: auto;
+	right: auto;
+	width: 200px;
+}
+#piPriceVAT {
+	position: static;
+	width: 200px;
+	clear: right;
+}
+
+/* Anderen kochten ook */
+.prodExtra {
+	border-top: 1px dashed #dddddd;
+	clear: both;
+	float: right;
+	height: 260px;
+	margin: 20px 0px;
+	padding: 15px 10px;
+	position: relative;
+	width: 735px;
+}
+.prodExtra .prodNav {
+	top: 12px;
+}
+.scrollLeft {
+	background: url(/img/content/prodNavPrev.png) no-repeat;
+	border-right: 1px solid #dddddd;
+	right: 33px;
+}
+.scrollRight {
+	background: url(/img/content/prodNavNext.png) no-repeat;
+	right: 8px;
+}
+.scrollLeft, .scrollRight {
+	background-position: 0px 0px;
+	cursor: pointer;
+	height: 24px;
+	position: absolute;
+	top: 12px;
+	width: 24px;
+}
+.scrollLeft:hover, .scrollRight:hover {
+	background-position: 0px -25px;
+}
+.prodExtra h2 {
+	color: #008851;
+	font-size: 14px;
+	font-weight: bold;
+}
+.prodExtraSlider {
+	clear: both;
+	display: block;
+	height: 260px;
+	overflow: hidden;
+	position: absolute;
+	top: 50px;
+	width: 100%;
+}
+.prodExtraContainer {
+	width: 10000px;
+}
+a.prodExtraItem {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	width: 150px;
+}
+a.prodExtraItem img {
+	clear: both;
+}
+a.prodExtraItem span {
+	clear: both;
+	color: #333333;
+	display: block;
+	font-size: 11px;
+	padding: 5px 20px;
+	text-decoration: none;
+}
+a.prodExtraItem span.oldPrice {
+    color: #333333;
+    padding: 0px;
+}
+a.prodExtraItem span.mainPrice {
+    font-weight: bold;
+    color: #005832;
+    font-size: 13px; 
+}
+#piThumbs {
+    width: 300px;
+    padding: 20px 0 0;
+}
+.scrollerLeft, .scrollerRight {
+	width: 24px;
+	height: 72px;
+	float: left;
+	background: url(../img/content/prodNavSprite.png) no-repeat 5px 26px #eeeeee;
+	position: relative;
+	cursor: pointer;
+}
+.scrollerRight {
+	border-left: 1px solid #dddddd;
+	margin: 0 0 0 8px;
+}
+.scrollerRight:hover {
+    background-position: -45px 27px;
+}
+.scrollerRight.disabled, .scrollerRight.disabled:hover, .scrollerLeft.disabled, .scrollerLeft.disabled:hover {
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=40);
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    cursor: default;
+}
+.scrollerLeft {
+	border-right: 1px solid #dddddd;
+	background-position: 5px -34px;
+	margin: 0 8px 0 0;
+}
+.scrollerLeft:hover {
+	background-position: -45px -34px;
+}
+.scroller {
+    float: left;
+    width: 234px;
+    height: 72px;
+    overflow: hidden;
+    position: relative;
+}
+.scroller a {
+    display: block;
+    float: left;
+    margin: 0 9px 0 0;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 70px;
+    text-align: center;
+    border: 1px solid #008852;
+}
+.scroller a.fotoalbum img {
+    margin: 0;
+    border: 0;
+}
+.scroller .subContent {
+    height: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+a.contentButton.contactTrigger:before {
+	content: "";
+	background: transparent no-repeat url('../img/ombouw/btnEnquireNow.png');
+	background-size: cover;
+	height: 15px;
+	width: 23px;
+	position: relative;
+	left: -10px;
+	top: 4px;
+	display: inline-block;
+}

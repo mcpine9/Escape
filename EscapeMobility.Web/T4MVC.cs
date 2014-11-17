@@ -38,6 +38,7 @@ public static partial class MVC
     public static EscapeMobility.Controllers.QuoteController Quote = new EscapeMobility.Controllers.T4MVC_QuoteController();
     public static EscapeMobility.Controllers.ServiceController Service = new EscapeMobility.Controllers.T4MVC_ServiceController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
+    public static T4MVC.UserMailerController UserMailer = new T4MVC.UserMailerController();
 }
 
 namespace T4MVC
@@ -69,6 +70,19 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public string Protocol { get; set; }
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_JsonResult : System.Web.Mvc.JsonResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_JsonResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
 
 
 
@@ -93,10 +107,13 @@ namespace Links
             public static readonly string jquery_1_8_0_min_0219160602_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.8.0.min.0219160602.min.js") ? Url("jquery-1.8.0.min.0219160602.min.js") : Url("jquery-1.8.0.min.0219160602.js");
             public static readonly string jquery_fancybox_1_3_4_pack_0219160601_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fancybox-1.3.4.pack.0219160601.min.js") ? Url("jquery.fancybox-1.3.4.pack.0219160601.min.js") : Url("jquery.fancybox-1.3.4.pack.0219160601.js");
             public static readonly string jquery_fancyform_0219160602_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fancyform.0219160602.min.js") ? Url("jquery.fancyform.0219160602.min.js") : Url("jquery.fancyform.0219160602.js");
+            public static readonly string jquery_jSlider_0219160602_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.jSlider.0219160602.min.js") ? Url("jquery.jSlider.0219160602.min.js") : Url("jquery.jSlider.0219160602.js");
             public static readonly string jquery_liveboard_0219160602_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.liveboard.0219160602.min.js") ? Url("jquery.liveboard.0219160602.min.js") : Url("jquery.liveboard.0219160602.js");
             public static readonly string jquery_tweet_0618084354_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.tweet.0618084354.min.js") ? Url("jquery.tweet.0618084354.min.js") : Url("jquery.tweet.0618084354.js");
             public static readonly string jquery_validate_min_0219160602_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.0219160602.min.js") ? Url("jquery.validate.min.0219160602.min.js") : Url("jquery.validate.min.0219160602.js");
+            public static readonly string Main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Main.min.js") ? Url("Main.min.js") : Url("Main.js");
             public static readonly string masterpage_1015101835_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/masterpage.1015101835.min.js") ? Url("masterpage.1015101835.min.js") : Url("masterpage.1015101835.js");
+            public static readonly string productdetail_1008085047_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/productdetail.1008085047.min.js") ? Url("productdetail.1008085047.min.js") : Url("productdetail.1008085047.js");
             public static readonly string seal_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/seal.min.js") ? Url("seal.min.js") : Url("seal.js");
         }
     
@@ -183,6 +200,7 @@ namespace Links
             public static readonly string arrowDownWhite_png = Url("arrowDownWhite.png");
             public static readonly string az_alma2_jpg = Url("az-alma2.jpg");
             public static readonly string azmlogo_2_png = Url("azmlogo_2.png");
+            public static readonly string backBtn_gif = Url("backBtn.gif");
             public static readonly string beeldmerk_png = Url("beeldmerk.png");
             public static readonly string berufsfoerderungswerk_jpg = Url("berufsfoerderungswerk.jpg");
             public static readonly string beurs3_jpg = Url("beurs3.jpg");
@@ -196,6 +214,7 @@ namespace Links
             public static readonly string contentBg_png = Url("contentBg.png");
             public static readonly string contentFooterBg_png = Url("contentFooterBg.png");
             public static readonly string ContentListLiBg_png = Url("ContentListLiBg.png");
+            public static readonly string contentNavBg_png = Url("contentNavBg.png");
             public static readonly string DhrvanLeeuwen_jpg = Url("DhrvanLeeuwen.jpg");
             public static readonly string distribiteurs_vrij225h_png = Url("distribiteurs_vrij225h.png");
             public static readonly string distributors_wanted_jpg = Url("distributors-wanted.jpg");
@@ -255,6 +274,8 @@ namespace Links
             public static readonly string kisco_senior_living_virginia_beach__virginia_jpg = Url("kisco senior living virginia beach, virginia.jpg");
             public static readonly string klantenservice_png = Url("klantenservice.png");
             public static readonly string lebenhsilfe_blau_png = Url("lebenhsilfe-blau.png");
+            public static readonly string LEDLights_png = Url("LEDLights.png");
+            public static readonly string LEDLightsDetail_png = Url("LEDLightsDetail.png");
             public static readonly string leftMenuUlBg_png = Url("leftMenuUlBg.png");
             public static readonly string leftMenuUlBottomBg_png = Url("leftMenuUlBottomBg.png");
             public static readonly string leftMenuUlLiBg_png = Url("leftMenuUlLiBg.png");
@@ -287,11 +308,14 @@ namespace Links
             public static readonly string phone_png = Url("phone.png");
             public static readonly string productie_jpg = Url("productie.jpg");
             public static readonly string productie_large_jpg = Url("productie_large.jpg");
+            public static readonly string productInfoButtonBg_png = Url("productInfoButtonBg.png");
+            public static readonly string productInfoButtonIcons_png = Url("productInfoButtonIcons.png");
             public static readonly string products_jpg = Url("products.jpg");
             public static readonly string radio_unchecked_png = Url("radio_unchecked.png");
             public static readonly string RK_logo3_jpg = Url("RK-logo3.jpg");
             public static readonly string roundCornerClose_png = Url("roundCornerClose.png");
             public static readonly string roundCorners_png = Url("roundCorners.png");
+            public static readonly string Sail_Exterior_1_reduced_1_jpg = Url("Sail_Exterior_1_reduced-1.jpg");
             public static readonly string scape_cbrn30_jpg = Url("scape-cbrn30.jpg");
             public static readonly string scape_co_cbrn__escape_respirator_jpg = Url("scape-co-cbrn--escape-respirator.jpg");
             public static readonly string seal_for_1016457_png = Url("seal-for-1016457.png");
@@ -301,6 +325,7 @@ namespace Links
             public static readonly string secure_payment_jpg = Url("secure-payment.jpg");
             public static readonly string secure90x72_gif = Url("secure90x72.gif");
             public static readonly string sliderTitles_png = Url("sliderTitles.png");
+            public static readonly string spacer_png = Url("spacer.png");
             public static readonly string stand_alone_holder_color_black_jpg = Url("stand-alone-holder-color-black.jpg");
             public static readonly string stempel_madeineurope_175_20graden_png = Url("stempel_madeineurope_175-20graden.png");
             public static readonly string subFooterArrow_png = Url("subFooterArrow.png");
@@ -353,6 +378,8 @@ namespace Links
                 public static readonly string jquery_fancybox_1_3_4_0219160601_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.fancybox-1.3.4.0219160601.min.css") ? Url("jquery.fancybox-1.3.4.0219160601.min.css") : Url("jquery.fancybox-1.3.4.0219160601.css");
                      
                 public static readonly string masterpage_1015101830_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/masterpage.1015101830.min.css") ? Url("masterpage.1015101830.min.css") : Url("masterpage.1015101830.css");
+                     
+                public static readonly string productdetail_0625152100_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/productdetail.0625152100.min.css") ? Url("productdetail.0625152100.min.css") : Url("productdetail.0625152100.css");
                      
                 public static readonly string productlisting_1008085041_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/productlisting.1008085041.min.css") ? Url("productlisting.1008085041.min.css") : Url("productlisting.1008085041.css");
                      

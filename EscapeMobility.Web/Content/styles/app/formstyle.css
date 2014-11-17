@@ -30,3 +30,7 @@ text-danger {
   clear: left;
   font-size: 1.2em;
 }
+.checkbox {
+  display: block;
+  float: right;
+}

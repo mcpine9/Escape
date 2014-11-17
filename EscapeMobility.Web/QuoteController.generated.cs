@@ -82,6 +82,7 @@ namespace EscapeMobility.Controllers
             public readonly string Index = "Index";
             public readonly string SubmitSuccess = "SubmitSuccess";
             public readonly string AddToQuote = "AddToQuote";
+            public readonly string GetItemCount = "GetItemCount";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -90,6 +91,7 @@ namespace EscapeMobility.Controllers
             public const string Index = "Index";
             public const string SubmitSuccess = "SubmitSuccess";
             public const string AddToQuote = "AddToQuote";
+            public const string GetItemCount = "GetItemCount";
         }
 
 
@@ -119,11 +121,13 @@ namespace EscapeMobility.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _MainLeftMenu = "_MainLeftMenu";
                 public readonly string _QuoteItems = "_QuoteItems";
                 public readonly string _QuoteModal = "_QuoteModal";
                 public readonly string Index = "Index";
                 public readonly string SubmitSuccess = "SubmitSuccess";
             }
+            public readonly string _MainLeftMenu = "~/Views/Quote/_MainLeftMenu.cshtml";
             public readonly string _QuoteItems = "~/Views/Quote/_QuoteItems.cshtml";
             public readonly string _QuoteModal = "~/Views/Quote/_QuoteModal.cshtml";
             public readonly string Index = "~/Views/Quote/Index.cshtml";
@@ -179,6 +183,17 @@ namespace EscapeMobility.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             AddToQuoteOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetItemCountOverride(T4MVC_System_Web_Mvc_JsonResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult GetItemCount()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.GetItemCount);
+            GetItemCountOverride(callInfo);
             return callInfo;
         }
 

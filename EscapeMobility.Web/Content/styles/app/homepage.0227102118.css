@@ -351,3 +351,16 @@ a.lniLink:hover, .followUs a:hover{
 { 
     width: 100% !important; 
 }
+
+#MainPageParagraph
+{
+    padding: 20px 15px 0 15px;
+    font-size: 1.1em;
+}
+#MainPageParagraph em
+{
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: bold;
+    color: #2FA171;
+}

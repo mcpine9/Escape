@@ -81,6 +81,18 @@ namespace EscapeMobility.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult EditSpecification()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSpecification);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult ProductSpecification()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductSpecification);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ProductsAdminController Actions { get { return MVC.ProductsAdmin; } }
@@ -104,6 +116,9 @@ namespace EscapeMobility.Web.Controllers
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
             public readonly string AddCategory = "AddCategory";
+            public readonly string EditSpecification = "EditSpecification";
+            public readonly string ProductSpecification = "ProductSpecification";
+            public readonly string AddSpecification = "AddSpecification";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -116,6 +131,9 @@ namespace EscapeMobility.Web.Controllers
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
             public const string AddCategory = "AddCategory";
+            public const string EditSpecification = "EditSpecification";
+            public const string ProductSpecification = "ProductSpecification";
+            public const string AddSpecification = "AddSpecification";
         }
 
 
@@ -169,6 +187,31 @@ namespace EscapeMobility.Web.Controllers
         public class ActionParamsClass_AddCategory
         {
             public readonly string CategoryName = "CategoryName";
+        }
+        static readonly ActionParamsClass_EditSpecification s_params_EditSpecification = new ActionParamsClass_EditSpecification();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditSpecification EditSpecificationParams { get { return s_params_EditSpecification; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditSpecification
+        {
+            public readonly string id = "id";
+            public readonly string spec = "spec";
+        }
+        static readonly ActionParamsClass_ProductSpecification s_params_ProductSpecification = new ActionParamsClass_ProductSpecification();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_ProductSpecification ProductSpecificationParams { get { return s_params_ProductSpecification; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_ProductSpecification
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_AddSpecification s_params_AddSpecification = new ActionParamsClass_AddSpecification();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddSpecification AddSpecificationParams { get { return s_params_AddSpecification; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddSpecification
+        {
+            public readonly string vm = "vm";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -317,6 +360,65 @@ namespace EscapeMobility.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCategory);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "CategoryName", CategoryName);
             AddCategoryOverride(callInfo, CategoryName);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditSpecification(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSpecification);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            EditSpecificationOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Escape.Data.Model.ProductSpecification spec);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult EditSpecification(Escape.Data.Model.ProductSpecification spec)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSpecification);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "spec", spec);
+            EditSpecificationOverride(callInfo, spec);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ProductSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ProductSpecification(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductSpecification);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ProductSpecificationOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddSpecification()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddSpecification);
+            AddSpecificationOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.AddProductSpecificationsViewModel vm);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddSpecification(EscapeMobility.Web.Models.AddProductSpecificationsViewModel vm)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddSpecification);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
+            AddSpecificationOverride(callInfo, vm);
             return callInfo;
         }
 

@@ -185,13 +185,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\backBtn.gif" />
+    <Content Include="Content\images\contentNavBg.png" />
     <Content Include="Content\images\DSC06167.JPG" />
     <Content Include="Content\images\LEDLights.png" />
     <Content Include="Content\images\LEDLightsDetail.png" />
     <Content Include="Content\images\overviewBlockBg.png" />
+    <Content Include="Content\images\productInfoButtonBg.png" />
+    <Content Include="Content\images\productInfoButtonIcons.png" />
     <Content Include="Content\images\roundCornerClose.png" />
     <Content Include="Content\images\roundCorners.png" />
     <Content Include="Content\images\Sail_Exterior_1_reduced-1.jpg" />
+    <Content Include="Content\images\spacer.png" />
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
@@ -201,6 +206,7 @@
     <Content Include="Content\styles\app\formstyle.min.css">
       <DependentUpon>formstyle.css</DependentUpon>
     </Content>
+    <Content Include="Content\styles\app\productdetail.0625152100.css" />
     <Content Include="Content\styles\app\productlisting.1008085041.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.min.css" />
@@ -368,7 +374,9 @@
     <Content Include="Global.asax" />
     <Content Include="InstallationDummyFile.txt" />
     <Content Include="RecaptchaNet.ReadMe.txt" />
+    <Content Include="Scripts\app\jquery.jSlider.0219160602.js" />
     <Content Include="Scripts\app\Main.js" />
+    <Content Include="Scripts\app\productdetail.1008085047.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\lib\jquery\jquery-2.1.0.min.map" />
     <Content Include="Content\styles\app\adminlayout.less" />
@@ -446,6 +454,8 @@
     <Compile Include="Mailers\IUserMailer.cs" />
     <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\AddCategoryViewModel.cs" />
+    <Compile Include="Models\EditSpecificationViewModel.cs" />
+    <Compile Include="Models\AddProductSpecificationsViewModel.cs" />
     <Compile Include="Models\AddToQuoteResponseViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
     <Compile Include="Models\CreateProductViewModel.cs" />
@@ -508,6 +518,9 @@
     <Compile Include="T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMailerController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="WebUtilities\EmailHelper.cs" />
@@ -685,6 +698,8 @@
     <Content Include="Views\UserMailer\PasswordReset.cshtml" />
     <Content Include="Views\UserMailer\SendContactEmail.cshtml" />
     <Content Include="Views\Shared\_ProductSpecifications.cshtml" />
+    <Content Include="Views\AllProducts\Details.cshtml" />
+    <Content Include="Views\ProductsAdmin\AddSpecification.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

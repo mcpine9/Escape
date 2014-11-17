@@ -20,12 +20,13 @@
         public string Footrest{ get; set; }
         public string Armrest{ get; set; }
         public bool HasImmobilizationBand{ get; set; }
-        public bool HasPaddedHeadrest{ get; set; }
         public string DimensionsFoldedUp{ get; set; }
         public string Warranty { get; set; }
         public string Weight { get; set; }
         public string Dimensions { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
+        public bool HasPaddedHeadRest { get; set; }
+        public string LimitedWarranty { get; set; }
     }
 }

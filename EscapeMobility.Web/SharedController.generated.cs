@@ -44,6 +44,7 @@ namespace T4MVC
                 public readonly string _Layout = "_Layout";
                 public readonly string _LoginPartial = "_LoginPartial";
                 public readonly string _MainNav = "_MainNav";
+                public readonly string _ProductSpecifications = "_ProductSpecifications";
                 public readonly string Error = "Error";
             }
             public readonly string _AdminLayout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -54,6 +55,7 @@ namespace T4MVC
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _LoginPartial = "~/Views/Shared/_LoginPartial.cshtml";
             public readonly string _MainNav = "~/Views/Shared/_MainNav.cshtml";
+            public readonly string _ProductSpecifications = "~/Views/Shared/_ProductSpecifications.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
         }
     }
