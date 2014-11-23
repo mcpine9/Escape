@@ -93,6 +93,12 @@ namespace EscapeMobility.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProductSpecification);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddSpecification()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddSpecification);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ProductsAdminController Actions { get { return MVC.ProductsAdmin; } }
@@ -211,6 +217,7 @@ namespace EscapeMobility.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_AddSpecification
         {
+            public readonly string id = "id";
             public readonly string vm = "vm";
         }
         static readonly ViewsClass s_views = new ViewsClass();
@@ -224,17 +231,21 @@ namespace EscapeMobility.Web.Controllers
             public class _ViewNamesClass
             {
                 public readonly string AddCategory = "AddCategory";
+                public readonly string AddSpecification = "AddSpecification";
                 public readonly string Create = "Create";
                 public readonly string Delete = "Delete";
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
+                public readonly string EditSpecification = "EditSpecification";
                 public readonly string Index = "Index";
             }
             public readonly string AddCategory = "~/Views/ProductsAdmin/AddCategory.cshtml";
+            public readonly string AddSpecification = "~/Views/ProductsAdmin/AddSpecification.cshtml";
             public readonly string Create = "~/Views/ProductsAdmin/Create.cshtml";
             public readonly string Delete = "~/Views/ProductsAdmin/Delete.cshtml";
             public readonly string Details = "~/Views/ProductsAdmin/Details.cshtml";
             public readonly string Edit = "~/Views/ProductsAdmin/Edit.cshtml";
+            public readonly string EditSpecification = "~/Views/ProductsAdmin/EditSpecification.cshtml";
             public readonly string Index = "~/Views/ProductsAdmin/Index.cshtml";
         }
     }
@@ -400,13 +411,14 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [NonAction]
-        partial void AddSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void AddSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult AddSpecification()
+        public override System.Web.Mvc.ActionResult AddSpecification(int id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddSpecification);
-            AddSpecificationOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            AddSpecificationOverride(callInfo, id);
             return callInfo;
         }
 

@@ -700,6 +700,7 @@
     <Content Include="Views\Shared\_ProductSpecifications.cshtml" />
     <Content Include="Views\AllProducts\Details.cshtml" />
     <Content Include="Views\ProductsAdmin\AddSpecification.cshtml" />
+    <Content Include="Views\ProductsAdmin\EditSpecification.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

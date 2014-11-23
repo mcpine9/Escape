@@ -134,6 +134,22 @@
     <Compile Include="Migrations\201411161727165_AdjustedProductSpecification.Designer.cs">
       <DependentUpon>201411161727165_AdjustedProductSpecification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411190359570_ChangedProductSpecRelationship.cs" />
+    <Compile Include="Migrations\201411190359570_ChangedProductSpecRelationship.Designer.cs">
+      <DependentUpon>201411190359570_ChangedProductSpecRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411230452549_ProductSpecChanges.cs" />
+    <Compile Include="Migrations\201411230452549_ProductSpecChanges.Designer.cs">
+      <DependentUpon>201411230452549_ProductSpecChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411230537053_ProductSpecChanges1.cs" />
+    <Compile Include="Migrations\201411230537053_ProductSpecChanges1.Designer.cs">
+      <DependentUpon>201411230537053_ProductSpecChanges1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411230632091_AddedIdentityKeyToProdSpec.cs" />
+    <Compile Include="Migrations\201411230632091_AddedIdentityKeyToProdSpec.Designer.cs">
+      <DependentUpon>201411230632091_AddedIdentityKeyToProdSpec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\Category.cs" />
@@ -214,6 +230,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411161727165_AdjustedProductSpecification.resx">
       <DependentUpon>201411161727165_AdjustedProductSpecification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411190359570_ChangedProductSpecRelationship.resx">
+      <DependentUpon>201411190359570_ChangedProductSpecRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411230452549_ProductSpecChanges.resx">
+      <DependentUpon>201411230452549_ProductSpecChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411230537053_ProductSpecChanges1.resx">
+      <DependentUpon>201411230537053_ProductSpecChanges1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411230632091_AddedIdentityKeyToProdSpec.resx">
+      <DependentUpon>201411230632091_AddedIdentityKeyToProdSpec.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

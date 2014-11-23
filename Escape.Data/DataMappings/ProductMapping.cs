@@ -12,7 +12,7 @@ namespace Escape.Data.DataMappings
     {
         public ProductMapping()
         {
-            HasRequired(s => s.ProductSpecification).WithRequiredPrincipal(p => p.Product);
+            HasRequired(s => s.ProductSpecification).WithRequiredPrincipal();
             HasMany(c => c.Categories)
                 .WithMany(p => p.Products)
                 .Map(t => t.MapLeftKey("ProductId")

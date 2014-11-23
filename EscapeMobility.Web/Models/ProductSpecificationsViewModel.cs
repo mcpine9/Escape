@@ -37,8 +37,8 @@ namespace EscapeMobility.Web.Models
         public bool HasGlidingBeltSystem { get; set; }
         public bool HasDustCover { get; set; }
         public bool HasAniSlipHandle { get; set; }
-        public int? MaxCarryingCapacity { get; set; }
-        public int? MaxAngleOfStairs { get; set; }
+        public string MaxCarryingCapacity { get; set; }
+        public string MaxAngleOfStairs { get; set; }
         public string OperatingHandle { get; set; }
         public string Seat { get; set; }
         public string Backrest { get; set; }

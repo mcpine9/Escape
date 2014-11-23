@@ -98,7 +98,7 @@ namespace EscapeMobility.Controllers
                     Armrest = spec.Armrest,
                     ArticleNumber = spec.Product.ArticleNumber,
                     Backrest = spec.Backrest,
-                    Dimensions = spec.Dimensions,
+                    Dimensions = spec.DimensionsFoldedUp,
                     DimentionsFoldedUp = spec.DimensionsFoldedUp,
                     Discount = spec.Product.Discount,
                     Footrest = spec.Footrest,
@@ -122,7 +122,7 @@ namespace EscapeMobility.Controllers
                     Seat = spec.Seat,
                     ShortDescription = spec.Product.ShortDescription,
                     Title = spec.Product.Title,
-                    Warranty = spec.Warranty,
+                    Warranty = spec.LimitedWarranty,
                     Weight = spec.Weight
 
                 };

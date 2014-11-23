@@ -87,9 +87,19 @@
                 </table>
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                @Html.ActionLink("Edit", MVC.ProductsAdmin.Edit(item.ProductId)) |
+                @Html.ActionLink("Details", MVC.ProductsAdmin.Details(item.ProductId)) |
+                @Html.ActionLink("Delete", MVC.ProductsAdmin.Delete(item.ProductId)) |
+                @{
+                    if (item.ProductSpecificationId == 0)
+                    {
+                        @Html.ActionLink("Add Specification", MVC.ProductsAdmin.AddSpecification(item.ProductId))
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit Specification", MVC.ProductsAdmin.EditSpecification(item.ProductId))
+                    }
+                }
             </td>
         </tr>
     }
