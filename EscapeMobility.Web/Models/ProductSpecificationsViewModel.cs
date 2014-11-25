@@ -10,6 +10,7 @@ namespace EscapeMobility.Web.Models
     {
         #region Product
 
+        public int ProductId { get; set; }
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
@@ -51,6 +52,7 @@ namespace EscapeMobility.Web.Models
         public string Weight { get; set; }
         public string Dimensions { get; set; }
         public string LimitedWarranty { get; set; }
+        public int ProductSpecificationId { get; set; }
 
         #endregion
 

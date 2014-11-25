@@ -5,8 +5,6 @@ namespace Escape.Data.Model
 {
     public class ProductSpecification
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductSpecificationId { get; set; }
         public bool IsSpecificationOn { get; set; }
         public string Material   { get; set; }
@@ -44,8 +42,6 @@ namespace Escape.Data.Model
         public string DimensionsFoldedUp{ get; set; }
         [Display(Name = "Weight:")]
         public string Weight { get; set; }
-        public int ProductId { get; set; }
-        public Product Product { get; set; }
         [Display(Name = "Padded (upholstered) headrest:")]
         public bool HasPaddedHeadRest { get; set; }
         [Display(Name = "Limited Warranty")]
