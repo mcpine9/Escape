@@ -201,7 +201,7 @@ namespace EscapeMobility.Web.Controllers
         public class ActionParamsClass_EditSpecification
         {
             public readonly string id = "id";
-            public readonly string spec = "spec";
+            public readonly string vm = "vm";
         }
         static readonly ActionParamsClass_ProductSpecification s_params_ProductSpecification = new ActionParamsClass_ProductSpecification();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -387,14 +387,14 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [NonAction]
-        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Escape.Data.Model.ProductSpecification spec);
+        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ProductSpecificationsViewModel vm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult EditSpecification(Escape.Data.Model.ProductSpecification spec)
+        public override System.Web.Mvc.ActionResult EditSpecification(EscapeMobility.Web.Models.ProductSpecificationsViewModel vm)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSpecification);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "spec", spec);
-            EditSpecificationOverride(callInfo, spec);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
+            EditSpecificationOverride(callInfo, vm);
             return callInfo;
         }
 

@@ -252,8 +252,8 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult EditSpecification(int id)
         {
-            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.ProductId == id).ProductSpecification;
             Product product = _db.Product.Find(id);
+            ProductSpecification spec = product.ProductSpecification;
             if (spec != null)
             {
                 var vm = new ProductSpecificationsViewModel()
@@ -300,34 +300,54 @@ namespace EscapeMobility.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                ProductSpecification ps = _db.ProductSpecification.Find(vm.ProductSpecificationId);
                 var spec = new ProductSpecification()
                 {
                     Armrest = vm.Armrest,
                     Backrest = vm.Backrest,
+                    DimensionsFoldedUp = vm.DimentionsFoldedUp,
+                    IsEasyToOperate = vm.IsEasyToOperate, 
+                    IsReadyForUse = vm.IsReadyForUse, 
+                    HasUnfoldingStand = vm.HasUnfoldingStand, 
+                    HasErgonomicBackrest = vm.HasErgonomicBackrest, 
+                    HasGlidingBeltSystem = vm.HasGlidingBeltSystem, 
+                    HasDustCover = vm.HasDustCover, 
+                    HasAniSlipHandle = vm.HasAniSlipHandle, 
+                    MaxCarryingCapacity = vm.MaxCarryingCapacity, 
+                    MaxAngleOfStairs = vm.MaxAngleOfStairs, 
+                    OperatingHandle = vm.OperatingHandle, 
+                    Seat = vm.Seat, 
+                    Footrest = vm.Footrest, 
+                    HasImmobilizationBand = vm.HasImmobilizationBand,
+                    Weight = vm.Weight, 
+                    HasPaddedHeadRest = vm.HasPaddedHeadRest, 
+                    LimitedWarranty = vm.LimitedWarranty 
+
                 };
-                if (productSpecification != null)
+                if (ps != null)
                 {
-                    _db.Entry(productSpecification).CurrentValues.SetValues(prodSpec);
+                    _db.Entry(ps).CurrentValues.SetValues(spec);
                     _db.SaveChanges();
                     return RedirectToAction("Index");
                 }
             }
-            return View(prodSpec);
+            return View(vm);
         }
 
         public virtual ActionResult ProductSpecification(int id)
         {
-            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.ProductId == id).ProductSpecification;
+            Product product = _db.Product.Find(id);
+            ProductSpecification spec = product.ProductSpecification;
             if (spec != null)
             {
                 var vm = new ProductSpecificationsViewModel()
                 {
                     Armrest = spec.Armrest,
-                    ArticleNumber = spec.Product.ArticleNumber,
+                    ArticleNumber = product.ArticleNumber,
                     Backrest = spec.Backrest,
                     Dimensions = spec.DimensionsFoldedUp,
                     DimentionsFoldedUp = spec.DimensionsFoldedUp,
-                    Discount = spec.Product.Discount,
+                    Discount = product.Discount,
                     Footrest = spec.Footrest,
                     HasAniSlipHandle = spec.HasAniSlipHandle,
                     HasDustCover = spec.HasDustCover,
@@ -335,20 +355,20 @@ namespace EscapeMobility.Web.Controllers
                     HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
                     HasImmobilizationBand = spec.HasImmobilizationBand,
                     HasUnfoldingStand = spec.HasUnfoldingStand,
-                    ImageFileName = spec.Product.ImageFileName,
+                    ImageFileName = product.ImageFileName,
                     IsEasyToOperate = spec.IsEasyToOperate,
                     IsReadyForUse = spec.IsReadyForUse,
                     IsSpecificationOn = spec.IsSpecificationOn,
-                    LongDescription = spec.Product.LongDescription,
+                    LongDescription = product.LongDescription,
                     Material = spec.Material,
                     MaxAngleOfStairs = spec.MaxAngleOfStairs,
                     MaxCarryingCapacity = spec.MaxCarryingCapacity,
                     OperatingHandle = spec.OperatingHandle,
                     HasPaddedHeadRest = spec.HasPaddedHeadRest,
-                    Price = spec.Product.Price,
+                    Price = product.Price,
                     Seat = spec.Seat,
-                    ShortDescription = spec.Product.ShortDescription,
-                    Title = spec.Product.Title,
+                    ShortDescription = product.ShortDescription,
+                    Title = product.Title,
                     Warranty = spec.LimitedWarranty,
                     Weight = spec.Weight
 
@@ -398,8 +418,7 @@ namespace EscapeMobility.Web.Controllers
                                         HasPaddedHeadRest = vm.HasPaddedHeadRest,
                                         DimensionsFoldedUp = vm.DimensionsFoldedUp,
                                         Weight = vm.Weight,
-                                        LimitedWarranty = vm.LimitedWarranty,
-                                        ProductId = vm.ProductId
+                                        LimitedWarranty = vm.LimitedWarranty
                                     };
             _db.ProductSpecification.Add(newProdSpec);
             _db.SaveChanges();
