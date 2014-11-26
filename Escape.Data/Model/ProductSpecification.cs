@@ -6,7 +6,7 @@ namespace Escape.Data.Model
     public class ProductSpecification
     {
         public int ProductSpecificationId { get; set; }
-        public bool IsSpecificationOn { get; set; }
+        public int ProductId { get; set; }
         public string Material   { get; set; }
         [Display(Name = "Light weight, easy to operate:")]
         public bool IsEasyToOperate { get; set; }

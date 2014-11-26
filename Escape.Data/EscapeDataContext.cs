@@ -32,6 +32,7 @@ namespace Escape.Data
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.Add(new ProductMapping());
+            modelBuilder.Configurations.Add(new ProductSpecificationMapping());
             base.OnModelCreating(modelBuilder);
         }
 

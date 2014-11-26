@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataMappings\ProductMapping.cs" />
+    <Compile Include="DataMappings\ProductSpecificationMapping.cs" />
     <Compile Include="EscapeDataInitializer.cs" />
     <Compile Include="EscapeDBConfiguration.cs">
       <SubType>Code</SubType>
@@ -153,6 +154,10 @@
     <Compile Include="Migrations\201411252321231_ChangedProductSpecification.cs" />
     <Compile Include="Migrations\201411252321231_ChangedProductSpecification.Designer.cs">
       <DependentUpon>201411252321231_ChangedProductSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411260359496_ChangeProductProdSpecRelationship.cs" />
+    <Compile Include="Migrations\201411260359496_ChangeProductProdSpecRelationship.Designer.cs">
+      <DependentUpon>201411260359496_ChangeProductProdSpecRelationship.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\CartItem.cs" />
@@ -249,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411252321231_ChangedProductSpecification.resx">
       <DependentUpon>201411252321231_ChangedProductSpecification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411260359496_ChangeProductProdSpecRelationship.resx">
+      <DependentUpon>201411260359496_ChangeProductProdSpecRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

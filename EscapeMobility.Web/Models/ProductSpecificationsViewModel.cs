@@ -29,7 +29,6 @@ namespace EscapeMobility.Web.Models
 
         #region Product Specification
 
-        public bool IsSpecificationOn { get; set; }
         public string Material { get; set; }
         public bool IsEasyToOperate { get; set; }
         public bool IsReadyForUse { get; set; }

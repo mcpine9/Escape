@@ -112,7 +112,6 @@ namespace EscapeMobility.Controllers
                     ImageFileName = product.ImageFileName,
                     IsEasyToOperate = spec.IsEasyToOperate,
                     IsReadyForUse = spec.IsReadyForUse,
-                    IsSpecificationOn = spec.IsSpecificationOn,
                     LongDescription = product.LongDescription,
                     Material = spec.Material,
                     MaxAngleOfStairs = spec.MaxAngleOfStairs,
