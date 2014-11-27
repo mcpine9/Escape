@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <td>@Html.LabelFor(model => model.Product.Categories)</td>
-                        <td>@Html.Raw(Model.SelectedCategories[item.ProductId])</td>
+                        <td>@Html.Raw(Model.SelectedCategories[item.Id])</td>
                     </tr>
                     <tr>
                         <td>@Html.LabelFor(model => model.Product.ImageFileName)</td>
@@ -87,17 +87,17 @@
                 </table>
             </td>
             <td>
-                @Html.ActionLink("Edit", MVC.ProductsAdmin.Edit(item.ProductId)) |
-                @Html.ActionLink("Details", MVC.ProductsAdmin.Details(item.ProductId)) |
-                @Html.ActionLink("Delete", MVC.ProductsAdmin.Delete(item.ProductId)) |
+                @Html.ActionLink("Edit", MVC.ProductsAdmin.Edit(item.Id)) |
+                @Html.ActionLink("Details", MVC.ProductsAdmin.Details(item.Id)) |
+                @Html.ActionLink("Delete", MVC.ProductsAdmin.Delete(item.Id)) |
                 @{
-                    if (item.ProductSpecificationId == 0)
+                    if (item.ProductSpecification == null)
                     {
-                        @Html.ActionLink("Add Specification", MVC.ProductsAdmin.AddSpecification(item.ProductId))
+                        @Html.ActionLink("Add Specification", MVC.ProductsAdmin.AddSpecification(item.Id))
                     }
                     else
                     {
-                        @Html.ActionLink("Edit Specification", MVC.ProductsAdmin.EditSpecification(item.ProductId))
+                        @Html.ActionLink("Edit Specification", MVC.ProductsAdmin.EditSpecification(item.Id))
                     }
                 }
             </td>

@@ -46,14 +46,12 @@ namespace EscapeMobility.Web.Models
         public string Armrest { get; set; }
         public bool HasImmobilizationBand { get; set; }
         public bool HasPaddedHeadRest { get; set; }
-        public string DimentionsFoldedUp { get; set; }
-        public string Warranty { get; set; }
+        public string DimensionsFoldedUp { get; set; }
         public string Weight { get; set; }
-        public string Dimensions { get; set; }
         public string LimitedWarranty { get; set; }
         public int ProductSpecificationId { get; set; }
 
         #endregion
-
+        public List<ProductHighlightModel> ProductHighlights { get; set; }
     }
 }

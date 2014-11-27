@@ -7,13 +7,13 @@ namespace Escape.Data
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class DeletedDateCreatedForCustomerContactTable : IMigrationMetadata
+    public sealed partial class ChangedProductandSpec : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DeletedDateCreatedForCustomerContactTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedProductandSpec));
         
         string IMigrationMetadata.Id
         {
-            get { return "201410120448315_DeletedDateCreatedForCustomerContactTable"; }
+            get { return "201411270439122_ChangedProductandSpec"; }
         }
         
         string IMigrationMetadata.Source

@@ -58,7 +58,7 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.SelectedCategories)</td>
-                <td>@Html.Raw(Model.SelectedCategories[Model.Product.ProductId])</td>
+                <td>@Html.Raw(Model.SelectedCategories[Model.Product.Id])</td>
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.Product.EvacuationType)</td>
@@ -71,6 +71,6 @@
         </table>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Product.ProductId }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Product.Id }) |
         @Html.ActionLink("Back to List", "Index")
     </p>

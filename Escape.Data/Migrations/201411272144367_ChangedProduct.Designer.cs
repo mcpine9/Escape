@@ -7,18 +7,18 @@ namespace Escape.Data
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class ChangeProductProdSpecRelationship : IMigrationMetadata
+    public sealed partial class ChangedProduct : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeProductProdSpecRelationship));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedProduct));
         
         string IMigrationMetadata.Id
         {
-            get { return "201411260359496_ChangeProductProdSpecRelationship"; }
+            get { return "201411272144367_ChangedProduct"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

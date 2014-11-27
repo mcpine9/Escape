@@ -5,8 +5,8 @@ namespace Escape.Data.Model
 {
     public class ProductSpecification
     {
-        public int ProductSpecificationId { get; set; }
-        public int ProductId { get; set; }
+        public int Id { get; set; }
+        public virtual Product Product { get; set; }
         public string Material   { get; set; }
         [Display(Name = "Light weight, easy to operate:")]
         public bool IsEasyToOperate { get; set; }

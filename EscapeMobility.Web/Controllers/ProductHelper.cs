@@ -14,7 +14,7 @@ namespace EscapeMobility.Controllers
                 where p.SafetyType == type
                 select new ProductHighlightModel()
                 {
-                    ProductID = p.ProductId,
+                    ProductID = p.Id,
                     ImageFileName = p.ImageFileName,
                     Name = p.Title,
                     Price = p.Price,
@@ -29,7 +29,7 @@ namespace EscapeMobility.Controllers
                 where p.EvacuationType == type
                 select new ProductHighlightModel()
                 {
-                    ProductID = p.ProductId,
+                    ProductID = p.Id,
                     ImageFileName = p.ImageFileName,
                     Name = p.Title,
                     Price = p.Price,

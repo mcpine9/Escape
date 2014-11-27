@@ -10,7 +10,7 @@
         @Html.ActionLink("All Products", MVC.AllProducts.Index(), null)
         @ViewBag.Title
     </div>
- }
+}
 @section pagescripts
 {
     <script src="~/Scripts/app/productdetail.1008085047.js"></script>
@@ -92,16 +92,16 @@
         <ul>
 
             <li class="navItem">
-                <a href="#" class="" rel="scDescription" class="active">Description</a>
+                <a href="#" rel="scDescription" class="active">Description</a>
             </li>
 
             <li class="navItem">
-                <a href="#" rel="scSpecs" class="">Specifications</a>
+                <a href="#" rel="scSpecs">Specifications</a>
             </li>
 
-            <li class="navItem">
+            @*<li class="navItem">
                 <a href="#" rel="scAccessoires">Accessories</a>
-            </li>
+            </li>*@
 
             <li>
                 <span>&nbsp;</span>
@@ -112,7 +112,9 @@
     <div class="subContent" rel="scDescription" style="display: block;">
         <div style="WIDTH: 330px; FLOAT: left; MARGIN-RIGHT: 10px">
             @Model.LongDescription
-            <img style="FLOAT: left" src="http://www.escape-mobility.nl/images/cms/logos/logo_CE_ISO_TUV.png"><br>
+            <br />
+            <br />
+            <p><img style="FLOAT: left" src="/Content/images/logo_CE_ISO_TUV.png"><br></p>
         </div>
         <div style="WIDTH: 350px; FLOAT: left">
             <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="194" src="http://www.youtube.com/embed/Ji9_0ceqSXY?rel=0&amp;showinfo=0&amp;wmode=transparent" frameborder="0" width="344" allowfullscreen=""></iframe><br>
@@ -129,31 +131,31 @@
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Light weight, easy to operate:</div>
-                <div class="slValue">@( Model.IsEasyToOperate ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@( Model.IsEasyToOperate ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Ready for use within a few seconds:</div>
-                <div class="slValue">@(Model.IsReadyForUse ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.IsReadyForUse ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Unfolding stand with wide wheel base for horizontal transport:</div>
-                <div class="slValue">@(Model.HasUnfoldingStand ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasUnfoldingStand ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Ergonomic backrest:</div>
-                <div class="slValue">@(Model.HasErgonomicBackrest ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasErgonomicBackrest ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Gliding belt system in safe closed exchangable cassette:</div>
-                <div class="slValue">@(Model.HasGlidingBeltSystem ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasGlidingBeltSystem ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Supplied with dust cover:</div>
-                <div class="slValue">@(Model.HasDustCover ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasDustCover ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Anti-slip on operating handle and lower bracket:</div>
-                <div class="slValue">@(Model.HasAniSlipHandle ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasAniSlipHandle ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Maximum carrying capacity:</div>
@@ -185,11 +187,11 @@
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Head rest including immobilization band:</div>
-                <div class="slValue">@(Model.HasImmobilizationBand ? "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasImmobilizationBand ? Html.Raw("<div class=\"fa fa-check\"></div>") : Html.Raw(""))</div>
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Padded (upholstered) headrest:</div>
-                <div class="slValue">@(Model.HasPaddedHeadRest ?  "<div class=\"icon iconYes\"></div>" : "")</div>
+                <div class="slValue">@(Model.HasPaddedHeadRest ? "<div class=\"icon iconYes\"></div>" : "")</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Weight:</div>
@@ -197,7 +199,7 @@
                 <div class="clear"></div>
             </div><div class="slRow">
                 <div class="slProperty">Dimensions folded up (H x W x D):</div>
-                <div class="slValue">@Model.Dimensions</div>
+                <div class="slValue">@Model.DimensionsFoldedUp</div>
                 <div class="clear"></div>
             </div><div class="slRowEven">
                 <div class="slProperty">Limited warranty:</div>
@@ -208,100 +210,20 @@
 
     </div>
 
-    <div class="subContent" rel="scAccessoires" style="display: none;">
-        <h2>Accessories</h2><a class="scAccessoire" href="/product/all-products/safety/smokehood/ievac-smoke-fire-hood-ebp-900.aspx?fromproduct=true">
+    @*<div class="subContent" rel="scAccessoires" style="display: none;">
+        <h2>Accessories</h2>
+        <a class="scAccessoire" href="/product/all-products/safety/smokehood/ievac-smoke-fire-hood-ebp-900.aspx?fromproduct=true">
             <img src="/images/product/264/small/{name_seo}.jpg">
             <b>iEvac Smoke/Fire Hood EBP-900</b>
             <br>
             Smokehood. Purifying respiratory device to assist in breathing clean air for immediate evacuation in case of an emergency.
             <div class="price">$ 149.95<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/safety/smokehood/scape-co-cbrn--escape-respirator.aspx?fromproduct=true">
-            <img src="/images/product/363/small/{name_seo}.jpg">
-            <b>SCape-CO CBRN - Escape-Respirator</b>
-            <br>
-            SCape® CO/CBRN Escape Respirator - the first and only NIOSH CBRN Escape Respirator with Carbon Monoxide Protection.
-            <div class="price">$ 299.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/safety/smokehood/scape-cbrn30.aspx?fromproduct=true">
-            <img src="/images/product/364/small/{name_seo}.jpg">
-            <b>SCape® CBRN30</b>
-            <br>
-            SCape® CBRN30&nbsp;- Revolutionary Escape Respirator - for Escape Only.
-            <div class="price">$ 254.34<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/footrest.aspx?fromproduct=true">
-            <img src="/images/product/24/small/{name_seo}.jpg">
-            <b>Footrest</b>
-            <br>
-            Footrest incl. assembly.
-            <div class="price">$ 520.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/dust-cover-standard-standard-alu.aspx?fromproduct=true">
-            <img src="/images/product/35/small/{name_seo}.jpg">
-            <b>Dust cover Standard/Standard-ALU</b>
-            <br>
-            This dust cover protects the Escape-Chair® Standard, the Escape-Chair® Standard-ALU and Escape-Carry Chair® Standard against dust, dirt and direct sunlight. It has an inspection card visible in&nbsp;a window. <em>Available in different sizes.</em>
-            <div class="price">$ 150.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/escape-locker.aspx?fromproduct=true">
-            <img src="/images/product/38/small/{name_seo}.jpg">
-            <b>Escape-Locker</b>
-            <br>
-            Locker&nbsp;for Escape-Chair® or Escape-Mattress® Fold. Colour white.
-            <div class="price">$ 520.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/escape-point-locker.aspx?fromproduct=true">
-            <img src="/images/product/39/small/{name_seo}.jpg">
-            <b>Escape-Point Locker</b>
-            <br>
-            All essential equipment for an evacuation or an emergency, in one central place!
-            <div class="price">$ 648.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/stand-alone-holder-color-black.aspx?fromproduct=true">
-            <img src="/images/product/40/small/{name_seo}.jpg">
-            <b>Stand-alone holder, color black</b>
-            <br>
-            The stand-alone holder is a free standing device with mounting brackets, so that the Escape-Chair® can be suspended.<br>
-            <em>Also available in white.</em>
-            <div class="price">Price on request</div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/escape-alarm.aspx?fromproduct=true">
-            <img src="/images/product/41/small/{name_seo}.jpg">
-            <b>Escape-Alarm</b>
-            <br>
-            This alarm emits an audible signal when unauthorised persons remove the Escape-Chair® or Escape-Carry Chair® from the wall.
-            <div class="price">$ 123.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/padded-seat.aspx?fromproduct=true">
-            <img src="/images/product/43/small/{name_seo}.jpg">
-            <b>Padded seat</b>
-            <br>
-            This padded seat gives the evacuee a higher sitting position. Especially useful for wheelchair users and elderly persons.
-            <div class="price">$ 325.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/additional-backrest.aspx?fromproduct=true">
-            <img src="/images/product/44/small/{name_seo}.jpg">
-            <b>Additional backrest</b>
-            <br>
-            This extra backrest provides improved support of the back, during the evacuation.
-            <div class="price">$ 150.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/fixation-headrest.aspx?fromproduct=true">
-            <img src="/images/product/45/small/{name_seo}.jpg">
-            <b>Fixation headrest</b>
-            <br>
-            This headrest with extra thickness allows the head of the evacuee to be immobilised and provides improved support.
-            <div class="price">$ 360.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/escape-harness-including-accessory-bag.aspx?fromproduct=true">
-            <img src="/images/product/46/small/{name_seo}.jpg">
-            <b>Escape-Harness, including accessory bag</b>
-            <br>
-            This harness allows extra immobilization of fragile or unconscious persons during evacuation.
-            <div class="price">$ 225.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/legstrap.aspx?fromproduct=true">
-            <img src="/images/product/47/small/{name_seo}.jpg">
-            <b>Legstrap</b>
-            <br>
-            This strap can be used to immobilize the legs of the evacuee.
-            <div class="price">$ 40.00<span class="VAT">excl. Tax</span></div>
-        </a><a class="scAccessoire" href="/product/all-products/evacuation/accessories/footstrap-for-footrest.aspx?fromproduct=true">
-            <img src="/images/product/48/small/{name_seo}.jpg">
-            <b>Footstrap for footrest</b>
-            <br>
-            This strap can be used to immobilize the feet of the evacuee.
-            <div class="price">$ 30.00<span class="VAT">excl. Tax</span></div>
         </a>
-    </div>
+        @foreach (var item in Model.ProductHighlights)
+        {
+            Html.RenderPartial("_ProductHighlight", item);
+        }
+    </div>*@
 
 
 

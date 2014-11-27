@@ -22,16 +22,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IsSpecificationOn, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsSpecificationOn)
-                    @Html.ValidationMessageFor(model => model.IsSpecificationOn, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Material, htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9">
                 @Html.EditorFor(model => model.Material, new { htmlAttributes = new { @class = "form-control" } })
@@ -186,18 +176,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DimentionsFoldedUp, htmlAttributes: new { @class = "control-label col-md-3" })
+            @Html.LabelFor(model => model.DimensionsFoldedUp, htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9">
-                @Html.EditorFor(model => model.DimentionsFoldedUp, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DimentionsFoldedUp, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.DimensionsFoldedUp, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DimensionsFoldedUp, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Warranty, htmlAttributes: new { @class = "control-label col-md-3" })
+            @Html.LabelFor(model => model.LimitedWarranty, htmlAttributes: new { @class = "control-label col-md-3" })
             <div class="col-md-9">
-                @Html.EditorFor(model => model.Warranty, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Warranty, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.LimitedWarranty, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LimitedWarranty, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -206,14 +196,6 @@
             <div class="col-md-9">
                 @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Dimensions, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                @Html.EditorFor(model => model.Dimensions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Dimensions, "", new { @class = "text-danger" })
             </div>
         </div>
 

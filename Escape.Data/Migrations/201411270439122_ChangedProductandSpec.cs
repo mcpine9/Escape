@@ -3,16 +3,16 @@ namespace Escape.Data
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AdjustedProductSpecification : DbMigration
+    public partial class ChangedProductandSpec : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.ProductSpecification", "LimitedWarranty", c => c.String());
+            DropColumn("dbo.Product", "ProductSpecificationId");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.ProductSpecification", "LimitedWarranty");
+            AddColumn("dbo.Product", "ProductSpecificationId", c => c.Int(nullable: false));
         }
     }
 }

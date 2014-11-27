@@ -90,7 +90,8 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Details(int id)
         {
-            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.ProductId == id).ProductSpecification;
+            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.Id == id).ProductSpecification;
             Product product = _db.Product.Find(id);
             if (spec != null)
             {
@@ -99,8 +100,7 @@ namespace EscapeMobility.Controllers
                     Armrest = spec.Armrest,
                     ArticleNumber = product.ArticleNumber,
                     Backrest = spec.Backrest,
-                    Dimensions = spec.DimensionsFoldedUp,
-                    DimentionsFoldedUp = spec.DimensionsFoldedUp,
+                    DimensionsFoldedUp = spec.DimensionsFoldedUp,
                     Discount = product.Discount,
                     Footrest = spec.Footrest,
                     HasAniSlipHandle = spec.HasAniSlipHandle,
@@ -122,8 +122,9 @@ namespace EscapeMobility.Controllers
                     Seat = spec.Seat,
                     ShortDescription = product.ShortDescription,
                     Title = product.Title,
-                    Warranty = spec.LimitedWarranty,
-                    Weight = spec.Weight
+                    LimitedWarranty = spec.LimitedWarranty,
+                    Weight = spec.Weight,
+                    ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeChair)
 
                 };
                 return View(vm);   

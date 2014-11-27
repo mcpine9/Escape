@@ -131,14 +131,14 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult AddToQuote(int id)
         {
             ShoppingCart cart = null;
-            Product product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            Product product = _db.Product.SingleOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return Content("-1");
             }
             var vm = new AddToQuoteViewModel
             {
-                ProductID = product.ProductId,
+                ProductID = product.Id,
                 Name = product.Title,
                 Price = product.Price,
                 ShortDescription = product.ShortDescription,
@@ -158,7 +158,7 @@ namespace EscapeMobility.Controllers
                 {
                     var cartItem = new CartItem()
                     {
-                        ProductID = product.ProductId,
+                        ProductID = product.Id,
                         Product = product,
                         Quantity = 1
                     };
@@ -170,7 +170,7 @@ namespace EscapeMobility.Controllers
             {
                 var cartItem = new CartItem()
                 {
-                    ProductID = product.ProductId,
+                    ProductID = product.Id,
                     Product = product,
                     Quantity = 1
                 };

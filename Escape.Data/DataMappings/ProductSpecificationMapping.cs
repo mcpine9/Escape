@@ -8,7 +8,7 @@ namespace Escape.Data.DataMappings
     {
         public ProductSpecificationMapping()
         {
-            HasKey(s => s.ProductSpecificationId);
+            HasRequired(ps => ps.Product);
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Escape.Data.DataMappings
     {
         public ProductMapping()
         {
-            HasRequired(s => s.ProductSpecification).WithRequiredPrincipal().WillCascadeOnDelete(true);
             HasMany(c => c.Categories)
                 .WithMany(p => p.Products)
                 .Map(t => t.MapLeftKey("ProductId")
@@ -20,6 +19,7 @@ namespace Escape.Data.DataMappings
             HasMany(s => s.SafetyCategories).WithMany(p => p.Products);
             HasMany(s => s.SimilarCategories).WithMany(p => p.Products);
             HasMany(s => s.Accessories).WithMany(p => p.Products);
+            Property(s => s.ProductSpecificationId).IsRequired();
         }
     }
 }

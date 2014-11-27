@@ -3,16 +3,16 @@ namespace Escape.Data
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ChangedShoppingCartProperty : DbMigration
+    public partial class FixProdSpecForeignKeyContraint : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.ShoppingCart", "Message", c => c.String());
+            AddColumn("dbo.Product", "ProductSpecificationId", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.ShoppingCart", "Message", c => c.Int(nullable: false));
+            DropColumn("dbo.Product", "ProductSpecificationId");
         }
     }
 }

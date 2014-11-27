@@ -27,9 +27,9 @@ namespace EscapeMobility.Web.Controllers
             {
                 var categoryArray = (from c in categories
                                      from productCategory in c.Products
-                                     where productCategory.ProductId == p.ProductId
+                                     where productCategory.Id == p.Id
                                      select c.CategoryName).ToArray();
-                vm.SelectedCategories.Add(p.ProductId, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
+                vm.SelectedCategories.Add(p.Id, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
             }
             vm.NumberOfProducts = product.Count;
             vm.Products = product;
@@ -53,7 +53,7 @@ namespace EscapeMobility.Web.Controllers
             var categories = _db.Category.ToList();
             var categoryArray = (from c in categories
                                  from productCategory in c.Products
-                                 where productCategory.ProductId == id
+                                 where productCategory.Id == id
                                  select c.CategoryName).ToArray();
             vm.SelectedCategories.Add((int) id, String.Join(", ", Array.ConvertAll(categoryArray, Convert.ToString)));
             return View(vm);
@@ -134,7 +134,7 @@ namespace EscapeMobility.Web.Controllers
                 EvacuationTypeList = new List<SelectListItem>(),
                 SafetyTypeList = new List<SelectListItem>()
             };
-            var product = _db.Product.SingleOrDefault(p => p.ProductId == id);
+            var product = _db.Product.SingleOrDefault(p => p.Id == id);
             var evacuationTypeValues = Enum.GetValues(typeof(EvacuationType));
             var evacuationTypeNames = Enum.GetNames(typeof(EvacuationType)); 
             for (int i = 0; i <= evacuationTypeNames.Length - 1; i++)
@@ -168,7 +168,7 @@ namespace EscapeMobility.Web.Controllers
                 vm.ProductCategoryList = categories;
                 vm.SelectedProductCategoryIds = (from c in _db.Category
                     from productCategory in c.Products
-                    where productCategory.ProductId == id
+                    where productCategory.Id == id
                     select c.CategoryId).ToList();
             }
             
@@ -256,14 +256,11 @@ namespace EscapeMobility.Web.Controllers
             ProductSpecification spec = product.ProductSpecification;
             if (spec != null)
             {
-                var vm = new ProductSpecificationsViewModel()
+                var vm = new EditSpecificationViewModel()
                 {
                     Armrest = spec.Armrest,
-                    ArticleNumber = product.ArticleNumber,
                     Backrest = spec.Backrest,
-                    Dimensions = spec.DimensionsFoldedUp,
-                    DimentionsFoldedUp = spec.DimensionsFoldedUp,
-                    Discount = product.Discount,
+                    DimensionsFoldedUp = spec.DimensionsFoldedUp,
                     Footrest = spec.Footrest,
                     HasAniSlipHandle = spec.HasAniSlipHandle,
                     HasDustCover = spec.HasDustCover,
@@ -271,20 +268,15 @@ namespace EscapeMobility.Web.Controllers
                     HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
                     HasImmobilizationBand = spec.HasImmobilizationBand,
                     HasUnfoldingStand = spec.HasUnfoldingStand,
-                    ImageFileName = product.ImageFileName,
                     IsEasyToOperate = spec.IsEasyToOperate,
                     IsReadyForUse = spec.IsReadyForUse,
-                    LongDescription = product.LongDescription,
                     Material = spec.Material,
                     MaxAngleOfStairs = spec.MaxAngleOfStairs,
                     MaxCarryingCapacity = spec.MaxCarryingCapacity,
                     OperatingHandle = spec.OperatingHandle,
                     HasPaddedHeadRest = spec.HasPaddedHeadRest,
-                    Price = product.Price,
                     Seat = spec.Seat,
-                    ShortDescription = product.ShortDescription,
-                    Title = product.Title,
-                    Warranty = spec.LimitedWarranty,
+                    LimitedWarranty = spec.LimitedWarranty,
                     Weight = spec.Weight
 
                 };
@@ -295,7 +287,7 @@ namespace EscapeMobility.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult EditSpecification([Bind(Include = "ProductSpecificationId,IsSpecificationOn,Material,IsEasyToOperate,IsReadyForUse,HasUnfoldingStand,HasErgonomicBackrest,HasGlidingBeltSystem,HasDustCover,HasAniSlipHandle,MaxCarryingCapacity,MaxAngleOfStairs,OperatingHandle,Seat,Backrest,Footrest,Armrest,HasImmobilizationBand,DimensionsFoldedUp,Warranty,Weight,ProductId,HasPaddedHeadRest,LimitedWarranty")] ProductSpecificationsViewModel vm)
+        public virtual ActionResult EditSpecification([Bind(Include = "ProductSpecificationId,IsSpecificationOn,Material,IsEasyToOperate,IsReadyForUse,HasUnfoldingStand,HasErgonomicBackrest,HasGlidingBeltSystem,HasDustCover,HasAniSlipHandle,MaxCarryingCapacity,MaxAngleOfStairs,OperatingHandle,Seat,Backrest,Footrest,Armrest,HasImmobilizationBand,DimensionsFoldedUp,Warranty,Weight,ProductId,HasPaddedHeadRest,LimitedWarranty")] EditSpecificationViewModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -304,7 +296,7 @@ namespace EscapeMobility.Web.Controllers
                 {
                     Armrest = vm.Armrest,
                     Backrest = vm.Backrest,
-                    DimensionsFoldedUp = vm.DimentionsFoldedUp,
+                    DimensionsFoldedUp = vm.DimensionsFoldedUp,
                     IsEasyToOperate = vm.IsEasyToOperate, 
                     IsReadyForUse = vm.IsReadyForUse, 
                     HasUnfoldingStand = vm.HasUnfoldingStand, 
@@ -344,8 +336,7 @@ namespace EscapeMobility.Web.Controllers
                     Armrest = spec.Armrest,
                     ArticleNumber = product.ArticleNumber,
                     Backrest = spec.Backrest,
-                    Dimensions = spec.DimensionsFoldedUp,
-                    DimentionsFoldedUp = spec.DimensionsFoldedUp,
+                    DimensionsFoldedUp = spec.DimensionsFoldedUp,
                     Discount = product.Discount,
                     Footrest = spec.Footrest,
                     HasAniSlipHandle = spec.HasAniSlipHandle,
@@ -367,7 +358,7 @@ namespace EscapeMobility.Web.Controllers
                     Seat = spec.Seat,
                     ShortDescription = product.ShortDescription,
                     Title = product.Title,
-                    Warranty = spec.LimitedWarranty,
+                    LimitedWarranty = spec.LimitedWarranty,
                     Weight = spec.Weight
 
                 };
@@ -378,7 +369,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult AddSpecification(int id)
         {
-            var name = _db.Product.SingleOrDefault(p => p.ProductId == id).Title;
+            var name = _db.Product.SingleOrDefault(p => p.Id == id).Title;
             var vm = new AddProductSpecificationsViewModel()
             {
                 ProductId = id,
@@ -418,13 +409,11 @@ namespace EscapeMobility.Web.Controllers
                                         Weight = vm.Weight,
                                         LimitedWarranty = vm.LimitedWarranty
                                     };
-            _db.ProductSpecification.Add(newProdSpec);
+            Product product = _db.Product.Find(vm.ProductId);
+            product.ProductSpecification = newProdSpec;
             _db.SaveChanges();
-            var product = _db.Product.Find(vm.ProductId);
-            product.ProductSpecificationId = newProdSpec.ProductSpecificationId;
-            var entry = _db.Entry(product);
-            entry.Property(p => p.ProductSpecificationId).IsModified = true;
-            _db.SaveChanges();
+            
+
             return RedirectToAction("Index");
         }
 

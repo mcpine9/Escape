@@ -7,18 +7,18 @@ namespace Escape.Data
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class ChangedShoppingCartProperty : IMigrationMetadata
+    public sealed partial class FixProdSpecForeignKeyContraint : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedShoppingCartProperty));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixProdSpecForeignKeyContraint));
         
         string IMigrationMetadata.Id
         {
-            get { return "201410130124090_ChangedShoppingCartProperty"; }
+            get { return "201411260642035_FixProdSpecForeignKeyContraint"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

@@ -387,10 +387,10 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [NonAction]
-        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.ProductSpecificationsViewModel vm);
+        partial void EditSpecificationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, EscapeMobility.Web.Models.EditSpecificationViewModel vm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult EditSpecification(EscapeMobility.Web.Models.ProductSpecificationsViewModel vm)
+        public override System.Web.Mvc.ActionResult EditSpecification(EscapeMobility.Web.Models.EditSpecificationViewModel vm)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditSpecification);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);

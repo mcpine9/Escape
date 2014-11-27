@@ -3,16 +3,16 @@ namespace Escape.Data
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedCommmentsToCustomerContact : DbMigration
+    public partial class ChangedProduct : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.CustomerContact", "Comments", c => c.String());
+            AddColumn("dbo.Product", "ProductSpecificationId", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.CustomerContact", "Comments");
+            DropColumn("dbo.Product", "ProductSpecificationId");
         }
     }
 }

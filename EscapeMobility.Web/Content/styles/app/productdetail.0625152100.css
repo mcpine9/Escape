@@ -136,10 +136,8 @@ span.piButtonIcon.print {
 .slRow, .slRowEven {
 	min-height: 24px;
 	line-height: 24px;
-}
-.slRow {
-	background: #eeeeee;
-}
+} 
+
 .slProperty {
 	float: left;
 	width: 316px;
