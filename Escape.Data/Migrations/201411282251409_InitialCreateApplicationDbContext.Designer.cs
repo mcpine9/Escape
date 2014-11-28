@@ -7,13 +7,13 @@ namespace Escape.Data
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class ChangedProductandSpec : IMigrationMetadata
+    public sealed partial class InitialCreateApplicationDbContext : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangedProductandSpec));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreateApplicationDbContext));
         
         string IMigrationMetadata.Id
         {
-            get { return "201411270439122_ChangedProductandSpec"; }
+            get { return "201411282251409_InitialCreateApplicationDbContext"; }
         }
         
         string IMigrationMetadata.Source
