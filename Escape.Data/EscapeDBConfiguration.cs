@@ -8,7 +8,6 @@ namespace Escape.Data
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = false;
-            
         }
 
         protected override void Seed(EscapeDataContext context)

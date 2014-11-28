@@ -10,5 +10,8 @@
     <div class="content">
         @RenderBody()
     </div>
+    <!-- Page Related Scripts -->
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("pagescripts", false)
 </body>
 </html>

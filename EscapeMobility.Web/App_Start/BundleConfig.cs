@@ -11,6 +11,9 @@ namespace EscapeMobility
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/app/jquery-1.8.0.min.0219160602.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                        "~/Scripts/app/jquery.validate*"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -29,6 +32,9 @@ namespace EscapeMobility
                     "~/Content/styles/lib/bootstrap.css",
                     "~/Content/styles/lib/font-awesome/font-awesome.css",
                     "~/Content/styles/app/adminlayout.css"));
+            // Set EnableOptimizations to false for debugging. For more information,
+            // visit http://go.microsoft.com/fwlink/?LinkId=301862
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
