@@ -27,8 +27,9 @@
 	border:1px solid #DDDDDD;
 }
 .overviewBlock .contentButton {
-	bottom: 11px;
-	position: absolute;
+	position: relative;
+    margin: 3px;
+    top: -25px;
 }
 .overviewBlock .moreInfo {
 	right: 11px;

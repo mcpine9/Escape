@@ -479,6 +479,12 @@
     <Content Include="Scripts\lib\simplemodal\jquery.simplemodal.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Views\CondoApartment\Details.cshtml" />
+    <Content Include="Views\Education\Details.cshtml" />
+    <Content Include="Views\EmergencyServices\Details.cshtml" />
+    <Content Include="Views\HealthCare\Details.cshtml" />
+    <Content Include="Views\Industry\Details.cshtml" />
+    <Content Include="Views\OfficeBuildings\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -782,6 +788,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\UserAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

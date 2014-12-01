@@ -12,7 +12,7 @@ using EscapeMobility.Web.Models;
 
 namespace EscapeMobility.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public partial class ProductsAdminController : Controller
     {
         private readonly EscapeDataContext _db = new EscapeDataContext();
@@ -181,7 +181,7 @@ namespace EscapeMobility.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit([Bind(Include = "ProductId,Title,ShortDescription,LongDescription,Thumbnailfolder,Price,Discount,ArticleNumber,VideoSampleURL,SafetyTags,SimilarTags,ProductSpecificationId,ImageFileName,IsAccessory,EvacuationType,SafetyType,SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
+        public virtual ActionResult Edit([Bind(Include = "Id, Title, ShortDescription, LongDescription, Thumbnailfolder, Price, Discount, ArticleNumber, VideoSampleURL, SafetyTags, RelatedTags, IsAccessory, ImageFileName, ProductSpecificationId, EvacuationType, SafetyType, SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
             var vm = new EditProductViewModel();
             if (ModelState.IsValid)

@@ -14,5 +14,6 @@ namespace EscapeMobility.Web.Models
         public decimal Price { get; set; }
         public string ShortDescription { get; set; }
         public string ImageFileName { get; set; }
+        public bool HasSpec { get; set; }
     }
 }

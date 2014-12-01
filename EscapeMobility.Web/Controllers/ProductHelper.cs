@@ -18,7 +18,8 @@ namespace EscapeMobility.Controllers
                     ImageFileName = p.ImageFileName,
                     Name = p.Title,
                     Price = p.Price,
-                    ShortDescription = p.ShortDescription
+                    ShortDescription = p.ShortDescription,
+                    HasSpec = !p.ProductSpecification.Equals(null)
                 }).ToList();
         }
 
@@ -33,7 +34,8 @@ namespace EscapeMobility.Controllers
                     ImageFileName = p.ImageFileName,
                     Name = p.Title,
                     Price = p.Price,
-                    ShortDescription = p.ShortDescription
+                    ShortDescription = p.ShortDescription,
+                    HasSpec = !p.ProductSpecification.Equals(null)
                 }).ToList();
         }
     }

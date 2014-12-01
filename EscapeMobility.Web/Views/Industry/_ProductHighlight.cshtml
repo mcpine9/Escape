@@ -12,6 +12,9 @@
         <div class="price">@Html.DisplayFor(m => m.Price)</div>
 
     </div><div id="piPriceVAT">excl. Tax</div><div class="clear"></div>
-    @*@Html.ActionLink("More Information", MVC.AllProducts.Details(Model.ProductID), new { @class = "contentButton moreInfo" })*@
+    @if (Model.HasSpec)
+    {
+        @Html.ActionLink("More Information", MVC.Industry.Details(Model.ProductID), new { @class = "contentButton moreInfo" })
+    }
     <a href="#" class="addToQuote contentButton  addToBasket" data-productid="@Model.ProductID">Add to Quote</a>
 </div>
