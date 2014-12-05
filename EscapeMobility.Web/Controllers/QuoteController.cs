@@ -47,7 +47,7 @@ namespace EscapeMobility.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,ShoppingCart")] QuoteViewModel vm )
+        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,ShoppingCart")] QuoteViewModel vm )
         {
             RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
@@ -74,7 +74,6 @@ namespace EscapeMobility.Controllers
                         _db.Customer.First(c => c.CustomerContacts.Any(cc => cc.Email == vm.Email));
                     currentCustomer.FirstName = vm.FirstName;
                     currentCustomer.LastName = vm.LastName;
-                    currentCustomer.MiddleName = vm.MiddleName;
                     if (Session["Cart"] != null)
                     {
                         currentCustomer.ShoppingCarts = new Collection<ShoppingCart>()
@@ -99,6 +98,7 @@ namespace EscapeMobility.Controllers
                         Zip = vm.Zip
                     });
 
+
                     _db.Entry(currentCustomer).State = System.Data.Entity.EntityState.Modified;
                     _db.SaveChanges();
                     UserMailer.SendQuoteEmail(vm).Send();
@@ -117,7 +117,6 @@ namespace EscapeMobility.Controllers
                     {
                         FirstName = vm.FirstName,
                         LastName = vm.LastName,
-                        MiddleName = vm.MiddleName,
                         ShoppingCarts = new Collection<ShoppingCart>()
                     {
                         new ShoppingCart()

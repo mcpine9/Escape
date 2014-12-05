@@ -7,6 +7,7 @@ FROM ESCAPE-MOBILITY.NET<br />
 ************************************************************************<br />
 
 @Html.DisplayFor(m => m.FirstName) @Html.DisplayFor(m => m.LastName)<br />
+@Model.Title<br />
 @Model.Phone<br />
 @Model.Address1<br />
 @(string.IsNullOrEmpty(Model.Address2) ? Model.Address2 + "<br />" : "")
@@ -16,17 +17,19 @@ FROM ESCAPE-MOBILITY.NET<br />
 @Model.Email<br />
 @Model.Company<br /><br />
 
-Comments:<br/>
+Comments:<br />
+<p>
+    @Model.Comments
+</p>
 
-@Model.Comments
-<ul>
-    @{
-        if (Model.ShoppingCart != null)
-        {
-            foreach (var item in Model.ShoppingCart.CartItems)
+    <ul>
+        @{
+            if ((Model.ShoppingCart.CartItems != null) && (Model.ShoppingCart.CartItems.Count > 0))
             {
-                <li>@item.Quantity x @item.Product.Title </li>
+                foreach (var item in Model.ShoppingCart.CartItems)
+                {
+                    <li>@item.Quantity x @item.Product.Title </li>
+                }
             }
         }
-    }
-</ul>
+    </ul>

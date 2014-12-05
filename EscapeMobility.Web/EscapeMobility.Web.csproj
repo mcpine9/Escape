@@ -491,6 +491,7 @@
     <Content Include="Views\HealthCare\Details.cshtml" />
     <Content Include="Views\Industry\Details.cshtml" />
     <Content Include="Views\OfficeBuildings\Details.cshtml" />
+    <Content Include="Views\Service\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

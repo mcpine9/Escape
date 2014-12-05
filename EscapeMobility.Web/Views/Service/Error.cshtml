@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pagebreadcrumbs
+{
+    <div id="breadcrumbs">
+        @Html.ActionLink("Home", MVC.Home.Index(), null)
+        @ViewBag.Title
+    </div>
+}
+
+
+<div id="leftMenu" class="all-open">
+    @Html.Partial("_MainLeftMenu")
+</div>
+
+
+<div id="mainContent" >
+
+    <div class="alert alert-warning col-md-10" role="alert">
+        There has been a server side error. We apologize for the incovenience.
+        If you continue to see this error screen. Please contact us at
+        <a href="mailto:info@escape-mobility-usa.com" class="alert-link">info@escape-mobility-usa.com</a>
+    </div>
+</div>
+

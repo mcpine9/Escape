@@ -114,5 +114,10 @@ namespace EscapeMobility.Controllers
         {
             return View();
         }
+
+        public virtual ActionResult Error()
+        {
+            return View();
+        }
     }
 }
