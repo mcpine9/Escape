@@ -25,6 +25,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static EscapeMobility.Controllers.AccountController Account = new EscapeMobility.Controllers.T4MVC_AccountController();
     public static EscapeMobility.Controllers.AllProductsController AllProducts = new EscapeMobility.Controllers.T4MVC_AllProductsController();
     public static EscapeMobility.Web.Controllers.CondoApartmentController CondoApartment = new EscapeMobility.Web.Controllers.T4MVC_CondoApartmentController();
     public static EscapeMobility.Controllers.EducationController Education = new EscapeMobility.Controllers.T4MVC_EducationController();
@@ -33,11 +34,13 @@ public static partial class MVC
     public static EscapeMobility.Controllers.HomeController Home = new EscapeMobility.Controllers.T4MVC_HomeController();
     public static EscapeMobility.Controllers.IndustryController Industry = new EscapeMobility.Controllers.T4MVC_IndustryController();
     public static EscapeMobility.Controllers.InformationController Information = new EscapeMobility.Controllers.T4MVC_InformationController();
+    public static EscapeMobility.Controllers.ManageController Manage = new EscapeMobility.Controllers.T4MVC_ManageController();
     public static EscapeMobility.Controllers.OfficeBuildingsController OfficeBuildings = new EscapeMobility.Controllers.T4MVC_OfficeBuildingsController();
     public static EscapeMobility.Web.Controllers.ProductsAdminController ProductsAdmin = new EscapeMobility.Web.Controllers.T4MVC_ProductsAdminController();
     public static EscapeMobility.Controllers.QuoteController Quote = new EscapeMobility.Controllers.T4MVC_QuoteController();
     public static EscapeMobility.Controllers.ServiceController Service = new EscapeMobility.Controllers.T4MVC_ServiceController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
+    public static T4MVC.UserAdminController UserAdmin = new T4MVC.UserAdminController();
     public static T4MVC.UserMailerController UserMailer = new T4MVC.UserMailerController();
 }
 
@@ -400,6 +403,9 @@ namespace Links
                     public static readonly string alerts_less = Url("alerts.less");
                     public static readonly string badges_less = Url("badges.less");
                     public static readonly string bootstrap_less = Url("bootstrap.less");
+                    public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
+                         
+                    public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
                     public static readonly string breadcrumbs_less = Url("breadcrumbs.less");
                     public static readonly string button_groups_less = Url("button-groups.less");
                     public static readonly string buttons_less = Url("buttons.less");

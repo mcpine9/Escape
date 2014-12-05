@@ -3,7 +3,7 @@
     <div class="obImage">
         <img src="~/Content/images/@Model.ImageFileName" class="overviewImage">
     </div>
-    <h2>@Html.DisplayFor(m => m.Name)</h2>
+    <h2 data-clickable="@Url.Action(MVC.Education.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
     <p>
         @Html.DisplayFor(m => m.ShortDescription)
     </p>

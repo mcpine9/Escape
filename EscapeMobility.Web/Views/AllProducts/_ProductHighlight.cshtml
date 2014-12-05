@@ -1,9 +1,9 @@
 ﻿@model EscapeMobility.Web.Models.ProductHighlightModel
 <div class="overviewBlock">
-    <div class="obImage">
+    <div data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))" class="obImage">
         <img src="~/Content/images/@Model.ImageFileName" class="overviewImage">
     </div>
-    <h2>@Html.DisplayFor(m => m.Name)</h2>
+    <h2 data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
     <p>
         @Html.DisplayFor(m => m.ShortDescription)
     </p>

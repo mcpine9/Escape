@@ -11,7 +11,11 @@
 	padding: 11px;
 	position: relative;
 	width: 680px;
-	cursor:pointer;
+}
+
+.overviewBlock h2:hover
+{   
+    text-decoration: underline;
 }
 .obImage {
 	float: left;		
@@ -33,6 +37,12 @@
 }
 .overviewBlock .moreInfo {
 	right: 11px;
+}
+.addToBasket
+{
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: initial
 }
 .overviewBlock .addToBasket {
 	right: 11px;

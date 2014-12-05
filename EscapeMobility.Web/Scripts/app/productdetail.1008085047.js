@@ -25,11 +25,11 @@
             $.fancybox.close();
         });
 
-        if ($("#mainContent").data("currentname")) {
-            var dataGroup = $("#mainContent").data("currentname");
-            var dataDivision = $("#mainContent").data("division");
-            $("#leftMenu").find("li[data-group='" + dataGroup + "'][data-division='" + dataDivision + "']").addClass("active").parent().addClass("keepOpen");
-        }
+        //if ($("#mainContent").data("currentname")) {
+        //    var dataGroup = $("#mainContent").data("currentname");
+        //    var dataDivision = $("#mainContent").data("division");
+        //    $("#leftMenu").find("li[data-group='" + dataGroup + "'][data-division='" + dataDivision + "']").addClass("active").parent().addClass("keepOpen");
+        //}
 
         $(".subContent").nextAll(".subContent").hide();
         $("#contentNav a").click(function (e) {

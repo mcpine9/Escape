@@ -65,25 +65,68 @@ namespace EscapeMobility.Controllers
             }
             if (ModelState.IsValid)
             {
-                vm.ShoppingCart.DateCreated = DateTime.Now;
-                foreach (var cartItem in vm.ShoppingCart.CartItems)
+                bool customerEmailExistsInDB =
+                       _db.CustomerContact.Any(c => c.Email == vm.Email);
+
+                if (customerEmailExistsInDB)
                 {
-                    cartItem.Product = _db.Product.Find(cartItem.ProductID);
+                    Customer currentCustomer =
+                        _db.Customer.First(c => c.CustomerContacts.Any(cc => cc.Email == vm.Email));
+                    currentCustomer.FirstName = vm.FirstName;
+                    currentCustomer.LastName = vm.LastName;
+                    currentCustomer.MiddleName = vm.MiddleName;
+                    if (Session["Cart"] != null)
+                    {
+                        currentCustomer.ShoppingCarts = new Collection<ShoppingCart>()
+                        {
+                            (ShoppingCart) Session["Cart"]
+                        };
+                        vm.ShoppingCart = (ShoppingCart) Session["Cart"];
+                    }
+                    currentCustomer.CustomerContacts.Where(cc => cc.Email == vm.Email).Select(c => new CustomerContact()
+                    {
+                        Address1 = vm.Address1,
+                        Address2 = vm.Address2,
+                        City = vm.City,
+                        Comments = vm.Comments,
+                        Company = vm.Company,
+                        DateAdded = DateTime.Now,
+                        Email = vm.Email,
+                        Phone = vm.Phone,
+                        Phone2 = vm.Phone2,
+                        State = vm.State,
+                        Title = vm.Title,
+                        Zip = vm.Zip
+                    });
+
+                    _db.Entry(currentCustomer).State = System.Data.Entity.EntityState.Modified;
+                    _db.SaveChanges();
+                    UserMailer.SendQuoteEmail(vm).Send();
                 }
-                var customer = new Customer()
+                else
                 {
-                    FirstName = vm.FirstName,
-                    LastName = vm.LastName,
-                    MiddleName = vm.MiddleName,
-                    ShoppingCarts = new Collection<ShoppingCart>()
+                    vm.ShoppingCart.DateCreated = DateTime.Now;
+                    if (vm.ShoppingCart.CartItems != null)
+                    {
+                        foreach (var cartItem in vm.ShoppingCart.CartItems)
+                        {
+                            cartItem.Product = _db.Product.Find(cartItem.ProductID);
+                        }
+                    }
+                    var customer = new Customer()
+                    {
+                        FirstName = vm.FirstName,
+                        LastName = vm.LastName,
+                        MiddleName = vm.MiddleName,
+                        ShoppingCarts = new Collection<ShoppingCart>()
                     {
                         new ShoppingCart()
                         {
-                            CartItems = vm.ShoppingCart.CartItems,
+                            CartItems = vm.ShoppingCart.CartItems ?? new Collection<CartItem>(),
                             DateCreated = DateTime.Now
                         }
                     },
-                    CustomerContacts = new Collection<CustomerContact>()
+                        CustomerContacts = new Collection<CustomerContact>()
                     {
                         new CustomerContact()
                         {
@@ -101,25 +144,16 @@ namespace EscapeMobility.Controllers
                             DateAdded = DateTime.Now
                         }
                     },
-                    DateCreated = DateTime.Now
-                };
-                
-                var customerExists =
-                    _db.CustomerContact.Where(c => c.Email == vm.Email);
-                if (!customerExists.Any())
-                {
+                        DateCreated = DateTime.Now
+                    };
                     customer.DateCreated = DateTime.Now;
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
                     UserMailer.SendQuoteEmail(vm).Send();
-                    return RedirectToAction(MVC.Quote.SubmitSuccess());
                 }
-                vm.ShoppingCart = (ShoppingCart) Session["Cart"];
-                ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";
-                return View(vm);
+                return RedirectToAction(MVC.Quote.SubmitSuccess());
 
             }
-            vm.ShoppingCart = (ShoppingCart)Session["Cart"];
             return View(vm);
         }
 
@@ -186,6 +220,27 @@ namespace EscapeMobility.Controllers
             }
             Session["ItemCount"] = cart.CartItems.Count; 
             return PartialView("_QuoteModal", vm);
+        }
+
+        public virtual ActionResult RemoveFromQuote(int id)
+        {
+            if (Session["Cart"] != null)
+            {
+                var cart = (ShoppingCart) Session["Cart"];
+                var cartItem = cart.CartItems.SingleOrDefault(ci => ci.ProductID == id);
+                if (cart.CartItems.Any())
+                {
+                    cart.CartItems.Remove(cartItem);
+                    Session["Cart"] = cart;
+                    Session["ItemCount"] = cart.CartItems.Count;
+                }
+                else
+                {
+                    Session["ItemCount"] = 0;   
+                }
+            }
+
+            return Content("ok");
         }
 
 

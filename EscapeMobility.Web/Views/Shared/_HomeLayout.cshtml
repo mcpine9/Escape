@@ -26,7 +26,19 @@
             @Html.Partial("~/Views/Shared/_Header.cshtml")
         </div>
         <div id="content">
-            @Html.Partial("~/Views/Shared/_MainNav.cshtml")
+
+            <ul id="mainNav">
+                <li class="navItem first">
+                    @Html.ActionLink("Home", MVC.Home.Index())
+                </li>
+                <li class="navItem">@Html.ActionLink("All Products", MVC.AllProducts.Index())</li>
+                <li class="navItem">@Html.ActionLink("Healthcare", MVC.HealthCare.Index())</li>
+                <li class="navItem">@Html.ActionLink("Condo/Apartments", MVC.CondoApartment.Index())</li>
+                <li class="navItem">@Html.ActionLink("Office Buildings", MVC.OfficeBuildings.Index())</li>
+                <li class="navItem">@Html.ActionLink("Education", MVC.Education.Index())</li>
+                <li class="navItem">@Html.ActionLink("Emergency Services", MVC.EmergencyServices.Index())</li>
+                <li class="navItem">@Html.ActionLink("Industry", MVC.Industry.Index())</li>
+            </ul>
             @RenderSection("pagebreadcrumbs", false)
             @RenderBody()
         </div>
@@ -64,7 +76,18 @@
     </div>
 </div>
             <!-- Page Related Scripts -->
-            @RenderSection("pagescripts", false)
-            @RenderSection("googleanalytics", false)
+                @RenderSection("pagescripts", false)
+                <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-50047524-1', 'escape-mobility.net');
+            ga('send', 'pageview');
+
+                </script>
 </body>
 </html>

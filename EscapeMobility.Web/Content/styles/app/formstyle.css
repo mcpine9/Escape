@@ -1,4 +1,7 @@
-﻿.form-group {
+﻿#recaptcha_area {
+  margin: 0 auto;
+}
+.form-group {
   margin: 10px 0;
 }
 .control-label,

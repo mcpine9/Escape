@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using EscapeMobility.Web.App_Start.LegacyRouteHandler;
 
 namespace EscapeMobility
 {
@@ -24,6 +25,17 @@ namespace EscapeMobility
                 url: "AllProducts/Safety/{category}",
                 defaults: new { controller = "AllProducts", action = "Safety", category = UrlParameter.Optional }
             );
+
+            routes.MapRoute("Login", "site/login", new
+            {
+                controller = "Users",
+                action = "DisplayLogin"
+            });
+
+            //routes.Add("", new LegacyRoute(
+            //    "Users/Login.aspx",
+            //    "Login",
+            //    new LegacyRouteHandler()));
         }
     }
 }

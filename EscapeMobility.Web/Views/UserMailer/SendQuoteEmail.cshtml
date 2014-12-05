@@ -1,4 +1,5 @@
 @using System.Net.Mime
+@using Tweetinvi.Core.Extensions
 @model EscapeMobility.Web.Models.QuoteViewModel
 
 ************************************************************************<br />
@@ -20,7 +21,7 @@ Comments:<br/>
 @Model.Comments
 <ul>
     @{
-        if (Model.ShoppingCart.CartItems != null)
+        if (Model.ShoppingCart != null)
         {
             foreach (var item in Model.ShoppingCart.CartItems)
             {

@@ -60,6 +60,12 @@ namespace EscapeMobility.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Details()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public OfficeBuildingsController Actions { get { return MVC.OfficeBuildings; } }
@@ -81,6 +87,7 @@ namespace EscapeMobility.Controllers
             public readonly string EscapeMattress = "EscapeMattress";
             public readonly string Accessories = "Accessories";
             public readonly string Safety = "Safety";
+            public readonly string Details = "Details";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -91,6 +98,7 @@ namespace EscapeMobility.Controllers
             public const string EscapeMattress = "EscapeMattress";
             public const string Accessories = "Accessories";
             public const string Safety = "Safety";
+            public const string Details = "Details";
         }
 
 
@@ -101,6 +109,14 @@ namespace EscapeMobility.Controllers
         public class ActionParamsClass_Safety
         {
             public readonly string category = "category";
+        }
+        static readonly ActionParamsClass_Details s_params_Details = new ActionParamsClass_Details();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Details DetailsParams { get { return s_params_Details; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Details
+        {
+            public readonly string id = "id";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -116,6 +132,7 @@ namespace EscapeMobility.Controllers
                 public readonly string _ProductHighlight = "_ProductHighlight";
                 public readonly string _SafetyMenu = "_SafetyMenu";
                 public readonly string Accessories = "Accessories";
+                public readonly string Details = "Details";
                 public readonly string EscapeChair = "EscapeChair";
                 public readonly string EscapeMattress = "EscapeMattress";
                 public readonly string Index = "Index";
@@ -124,6 +141,7 @@ namespace EscapeMobility.Controllers
             public readonly string _ProductHighlight = "~/Views/OfficeBuildings/_ProductHighlight.cshtml";
             public readonly string _SafetyMenu = "~/Views/OfficeBuildings/_SafetyMenu.cshtml";
             public readonly string Accessories = "~/Views/OfficeBuildings/Accessories.cshtml";
+            public readonly string Details = "~/Views/OfficeBuildings/Details.cshtml";
             public readonly string EscapeChair = "~/Views/OfficeBuildings/EscapeChair.cshtml";
             public readonly string EscapeMattress = "~/Views/OfficeBuildings/EscapeMattress.cshtml";
             public readonly string Index = "~/Views/OfficeBuildings/Index.cshtml";
@@ -205,6 +223,18 @@ namespace EscapeMobility.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Safety);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "category", category);
             SafetyOverride(callInfo, category);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Details(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            DetailsOverride(callInfo, id);
             return callInfo;
         }
 

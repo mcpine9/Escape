@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using Microsoft.Ajax.Utilities;
 using WebGrease.Css.Ast.Selectors;
 
 namespace EscapeMobility.Controllers
@@ -127,7 +128,7 @@ namespace EscapeMobility.Controllers
                 };
                 return View(vm);   
             }
-            return View(MVC.AllProducts.Index());
+            return Redirect(HttpContext.Request.UrlReferrer.AbsoluteUri);
         }
     }
 }

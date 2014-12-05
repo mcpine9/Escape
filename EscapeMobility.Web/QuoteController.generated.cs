@@ -63,6 +63,12 @@ namespace EscapeMobility.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult RemoveFromQuote()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveFromQuote);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public QuoteController Actions { get { return MVC.Quote; } }
@@ -82,6 +88,7 @@ namespace EscapeMobility.Controllers
             public readonly string Index = "Index";
             public readonly string SubmitSuccess = "SubmitSuccess";
             public readonly string AddToQuote = "AddToQuote";
+            public readonly string RemoveFromQuote = "RemoveFromQuote";
             public readonly string GetItemCount = "GetItemCount";
         }
 
@@ -91,6 +98,7 @@ namespace EscapeMobility.Controllers
             public const string Index = "Index";
             public const string SubmitSuccess = "SubmitSuccess";
             public const string AddToQuote = "AddToQuote";
+            public const string RemoveFromQuote = "RemoveFromQuote";
             public const string GetItemCount = "GetItemCount";
         }
 
@@ -108,6 +116,14 @@ namespace EscapeMobility.Controllers
         public ActionParamsClass_AddToQuote AddToQuoteParams { get { return s_params_AddToQuote; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_AddToQuote
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_RemoveFromQuote s_params_RemoveFromQuote = new ActionParamsClass_RemoveFromQuote();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RemoveFromQuote RemoveFromQuoteParams { get { return s_params_RemoveFromQuote; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RemoveFromQuote
         {
             public readonly string id = "id";
         }
@@ -183,6 +199,18 @@ namespace EscapeMobility.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddToQuote);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             AddToQuoteOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemoveFromQuoteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RemoveFromQuote(int id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveFromQuote);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            RemoveFromQuoteOverride(callInfo, id);
             return callInfo;
         }
 

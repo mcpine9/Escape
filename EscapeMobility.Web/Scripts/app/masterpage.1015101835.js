@@ -26,13 +26,13 @@ var masterpage = {
 
         $("#mainNav").find("a").each(function () {
             if ($(this).data("curbrance") == curBranche) {
-                $(this).addClass("active")
+                //$(this).addClass("active")
             }
         });
 
         $(".dynamicForm textarea").parent().addClass("textArea").removeClass("fdInput");
 
-        $("#mainNav > .navItem:last").addClass("last");
+        //$("#mainNav > .navItem:last").addClass("last");
 
         $("#search").find("input").unbind("keyup");
         $("#search").find("input").keyup(function (e) {
