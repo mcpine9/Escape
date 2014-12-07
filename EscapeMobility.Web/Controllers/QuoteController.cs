@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -68,43 +69,42 @@ namespace EscapeMobility.Controllers
                 bool customerEmailExistsInDB =
                        _db.CustomerContact.Any(c => c.Email == vm.Email);
 
-                if (customerEmailExistsInDB)
-                {
-                    Customer currentCustomer =
-                        _db.Customer.First(c => c.CustomerContacts.Any(cc => cc.Email == vm.Email));
-                    currentCustomer.FirstName = vm.FirstName;
-                    currentCustomer.LastName = vm.LastName;
-                    if (Session["Cart"] != null)
-                    {
-                        currentCustomer.ShoppingCarts = new Collection<ShoppingCart>()
-                        {
-                            (ShoppingCart) Session["Cart"]
-                        };
-                        vm.ShoppingCart = (ShoppingCart) Session["Cart"];
-                    }
-                    currentCustomer.CustomerContacts.Where(cc => cc.Email == vm.Email).Select(c => new CustomerContact()
-                    {
-                        Address1 = vm.Address1,
-                        Address2 = vm.Address2,
-                        City = vm.City,
-                        Comments = vm.Comments,
-                        Company = vm.Company,
-                        DateAdded = DateTime.Now,
-                        Email = vm.Email,
-                        Phone = vm.Phone,
-                        Phone2 = vm.Phone2,
-                        State = vm.State,
-                        Title = vm.Title,
-                        Zip = vm.Zip
-                    });
-
-
-                    _db.Entry(currentCustomer).State = System.Data.Entity.EntityState.Modified;
-                    _db.SaveChanges();
-                    UserMailer.SendQuoteEmail(vm).Send();
-                }
-                else
-                {
+                //if (customerEmailExistsInDB)
+                //{
+                //    Customer currentCustomer =
+                //        _db.Customer.AsNoTracking().First(c => c.CustomerContacts.Any(cc => cc.Email == vm.Email));
+                //    currentCustomer.FirstName = vm.FirstName;
+                //    currentCustomer.LastName = vm.LastName;
+                //    if (Session["Cart"] != null)
+                //    {
+                //        currentCustomer.ShoppingCarts = new Collection<ShoppingCart>()
+                //        {
+                //            (ShoppingCart) Session["Cart"]
+                //        };
+                //        vm.ShoppingCart = (ShoppingCart) Session["Cart"];
+                //    }
+                //    _db.CustomerContact.AsNoTracking();
+                //    currentCustomer.CustomerContacts.Where(cc => cc.Email == vm.Email).Select(c => new CustomerContact()
+                //    {
+                //        Address1 = vm.Address1,
+                //        Address2 = vm.Address2,
+                //        City = vm.City,
+                //        Comments = vm.Comments,
+                //        Company = vm.Company,
+                //        DateAdded = DateTime.Now,
+                //        Email = vm.Email,
+                //        Phone = vm.Phone,
+                //        Phone2 = vm.Phone2,
+                //        State = vm.State,
+                //        Title = vm.Title,
+                //        Zip = vm.Zip
+                //    });
+                //    _db.Entry(currentCustomer).State = System.Data.Entity.EntityState.Modified;
+                //    _db.SaveChanges();
+                //    UserMailer.SendQuoteEmail(vm).Send();
+                //}
+                //else
+                //{
                     vm.ShoppingCart.DateCreated = DateTime.Now;
                     if (vm.ShoppingCart.CartItems != null)
                     {
@@ -149,7 +149,7 @@ namespace EscapeMobility.Controllers
                     _db.Customer.Add(customer);
                     _db.SaveChanges();
                     UserMailer.SendQuoteEmail(vm).Send();
-                }
+                //}
                 return RedirectToAction(MVC.Quote.SubmitSuccess());
 
             }
