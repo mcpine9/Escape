@@ -123,7 +123,8 @@ namespace EscapeMobility.Controllers
                     ShortDescription = product.ShortDescription,
                     Title = product.Title,
                     LimitedWarranty = spec.LimitedWarranty,
-                    Weight = spec.Weight
+                    Weight = spec.Weight,
+                    ProductId = product.Id
 
                 };
                 return View(vm);   

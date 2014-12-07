@@ -40,7 +40,7 @@ namespace EscapeMobility.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Contact([Bind(Include = "FirstName,LastName,MiddleName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments")] ContactFormViewModel vm)
+        public virtual ActionResult Contact([Bind(Include = "FirstName,LastName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments")] ContactFormViewModel vm)
         {
             RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
@@ -62,7 +62,6 @@ namespace EscapeMobility.Controllers
                 {
                     FirstName = vm.FirstName,
                     LastName = vm.LastName,
-                    MiddleName = vm.MiddleName,
                 
                     CustomerContacts = new Collection<CustomerContact>()
                     {
@@ -83,18 +82,12 @@ namespace EscapeMobility.Controllers
                         }
                     }
                 };
-                var customerExists =
-                    _db.CustomerContact.Where(c => c.Email == vm.Email);
-                if (!customerExists.Any())
-                {
-                    customer.DateCreated = DateTime.Now;
-                    _db.Customer.Add(customer);
-                    _db.SaveChanges();
-                    UserMailer.SendContactEmail(vm).Send();
-                    return RedirectToAction(MVC.Service.SubmitSuccess());
-                }
-                ViewBag.ContactExistsMessage = "We're sorry, someone with that email already exists in our database.";
-                return View(vm);
+                
+                customer.DateCreated = DateTime.Now;
+                _db.Customer.Add(customer);
+                _db.SaveChanges();
+                UserMailer.SendContactEmail(vm).Send();
+                return RedirectToAction(MVC.Service.SubmitSuccess());
 
             }
             return View(vm);
