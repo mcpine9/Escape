@@ -32,6 +32,12 @@ namespace EscapeMobility
                 action = "DisplayLogin"
             });
 
+            routes.MapRoute(
+                    name: "EscapeChair",
+                    url: "products/all-products/evacuation/escape-chair.aspx",
+                    defaults: new { controller = "AllProducts", action = "EscapeChair"}
+                );
+
             //routes.Add("", new LegacyRoute(
             //    "Users/Login.aspx",
             //    "Login",
