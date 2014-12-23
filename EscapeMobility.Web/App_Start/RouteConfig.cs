@@ -33,10 +33,18 @@ namespace EscapeMobility
             });
 
             routes.MapRoute(
-                    name: "EscapeChair",
+                    name: "APEscapeChair",
                     url: "products/all-products/evacuation/escape-chair.aspx",
                     defaults: new { controller = "AllProducts", action = "EscapeChair"}
                 );
+
+            routes.MapRoute(
+                    name: "OBEscapeChair",
+                    url: "products/office-buildings/evacuation/escape-chair.aspx",
+                    defaults: new { controller = "OfficeBuildings", action = "EscapeChair"}
+                );
+
+            
 
             //routes.Add("", new LegacyRoute(
             //    "Users/Login.aspx",

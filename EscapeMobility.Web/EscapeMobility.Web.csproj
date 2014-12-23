@@ -231,17 +231,100 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\backBtn.gif" />
+    <Content Include="Content\images\CE_logo_zwart.png" />
     <Content Include="Content\images\contentNavBg.png" />
     <Content Include="Content\images\DSC06167.JPG" />
+    <Content Include="Content\images\escape-carry-chair-standard%281%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standard%282%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standard-with-extra-package%281%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standardplus%281%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-standardplus%282%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-xs%281%29.jpg" />
+    <Content Include="Content\images\escape-carry-chair-xs%282%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort %281%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort %282%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort%281%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort%282%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort%283%29.jpg" />
+    <Content Include="Content\images\escape-chair-comfort%284%29.jpg" />
+    <Content Include="Content\images\escape-chair-standard-alu%281%29.jpg" />
+    <Content Include="Content\images\escape-chair-standard-alu%282%29.jpg" />
+    <Content Include="Content\images\escape-chair-standard-alu-with-extra-package%281%29.jpg" />
+    <Content Include="Content\images\escape-locker%281%29.jpg" />
+    <Content Include="Content\images\escape-locker%282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-compact%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-compact%282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-compact%283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-compact%284%29.jpg" />
+    <Content Include="Content\images\escape-mattress-compact%285%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold %281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold %282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold %283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold %284%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold%282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold%283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold%284%29.jpg" />
+    <Content Include="Content\images\escape-mattress-fold%285%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare %281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare %282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare%282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare%283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-healthcare%284%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo %281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo %282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo %283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo%282%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo%283%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo%284%29.jpg" />
+    <Content Include="Content\images\escape-mattress-solo%285%29.jpg" />
+    <Content Include="Content\images\escape-mattress-storage-bag%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-stretcher-black%281%29.jpg" />
+    <Content Include="Content\images\escape-mattress-stretcher-green.jpg" />
+    <Content Include="Content\images\escape-point-locker%281%29.jpg" />
+    <Content Include="Content\images\escape-smokehood-single-pack--smoke-mask %281%29.jpg" />
+    <Content Include="Content\images\escape-smokehood-single-pack--smoke-mask %282%29.jpg" />
+    <Content Include="Content\images\gsa2013_de_nominee-pokal-web.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900 %281%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900 %282%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900%281%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900%282%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900%283%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900%284%29.jpg" />
+    <Content Include="Content\images\ievac-smoke-fire-hood-ebp-900%285%29.jpg" />
     <Content Include="Content\images\LEDLights.png" />
     <Content Include="Content\images\LEDLightsDetail.png" />
+    <Content Include="Content\images\logo_CE_ISO_TUV %281%29.png" />
     <Content Include="Content\images\overviewBlockBg.png" />
     <Content Include="Content\images\productInfoButtonBg.png" />
     <Content Include="Content\images\productInfoButtonIcons.png" />
     <Content Include="Content\images\roundCornerClose.png" />
     <Content Include="Content\images\roundCorners.png" />
     <Content Include="Content\images\Sail_Exterior_1_reduced-1.jpg" />
+    <Content Include="Content\images\scape-cbrn30 %281%29.jpg" />
+    <Content Include="Content\images\scape-cbrn30 %282%29.jpg" />
+    <Content Include="Content\images\scape-cbrn30 %283%29.jpg" />
+    <Content Include="Content\images\scape-co-cbrn--escape-respirator %281%29.jpg" />
+    <Content Include="Content\images\scape-co-cbrn--escape-respirator %282%29.jpg" />
+    <Content Include="Content\images\scape-co-cbrn--escape-respirator %283%29.jpg" />
     <Content Include="Content\images\spacer.png" />
+    <Content Include="Content\images\{name_seo}%281%29.jpg" />
+    <Content Include="Content\images\{name_seo}%2810%29.jpg" />
+    <Content Include="Content\images\{name_seo}%2811%29.jpg" />
+    <Content Include="Content\images\{name_seo}%2812%29.jpg" />
+    <Content Include="Content\images\{name_seo}%2813%29.jpg" />
+    <Content Include="Content\images\{name_seo}%2814%29.jpg" />
+    <Content Include="Content\images\{name_seo}%282%29.jpg" />
+    <Content Include="Content\images\{name_seo}%283%29.jpg" />
+    <Content Include="Content\images\{name_seo}%284%29.jpg" />
+    <Content Include="Content\images\{name_seo}%285%29.jpg" />
+    <Content Include="Content\images\{name_seo}%286%29.jpg" />
+    <Content Include="Content\images\{name_seo}%287%29.jpg" />
+    <Content Include="Content\images\{name_seo}%288%29.jpg" />
+    <Content Include="Content\images\{name_seo}%289%29.jpg" />
+    <Content Include="Content\images\{name_seo}.jpg" />
     <Content Include="Content\styles\app\adminlayout.min.css">
       <DependentUpon>adminlayout.css</DependentUpon>
     </Content>
@@ -258,6 +341,12 @@
     </Content>
     <Content Include="Content\styles\lib\bootstrap\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\lib\bootstrap\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\lib\bootstrap\variables.min.css">
+      <DependentUpon>variables.css</DependentUpon>
     </Content>
     <Content Include="Content\styles\lib\font-awesome\font-awesome.css" />
     <Content Include="Content\styles\lib\font-awesome\font-awesome.min.css" />
@@ -444,6 +533,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Content\styles\app\formstyle.less" />
+    <Content Include="Content\styles\lib\bootstrap\bootstrap-social.less" />
     <None Include="Properties\PublishProfiles\EscapeMobility.pubxml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\app\branchepage.0227102119.js" />

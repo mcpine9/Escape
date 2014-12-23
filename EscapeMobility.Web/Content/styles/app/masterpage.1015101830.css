@@ -109,7 +109,7 @@ div.belowimage
 	float: right;
 	margin-right: 17px;
 	position: absolute;
-	right: 0px;
+	right: -47px;
 	z-index: 10;
 }
 #topBox ul {
@@ -122,23 +122,38 @@ div.belowimage
 	float: left;
 	height: 32px;
 	line-height: 32px;
-	padding-right: 1px;
+	padding: 0 2px;
 	position: relative;
 	z-index: 10;
 }
 #topBox ul li#languages {
 	padding: 0 10px 0 8px;
 }
-#topBox ul li a {
+#topBox ul li#navigation a {
 	background: transparent no-repeat url('/Content/images/arrowDownWhite.png') center right;
 	color: #ffffff;
 	display: inline-block;
 	padding: 0 25px 0 10px;
 	text-decoration: none;
 }
+#topBox ul li a.btn {
+	color: #ffffff;
+	display: inline-block;
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+}
 #topBox ul li a:hover {
 	background: #9dd171 no-repeat url('/Content/images/arrowDownWhite.png') center right;
 }
+#topBox ul li a.btn:hover {
+	background: transparent;
+}
+
+#topBox ul li a.btn-social-icon
+{
+    margin: 0 2px;
+}
+
 #topBox ul li ul {
 	background: #e1e1e1;
 	border: 1px solid #ffffff;
@@ -226,6 +241,9 @@ div.belowimage
 	margin-right: 2px;
 	float: left;
 	padding: 0px;
+}
+#topBox ul li#social a {
+    
 }
 #topBox ul li#languages a.language {
 	padding: 0px;
