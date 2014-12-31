@@ -534,6 +534,12 @@
     </None>
     <Content Include="Content\styles\app\formstyle.less" />
     <Content Include="Content\styles\lib\bootstrap\bootstrap-social.less" />
+    <Content Include="Content\styles\app\formstyle.css.map">
+      <DependentUpon>formstyle.css</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\lib\bootstrap\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\EscapeMobility.pubxml" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\app\branchepage.0227102119.js" />

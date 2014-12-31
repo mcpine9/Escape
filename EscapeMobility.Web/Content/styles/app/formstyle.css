@@ -17,8 +17,8 @@ single-line {
   padding: 4px;
   width: 50%;
 }
-.btn,
-btn-default {
+.form-group .btn,
+.form-group .btn-default {
   font-size: 1.5em;
   font-weight: bold;
   padding: 8px;
@@ -37,3 +37,4 @@ text-danger {
   display: block;
   float: right;
 }
+/*# sourceMappingURL=formstyle.css.map */
