@@ -12,7 +12,7 @@ using EscapeMobility.Web.Models;
 
 namespace EscapeMobility.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public partial class ProductsAdminController : Controller
     {
         private readonly EscapeDataContext _db = new EscapeDataContext();
