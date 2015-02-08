@@ -26,6 +26,7 @@ namespace Escape.Data
         public DbSet<Category> Category { get; set; }
         public DbSet<SafetyCategory> SafetyCategory { get; set; }
         public DbSet<SimilarCategory> SimilarCategory { get; set; }
+        public DbSet<CustomSpecification> CustomSpecification { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

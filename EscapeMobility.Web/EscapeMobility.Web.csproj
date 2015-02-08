@@ -526,6 +526,7 @@
     <Content Include="Content\styles\lib\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\styles\lib\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\styles\lib\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\lib\sortable\jquery-sortable.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

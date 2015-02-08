@@ -44,5 +44,6 @@ namespace Escape.Data.Model
         public virtual ICollection<SafetyCategory> SafetyCategories { get; set; }
         public virtual ICollection<SimilarCategory> SimilarCategories { get; set; }
         public virtual ICollection<Accessory> Accessories { get; set; }
+        public virtual ICollection<CustomSpecification> CustomSpecifications { get; set; } 
     }
 }
