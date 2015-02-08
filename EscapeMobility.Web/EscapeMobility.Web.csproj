@@ -541,6 +541,7 @@
     <Content Include="Content\styles\lib\bootstrap\bootstrap.css.map">
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Escape Publish.pubxml" />
     <None Include="Properties\PublishProfiles\EscapeMobility.pubxml" />
     <None Include="Properties\PublishProfiles\EscapeProdWWW.pubxml" />
     <None Include="T4MVC.tt.settings.xml" />
