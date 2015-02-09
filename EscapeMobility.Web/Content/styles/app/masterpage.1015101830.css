@@ -53,7 +53,7 @@ div.belowimage
 
 .hideMe {
 	display:none;
-}
+}   
 
 #emailIcon
 {
@@ -146,10 +146,13 @@ div.belowimage
 }
 #topBox ul li#navigation a {
 	background: transparent no-repeat url('/Content/images/arrowDownWhite.png') center right;
-	color: #ffffff;
+	color: #00693C;
 	display: inline-block;
 	padding: 0 25px 0 10px;
 	text-decoration: none;
+}
+#topBox ul li#navigation a:hover {
+	color: #fff;
 }
 #topBox ul li a.btn {
 	color: #ffffff;
@@ -192,12 +195,18 @@ div.belowimage
 	float: none;
 	margin: 0px;
 	padding: 0px;
-	width: 150px;
+	width: 172px;
+}
+#topBox ul li ul li:hover {
+	background-color: #777777;
 }
 #topBox ul li ul li.topBoxWM {
 	line-height: 15px;
 	padding: 7px 9px;
 	width: 170px;
+}
+#topBox ul li ul li.topBoxWM:hover {
+    color: #fff;
 }
 #topBox ul li ul li a {
 	background: none;
