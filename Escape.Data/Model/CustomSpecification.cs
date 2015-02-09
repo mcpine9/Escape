@@ -13,5 +13,9 @@ namespace Escape.Data.Model
 
         public ICollection<Product> Products { get; set; }
 
+        public CustomSpecification()
+        {
+            Products = new HashSet<Product>();
+        }
     }
 }

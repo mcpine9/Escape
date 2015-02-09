@@ -17,7 +17,7 @@ namespace EscapeMobility.Web.Mailers
             ViewData.Model = vm;
 			return Populate(x =>
 			{
-				x.Subject = "QUOTE REQUEST FROM ESCAPE-MOBILITY.NET";
+                x.Subject = "QUOTE REQUEST FROM ESCAPE-MOBILITY-USA.COM";
 				x.ViewName = "SendQuoteEmail";
                 x.To.Add("burak@escape-mobility.net");
                 x.Bcc.Add("mcpine@gmail.com");
@@ -30,7 +30,7 @@ namespace EscapeMobility.Web.Mailers
             ViewData.Model = vm;
             return Populate(x =>
             {
-                x.Subject = "CONTACT FORM REQUEST FROM ESCAPE-MOBILITY.NET";
+                x.Subject = "CONTACT FORM REQUEST FROM ESCAPE-MOBILITY-USA.COM";
                 x.ViewName = "SendContactEmail";
                 x.To.Add("burak@escape-mobility.net");
                 x.Bcc.Add("mcpine@gmail.com");

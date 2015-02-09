@@ -54,6 +54,21 @@ div.belowimage
 .hideMe {
 	display:none;
 }
+
+#emailIcon
+{
+    font-size: 1.5em;
+    margin: 5px 8px;
+}
+#emailIcon a
+{
+    color: #fff;
+}
+#emailIcon a:hover
+{
+    color: #fff;
+    background: none !important;
+}
 #topGlow {
 	background: transparent repeat-x url('/Content/images/topGlow.png') top center;
 	display: block;

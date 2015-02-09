@@ -11,6 +11,10 @@ namespace Escape.Data.Model
 {
     public class Product
     {
+        public Product()
+        {
+            CustomSpecifications = new HashSet<CustomSpecification>();
+        }
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }

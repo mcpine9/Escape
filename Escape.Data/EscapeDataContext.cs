@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -34,8 +35,13 @@ namespace Escape.Data
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.Add(new ProductMapping());
             modelBuilder.Configurations.Add(new ProductSpecificationMapping());
+            modelBuilder.Configurations.Add(new CustomSpecificationMapping());
             base.OnModelCreating(modelBuilder);
         }
 
+    }
+
+    public class CustomSpecificationMapping : EntityTypeConfiguration<CustomSpecification>
+    {
     }
 }
