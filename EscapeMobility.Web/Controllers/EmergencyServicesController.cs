@@ -11,11 +11,11 @@ namespace EscapeMobility.Controllers
 {
     public partial class EmergencyServicesController : Controller
     {
-        private EscapeDataContext _db;
+        private EscapeDataModel _db;
 
         public EmergencyServicesController()
         {
-            _db = new EscapeDataContext();
+            _db = new EscapeDataModel();
         }
         // GET: EmergencyServices
         public virtual ActionResult Index()
@@ -25,7 +25,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChair()
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 6));
+            var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 6));
             var model = new ProductHighlightModels
             {
                 ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeChair)
@@ -35,7 +35,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeCarryChair()
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 6));
+            var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 6));
             var model = new ProductHighlightModels
             {
                 ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeCarryChair)
@@ -45,7 +45,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeMattress()
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 6));
+            var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 6));
             var model = new ProductHighlightModels
             {
                 ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeMattress)
@@ -55,7 +55,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Accessories()
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 6));
+            var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 6));
             var model = new ProductHighlightModels
             {
                 ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeMattress)
@@ -65,7 +65,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Safety(string category)
         {
-            var products = _db.Product.Where(p => p.Categories.Any(c => c.CategoryId == 2));
+            var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 2));
             var model = new ProductHighlightModels();
             switch (category)
             {
@@ -82,8 +82,8 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Details(int id)
         {
-            ProductSpecification spec = _db.Product.SingleOrDefault(s => s.Id == id).ProductSpecification;
-            Product product = _db.Product.Find(id);
+            ProductSpecification spec = _db.Products.SingleOrDefault(s => s.Id == id).ProductSpecification;
+            Product product = _db.Products.Find(id);
             if (spec != null)
             {
                 var vm = new ProductSpecificationsViewModel()

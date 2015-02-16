@@ -1,4 +1,5 @@
-﻿using Escape.Data.Models;
+﻿using Escape.Data.Model;
+using Escape.Data.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Escape.Data

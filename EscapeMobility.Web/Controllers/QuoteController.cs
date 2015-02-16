@@ -22,7 +22,7 @@ namespace EscapeMobility.Controllers
 {
     public partial class QuoteController : Controller
     {
-        EscapeDataContext _db = new EscapeDataContext();
+        EscapeDataModel _db = new EscapeDataModel();
 
         private IUserMailer _userMailer = new UserMailer();
         public IUserMailer UserMailer
@@ -67,7 +67,7 @@ namespace EscapeMobility.Controllers
             if (ModelState.IsValid)
             {
                 bool customerEmailExistsInDB =
-                       _db.CustomerContact.Any(c => c.Email == vm.Email);
+                       _db.CustomerContacts.Any(c => c.Email == vm.Email);
 
                 //if (customerEmailExistsInDB)
                 //{
@@ -110,7 +110,7 @@ namespace EscapeMobility.Controllers
                     {
                         foreach (var cartItem in vm.ShoppingCart.CartItems)
                         {
-                            cartItem.Product = _db.Product.Find(cartItem.ProductID);
+                            cartItem.Product = _db.Products.Find(cartItem.ProductID);
                         }
                     }
                     var customer = new Customer()
@@ -146,7 +146,7 @@ namespace EscapeMobility.Controllers
                         DateCreated = DateTime.Now
                     };
                     customer.DateCreated = DateTime.Now;
-                    _db.Customer.Add(customer);
+                    _db.Customers.Add(customer);
                     _db.SaveChanges();
                     UserMailer.SendQuoteEmail(vm).Send();
                 //}
@@ -164,7 +164,7 @@ namespace EscapeMobility.Controllers
         public virtual ActionResult AddToQuote(int id)
         {
             ShoppingCart cart = null;
-            Product product = _db.Product.SingleOrDefault(p => p.Id == id);
+            Product product = _db.Products.SingleOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return Content("-1");

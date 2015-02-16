@@ -2,7 +2,7 @@
 
 namespace Escape.Data
 {
-    public class EscapeDBConfiguration : DbMigrationsConfiguration<EscapeDataContext>
+    public class EscapeDBConfiguration : DbMigrationsConfiguration<EscapeDataModel>
     {
         public EscapeDBConfiguration()
         {
@@ -10,7 +10,7 @@ namespace Escape.Data
             AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(EscapeDataContext context)
+        protected override void Seed(EscapeDataModel context)
         {
 
         }

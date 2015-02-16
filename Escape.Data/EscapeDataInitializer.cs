@@ -9,7 +9,7 @@ using Escape.Data.Model;
 
 namespace Escape.Data
 {
-    public class EscapeDataInitializer : DropCreateDatabaseIfModelChanges<EscapeDataContext>
+    public class EscapeDataInitializer : DropCreateDatabaseAlways<EscapeDataContext>
     {
         protected override void Seed(EscapeDataContext context)
         {

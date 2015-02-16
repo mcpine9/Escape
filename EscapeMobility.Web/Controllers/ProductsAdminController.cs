@@ -12,16 +12,16 @@ using EscapeMobility.Web.Models;
 
 namespace EscapeMobility.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public partial class ProductsAdminController : Controller
     {
-        private readonly EscapeDataContext _db = new EscapeDataContext();
+        private readonly EscapeDataModel _db = new EscapeDataModel();
         
         // GET: ProductsAdmin
         public virtual ActionResult Index()
         {
-            var product = _db.Product.ToList();
-            var categories = _db.Category.ToList();
+            var product = _db.Products.ToList();
+            var categories = _db.Categories.ToList();
 
             var vm = new ProductsAdminViewModel {SelectedCategories = new Dictionary<int, string>()};
             foreach (var p in product)
@@ -45,13 +45,13 @@ namespace EscapeMobility.Web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var vm = new ProductsAdminDetailsViewModel {SelectedCategories = new Dictionary<int, string>()};
-            Product product = _db.Product.Find(id);
+            Product product = _db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
             vm.Product = product;
-            var categories = _db.Category.ToList();
+            var categories = _db.Categories.ToList();
             var categoryArray = (from c in categories
                                  from productCategory in c.Products
                                  where productCategory.Id == id
@@ -90,7 +90,7 @@ namespace EscapeMobility.Web.Controllers
                 };
                 vm.SafetyTypeList.Add(t);
             }
-            IEnumerable<Category> categories = (from c in _db.Category
+            IEnumerable<Category> categories = (from c in _db.Categories
                                                 select c);
                 vm.ProductCategoryList = categories;
             
@@ -111,7 +111,7 @@ namespace EscapeMobility.Web.Controllers
                 product.Categories = new Collection<Category>();
                 if (SelectedProductCategoryIds != null)
                 {
-                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Category.Find(ids)))
+                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Categories.Find(ids)))
                     {
                         product.Categories.Add(category);
                     }
@@ -135,7 +135,7 @@ namespace EscapeMobility.Web.Controllers
                 EvacuationTypeList = new List<SelectListItem>(),
                 SafetyTypeList = new List<SelectListItem>()
             };
-            var product = _db.Product.SingleOrDefault(p => p.Id == id);
+            var product = _db.Products.SingleOrDefault(p => p.Id == id);
             var evacuationTypeValues = Enum.GetValues(typeof(EvacuationType));
             var evacuationTypeNames = Enum.GetNames(typeof(EvacuationType)); 
             for (int i = 0; i <= evacuationTypeNames.Length - 1; i++)
@@ -161,13 +161,13 @@ namespace EscapeMobility.Web.Controllers
                 vm.SafetyTypeList.Add(t);
             }
             
-            IEnumerable<Category> categories = (from c in _db.Category
+            IEnumerable<Category> categories = (from c in _db.Categories
                 select c);
             if (product != null)
             {
                 vm.Product = product;
                 vm.ProductCategoryList = categories;
-                vm.SelectedProductCategoryIds = (from c in _db.Category
+                vm.SelectedProductCategoryIds = (from c in _db.Categories
                     from productCategory in c.Products
                     where productCategory.Id == id
                     select c.CategoryId).ToList();
@@ -191,7 +191,7 @@ namespace EscapeMobility.Web.Controllers
                 product.Categories.Clear();
                 if (SelectedProductCategoryIds != null)
                 {
-                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Category.Find(ids)))
+                    foreach (var category in SelectedProductCategoryIds.Select(ids => _db.Categories.Find(ids)))
                     {
                         product.Categories.Add(category);
                     }
@@ -210,7 +210,7 @@ namespace EscapeMobility.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = _db.Product.Find(id);
+            Product product = _db.Products.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -223,8 +223,8 @@ namespace EscapeMobility.Web.Controllers
         [ValidateAntiForgeryToken]
         public virtual ActionResult DeleteConfirmed(int id)
         {
-            Product product = _db.Product.Find(id);
-            _db.Product.Remove(product);
+            Product product = _db.Products.Find(id);
+            _db.Products.Remove(product);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -244,7 +244,7 @@ namespace EscapeMobility.Web.Controllers
                 {
                     CategoryName = CategoryName
                 };
-                _db.Category.Add(cat);
+                _db.Categories.Add(cat);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -253,7 +253,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult EditSpecification(int id)
         {
-            Product product = _db.Product.Find(id);
+            Product product = _db.Products.Find(id);
             ProductSpecification spec = product.ProductSpecification;
             if (spec != null)
             {
@@ -292,7 +292,7 @@ namespace EscapeMobility.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                ProductSpecification ps = _db.ProductSpecification.Find(vm.ProductSpecificationId);
+                ProductSpecification ps = _db.ProductSpecifications.Find(vm.ProductSpecificationId);
                 var spec = new ProductSpecification()
                 {
                     Armrest = vm.Armrest,
@@ -328,7 +328,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult ProductSpecification(int id)
         {
-            Product product = _db.Product.Find(id);
+            Product product = _db.Products.Find(id);
             ProductSpecification spec = product.ProductSpecification;
             if (spec != null)
             {
@@ -370,7 +370,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult AddSpecification(int id)
         {
-            var name = _db.Product.SingleOrDefault(p => p.Id == id).Title;
+            var name = _db.Products.SingleOrDefault(p => p.Id == id).Title;
             var vm = new AddProductSpecificationsViewModel()
             {
                 ProductId = id,
@@ -410,7 +410,7 @@ namespace EscapeMobility.Web.Controllers
                                         Weight = vm.Weight,
                                         LimitedWarranty = vm.LimitedWarranty
                                     };
-            Product product = _db.Product.Find(vm.ProductId);
+            Product product = _db.Products.Find(vm.ProductId);
             product.ProductSpecification = newProdSpec;
             _db.SaveChanges();
             

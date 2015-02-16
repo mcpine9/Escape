@@ -41,7 +41,4 @@ namespace Escape.Data
 
     }
 
-    public class CustomSpecificationMapping : EntityTypeConfiguration<CustomSpecification>
-    {
-    }
 }

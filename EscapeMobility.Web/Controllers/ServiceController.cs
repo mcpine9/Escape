@@ -15,7 +15,7 @@ namespace EscapeMobility.Controllers
 {
     public partial class ServiceController : Controller
     {
-        EscapeDataContext _db = new EscapeDataContext();
+        EscapeDataModel _db = new EscapeDataModel();
         private IUserMailer _userMailer = new UserMailer();
         public IUserMailer UserMailer
         {
@@ -84,7 +84,7 @@ namespace EscapeMobility.Controllers
                 };
                 
                 customer.DateCreated = DateTime.Now;
-                _db.Customer.Add(customer);
+                _db.Customers.Add(customer);
                 _db.SaveChanges();
                 UserMailer.SendContactEmail(vm).Send();
                 return RedirectToAction(MVC.Service.SubmitSuccess());

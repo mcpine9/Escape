@@ -11,7 +11,7 @@ namespace EscapeMobility.Controllers
         {
             return (
                 from p in products
-                where p.SafetyType == type
+                where p.SafetyType == (decimal) type
                 select new ProductHighlightModel()
                 {
                     ProductID = p.Id,
@@ -27,7 +27,7 @@ namespace EscapeMobility.Controllers
         {
             return (
                 from p in products
-                where p.EvacuationType == type
+                where p.EvacuationType == (decimal) type
                 select new ProductHighlightModel()
                 {
                     ProductID = p.Id,

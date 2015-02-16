@@ -3,6 +3,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net.Mime;
 using System.Threading.Tasks;
+using Escape.Data.Model;
 using Escape.Data.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
