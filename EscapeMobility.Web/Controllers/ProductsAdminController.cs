@@ -418,6 +418,33 @@ namespace EscapeMobility.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public virtual ActionResult AddCustomSpecs(int id, string json)
+        {
+            var spec = new CustomSpecification()
+            {
+                SpecificationObject = "{ 'Material':'Aluminum', 'Comfortable':'true' }"
+            };
+            var product = _db.Products.SingleOrDefault(p => p.Id == id);
+            product.CustomSpecifications.Add(spec);
+            _db.Products.Add(product);
+            _db.SaveChanges();
+
+            return View();
+        }
+
+        public virtual ActionResult RemoveCustomSpecs(int id)
+        {
+            var cSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == id);
+            _db.CustomeSpecifications.Remove(cSpec);
+            _db.SaveChanges();
+            return View();
+        }
+
+        public virtual ActionResult UpdateCustomSpecs(int id, string json)
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
