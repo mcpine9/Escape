@@ -442,7 +442,7 @@ namespace EscapeMobility.Web.Controllers
             var cSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == id);
             _db.CustomeSpecifications.Remove(cSpec);
             _db.SaveChanges();
-            return View();
+            return PartialView();
         }
 
         public virtual ActionResult UpdateCustomSpecs(int id, string json)
