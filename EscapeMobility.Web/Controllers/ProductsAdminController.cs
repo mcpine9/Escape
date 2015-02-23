@@ -421,6 +421,14 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult CustomSpecs(int id)
         {
+            string jsonObj = _db.CustomeSpecifications.SingleOrDefault(s => s.CustomSpecificationId == id).SpecificationObject;
+            IEnumerable<Product> products =
+                _db.Products.Where(c => c.CustomSpecifications.Any(p => p.CustomSpecificationId == id));
+            var vm = new CustomSpecsViewModel()
+            {
+                CustomSpecJSONObject = jsonObj,
+                LinkedProducts = products
+            };
             return View();
         }
 
