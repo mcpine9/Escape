@@ -418,6 +418,11 @@ namespace EscapeMobility.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public virtual ActionResult CustomSpecs(int id)
+        {
+            return View();
+        }
+
         public virtual ActionResult AddCustomSpecs(int id, string json)
         {
             var spec = new CustomSpecification()
