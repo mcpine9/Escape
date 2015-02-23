@@ -179,6 +179,14 @@ namespace Links
                 public static readonly string jquery_simplemodal_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.simplemodal.min.js") ? Url("jquery.simplemodal.min.js") : Url("jquery.simplemodal.js");
             }
         
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class sortable {
+                private const string URLPATH = "~/Scripts/lib/sortable";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string jquery_sortable_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-sortable.min.js") ? Url("jquery-sortable.min.js") : Url("jquery-sortable.js");
+            }
+        
         }
     
         public static readonly string modernizr_2_7_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.7.2.min.js") ? Url("modernizr-2.7.2.min.js") : Url("modernizr-2.7.2.js");
@@ -194,6 +202,21 @@ namespace Links
             private const string URLPATH = "~/Content/images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string _name_seo__1__jpg = Url("{name_seo}(1).jpg");
+            public static readonly string _name_seo__10__jpg = Url("{name_seo}(10).jpg");
+            public static readonly string _name_seo__11__jpg = Url("{name_seo}(11).jpg");
+            public static readonly string _name_seo__12__jpg = Url("{name_seo}(12).jpg");
+            public static readonly string _name_seo__13__jpg = Url("{name_seo}(13).jpg");
+            public static readonly string _name_seo__14__jpg = Url("{name_seo}(14).jpg");
+            public static readonly string _name_seo__2__jpg = Url("{name_seo}(2).jpg");
+            public static readonly string _name_seo__3__jpg = Url("{name_seo}(3).jpg");
+            public static readonly string _name_seo__4__jpg = Url("{name_seo}(4).jpg");
+            public static readonly string _name_seo__5__jpg = Url("{name_seo}(5).jpg");
+            public static readonly string _name_seo__6__jpg = Url("{name_seo}(6).jpg");
+            public static readonly string _name_seo__7__jpg = Url("{name_seo}(7).jpg");
+            public static readonly string _name_seo__8__jpg = Url("{name_seo}(8).jpg");
+            public static readonly string _name_seo__9__jpg = Url("{name_seo}(9).jpg");
+            public static readonly string _name_seo__jpg = Url("{name_seo}.jpg");
             public static readonly string ada_county_JPG = Url("ada_county.JPG");
             public static readonly string additional_backrest_jpg = Url("additional-backrest.jpg");
             public static readonly string Akademie_der_Kunste_Berlin_jpg = Url("Akademie-der-Kunste-Berlin.jpg");
@@ -213,6 +236,7 @@ namespace Links
             public static readonly string breadcrumbSpacer_png = Url("breadcrumbSpacer.png");
             public static readonly string cbbb_badge_horz_png = Url("cbbb-badge-horz.png");
             public static readonly string cbBorderBg_png = Url("cbBorderBg.png");
+            public static readonly string CE_logo_zwart_png = Url("CE_logo_zwart.png");
             public static readonly string Contact_foto_Marlie_png = Url("Contact_foto_Marlie.png");
             public static readonly string contentBg_png = Url("contentBg.png");
             public static readonly string contentFooterBg_png = Url("contentFooterBg.png");
@@ -230,29 +254,81 @@ namespace Links
             public static readonly string emergency_services_jpg = Url("emergency-services.jpg");
             public static readonly string emergency_water_rations_jpg = Url("emergency-water-rations.jpg");
             public static readonly string escape_alarm_jpg = Url("escape-alarm.jpg");
+            public static readonly string escape_carry_chair_standard_with_extra_package_1__jpg = Url("escape-carry-chair-standard-with-extra-package(1).jpg");
             public static readonly string escape_carry_chair_standard_with_extra_package_jpg = Url("escape-carry-chair-standard-with-extra-package.jpg");
+            public static readonly string escape_carry_chair_standard_1__jpg = Url("escape-carry-chair-standard(1).jpg");
+            public static readonly string escape_carry_chair_standard_2__jpg = Url("escape-carry-chair-standard(2).jpg");
             public static readonly string escape_carry_chair_standard_jpg = Url("escape-carry-chair-standard.jpg");
+            public static readonly string escape_carry_chair_standardplus_1__jpg = Url("escape-carry-chair-standardplus(1).jpg");
+            public static readonly string escape_carry_chair_standardplus_2__jpg = Url("escape-carry-chair-standardplus(2).jpg");
             public static readonly string escape_carry_chair_standardplus_jpg = Url("escape-carry-chair-standardplus.jpg");
+            public static readonly string escape_carry_chair_xs_1__jpg = Url("escape-carry-chair-xs(1).jpg");
+            public static readonly string escape_carry_chair_xs_2__jpg = Url("escape-carry-chair-xs(2).jpg");
             public static readonly string escape_carry_chair_xs_jpg = Url("escape-carry-chair-xs.jpg");
             public static readonly string Escape_Carry_Chair_png = Url("Escape-Carry-Chair.png");
+            public static readonly string escape_chair_comfort__1__jpg = Url("escape-chair-comfort (1).jpg");
+            public static readonly string escape_chair_comfort__2__jpg = Url("escape-chair-comfort (2).jpg");
+            public static readonly string escape_chair_comfort_1__jpg = Url("escape-chair-comfort(1).jpg");
+            public static readonly string escape_chair_comfort_2__jpg = Url("escape-chair-comfort(2).jpg");
+            public static readonly string escape_chair_comfort_3__jpg = Url("escape-chair-comfort(3).jpg");
+            public static readonly string escape_chair_comfort_4__jpg = Url("escape-chair-comfort(4).jpg");
             public static readonly string escape_chair_comfort_jpg = Url("escape-chair-comfort.jpg");
+            public static readonly string escape_chair_standard_alu_with_extra_package_1__jpg = Url("escape-chair-standard-alu-with-extra-package(1).jpg");
             public static readonly string escape_chair_standard_alu_with_extra_package_jpg = Url("escape-chair-standard-alu-with-extra-package.jpg");
+            public static readonly string escape_chair_standard_alu_1__jpg = Url("escape-chair-standard-alu(1).jpg");
+            public static readonly string escape_chair_standard_alu_2__jpg = Url("escape-chair-standard-alu(2).jpg");
             public static readonly string escape_chair_standard_alu_jpg = Url("escape-chair-standard-alu.jpg");
             public static readonly string escape_chair_standard_jpg = Url("escape-chair-standard.jpg");
             public static readonly string escape_chair_standardplus_jpg = Url("escape-chair-standardplus.jpg");
             public static readonly string escape_chair_standardalu_jpg = Url("escape-chair_standardalu.jpg");
             public static readonly string Escape_Chair2_png = Url("Escape-Chair2.png");
             public static readonly string escape_harness_including_accessory_bag_jpg = Url("escape-harness-including-accessory-bag.jpg");
+            public static readonly string escape_locker_1__jpg = Url("escape-locker(1).jpg");
+            public static readonly string escape_locker_2__jpg = Url("escape-locker(2).jpg");
             public static readonly string escape_locker_jpg = Url("escape-locker.jpg");
+            public static readonly string escape_mattress_compact_1__jpg = Url("escape-mattress-compact(1).jpg");
+            public static readonly string escape_mattress_compact_2__jpg = Url("escape-mattress-compact(2).jpg");
+            public static readonly string escape_mattress_compact_3__jpg = Url("escape-mattress-compact(3).jpg");
+            public static readonly string escape_mattress_compact_4__jpg = Url("escape-mattress-compact(4).jpg");
+            public static readonly string escape_mattress_compact_5__jpg = Url("escape-mattress-compact(5).jpg");
             public static readonly string escape_mattress_compact_jpg = Url("escape-mattress-compact.jpg");
+            public static readonly string escape_mattress_fold__1__jpg = Url("escape-mattress-fold (1).jpg");
+            public static readonly string escape_mattress_fold__2__jpg = Url("escape-mattress-fold (2).jpg");
+            public static readonly string escape_mattress_fold__3__jpg = Url("escape-mattress-fold (3).jpg");
+            public static readonly string escape_mattress_fold__4__jpg = Url("escape-mattress-fold (4).jpg");
+            public static readonly string escape_mattress_fold_1__jpg = Url("escape-mattress-fold(1).jpg");
+            public static readonly string escape_mattress_fold_2__jpg = Url("escape-mattress-fold(2).jpg");
+            public static readonly string escape_mattress_fold_3__jpg = Url("escape-mattress-fold(3).jpg");
+            public static readonly string escape_mattress_fold_4__jpg = Url("escape-mattress-fold(4).jpg");
+            public static readonly string escape_mattress_fold_5__jpg = Url("escape-mattress-fold(5).jpg");
             public static readonly string escape_mattress_fold_jpg = Url("escape-mattress-fold.jpg");
+            public static readonly string escape_mattress_healthcare__1__jpg = Url("escape-mattress-healthcare (1).jpg");
+            public static readonly string escape_mattress_healthcare__2__jpg = Url("escape-mattress-healthcare (2).jpg");
+            public static readonly string escape_mattress_healthcare_1__jpg = Url("escape-mattress-healthcare(1).jpg");
+            public static readonly string escape_mattress_healthcare_2__jpg = Url("escape-mattress-healthcare(2).jpg");
+            public static readonly string escape_mattress_healthcare_3__jpg = Url("escape-mattress-healthcare(3).jpg");
+            public static readonly string escape_mattress_healthcare_4__jpg = Url("escape-mattress-healthcare(4).jpg");
             public static readonly string escape_mattress_healthcare_jpg = Url("escape-mattress-healthcare.jpg");
+            public static readonly string escape_mattress_solo__1__jpg = Url("escape-mattress-solo (1).jpg");
+            public static readonly string escape_mattress_solo__2__jpg = Url("escape-mattress-solo (2).jpg");
+            public static readonly string escape_mattress_solo__3__jpg = Url("escape-mattress-solo (3).jpg");
+            public static readonly string escape_mattress_solo_1__jpg = Url("escape-mattress-solo(1).jpg");
+            public static readonly string escape_mattress_solo_2__jpg = Url("escape-mattress-solo(2).jpg");
+            public static readonly string escape_mattress_solo_3__jpg = Url("escape-mattress-solo(3).jpg");
+            public static readonly string escape_mattress_solo_4__jpg = Url("escape-mattress-solo(4).jpg");
+            public static readonly string escape_mattress_solo_5__jpg = Url("escape-mattress-solo(5).jpg");
             public static readonly string escape_mattress_solo_jpg = Url("escape-mattress-solo.jpg");
+            public static readonly string escape_mattress_storage_bag_1__jpg = Url("escape-mattress-storage-bag(1).jpg");
             public static readonly string escape_mattress_storage_bag_jpg = Url("escape-mattress-storage-bag.jpg");
+            public static readonly string escape_mattress_stretcher_black_1__jpg = Url("escape-mattress-stretcher-black(1).jpg");
             public static readonly string escape_mattress_stretcher_black_jpg = Url("escape-mattress-stretcher-black.jpg");
+            public static readonly string escape_mattress_stretcher_green_jpg = Url("escape-mattress-stretcher-green.jpg");
             public static readonly string Escape_Mattress_png = Url("Escape-Mattress.png");
             public static readonly string escape_mobility_company_usa_1016457_png = Url("escape-mobility-company-usa-1016457.png");
+            public static readonly string escape_point_locker_1__jpg = Url("escape-point-locker(1).jpg");
             public static readonly string escape_point_locker_jpg = Url("escape-point-locker.jpg");
+            public static readonly string escape_smokehood_single_pack__smoke_mask__1__jpg = Url("escape-smokehood-single-pack--smoke-mask (1).jpg");
+            public static readonly string escape_smokehood_single_pack__smoke_mask__2__jpg = Url("escape-smokehood-single-pack--smoke-mask (2).jpg");
             public static readonly string escape_smokehood_single_pack__smoke_mask_jpg = Url("escape-smokehood-single-pack--smoke-mask.jpg");
             public static readonly string escape_smokehood_soft_pack__smoke_mask_jpg = Url("escape-smokehood-soft-pack--smoke-mask.jpg");
             public static readonly string escape_smokehood_traveller_pack__smoke_mask_jpg = Url("escape-smokehood-traveller-pack--smoke-mask.jpg");
@@ -269,7 +345,15 @@ namespace Links
             public static readonly string galena_park_jpg = Url("galena park.jpg");
             public static readonly string gebouw_autosNEW600_web_jpg = Url("gebouw_autosNEW600-web.jpg");
             public static readonly string greenArrow_png = Url("greenArrow.png");
+            public static readonly string gsa2013_de_nominee_pokal_web_jpg = Url("gsa2013_de_nominee-pokal-web.jpg");
             public static readonly string healthcare_jpg = Url("healthcare.jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900__1__jpg = Url("ievac-smoke-fire-hood-ebp-900 (1).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900__2__jpg = Url("ievac-smoke-fire-hood-ebp-900 (2).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900_1__jpg = Url("ievac-smoke-fire-hood-ebp-900(1).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900_2__jpg = Url("ievac-smoke-fire-hood-ebp-900(2).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900_3__jpg = Url("ievac-smoke-fire-hood-ebp-900(3).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900_4__jpg = Url("ievac-smoke-fire-hood-ebp-900(4).jpg");
+            public static readonly string ievac_smoke_fire_hood_ebp_900_5__jpg = Url("ievac-smoke-fire-hood-ebp-900(5).jpg");
             public static readonly string ievac_smoke_fire_hood_ebp_900_jpg = Url("ievac-smoke-fire-hood-ebp-900.jpg");
             public static readonly string industry_jpg = Url("industry.jpg");
             public static readonly string jvg_logo_jpg = Url("jvg-logo.jpg");
@@ -290,6 +374,7 @@ namespace Links
             public static readonly string liveboard_png = Url("liveboard.png");
             public static readonly string liveboard_nav_png = Url("liveboard_nav.png");
             public static readonly string loader_gif = Url("loader.gif");
+            public static readonly string logo_CE_ISO_TUV__1__png = Url("logo_CE_ISO_TUV (1).png");
             public static readonly string logo_CE_ISO_TUV_png = Url("logo_CE_ISO_TUV.png");
             public static readonly string logo_en_png = Url("logo_en.png");
             public static readonly string mainContentBg_png = Url("mainContentBg.png");
@@ -319,7 +404,13 @@ namespace Links
             public static readonly string roundCornerClose_png = Url("roundCornerClose.png");
             public static readonly string roundCorners_png = Url("roundCorners.png");
             public static readonly string Sail_Exterior_1_reduced_1_jpg = Url("Sail_Exterior_1_reduced-1.jpg");
+            public static readonly string scape_cbrn30__1__jpg = Url("scape-cbrn30 (1).jpg");
+            public static readonly string scape_cbrn30__2__jpg = Url("scape-cbrn30 (2).jpg");
+            public static readonly string scape_cbrn30__3__jpg = Url("scape-cbrn30 (3).jpg");
             public static readonly string scape_cbrn30_jpg = Url("scape-cbrn30.jpg");
+            public static readonly string scape_co_cbrn__escape_respirator__1__jpg = Url("scape-co-cbrn--escape-respirator (1).jpg");
+            public static readonly string scape_co_cbrn__escape_respirator__2__jpg = Url("scape-co-cbrn--escape-respirator (2).jpg");
+            public static readonly string scape_co_cbrn__escape_respirator__3__jpg = Url("scape-co-cbrn--escape-respirator (3).jpg");
             public static readonly string scape_co_cbrn__escape_respirator_jpg = Url("scape-co-cbrn--escape-respirator.jpg");
             public static readonly string seal_for_1016457_png = Url("seal-for-1016457.png");
             public static readonly string search_png = Url("search.png");
@@ -375,6 +466,7 @@ namespace Links
                 public static readonly string formstyle_less = Url("formstyle.less");
                 public static readonly string formstyle_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/formstyle.min.css") ? Url("formstyle.min.css") : Url("formstyle.css");
                      
+                public static readonly string formstyle_css_map = Url("formstyle.css.map");
                 public static readonly string formstyle_min_css = Url("formstyle.min.css");
                 public static readonly string homepage_0227102118_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/homepage.0227102118.min.css") ? Url("homepage.0227102118.min.css") : Url("homepage.0227102118.css");
                      
@@ -402,9 +494,11 @@ namespace Links
                     public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                     public static readonly string alerts_less = Url("alerts.less");
                     public static readonly string badges_less = Url("badges.less");
+                    public static readonly string bootstrap_social_less = Url("bootstrap-social.less");
                     public static readonly string bootstrap_less = Url("bootstrap.less");
                     public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
                          
+                    public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
                     public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
                     public static readonly string breadcrumbs_less = Url("breadcrumbs.less");
                     public static readonly string button_groups_less = Url("button-groups.less");
@@ -442,6 +536,9 @@ namespace Links
                     public static readonly string type_less = Url("type.less");
                     public static readonly string utilities_less = Url("utilities.less");
                     public static readonly string variables_less = Url("variables.less");
+                    public static readonly string variables_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/variables.min.css") ? Url("variables.min.css") : Url("variables.css");
+                         
+                    public static readonly string variables_min_css = Url("variables.min.css");
                     public static readonly string wells_less = Url("wells.less");
                 }
             

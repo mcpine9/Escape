@@ -592,6 +592,9 @@
     <Content Include="Views\OfficeBuildings\Details.cshtml" />
     <Content Include="Views\Service\Error.cshtml" />
     <Content Include="Views\ProductsAdmin\AddCustomSpecs.cshtml" />
+    <Content Include="Views\ProductsAdmin\CustomSpecs.cshtml" />
+    <Content Include="Views\ProductsAdmin\RemoveCustomSpecs.cshtml" />
+    <Content Include="Views\ProductsAdmin\UpdateCustomSpecs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -630,6 +633,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddCategoryViewModel.cs" />
     <Compile Include="Models\AddCustomSpecsViewModel.cs" />
+    <Compile Include="Models\CustomSpecsViewModel.cs" />
     <Compile Include="Models\EditSpecificationViewModel.cs" />
     <Compile Include="Models\AddProductSpecificationsViewModel.cs" />
     <Compile Include="Models\AddToQuoteResponseViewModel.cs" />
@@ -675,6 +679,7 @@
     <Compile Include="Models\ProductsAdminViewModel.cs" />
     <Compile Include="Models\ProductSpecificationsViewModel.cs" />
     <Compile Include="Models\QuoteViewModel.cs" />
+    <Compile Include="Models\RemoveCustomSpecsViewModel.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

@@ -79,6 +79,7 @@ namespace EscapeMobility.Controllers
             public readonly string SubmitSuccess = "SubmitSuccess";
             public readonly string PrivacyStatement = "PrivacyStatement";
             public readonly string Terms = "Terms";
+            public readonly string Error = "Error";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -90,6 +91,7 @@ namespace EscapeMobility.Controllers
             public const string SubmitSuccess = "SubmitSuccess";
             public const string PrivacyStatement = "PrivacyStatement";
             public const string Terms = "Terms";
+            public const string Error = "Error";
         }
 
 
@@ -113,6 +115,7 @@ namespace EscapeMobility.Controllers
             {
                 public readonly string _MainLeftMenu = "_MainLeftMenu";
                 public readonly string Contact = "Contact";
+                public readonly string Error = "Error";
                 public readonly string Index = "Index";
                 public readonly string PrivacyStatement = "PrivacyStatement";
                 public readonly string SubmitSuccess = "SubmitSuccess";
@@ -120,6 +123,7 @@ namespace EscapeMobility.Controllers
             }
             public readonly string _MainLeftMenu = "~/Views/Service/_MainLeftMenu.cshtml";
             public readonly string Contact = "~/Views/Service/Contact.cshtml";
+            public readonly string Error = "~/Views/Service/Error.cshtml";
             public readonly string Index = "~/Views/Service/Index.cshtml";
             public readonly string PrivacyStatement = "~/Views/Service/PrivacyStatement.cshtml";
             public readonly string SubmitSuccess = "~/Views/Service/SubmitSuccess.cshtml";
@@ -207,6 +211,17 @@ namespace EscapeMobility.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Terms);
             TermsOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ErrorOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Error()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Error);
+            ErrorOverride(callInfo);
             return callInfo;
         }
 

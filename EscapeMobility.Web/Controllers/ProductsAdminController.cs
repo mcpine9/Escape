@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -425,14 +426,26 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult AddCustomSpecs(int id, string json)
         {
+            Product product = null;
             var spec = new CustomSpecification()
             {
-                SpecificationObject = "{ 'Material':'Aluminum', 'Comfortable':'true' }"
+                SpecificationObject = json
             };
-            var product = _db.Products.SingleOrDefault(p => p.Id == id);
-            product.CustomSpecifications.Add(spec);
-            _db.Products.Add(product);
-            _db.SaveChanges();
+            try
+            {
+                product = _db.Products.SingleOrDefault(p => p.Id == id);
+                product.CustomSpecifications.Add(spec);
+                _db.SaveChanges();
+
+            }
+            catch (Exception e)
+            {
+                if (product == null)
+                {
+                    throw new NullReferenceException(e.Message);
+                }
+                throw new Exception(e.Message);
+            }
 
             return View();
         }
@@ -447,6 +460,25 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult UpdateCustomSpecs(int id, string json)
         {
+            CustomSpecification currentCSpec = null;
+            try
+            {
+                currentCSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == id);
+                currentCSpec.SpecificationObject = json;
+                if (ModelState.IsValid)
+                {
+                    _db.Entry(currentCSpec).State = EntityState.Modified;
+                    _db.SaveChanges();
+                    return RedirectToAction(MVC.ProductsAdmin.Index());
+                }
+            }
+            catch (Exception e)
+            {
+                if (currentCSpec == null)
+                {
+                    throw new NullReferenceException(e.Message);
+                }
+            }
             return View();
         }
 
