@@ -101,12 +101,6 @@ namespace EscapeMobility.Web.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult CustomSpecs()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CustomSpecs);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult AddCustomSpecs()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomSpecs);
@@ -149,7 +143,6 @@ namespace EscapeMobility.Web.Controllers
             public readonly string EditSpecification = "EditSpecification";
             public readonly string ProductSpecification = "ProductSpecification";
             public readonly string AddSpecification = "AddSpecification";
-            public readonly string CustomSpecs = "CustomSpecs";
             public readonly string AddCustomSpecs = "AddCustomSpecs";
             public readonly string RemoveCustomSpecs = "RemoveCustomSpecs";
             public readonly string UpdateCustomSpecs = "UpdateCustomSpecs";
@@ -168,7 +161,6 @@ namespace EscapeMobility.Web.Controllers
             public const string EditSpecification = "EditSpecification";
             public const string ProductSpecification = "ProductSpecification";
             public const string AddSpecification = "AddSpecification";
-            public const string CustomSpecs = "CustomSpecs";
             public const string AddCustomSpecs = "AddCustomSpecs";
             public const string RemoveCustomSpecs = "RemoveCustomSpecs";
             public const string UpdateCustomSpecs = "UpdateCustomSpecs";
@@ -252,21 +244,13 @@ namespace EscapeMobility.Web.Controllers
             public readonly string id = "id";
             public readonly string vm = "vm";
         }
-        static readonly ActionParamsClass_CustomSpecs s_params_CustomSpecs = new ActionParamsClass_CustomSpecs();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_CustomSpecs CustomSpecsParams { get { return s_params_CustomSpecs; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_CustomSpecs
-        {
-            public readonly string id = "id";
-        }
         static readonly ActionParamsClass_AddCustomSpecs s_params_AddCustomSpecs = new ActionParamsClass_AddCustomSpecs();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_AddCustomSpecs AddCustomSpecsParams { get { return s_params_AddCustomSpecs; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_AddCustomSpecs
         {
-            public readonly string id = "id";
+            public readonly string productId = "productId";
             public readonly string json = "json";
         }
         static readonly ActionParamsClass_RemoveCustomSpecs s_params_RemoveCustomSpecs = new ActionParamsClass_RemoveCustomSpecs();
@@ -275,7 +259,7 @@ namespace EscapeMobility.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_RemoveCustomSpecs
         {
-            public readonly string id = "id";
+            public readonly string customSpecId = "customSpecId";
         }
         static readonly ActionParamsClass_UpdateCustomSpecs s_params_UpdateCustomSpecs = new ActionParamsClass_UpdateCustomSpecs();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -283,7 +267,8 @@ namespace EscapeMobility.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_UpdateCustomSpecs
         {
-            public readonly string id = "id";
+            public readonly string productId = "productId";
+            public readonly string customSpecId = "customSpecId";
             public readonly string json = "json";
         }
         static readonly ViewsClass s_views = new ViewsClass();
@@ -300,26 +285,24 @@ namespace EscapeMobility.Web.Controllers
                 public readonly string AddCustomSpecs = "AddCustomSpecs";
                 public readonly string AddSpecification = "AddSpecification";
                 public readonly string Create = "Create";
-                public readonly string CustomSpecs = "CustomSpecs";
+                public readonly string CustomSpecsByProductId = "CustomSpecsByProductId";
                 public readonly string Delete = "Delete";
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
                 public readonly string EditSpecification = "EditSpecification";
                 public readonly string Index = "Index";
-                public readonly string RemoveCustomSpecs = "RemoveCustomSpecs";
                 public readonly string UpdateCustomSpecs = "UpdateCustomSpecs";
             }
             public readonly string AddCategory = "~/Views/ProductsAdmin/AddCategory.cshtml";
             public readonly string AddCustomSpecs = "~/Views/ProductsAdmin/AddCustomSpecs.cshtml";
             public readonly string AddSpecification = "~/Views/ProductsAdmin/AddSpecification.cshtml";
             public readonly string Create = "~/Views/ProductsAdmin/Create.cshtml";
-            public readonly string CustomSpecs = "~/Views/ProductsAdmin/CustomSpecs.cshtml";
+            public readonly string CustomSpecsByProductId = "~/Views/ProductsAdmin/CustomSpecsByProductId.cshtml";
             public readonly string Delete = "~/Views/ProductsAdmin/Delete.cshtml";
             public readonly string Details = "~/Views/ProductsAdmin/Details.cshtml";
             public readonly string Edit = "~/Views/ProductsAdmin/Edit.cshtml";
             public readonly string EditSpecification = "~/Views/ProductsAdmin/EditSpecification.cshtml";
             public readonly string Index = "~/Views/ProductsAdmin/Index.cshtml";
-            public readonly string RemoveCustomSpecs = "~/Views/ProductsAdmin/RemoveCustomSpecs.cshtml";
             public readonly string UpdateCustomSpecs = "~/Views/ProductsAdmin/UpdateCustomSpecs.cshtml";
         }
     }
@@ -509,52 +492,64 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [NonAction]
-        partial void CustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void AddCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productId);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult CustomSpecs(int id)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            CustomSpecsOverride(callInfo, id);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void AddCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, string json);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult AddCustomSpecs(int id, string json)
+        public override System.Web.Mvc.ActionResult AddCustomSpecs(int productId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "json", json);
-            AddCustomSpecsOverride(callInfo, id, json);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
+            AddCustomSpecsOverride(callInfo, productId);
             return callInfo;
         }
 
         [NonAction]
-        partial void RemoveCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void AddCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productId, string json);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult RemoveCustomSpecs(int id)
+        public override System.Web.Mvc.ActionResult AddCustomSpecs(int productId, string json)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomSpecs);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "json", json);
+            AddCustomSpecsOverride(callInfo, productId, json);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RemoveCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customSpecId);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult RemoveCustomSpecs(int customSpecId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RemoveCustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            RemoveCustomSpecsOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customSpecId", customSpecId);
+            RemoveCustomSpecsOverride(callInfo, customSpecId);
             return callInfo;
         }
 
         [NonAction]
-        partial void UpdateCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, string json);
+        partial void UpdateCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productId);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult UpdateCustomSpecs(int id, string json)
+        public override System.Web.Mvc.ActionResult UpdateCustomSpecs(int productId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateCustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
+            UpdateCustomSpecsOverride(callInfo, productId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UpdateCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customSpecId, string json);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UpdateCustomSpecs(int customSpecId, string json)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateCustomSpecs);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customSpecId", customSpecId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "json", json);
-            UpdateCustomSpecsOverride(callInfo, id, json);
+            UpdateCustomSpecsOverride(callInfo, customSpecId, json);
             return callInfo;
         }
 

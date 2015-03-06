@@ -7,6 +7,6 @@ namespace EscapeMobility.Web.Models
     {
         public int CustomSpecificationId { get; set; }
         public string CustomSpecJSONObject { get; set; }
-        public IEnumerable<Product> LinkedProducts { get; set; }
+        public Product Product { get; set; }
     }
 }

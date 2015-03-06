@@ -1,8 +1,31 @@
-﻿@model dynamic
+﻿@model EscapeMobility.Web.Models.CustomSpecsViewModel
 
 @{
     ViewBag.Title = "Update Custom Specifications";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Update Custom Specifications</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-inline">
+        <h4>Update Custom Specifications</h4>
+        <hr />
+
+        <div class="form-group" >
+            <strong>Key</strong>
+        </div>
+        <div class="form-group">
+            <strong>Value</strong>
+        </div>
+        <div class="form-group">
+            <strong>Type</strong>
+        </div>
+    </div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

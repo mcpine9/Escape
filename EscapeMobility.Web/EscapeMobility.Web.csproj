@@ -115,7 +115,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
@@ -592,8 +592,7 @@
     <Content Include="Views\OfficeBuildings\Details.cshtml" />
     <Content Include="Views\Service\Error.cshtml" />
     <Content Include="Views\ProductsAdmin\AddCustomSpecs.cshtml" />
-    <Content Include="Views\ProductsAdmin\CustomSpecs.cshtml" />
-    <Content Include="Views\ProductsAdmin\RemoveCustomSpecs.cshtml" />
+    <Content Include="Views\ProductsAdmin\CustomSpecsByProductId.cshtml" />
     <Content Include="Views\ProductsAdmin\UpdateCustomSpecs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -679,7 +678,6 @@
     <Compile Include="Models\ProductsAdminViewModel.cs" />
     <Compile Include="Models\ProductSpecificationsViewModel.cs" />
     <Compile Include="Models\QuoteViewModel.cs" />
-    <Compile Include="Models\RemoveCustomSpecsViewModel.cs" />
     <Compile Include="Models\TwitterFeedViewModel.cs" />
     <Compile Include="OfficeBuildingsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>

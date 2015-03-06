@@ -91,13 +91,13 @@
                 @Html.ActionLink("Details", MVC.ProductsAdmin.Details(item.Id)) |
                 @Html.ActionLink("Delete", MVC.ProductsAdmin.Delete(item.Id)) |
                 @{
-                    if (item.ProductSpecification == null)
+                    if (!item.CustomSpecifications.Any())
                     {
-                        @Html.ActionLink("Add Specification", MVC.ProductsAdmin.AddSpecification(item.Id))
+                        @Html.ActionLink("Add Specification", MVC.ProductsAdmin.AddCustomSpecs(item.Id))
                     }
                     else
                     {
-                        @Html.ActionLink("Edit Specification", MVC.ProductsAdmin.EditSpecification(item.Id))
+                        @Html.ActionLink("Edit Specification", MVC.ProductsAdmin.UpdateCustomSpecs(item.Id))
                     }
                 }
             </td>

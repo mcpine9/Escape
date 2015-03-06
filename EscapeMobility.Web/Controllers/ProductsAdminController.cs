@@ -10,6 +10,7 @@ using System.Web.Services.Description;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using Newtonsoft.Json;
 
 namespace EscapeMobility.Web.Controllers
 {
@@ -419,20 +420,16 @@ namespace EscapeMobility.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public virtual ActionResult CustomSpecs(int id)
+        public virtual ActionResult AddCustomSpecs(int productId)
         {
-            string jsonObj = _db.CustomeSpecifications.SingleOrDefault(s => s.CustomSpecificationId == id).SpecificationObject;
-            IEnumerable<Product> products =
-                _db.Products.Where(c => c.CustomSpecifications.Any(p => p.CustomSpecificationId == id));
-            var vm = new CustomSpecsViewModel()
-            {
-                CustomSpecJSONObject = jsonObj,
-                LinkedProducts = products
-            };
+            Product product = _db.Products.SingleOrDefault(p => p.Id == productId);
+            ViewBag.productId = productId;
+            ViewBag.productTitle = product.Title;
             return View();
         }
 
-        public virtual ActionResult AddCustomSpecs(int id, string json)
+        [HttpPost]
+        public virtual ActionResult AddCustomSpecs(int productId, string json)
         {
             Product product = null;
             var spec = new CustomSpecification()
@@ -441,7 +438,12 @@ namespace EscapeMobility.Web.Controllers
             };
             try
             {
-                product = _db.Products.SingleOrDefault(p => p.Id == id);
+                product = _db.Products.SingleOrDefault(p => p.Id == productId);
+                if (product.CustomSpecifications.Any())
+                {
+                    _db.CustomeSpecifications.Remove(product.CustomSpecifications.First());
+                    _db.SaveChanges();
+                }
                 product.CustomSpecifications.Add(spec);
                 _db.SaveChanges();
 
@@ -450,7 +452,7 @@ namespace EscapeMobility.Web.Controllers
             {
                 if (product == null)
                 {
-                    throw new NullReferenceException(e.Message);
+                    throw new NullReferenceException("There are no products with that ID.");
                 }
                 throw new Exception(e.Message);
             }
@@ -458,20 +460,41 @@ namespace EscapeMobility.Web.Controllers
             return View();
         }
 
-        public virtual ActionResult RemoveCustomSpecs(int id)
+        public virtual ActionResult RemoveCustomSpecs(int customSpecId)
         {
-            var cSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == id);
-            _db.CustomeSpecifications.Remove(cSpec);
-            _db.SaveChanges();
-            return PartialView();
+            var cSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == customSpecId);
+            try
+            {
+                _db.CustomeSpecifications.Remove(cSpec);
+                _db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return RedirectToAction(MVC.ProductsAdmin.Index());
         }
 
-        public virtual ActionResult UpdateCustomSpecs(int id, string json)
+        public virtual ActionResult UpdateCustomSpecs(int productId)
+        {
+            var vm = new CustomSpecsViewModel
+            {
+                Product = _db.Products.SingleOrDefault(p => p.Id == productId)
+            };
+            var spec =
+                _db.CustomeSpecifications.FirstOrDefault(s => s.Products.Any(p => p.Id == productId));
+            vm.CustomSpecJSONObject = spec.SpecificationObject;
+            vm.CustomSpecificationId = spec.CustomSpecificationId;
+
+            return View(vm);
+        }
+        [HttpPost]
+        public virtual ActionResult UpdateCustomSpecs(int customSpecId, string json)
         {
             CustomSpecification currentCSpec = null;
             try
             {
-                currentCSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == id);
+                currentCSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == customSpecId);
                 currentCSpec.SpecificationObject = json;
                 if (ModelState.IsValid)
                 {
