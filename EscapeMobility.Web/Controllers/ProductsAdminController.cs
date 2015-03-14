@@ -457,7 +457,7 @@ namespace EscapeMobility.Web.Controllers
                 throw new Exception(e.Message);
             }
 
-            return View();
+            return RedirectToAction(MVC.ProductsAdmin.Index());
         }
 
         public virtual ActionResult RemoveCustomSpecs(int customSpecId)
