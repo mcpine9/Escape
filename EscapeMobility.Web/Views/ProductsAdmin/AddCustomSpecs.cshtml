@@ -1,17 +1,18 @@
-﻿@model EscapeMobility.Web.Models.CustomSpecsViewModel
+﻿@model EscapeMobility.Web.Models.AddCustomSpecsViewModel
 @{
     ViewBag.Title = "Add Custom Specifications";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <div ng-app="AddSpecMod" ng-controller="AddSpecCtrl">
-    @using (Html.BeginForm())
-    {
+    <form>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.AntiForgeryToken()
         <div class="form-horizontal">
             <div class="form-group">
                 <div class="col-md-12 col-md-pull-1">
                     <h4>Add Custom Specifications</h4>
-                    <h3>@ViewBag.productTitle</h3>
+                    <h3>@Model.Product.Title</h3>
                     <hr />
                 </div>
             </div>
@@ -48,7 +49,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="form-horizontal">
             <div class="form-group">
                 <div class="col-md-5">
@@ -72,7 +73,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12 col-md-pull-1">
-                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="submit" value="Save" class="btn btn-success" ng-click="submit()" />
                 </div>
             </div>
 
@@ -82,11 +83,11 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" id="productId" value="@ViewBag.productId" />
-        <input type="hidden" id="json" ng-model="json" />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    }
+        <text>{{ specs }}</text>
+        @Html.HiddenFor(m => m.productId)
+        @Html.HiddenFor(m => m.json, new { ng_value = "specs" })
 
+    </form>
 </div>
 
 @section pagescripts

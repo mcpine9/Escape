@@ -422,23 +422,28 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult AddCustomSpecs(int productId)
         {
+            var vm = new AddCustomSpecsViewModel();
             Product product = _db.Products.SingleOrDefault(p => p.Id == productId);
-            ViewBag.productId = productId;
-            ViewBag.productTitle = product.Title;
-            return View();
+            if (product != null)
+            {
+                vm.productId = productId;
+                vm.Product = product;
+            }
+            return View(vm);
+
         }
 
         [HttpPost]
-        public virtual ActionResult AddCustomSpecs(int productId, string json)
+        public virtual JsonResult AddCustomSpecs([Bind(Include = "json,productId")] AddCustomSpecsViewModel vm)
         {
             Product product = null;
             var spec = new CustomSpecification()
             {
-                SpecificationObject = json
+                SpecificationObject = vm.json
             };
             try
             {
-                product = _db.Products.SingleOrDefault(p => p.Id == productId);
+                product = _db.Products.SingleOrDefault(p => p.Id == vm.productId);
                 if (product.CustomSpecifications.Any())
                 {
                     _db.CustomeSpecifications.Remove(product.CustomSpecifications.First());
@@ -457,7 +462,7 @@ namespace EscapeMobility.Web.Controllers
                 throw new Exception(e.Message);
             }
 
-            return RedirectToAction(MVC.ProductsAdmin.Index());
+            return Json("ok");
         }
 
         public virtual ActionResult RemoveCustomSpecs(int customSpecId)

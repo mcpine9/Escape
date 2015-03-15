@@ -251,7 +251,7 @@ namespace EscapeMobility.Web.Controllers
         public class ActionParamsClass_AddCustomSpecs
         {
             public readonly string productId = "productId";
-            public readonly string json = "json";
+            public readonly string vm = "vm";
         }
         static readonly ActionParamsClass_RemoveCustomSpecs s_params_RemoveCustomSpecs = new ActionParamsClass_RemoveCustomSpecs();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -504,15 +504,14 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [NonAction]
-        partial void AddCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int productId, string json);
+        partial void AddCustomSpecsOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, EscapeMobility.Web.Models.AddCustomSpecsViewModel vm);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult AddCustomSpecs(int productId, string json)
+        public override System.Web.Mvc.JsonResult AddCustomSpecs(EscapeMobility.Web.Models.AddCustomSpecsViewModel vm)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddCustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "json", json);
-            AddCustomSpecsOverride(callInfo, productId, json);
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.AddCustomSpecs);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "vm", vm);
+            AddCustomSpecsOverride(callInfo, vm);
             return callInfo;
         }
 

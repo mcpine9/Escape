@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Data.Entity.Core.Metadata.Edm;
+using System.Web;
 using System.Web.Optimization;
 
 namespace EscapeMobility
@@ -22,6 +23,9 @@ namespace EscapeMobility
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/lib/bootstrap/bootstrap.js",
                       "~/Scripts/lib/respond/respond.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/lib/angular/angular.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                     "~/Scripts/app/Main.js"));
