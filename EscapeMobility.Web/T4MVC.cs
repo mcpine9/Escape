@@ -105,6 +105,7 @@ namespace Links
             public static readonly string AddSpecMod_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AddSpecMod.min.js") ? Url("AddSpecMod.min.js") : Url("AddSpecMod.js");
             public static readonly string branchepage_0227102119_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/branchepage.0227102119.min.js") ? Url("branchepage.0227102119.min.js") : Url("branchepage.0227102119.js");
             public static readonly string conversion_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/conversion.min.js") ? Url("conversion.min.js") : Url("conversion.js");
+            public static readonly string EditSpecMod_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/EditSpecMod.min.js") ? Url("EditSpecMod.min.js") : Url("EditSpecMod.js");
             public static readonly string ga_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ga.min.js") ? Url("ga.min.js") : Url("ga.js");
             public static readonly string homepage_0618084353_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/homepage.0618084353.min.js") ? Url("homepage.0618084353.min.js") : Url("homepage.0618084353.js");
             public static readonly string JLibrary_min_0523152631_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/JLibrary.min.0523152631.min.js") ? Url("JLibrary.min.0523152631.min.js") : Url("JLibrary.min.0523152631.js");
@@ -118,6 +119,7 @@ namespace Links
             public static readonly string Main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Main.min.js") ? Url("Main.min.js") : Url("Main.js");
             public static readonly string masterpage_1015101835_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/masterpage.1015101835.min.js") ? Url("masterpage.1015101835.min.js") : Url("masterpage.1015101835.js");
             public static readonly string productdetail_1008085047_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/productdetail.1008085047.min.js") ? Url("productdetail.1008085047.min.js") : Url("productdetail.1008085047.js");
+            public static readonly string ProductSpecsMod_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ProductSpecsMod.min.js") ? Url("ProductSpecsMod.min.js") : Url("ProductSpecsMod.js");
             public static readonly string seal_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/seal.min.js") ? Url("seal.min.js") : Url("seal.js");
         }
     

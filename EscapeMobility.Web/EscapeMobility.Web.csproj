@@ -887,7 +887,6 @@
     <Content Include="Views\ProductsAdmin\AddCustomSpecs.cshtml" />
     <Content Include="Views\ProductsAdmin\CustomSpecsByProductId.cshtml" />
     <Content Include="Views\ProductsAdmin\UpdateCustomSpecs.cshtml" />
-    <Content Include="Views\ProductsAdmin\EditCustomSpecs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

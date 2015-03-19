@@ -106,6 +106,10 @@
     <Compile Include="Migrations\201502160715250_InitialCreate.Designer.cs">
       <DependentUpon>201502160715250_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503190504377_AddShowProperties.cs" />
+    <Compile Include="Migrations\201503190504377_AddShowProperties.Designer.cs">
+      <DependentUpon>201503190504377_AddShowProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Accessory.cs" />
     <Compile Include="Model\AspNetRole.cs" />
     <Compile Include="Model\AspNetUser.cs" />
@@ -160,6 +164,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502160715250_InitialCreate.resx">
       <DependentUpon>201502160715250_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503190504377_AddShowProperties.resx">
+      <DependentUpon>201503190504377_AddShowProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

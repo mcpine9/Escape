@@ -12,6 +12,8 @@ namespace Escape.Data.Model
     {
         public int CustomSpecificationId { get; set; }
         public string SpecificationObject { get; set; }
+        public bool Show { get; set; }
+        public bool ShowInProd { get; set; }
 
         public ICollection<Product> Products { get; set; }
 

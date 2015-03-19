@@ -268,8 +268,6 @@ namespace EscapeMobility.Web.Controllers
         public class ActionParamsClass_UpdateCustomSpecs
         {
             public readonly string productId = "productId";
-            public readonly string customSpecId = "customSpecId";
-            public readonly string json = "json";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -536,19 +534,6 @@ namespace EscapeMobility.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateCustomSpecs);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "productId", productId);
             UpdateCustomSpecsOverride(callInfo, productId);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void UpdateCustomSpecsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int customSpecId, string json);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult UpdateCustomSpecs(int customSpecId, string json)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateCustomSpecs);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "customSpecId", customSpecId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "json", json);
-            UpdateCustomSpecsOverride(callInfo, customSpecId, json);
             return callInfo;
         }
 

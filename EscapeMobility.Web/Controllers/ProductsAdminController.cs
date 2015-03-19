@@ -434,12 +434,14 @@ namespace EscapeMobility.Web.Controllers
         }
 
         [HttpPost]
-        public virtual JsonResult AddCustomSpecs([Bind(Include = "json,productId")] AddCustomSpecsViewModel vm)
+        public virtual JsonResult AddCustomSpecs([Bind(Include = "json,productId,Show,ShowInProd")] AddCustomSpecsViewModel vm)
         {
             Product product = null;
             var spec = new CustomSpecification()
             {
-                SpecificationObject = vm.json
+                SpecificationObject = vm.json,
+                Show = vm.Show,
+                ShowInProd = vm.ShowInProd
             };
             try
             {
@@ -482,39 +484,14 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult UpdateCustomSpecs(int productId)
         {
-            var vm = new UpdateCustomSpecsViewModel
+            var vm = new UpdateCustomSpecsViewModel()
             {
-                Product = _db.Products.SingleOrDefault(p => p.Id == productId)
+                Product = _db.Products.SingleOrDefault(p => p.Id == productId),
+                productId = productId,
+                json = _db.CustomeSpecifications.Single(s => s.Products.Any(p => p.Id == productId)).SpecificationObject
             };
-            var spec =
-                _db.CustomeSpecifications.FirstOrDefault(s => s.Products.Any(p => p.Id == productId));
-            vm.json = spec.SpecificationObject;
 
             return View(vm);
-        }
-        [HttpPost]
-        public virtual ActionResult UpdateCustomSpecs(int customSpecId, string json)
-        {
-            CustomSpecification currentCSpec = null;
-            try
-            {
-                currentCSpec = _db.CustomeSpecifications.FirstOrDefault(s => s.CustomSpecificationId == customSpecId);
-                currentCSpec.SpecificationObject = json;
-                if (ModelState.IsValid)
-                {
-                    _db.Entry(currentCSpec).State = EntityState.Modified;
-                    _db.SaveChanges();
-                    return RedirectToAction(MVC.ProductsAdmin.Index());
-                }
-            }
-            catch (Exception e)
-            {
-                if (currentCSpec == null)
-                {
-                    throw new NullReferenceException(e.Message);
-                }
-            }
-            return View();
         }
 
         protected override void Dispose(bool disposing)

@@ -3,7 +3,7 @@
     ViewBag.Title = "Edit Custom Specifications";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<div ng-app="AddSpecMod" ng-controller="AddSpecCtrl">
+<div ng-app="EditSpecMod" ng-controller="EditSpecCtrl">
     <form>
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -83,19 +83,18 @@
                 </div>
             </div>
         </div>
-        <text>{{ specs }}</text>
         @Html.HiddenFor(m => m.productId)
         @Html.HiddenFor(m => m.json, new { ng_value = "specs" })
 
     </form>
 </div>
+<script type="text/javascript" language="javascript">
+    var pageJsonObj = @Html.Raw(Model.json + ";")
+</script>
 
 @section pagescripts
 {
     <script src="~/Scripts/lib/angular/angular.min.js"></script>
     <script src="~/ckeditor/ckeditor.js"></script>
     <script src="~/Scripts/app/EditSpecMod.js"></script>
-    <script type="text/javascript" language="javascript">
-        var pageJsonObj = @Model.json
-    </script>
 }

@@ -23,9 +23,9 @@ var EditSpecMod = angular.module("EditSpecMod", [])
 });;
 
 EditSpecMod.controller("EditSpecCtrl", ['$scope', '$http', '$window', function ($scope, $http, $window) {
-    var currentId = pageJsonObj.rows.filter(function(elem) { return elem[elem.length - 1].id; });
+    var arrayLength = pageJsonObj.rows.length,
+        currentId = pageJsonObj.rows[arrayLength -1].id;
     $scope.specs = pageJsonObj;
-    $scope.specs.description = "";
     $scope.AddSpecRows = function () {
         $scope.specs.rows.push({ 'id': currentId >= 1 ? currentId++ : 1, 'key': '', 'value': '' });
     };
