@@ -37,7 +37,9 @@ EditSpecMod.controller("EditSpecCtrl", ['$scope', '$http', '$window', function (
     $scope.submit = function () {
         var paramsObj = {
             "productId" : $("#productId").val(),
-            "json" : JSON.stringify($scope.specs)
+            "json": JSON.stringify($scope.specs),
+            "Show": $("#Show").is(':checked'),
+            "ShowInProd": $("#ShowInProd").is(':checked')
         }
         $http.post("/ProductsAdmin/AddCustomSpecs", paramsObj)
             .success(function() {

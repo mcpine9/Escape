@@ -484,11 +484,14 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult UpdateCustomSpecs(int productId)
         {
+            CustomSpecification spec = _db.CustomeSpecifications.Single(s => s.Products.Any(p => p.Id == productId));
             var vm = new UpdateCustomSpecsViewModel()
             {
                 Product = _db.Products.SingleOrDefault(p => p.Id == productId),
                 productId = productId,
-                json = _db.CustomeSpecifications.Single(s => s.Products.Any(p => p.Id == productId)).SpecificationObject
+                json = spec.SpecificationObject,
+                Show = spec.Show,
+                ShowInProd = spec.ShowInProd
             };
 
             return View(vm);
