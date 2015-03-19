@@ -729,6 +729,7 @@
     <Content Include="Content\styles\lib\simple-modal\simple-modal-basic.css" />
     <Content Include="Global.asax" />
     <Content Include="RecaptchaNet.ReadMe.txt" />
+    <Content Include="Scripts\app\EditSpecMod.js" />
     <Content Include="Scripts\app\AddSpecMod.js" />
     <Content Include="Scripts\app\ProductSpecsMod.js" />
     <Content Include="Scripts\lib\angular\angular-animate.js" />
@@ -886,6 +887,7 @@
     <Content Include="Views\ProductsAdmin\AddCustomSpecs.cshtml" />
     <Content Include="Views\ProductsAdmin\CustomSpecsByProductId.cshtml" />
     <Content Include="Views\ProductsAdmin\UpdateCustomSpecs.cshtml" />
+    <Content Include="Views\ProductsAdmin\EditCustomSpecs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -925,6 +927,7 @@
     <Compile Include="Models\AddCategoryViewModel.cs" />
     <Compile Include="Models\AddCustomSpecsViewModel.cs" />
     <Compile Include="Models\CustomSpecsViewModel.cs" />
+    <Compile Include="Models\UpdateCustomSpecsViewModel.cs" />
     <Compile Include="Models\EditSpecificationViewModel.cs" />
     <Compile Include="Models\AddProductSpecificationsViewModel.cs" />
     <Compile Include="Models\AddToQuoteResponseViewModel.cs" />

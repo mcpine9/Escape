@@ -444,7 +444,7 @@ namespace EscapeMobility.Web.Controllers
             try
             {
                 product = _db.Products.SingleOrDefault(p => p.Id == vm.productId);
-                if (product.CustomSpecifications.Any())
+                if (product.CustomSpecifications.Count > 0)
                 {
                     _db.CustomeSpecifications.Remove(product.CustomSpecifications.First());
                     _db.SaveChanges();
@@ -482,14 +482,13 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult UpdateCustomSpecs(int productId)
         {
-            var vm = new CustomSpecsViewModel
+            var vm = new UpdateCustomSpecsViewModel
             {
                 Product = _db.Products.SingleOrDefault(p => p.Id == productId)
             };
             var spec =
                 _db.CustomeSpecifications.FirstOrDefault(s => s.Products.Any(p => p.Id == productId));
-            vm.CustomSpecJSONObject = spec.SpecificationObject;
-            vm.CustomSpecificationId = spec.CustomSpecificationId;
+            vm.json = spec.SpecificationObject;
 
             return View(vm);
         }
