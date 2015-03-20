@@ -91,40 +91,24 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Details(int id)
         {
-            ProductSpecification spec = _db.Products.SingleOrDefault(s => s.Id == id).ProductSpecification;
+
+            CustomSpecification spec = _db.CustomeSpecifications.Single(s => s.Products.Any(p => p.Id == id));
             Product product = _db.Products.Find(id);
             if (spec != null)
             {
                 var vm = new ProductSpecificationsViewModel()
                 {
-                    Armrest = spec.Armrest,
                     ArticleNumber = product.ArticleNumber,
-                    Backrest = spec.Backrest,
-                    DimensionsFoldedUp = spec.DimensionsFoldedUp,
                     Discount = product.Discount,
-                    Footrest = spec.Footrest,
-                    HasAniSlipHandle = spec.HasAniSlipHandle,
-                    HasDustCover = spec.HasDustCover,
-                    HasErgonomicBackrest = spec.HasErgonomicBackrest,
-                    HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
-                    HasImmobilizationBand = spec.HasImmobilizationBand,
-                    HasUnfoldingStand = spec.HasUnfoldingStand,
                     ImageFileName = product.ImageFileName,
-                    IsEasyToOperate = spec.IsEasyToOperate,
-                    IsReadyForUse = spec.IsReadyForUse,
                     LongDescription = product.LongDescription,
-                    Material = spec.Material,
-                    MaxAngleOfStairs = spec.MaxAngleOfStairs,
-                    MaxCarryingCapacity = spec.MaxCarryingCapacity,
-                    OperatingHandle = spec.OperatingHandle,
-                    HasPaddedHeadRest = spec.HasPaddedHeadRest,
                     Price = product.Price,
-                    Seat = spec.Seat,
                     ShortDescription = product.ShortDescription,
                     Title = product.Title,
-                    LimitedWarranty = spec.LimitedWarranty,
-                    Weight = spec.Weight,
-                    ProductId = product.Id
+                    ProductId = product.Id,
+                    json = spec.SpecificationObject,
+                    Show = spec.Show,
+                    ShowInProd = spec.ShowInProd
 
                 };
                 return View(vm);   
