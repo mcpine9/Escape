@@ -1,5 +1,5 @@
 ﻿var ProductSpecsMod = angular.module("ProductSpecsMod", []);
 
-ProductSpecsMod.controller("ProdSpecsCtrl", ["$scope", "$http", function ($scope, $http) {
-    $http.get("/ProductsAdmin").success().error();
+ProductSpecsMod.controller("ProdSpecsCtrl", ["$scope", function ($scope) {
+    $scope.specs = pageJsonObj;
 }])

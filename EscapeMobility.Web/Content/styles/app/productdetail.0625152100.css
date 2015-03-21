@@ -129,8 +129,6 @@ span.piButtonIcon.print {
 /* Specificaties */
 #specsList {
 	border-bottom: 1px solid #7cc242;
-	border-top: 1px solid #7cc242;
-	margin-top: 18px;
 	width: 100%;
 }
 .slRow, .slRowEven {

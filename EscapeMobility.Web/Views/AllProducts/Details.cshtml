@@ -15,6 +15,7 @@
 {
     <script src="~/Scripts/lib/angular/angular.min.js"></script>
     <script src="~/Scripts/app/productdetail.1008085047.js"></script>
+    <script src="~/Scripts/app/ProductSpecsMod.js"></script>
 }
 @section pagecss
 {
@@ -126,11 +127,10 @@
 
     <div class="subContent" rel="scSpecs" style="display: none;">
         <h2>Specifications - Escape-Chair® Standard-ALU</h2>
-        <div id="specsList" ng-repeat="row in specs.rows" ng-model="specs">
-            <div class="slRowEven">
-                <div class="slProperty" ng-bind-html="row.key"></div>
-                <div class="slValue" ng-bind-html="row.value"></div>
-                <div class="clear"></div>
+        <div id="specsList" ng-repeat="row in specs.rows">
+            <div class="row" ng-class-odd="'slRow'" ng-class-even="'slRowEven'">
+                <div class="col-md-5">{{row.key}}</div>
+                <div class="col-md-3 col-md-offset-1">{{row.value}}</div>
             </div>
         </div>
 

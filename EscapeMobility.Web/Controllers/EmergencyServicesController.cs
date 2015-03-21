@@ -88,33 +88,13 @@ namespace EscapeMobility.Controllers
             {
                 var vm = new ProductSpecificationsViewModel()
                 {
-                    Armrest = spec.Armrest,
                     ArticleNumber = product.ArticleNumber,
-                    Backrest = spec.Backrest,
-                    DimensionsFoldedUp = spec.DimensionsFoldedUp,
                     Discount = product.Discount,
-                    Footrest = spec.Footrest,
-                    HasAniSlipHandle = spec.HasAniSlipHandle,
-                    HasDustCover = spec.HasDustCover,
-                    HasErgonomicBackrest = spec.HasErgonomicBackrest,
-                    HasGlidingBeltSystem = spec.HasGlidingBeltSystem,
-                    HasImmobilizationBand = spec.HasImmobilizationBand,
-                    HasUnfoldingStand = spec.HasUnfoldingStand,
                     ImageFileName = product.ImageFileName,
-                    IsEasyToOperate = spec.IsEasyToOperate,
-                    IsReadyForUse = spec.IsReadyForUse,
                     LongDescription = product.LongDescription,
-                    Material = spec.Material,
-                    MaxAngleOfStairs = spec.MaxAngleOfStairs,
-                    MaxCarryingCapacity = spec.MaxCarryingCapacity,
-                    OperatingHandle = spec.OperatingHandle,
-                    HasPaddedHeadRest = spec.HasPaddedHeadRest,
                     Price = product.Price,
-                    Seat = spec.Seat,
                     ShortDescription = product.ShortDescription,
-                    Title = product.Title,
-                    LimitedWarranty = spec.LimitedWarranty,
-                    Weight = spec.Weight
+                    Title = product.Title
 
                 };
                 return View(vm);
