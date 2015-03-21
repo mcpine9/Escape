@@ -1,4 +1,5 @@
-﻿@using Recaptcha.Web.Mvc
+﻿@using Escape.Data.Model
+@using Recaptcha.Web.Mvc
 @using Tweetinvi.Core.Extensions
 @model EscapeMobility.Web.Models.QuoteViewModel
 @{
@@ -101,35 +102,32 @@
                     </thead>
                     <tbody>
                         @{
-                            var CartItemList = Model.ShoppingCart.CartItems.ToList();
-                            for (int i = 0; i < CartItemList.Count(); i++)
-                            {
-
-                                {
-
-                                    <tr class="item-@(i)">
-                                        <td>
-                                            <div class="formData fdInputSmall">
-                                                @Html.EditorFor(model => model.ShoppingCart.CartItems[i].Quantity)
-                                            </div>
-                                        </td>
-                                        <td>x $@Model.ShoppingCart.CartItems[i].Product.Price</td>
-                                        <td>@Model.ShoppingCart.CartItems[i].Product.Title</td>
-                                        <td>@Model.ShoppingCart.CartItems[i].Product.ArticleNumber</td>
-                                        <td>
-                                            <a class="removeButton fa fa-trash-o"></a>
-                                            @Html.HiddenFor(model => model.ShoppingCart.CartItems[i].ProductID)
-                                        </td>
-                                    </tr>
-                                    <tr class="item-@(i)">
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
-                                        <td colspan="2" class="priceExVat">Prices are excl. Tax</td>
-                                    </tr>
-
-                                }
-                            }
+                            int i = 0;
+                foreach (CartItem cartItem in Model.ShoppingCart.CartItems)
+                {
+                    
+                    <tr class="item-@(i)">
+                        <td>
+                            <div class="formData fdInputSmall">
+                                <input id="@("item_" + i)" type="text" value="@cartItem.Quantity"/>
+                            </div>
+                        </td>
+                        <td>x $@cartItem.Product.Price</td>
+                        <td>@cartItem.Product.Title</td>
+                        <td>@cartItem.Product.ArticleNumber</td>
+                        <td>
+                            <a class="removeButton fa fa-trash-o"></a>
+                            <input type="hidden" id="ProductId" value="@cartItem.ProductID"/>
+                        </td>
+                    </tr>
+                            <tr class="item-@(i)">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td colspan="2" class="priceExVat">Prices are excl. Tax</td>
+                            </tr>
+                            @(i++)
+                }
                         }
                     </tbody>
 
