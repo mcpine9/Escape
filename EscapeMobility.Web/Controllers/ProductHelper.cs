@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace EscapeMobility.Controllers
 {
@@ -19,7 +21,9 @@ namespace EscapeMobility.Controllers
                     Name = p.Title,
                     Price = p.Price,
                     ShortDescription = p.ShortDescription,
-                    HasSpec = !p.ProductSpecification.Equals(null)
+                    HasSpec = !p.ProductSpecification.Equals(null),
+                    Show = p.CustomSpecifications.Any() && p.CustomSpecifications.FirstOrDefault(x => x.Products.Contains(p)).Show,
+                    ShowInProd = p.CustomSpecifications.Any() && p.CustomSpecifications.FirstOrDefault(x => x.Products.Contains(p)).ShowInProd
                 }).ToList();
         }
 
@@ -27,7 +31,7 @@ namespace EscapeMobility.Controllers
         {
             return (
                 from p in products
-                where p.EvacuationType == (decimal) type
+                where p.EvacuationType == (decimal)type
                 select new ProductHighlightModel()
                 {
                     ProductID = p.Id,
@@ -35,7 +39,9 @@ namespace EscapeMobility.Controllers
                     Name = p.Title,
                     Price = p.Price,
                     ShortDescription = p.ShortDescription,
-                    HasSpec = !p.ProductSpecification.Equals(null)
+                    HasSpec = !p.ProductSpecification.Equals(null),
+                    Show = p.CustomSpecifications.Any() && p.CustomSpecifications.FirstOrDefault(x => x.Products.Contains(p)).Show,
+                    ShowInProd = p.CustomSpecifications.Any() && p.CustomSpecifications.FirstOrDefault(x => x.Products.Contains(p)).ShowInProd
                 }).ToList();
         }
     }

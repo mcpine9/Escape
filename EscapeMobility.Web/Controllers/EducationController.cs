@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Escape.Data;
 using Escape.Data.Model;
 using EscapeMobility.Web.Models;
+using EscapeMobility.Web.WebUtilities;
 
 namespace EscapeMobility.Controllers
 {
@@ -31,6 +32,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChair()
         {
+            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 5));
             var model = new ProductHighlightModels
             {
@@ -41,6 +43,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeMattress()
         {
+            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 5));
             var model = new ProductHighlightModels
             {
@@ -51,6 +54,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Accessories()
         {
+            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 5));
             var model = new ProductHighlightModels
             {
@@ -61,6 +65,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Safety(string category)
         {
+            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 2));
             var model = new ProductHighlightModels();
             switch (category)

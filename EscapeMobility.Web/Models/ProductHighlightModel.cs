@@ -15,5 +15,7 @@ namespace EscapeMobility.Web.Models
         public string ShortDescription { get; set; }
         public string ImageFileName { get; set; }
         public bool HasSpec { get; set; }
+        public bool Show { get; set; }
+        public bool ShowInProd { get; set; }
     }
 }

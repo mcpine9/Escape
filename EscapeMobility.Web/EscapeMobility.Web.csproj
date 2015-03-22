@@ -1001,6 +1001,7 @@
     <Compile Include="UserMailerController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="WebUtilities\DomainResolver.cs" />
     <Compile Include="WebUtilities\EmailHelper.cs" />
     <Compile Include="WebUtilities\HtmlHelperExtensions\HtmlActionLinkHelpers.cs" />
   </ItemGroup>
