@@ -116,8 +116,8 @@ jQuery(document).ready(function($) {
 
 $(function() {
     productlisting.init();
-    masterpage.initMenu();
-    productlisting.initAddProduct();
+    //masterpage.initMenu();
+    //productlisting.initAddProduct();
 	
     // Is this a version of IE?
     if ($.browser.msie) {

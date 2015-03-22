@@ -14,8 +14,12 @@
 @section pagescripts
 {
     <script src="~/Scripts/lib/angular/angular.min.js"></script>
+<script src="~/Scripts/lib/angular/angular-sanitize.min.js"></script>
     <script src="~/Scripts/app/productdetail.1008085047.js"></script>
     <script src="~/Scripts/app/ProductSpecsMod.js"></script>
+    <script type="text/javascript" language="javascript">
+        var pageJsonObj = @Html.Raw(Model.json + ";")
+    </script>
 }
 @section pagecss
 {
@@ -112,11 +116,7 @@
     </div>
 
     <div class="subContent" rel="scDescription" style="display: block;">
-        <div style="WIDTH: 330px; FLOAT: left; MARGIN-RIGHT: 10px">
-            @Model.LongDescription
-            <br />
-            <br />
-            <p><img style="FLOAT: left" src="/Content/images/logo_CE_ISO_TUV.png"><br></p>
+        <div style="WIDTH: 330px; FLOAT: left; MARGIN-RIGHT: 10px" ng-bind-html="specs.description">
         </div>
         <div style="WIDTH: 350px; FLOAT: left">
             <iframe style="MARGIN-BOTTOM: 10px; FLOAT: right" height="194" src="http://www.youtube.com/embed/Ji9_0ceqSXY?rel=0&amp;showinfo=0&amp;wmode=transparent" frameborder="0" width="344" allowfullscreen=""></iframe><br>
@@ -126,7 +126,7 @@
     </div>
 
     <div class="subContent" rel="scSpecs" style="display: none;">
-        <h2>Specifications - Escape-Chair® Standard-ALU</h2>
+        <h2>Specifications - @Model.Title</h2>
         <div id="specsList" ng-repeat="row in specs.rows">
             <div class="row" ng-class-odd="'slRow'" ng-class-even="'slRowEven'">
                 <div class="col-md-5">{{row.key}}</div>
@@ -156,9 +156,7 @@
     <div class="clear"></div>
 </div>
 
-<script type="text/javascript" language="javascript">
-    var pageJsonObj = @Html.Raw(Model.json + ";")
-</script>
+
 
 
 
