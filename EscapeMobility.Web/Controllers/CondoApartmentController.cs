@@ -33,7 +33,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult EscapeChair()
         {
-            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryName == "Condo/Apartments"));
             var model = new ProductHighlightModels
             {
@@ -44,7 +44,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult EscapeCarryChair()
         {
-            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryName == "Condo/Apartments"));
             var model = new ProductHighlightModels
             {
@@ -55,7 +55,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult EscapeMattress()
         {
-            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryName == "Condo/Apartments"));
             var model = new ProductHighlightModels
             {
@@ -66,7 +66,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult Accessories()
         {
-            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryName == "Condo/Apartments"));
             var model = new ProductHighlightModels
             {
@@ -76,7 +76,7 @@ namespace EscapeMobility.Web.Controllers
         }
         public virtual ActionResult Safety(string category)
         {
-            ViewBag.IsDevDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryName == "Condo/Apartments"));
             var model = new ProductHighlightModels();
             switch (category)
