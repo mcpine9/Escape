@@ -29,7 +29,15 @@ EditSpecMod.controller("EditSpecCtrl", ['$scope', '$http', '$window', function (
     $scope.AddSpecRows = function () {
         $scope.specs.rows.push({ 'id': currentId >= 1 ? currentId++ : 1, 'key': '', 'value': '' });
     };
-    $scope.DeleteSpecRow = function(id) {
+    $scope.DeleteSpecRow = function (id) {
+        if ($scope.specs.rows.length == 1)
+        {
+            var newId = id + 1;
+            $scope.specs.rows.push({ 'id': newId, 'key': '', 'value': '' });
+            $scope.specs.rows = $scope.specs.rows.filter(function (elem) {
+                return elem.id !== id;
+            });
+        }
         $scope.specs.rows = $scope.specs.rows.filter(function (elem) {
             return elem.id !== id;
         });
