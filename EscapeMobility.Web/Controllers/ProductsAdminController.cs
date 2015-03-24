@@ -138,27 +138,27 @@ namespace EscapeMobility.Web.Controllers
                 SafetyTypeList = new List<SelectListItem>()
             };
             var product = _db.Products.SingleOrDefault(p => p.Id == id);
-            var evacuationTypeValues = Enum.GetValues(typeof(EvacuationType));
+            var evacuationTypeValues = Enum.GetValues(typeof(EvacuationType)).Cast<int>().ToArray();
             var evacuationTypeNames = Enum.GetNames(typeof(EvacuationType)); 
             for (int i = 0; i <= evacuationTypeNames.Length - 1; i++)
             {
                 var t = new SelectListItem()
                 {
                     Text = evacuationTypeNames[i],
-                    Value = evacuationTypeValues.GetValue(i).ToString(),
-                    Selected = product != null && (product.EvacuationType.ToString() == evacuationTypeNames[i])
+                    Value = evacuationTypeValues[i].ToString(),
+                    Selected = product != null && (product.EvacuationType == evacuationTypeValues[i])
                 };
                 vm.EvacuationTypeList.Add(t);
             }
-            var safetyTypeValues = Enum.GetValues(typeof(SafetyType));
+            var safetyTypeValues = Enum.GetValues(typeof(SafetyType)).Cast<int>().ToArray();
             var safetyTypeNames = Enum.GetNames(typeof(SafetyType));
             for (int i = 0; i <= safetyTypeNames.Length - 1; i++)
             {
                 var t = new SelectListItem()
                 {
                     Text = safetyTypeNames[i],
-                    Value = safetyTypeValues.GetValue(i).ToString(),
-                    Selected = product != null && (product.SafetyType.ToString() == safetyTypeNames[i])
+                    Value = safetyTypeValues[i].ToString(),
+                    Selected = product != null && (product.SafetyType == safetyTypeValues[i])
                 };
                 vm.SafetyTypeList.Add(t);
             }

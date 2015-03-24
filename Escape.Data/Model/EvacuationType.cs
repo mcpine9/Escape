@@ -2,10 +2,10 @@
 {
     public enum EvacuationType
     {
-        None,
-        EscapeChair,
-        EscapeCarryChair,
-        EscapeMattress,
-        Accessories
+        None = 0,
+        EscapeChair = 1,
+        EscapeCarryChair = 2,
+        EscapeMattress = 3,
+        Accessories = 4
     }
 }
