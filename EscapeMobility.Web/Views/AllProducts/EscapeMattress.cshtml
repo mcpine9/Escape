@@ -39,6 +39,7 @@
     <p></p>
     @foreach (var item in Model.ProductHighlights)
     {
+        item.IsDev = Model.IsDev;
         Html.RenderPartial("_ProductHighlight", item);
     }
 </div>

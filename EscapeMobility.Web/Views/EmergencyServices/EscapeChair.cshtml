@@ -54,6 +54,7 @@
     <div style="CLEAR: both"></div>
     @foreach (var item in Model.ProductHighlights)
     {
+        item.IsDev = Model.IsDev;
         Html.RenderPartial("_ProductHighlight", item);
     }
 </div>

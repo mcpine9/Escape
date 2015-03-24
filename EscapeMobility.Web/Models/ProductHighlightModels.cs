@@ -9,5 +9,6 @@ namespace EscapeMobility.Web.Models
     public class ProductHighlightModels
     {
         public List<ProductHighlightModel> ProductHighlights { get; set; }
+        public bool IsDev { get; set; }
     }
 }

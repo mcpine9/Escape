@@ -17,5 +17,6 @@ namespace EscapeMobility.Web.Models
         public bool HasSpec { get; set; }
         public bool Show { get; set; }
         public bool ShowInProd { get; set; }
+        public bool IsDev { get; set; }
     }
 }

@@ -26,51 +26,55 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult EscapeChair()
         {
-            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 7));
             var model = new ProductHighlightModels
             {
-                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeChair)
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeChair),
+                IsDev = (bool) DomainResolver.IsDevSubDomain(HttpContext)
             };
             return View(model);
         }
 
         public virtual ActionResult EscapeCarryChair()
         {
-            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 7));
             var model = new ProductHighlightModels
             {
-                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeCarryChair)
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeCarryChair),
+                IsDev = (bool) DomainResolver.IsDevSubDomain(HttpContext)
             };
             return View(model);
         }
 
         public virtual ActionResult EscapeMattress()
         {
-            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 7));
             var model = new ProductHighlightModels
             {
-                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeMattress)
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.EscapeMattress),
+                IsDev = (bool) DomainResolver.IsDevSubDomain(HttpContext)
             };
             return View(model);
         }
 
         public virtual ActionResult Accessories()
         {
-            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 7));
             var model = new ProductHighlightModels
             {
-                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.Accessories)
+                ProductHighlights = ProductHelper.ToEvacuationTypeProductHighlights(products, EvacuationType.Accessories),
+                IsDev = (bool) DomainResolver.IsDevSubDomain(HttpContext)
             };
             return View(model);
         }
 
         public virtual ActionResult Safety(string category)
         {
-            ViewBag.IsDevSubDomain = DomainResolver.IsDevSubDomain(HttpContext);
+            
             var products = _db.Products.Where(p => p.Categories.Any(c => c.CategoryId == 2));
             var model = new ProductHighlightModels();
             switch (category)

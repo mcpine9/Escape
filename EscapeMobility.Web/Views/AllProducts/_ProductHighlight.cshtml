@@ -15,7 +15,7 @@
     </div><div id="piPriceVAT">excl. Tax</div><div class="clear"></div>
     @if (Model.Show)
     {
-        if (ViewBag.IsDevSubDomain || Model.ShowInProd)
+        if (Model.IsDev || Model.ShowInProd)
         {
                 @Html.ActionLink("More Information", MVC.AllProducts.Details(Model.ProductID), new { @class = "contentButton moreInfo" })
         }
