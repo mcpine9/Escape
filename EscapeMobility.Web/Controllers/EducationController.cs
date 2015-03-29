@@ -89,7 +89,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Details(int id)
         {
-            ProductSpecification spec = _db.Products.SingleOrDefault(s => s.Id == id).ProductSpecification;
+            CustomSpecification spec = _db.CustomeSpecifications.SingleOrDefault(s => s.Products.Any(p => p.Id == id));
             Product product = _db.Products.Find(id);
             if (spec != null)
             {
@@ -101,12 +101,16 @@ namespace EscapeMobility.Controllers
                     LongDescription = product.LongDescription,
                     Price = product.Price,
                     ShortDescription = product.ShortDescription,
-                    Title = product.Title
+                    Title = product.Title,
+                    ProductId = product.Id,
+                    json = spec.SpecificationObject,
+                    Show = spec.Show,
+                    ShowInProd = spec.ShowInProd
 
                 };
                 return View(vm);
             }
-            return View(MVC.Education.Index());
+            return Redirect(HttpContext.Request.UrlReferrer.AbsoluteUri);
         }
     }
 }
