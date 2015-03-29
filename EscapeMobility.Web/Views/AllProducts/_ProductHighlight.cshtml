@@ -4,7 +4,21 @@
     <div data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))" class="obImage">
         <img src="~/Content/images/@Model.ImageFileName" class="overviewImage">
     </div>
-    <h2 data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
+    @if (Model.Show)
+    {
+        if (Model.IsDev || Model.ShowInProd)
+        {
+            <h2 data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
+        }
+        else
+        {
+            <h2>@Html.DisplayFor(m => m.Name)</h2>
+        }
+    }
+    else
+    {
+        <h2>@Html.DisplayFor(m => m.Name)</h2>
+    }
     <p>
         @Html.DisplayFor(m => m.ShortDescription)
     </p>
@@ -17,7 +31,7 @@
     {
         if (Model.IsDev || Model.ShowInProd)
         {
-                @Html.ActionLink("More Information", MVC.AllProducts.Details(Model.ProductID), new { @class = "contentButton moreInfo" })
+            @Html.ActionLink("More Information", MVC.AllProducts.Details(Model.ProductID), new { @class = "contentButton moreInfo" })
         }
     }
     <a href="#" class="addToQuote contentButton  addToBasket" data-productid="@Model.ProductID">Add to Quote</a>

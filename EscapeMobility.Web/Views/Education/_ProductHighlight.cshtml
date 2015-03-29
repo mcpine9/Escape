@@ -2,8 +2,21 @@
 <div class="overviewBlock">
     <div class="obImage">
         <img src="~/Content/images/@Model.ImageFileName" class="overviewImage">
-    </div>
-    <h2 data-clickable="@Url.Action(MVC.Education.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
+    </div>    @if (Model.Show)
+    {
+        if (Model.IsDev || Model.ShowInProd)
+        {
+            <h2 data-clickable="@Url.Action(MVC.AllProducts.Details(Model.ProductID))">@Html.DisplayFor(m => m.Name)</h2>
+        }
+        else
+        {
+            <h2>@Html.DisplayFor(m => m.Name)</h2>
+        }
+    }
+    else
+    {
+        <h2>@Html.DisplayFor(m => m.Name)</h2>
+    }
     <p>
         @Html.DisplayFor(m => m.ShortDescription)
     </p>
