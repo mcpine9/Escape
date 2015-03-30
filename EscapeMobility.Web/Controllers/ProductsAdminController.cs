@@ -183,6 +183,7 @@ namespace EscapeMobility.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public virtual ActionResult Edit([Bind(Include = "Id, Title, ShortDescription, LongDescription, Thumbnailfolder, Price, Discount, ArticleNumber, VideoSampleURL, SafetyTags, RelatedTags, IsAccessory, ImageFileName, ProductSpecificationId, EvacuationType, SafetyType, SelectedProductCategoryIds")] Product product, int[] SelectedProductCategoryIds)
         {
             var vm = new EditProductViewModel();

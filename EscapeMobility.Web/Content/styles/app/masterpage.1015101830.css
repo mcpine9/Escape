@@ -823,8 +823,11 @@ a.contentButton:hover {
 #piImage {
 	float: left;
 	text-align: center;
-	width: 300px;
+	width: 50%;
 	margin: 0 15px 0 -15px;
+}
+#piImage img {
+    max-width: 348px
 }
 .print #piImage {
 	margin : 0;

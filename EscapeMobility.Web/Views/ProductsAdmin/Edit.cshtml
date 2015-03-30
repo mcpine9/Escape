@@ -33,7 +33,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Product.LongDescription, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.TextAreaFor(model => model.Product.LongDescription, new { @class = "form-control" })
+                    @Html.TextAreaFor(model => model.Product.LongDescription, new { @class = "form-control", cols = "80", id = "editor1", name = "editor1", rows = "10" })
                     @Html.ValidationMessageFor(model => model.Product.LongDescription, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -145,3 +145,10 @@
         </div>
     }
 
+@section pagescripts
+{
+    <script type="text/javascript" src="~/ckeditor/ckeditor.js"></script>
+    <script language="javascript">
+        CKEDITOR.replace('editor1');
+    </script>
+}

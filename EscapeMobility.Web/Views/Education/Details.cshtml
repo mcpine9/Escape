@@ -64,7 +64,7 @@
 
         </div>
         <p>
-            @Model.LongDescription<br><br><i>Article Number: @Model.ArticleNumber</i>
+            @Html.Raw(Model.LongDescription)<br><br><i>Article Number: @Model.ArticleNumber</i>
         </p>
         <div id="priceBlock">
 
@@ -128,7 +128,7 @@
 
     <div class="subContent" rel="scSpecs" style="display: none;">
         <h2>Specifications - @Model.Title</h2>
-        <div id="specsList" ng-repeat="row in specs.rows">
+        <div id="specsList" ng-repeat="row in specs.rows track by $index">
             <div class="row" ng-class-odd="'slRow'" ng-class-even="'slRowEven'">
                 <div class="col-md-4">{{row.key}}</div>
                 <div class="col-md-5 col-md-offset-1">{{row.value}}</div>

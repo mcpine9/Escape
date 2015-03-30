@@ -28,7 +28,7 @@
 
             </div>
         </div>
-        <div class="form-horizontal" ng-repeat="row in specs.rows" ng-model="specs">
+        <div class="form-horizontal" ng-repeat="row in specs.rows track by $index" ng-model=" specs">
             <div class="form-group">
                 <div class="col-md-5">
                     <input type="text" name="key" id="key_{{row.id}}" class="form-control" placeholder="key" ng-model="row.key" />
