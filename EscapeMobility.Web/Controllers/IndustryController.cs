@@ -95,7 +95,7 @@ namespace EscapeMobility.Controllers
 
         public virtual ActionResult Details(int id)
         {
-            CustomSpecification spec = _db.CustomeSpecifications.SingleOrDefault(s => s.Products.Any(p => p.Id == id));
+            CustomSpecification spec = _db.CustomeSpecifications.OrderByDescending(x => x.CustomSpecificationId).FirstOrDefault(s => s.Products.Any(p => p.Id == id));
             Product product = _db.Products.Find(id);
             if (spec != null)
             {

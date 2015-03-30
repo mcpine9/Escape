@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace EscapeMobility.Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public partial class ProductsAdminController : Controller
     {
         private readonly EscapeDataModel _db = new EscapeDataModel();
@@ -429,7 +429,7 @@ namespace EscapeMobility.Web.Controllers
                 product = _db.Products.SingleOrDefault(p => p.Id == vm.productId);
                 if (product.CustomSpecifications.Count > 0)
                 {
-                    _db.CustomeSpecifications.Remove(product.CustomSpecifications.First());
+                    _db.CustomeSpecifications.Remove(product.CustomSpecifications.OrderByDescending(x => x.CustomSpecificationId).FirstOrDefault());
                     _db.SaveChanges();
                 }
                 product.CustomSpecifications.Add(spec);
@@ -465,7 +465,7 @@ namespace EscapeMobility.Web.Controllers
 
         public virtual ActionResult UpdateCustomSpecs(int productId)
         {
-            CustomSpecification spec = _db.CustomeSpecifications.Single(s => s.Products.Any(p => p.Id == productId));
+            CustomSpecification spec = _db.CustomeSpecifications.OrderByDescending(x => x.CustomSpecificationId).FirstOrDefault(s => s.Products.Any(p => p.Id == productId));
             var vm = new UpdateCustomSpecsViewModel()
             {
                 Product = _db.Products.SingleOrDefault(p => p.Id == productId),
