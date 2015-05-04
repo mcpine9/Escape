@@ -12,8 +12,7 @@ namespace EscapeMobility.Web.Mailers
 		}
 
         public virtual MvcMailMessage SendQuoteEmail(QuoteViewModel vm)
-		{
-			//ViewBag.Data = someObject;
+		{;
             ViewData.Model = vm;
 			return Populate(x =>
 			{
@@ -26,7 +25,6 @@ namespace EscapeMobility.Web.Mailers
 
         public virtual MvcMailMessage SendContactEmail(ContactFormViewModel vm)
         {
-            //ViewBag.Data = someObject;
             ViewData.Model = vm;
             return Populate(x =>
             {

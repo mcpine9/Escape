@@ -48,8 +48,13 @@ namespace EscapeMobility.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,ShoppingCart")] QuoteViewModel vm )
+        public virtual ActionResult Index([Bind(Include = "FirstName,LastName,Title,Company,Email,Phone,Phone2,Address1,Address2,City,State,Zip,Comments,")] QuoteViewModel vm )
         {
+            vm.ShoppingCart = (ShoppingCart)Session["Cart"];
+            foreach (var item in vm.ShoppingCart.CartItems)
+            {
+                
+            }
             RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
 
             if (String.IsNullOrEmpty(recaptchaHelper.Response))
@@ -66,90 +71,51 @@ namespace EscapeMobility.Controllers
             }
             if (ModelState.IsValid)
             {
-                bool customerEmailExistsInDB =
-                       _db.CustomerContacts.Any(c => c.Email == vm.Email);
-
-                //if (customerEmailExistsInDB)
-                //{
-                //    Customer currentCustomer =
-                //        _db.Customer.AsNoTracking().First(c => c.CustomerContacts.Any(cc => cc.Email == vm.Email));
-                //    currentCustomer.FirstName = vm.FirstName;
-                //    currentCustomer.LastName = vm.LastName;
-                //    if (Session["Cart"] != null)
-                //    {
-                //        currentCustomer.ShoppingCarts = new Collection<ShoppingCart>()
-                //        {
-                //            (ShoppingCart) Session["Cart"]
-                //        };
-                //        vm.ShoppingCart = (ShoppingCart) Session["Cart"];
-                //    }
-                //    _db.CustomerContact.AsNoTracking();
-                //    currentCustomer.CustomerContacts.Where(cc => cc.Email == vm.Email).Select(c => new CustomerContact()
-                //    {
-                //        Address1 = vm.Address1,
-                //        Address2 = vm.Address2,
-                //        City = vm.City,
-                //        Comments = vm.Comments,
-                //        Company = vm.Company,
-                //        DateAdded = DateTime.Now,
-                //        Email = vm.Email,
-                //        Phone = vm.Phone,
-                //        Phone2 = vm.Phone2,
-                //        State = vm.State,
-                //        Title = vm.Title,
-                //        Zip = vm.Zip
-                //    });
-                //    _db.Entry(currentCustomer).State = System.Data.Entity.EntityState.Modified;
-                //    _db.SaveChanges();
-                //    UserMailer.SendQuoteEmail(vm).Send();
-                //}
-                //else
-                //{
-                    vm.ShoppingCart.DateCreated = DateTime.Now;
-                    if (vm.ShoppingCart.CartItems != null)
+                vm.ShoppingCart.DateCreated = DateTime.Now;
+                if (vm.ShoppingCart.CartItems != null)
+                {
+                    foreach (var cartItem in vm.ShoppingCart.CartItems)
                     {
-                        foreach (var cartItem in vm.ShoppingCart.CartItems)
-                        {
-                            cartItem.Product = _db.Products.Find(cartItem.ProductID);
-                        }
+                        cartItem.Product = _db.Products.Find(cartItem.ProductID);
                     }
-                    var customer = new Customer()
+                }
+                var customer = new Customer()
+                {
+                    FirstName = vm.FirstName,
+                    LastName = vm.LastName,
+                    ShoppingCarts = new Collection<ShoppingCart>()
+                {
+                    new ShoppingCart()
                     {
-                        FirstName = vm.FirstName,
-                        LastName = vm.LastName,
-                        ShoppingCarts = new Collection<ShoppingCart>()
-                    {
-                        new ShoppingCart()
-                        {
-                            CartItems = vm.ShoppingCart.CartItems ?? new Collection<CartItem>(),
-                            DateCreated = DateTime.Now
-                        }
-                    },
-                        CustomerContacts = new Collection<CustomerContact>()
-                    {
-                        new CustomerContact()
-                        {
-                            Title = vm.Title,
-                            Company = vm.Company,
-                            Email = vm.Email,
-                            Phone = vm.Phone,
-                            Phone2 = vm.Phone2,
-                            Address1 = vm.Address1,
-                            Address2 = vm.Address2,
-                            City = vm.City,
-                            State = vm.State,
-                            Zip = vm.Zip,
-                            Comments = vm.Comments,
-                            DateAdded = DateTime.Now
-                        }
-                    },
+                        CartItems = vm.ShoppingCart.CartItems ?? new Collection<CartItem>(),
                         DateCreated = DateTime.Now
-                    };
-                    customer.DateCreated = DateTime.Now;
-                    _db.Customers.Add(customer);
-                    _db.SaveChanges();
-                    UserMailer.SendQuoteEmail(vm).Send();
-                //}
+                    }
+                },
+                    CustomerContacts = new Collection<CustomerContact>()
+                {
+                    new CustomerContact()
+                    {
+                        Title = vm.Title,
+                        Company = vm.Company,
+                        Email = vm.Email,
+                        Phone = vm.Phone,
+                        Phone2 = vm.Phone2,
+                        Address1 = vm.Address1,
+                        Address2 = vm.Address2,
+                        City = vm.City,
+                        State = vm.State,
+                        Zip = vm.Zip,
+                        Comments = vm.Comments,
+                        DateAdded = DateTime.Now
+                    }
+                },
+                    DateCreated = DateTime.Now
+                };
+
+                customer.DateCreated = DateTime.Now;
+                _db.Customers.Add(customer);
+                _db.SaveChanges();
+                UserMailer.SendQuoteEmail(vm).Send();
                 return RedirectToAction(MVC.Quote.SubmitSuccess());
 
             }
@@ -245,11 +211,37 @@ namespace EscapeMobility.Controllers
 
         public virtual JsonResult GetItemCount()
         {
-            var vm = new ItemCountViewModel()
+
+            var vm = new ItemCountViewModel();
+            if (Session["ItemCount"] != null)
             {
-                Count = (int) Session["ItemCount"]
-            };
+                vm.Count = (int) Session["ItemCount"];
+                return Json(vm, JsonRequestBehavior.AllowGet);
+            }
+            vm.Count = 0;
             return Json(vm, JsonRequestBehavior.AllowGet);
+        }
+
+        public virtual ActionResult ChangeQuantity(int id, int quantity)
+        {
+            if (Session["Cart"] != null)
+            {
+                var cart = (ShoppingCart)Session["Cart"];
+                var itemToUpdate = cart.CartItems.SingleOrDefault(ci => ci.ProductID == id);
+                if (itemToUpdate != null)
+                {
+                    cart.CartItems.Remove(itemToUpdate);
+                    itemToUpdate.Quantity = quantity;
+                    cart.CartItems.Add(itemToUpdate);
+                    Session["Cart"] = cart;
+                    Session["ItemCount"] = cart.CartItems.Count;
+                }
+                else
+                {
+                    Session["ItemCount"] = 0;
+                }
+            }
+            return Content("ok");
         }
 
     }

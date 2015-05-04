@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace EscapeMobility.Web.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public partial class ProductsAdminController : Controller
     {
         private readonly EscapeDataModel _db = new EscapeDataModel();
